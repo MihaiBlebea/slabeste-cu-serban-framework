@@ -1,0 +1,80 @@
+
+{extends file='layouts/admin_layout.tpl'}
+
+{block name="body"}
+    <div class="container-fluid">
+        {if $error == true}
+            <div class="alert alert-{$errorType}" role="alert">
+                {$errorMessage}
+            </div>
+        {/if}
+        <div class="card">
+            <div class="card-body">
+                <div class="row" style="display:flex;align-items:center;">
+                    <div class="col-lg-6">
+                        <h4 class="card-title">Manage clients</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Clients database</h6>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <div class="input-group-btn">
+                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    Search by
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" onclick="sendSearch('id');">ID</a>
+                                    <a class="dropdown-item" onclick="sendSearch('username');">Username</a>
+                                    <a class="dropdown-item" onclick="sendSearch('email');">Email</a>
+                                </div>
+                            </div>
+                            <input id="search-input" type="text" class="form-control" aria-label="Text input with dropdown button">
+                        </div>
+                    </div>
+                </div>
+                <!-- <hr /> -->
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Name</th>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Products</th>
+                            <th>Edit</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {foreach $users as $index => $user}
+                            <tr>
+                                <th scope="row">{$index + 1}</th>
+                                <td>{$user['first_name']} {$user['last_name']}</td>
+                                <td>{$user['username']}</td>
+                                <td>{$user['email']}</td>
+                                <td>{$user['programs']}</td>
+                                <td><a href="{$app_path}/client/client/{$user['id']}/id">Edit</a></td>
+                            </tr>
+                        {/foreach}
+                    </tbody>
+                </table>
+
+                <a href="{$app_path}/client/get-create-client" class="card-link">Create a new client</a><br />
+            </div>
+        </div>
+    </div>
+    <script>
+        function getSearch()
+        {
+            return search = document.getElementById('search-input').value;
+        }
+
+        function sendSearch(mode)
+        {
+            var client = getSearch();
+            return window.location="client/" + client + "/" + mode;
+        }
+    </script>
+{/block}
+
+{block name="footer"}
+
+{/block}

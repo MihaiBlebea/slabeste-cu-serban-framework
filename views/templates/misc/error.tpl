@@ -1,0 +1,24 @@
+
+{extends file='layouts/misc/misc_layout.tpl'}
+
+{block name="body"}
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-8 col-sm-12">
+                        <h4 class="card-title">404 - Un cod ciudat</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Nu intra in panica,asta inseamna doar ca pagina pe care o cauti nu exista</h6>
+                    </div>
+                    <div class="col-md-4 col-sm-12">
+                        <button type="button" class="btn btn-primary btn-lg">Vreau sa ajung acasa</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{/block}
+
+{block name="footer"}
+
+{/block}

@@ -24,5 +24,5 @@ return [
 
     "app_name"             => "Framework",
 
-    "app_path"             => "http://localhost:8070/Tests/test-IOC/public"
+    "app_path"             => "http://localhost:8070/slabeste-cu-serban/slabeste-cu-serban-framework/public"
 ];

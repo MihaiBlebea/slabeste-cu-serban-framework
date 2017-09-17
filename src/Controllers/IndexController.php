@@ -1,16 +1,23 @@
 <?php
 
-namespace App\Controllers;
+namespace InstaRouter\Controllers;
 
-use Framework\Injectables\Injector;
-use Framework\Facades\RouterFacade;
-use Framework\Alias\Request as AliasRequest;
-use Framework\Alias\Template;
+use InstaRouter\Controllers\Controller;
+use InstaRouter\Database\Worker;
+use InstaRouter\Model\User;
+use InstaRouter\Factory\ModelFactory;
+use InstaRouter\Events\LogUserEvent;
 
-class IndexController
+class IndexController extends Controller
 {
     public function index()
     {
-        Template::setAssign(["message" => "This is a new app"])->setDisplay("home.tpl");
+        $this->smarty->display("landing/index.tpl");
+    }
+
+    public function migrate()
+    {
+        $migrate = new Worker;
+        $migrate->migrateAll();
     }
 }

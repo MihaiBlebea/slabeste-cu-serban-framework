@@ -1,11 +1,11 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-17 20:09:58
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-17 20:59:55
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\membership\home_page_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59bed696f28fe0_75047904',
+  'unifunc' => 'content_59bee24b57ae26_24758478',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layouts/membership/membership_footer.tpl' => 1,
   ),
 ),false)) {
-function content_59bed696f28fe0_75047904 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59bee24b57ae26_24758478 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -116,7 +116,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         <div class="container-fluid">
             <div class="content">
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_202648135959bed696f240b6_61514561', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_192073960959bee24b5772c7_27651524', "body");
 ?>
 
             </div>
@@ -128,12 +128,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_202648135959bed696
 <body>
 <?php }
 /* {block "body"} */
-class Block_202648135959bed696f240b6_61514561 extends Smarty_Internal_Block
+class Block_192073960959bee24b5772c7_27651524 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_202648135959bed696f240b6_61514561',
+    0 => 'Block_192073960959bee24b5772c7_27651524',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

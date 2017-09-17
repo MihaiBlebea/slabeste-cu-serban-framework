@@ -18,22 +18,22 @@
 
         {foreach $programs as $program}
             <div class="card program-card" style="width: 20rem;">
-                {if $program['owned'] == 0}
-                    <a href="{$program['program_sales_page']}">
-                        <img class="card-img-top" style="filter: grayscale(100%);" src="{$program['program_image']}">
+                {if $program->owned == false}
+                    <a href="{$program->program_sales_page}">
+                        <img class="card-img-top" style="filter: grayscale(100%);" src="{$program->program_image}">
                     </a>
                 {else}
-                    <a href="{$app_path}{$program['main_page']}">
-                        <img class="card-img-top" src="{$program['program_image']}">
+                    <a href="{$app_path}{$program->main_page}">
+                        <img class="card-img-top" src="{$program->program_image}">
                     </a>
                 {/if}
                 <div class="card-body">
-                    <h4 class="card-title" style="text-align:center;">{$program['program_name']}</h4>
+                    <h4 class="card-title" style="text-align:center;">{$program->program_name}</h4>
 
-                    {if $program['owned'] == 0}
-                        <a href="{$program['program_sales_page']}" class="btn btn-primary" style="display:block;margin:auto;">Afla mai multe</a>
+                    {if $program->owned == false}
+                        <a href="{$program->program_sales_page}" class="btn btn-primary" style="display:block;margin:auto;">Afla mai multe</a>
                     {else}
-                        <a href="{$app_path}{$program['main_page']}" class="btn btn-primary" style="display:block;margin:auto;">Acceseaza</a>
+                        <a href="{$app_path}{$program->main_page}" class="btn btn-primary" style="display:block;margin:auto;">Acceseaza</a>
                     {/if}
                 </div>
             </div>

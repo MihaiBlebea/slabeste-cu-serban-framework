@@ -1,11 +1,11 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-17 19:33:05
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-17 21:11:01
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\login_navigation.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59becdf1c9b6b6_23222767',
+  'unifunc' => 'content_59bee4e5e4a802_35289847',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59becdf1c9b6b6_23222767 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59bee4e5e4a802_35289847 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <ul class="nav">
     <li class="nav-item">

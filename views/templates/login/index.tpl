@@ -25,7 +25,7 @@
                 </form>
 
                 <a href="#" class="card-link">Cum pot sa-mi fac un cont?</a><br />
-                <a href="{$app_path}/login/recover" class="card-link">Ups, mi-am uitat parola!</a>
+                <a href="{$app_path}/recover-password" class="card-link">Ups, mi-am uitat parola!</a>
             </div>
         </div>
     </div>

@@ -20,4 +20,7 @@ class Program extends Model
 	public $discount_code;
 	public $discount_price;
 	public $plan_id;
+
+	// property indicating if program is owned by the user or not (default FALSE)
+	public $owned = false;
 }

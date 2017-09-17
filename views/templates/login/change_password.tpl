@@ -7,7 +7,7 @@
             <div class="card-body">
                 <h4 class="card-title">Schimba parola</h4>
                 <h6 class="card-subtitle mb-2 text-muted">Introdu de 2 ori parola ta</h6>
-                <form method="POST" action="{$app_path}/login/get-change-password">
+                <form method="POST" action="{$app_path}/change-password">
                     <div class="form-group row">
                         <label class="col-form-label">Username: <strong>{$username}</strong></label>
                     </div>
@@ -23,7 +23,7 @@
                     <input disabled id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block" value="Salveaza parola">
                 </form>
 
-                <a href="{$app_path}/login/login" class="card-link">Inapoi la formular</a><br />
+                <a href="{$app_path}/login" class="card-link">Inapoi la formular</a><br />
             </div>
         </div>
     </div>

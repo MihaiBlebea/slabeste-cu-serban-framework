@@ -7,8 +7,9 @@ use Framework\Sessions\UsernameSession;
 use App\Models\User;
 use App\Models\Account;
 use Framework\Router\Request;
+use App\Managers\OwnedProgramsManager;
 
-use App\Model\RecoverPassword;
+use App\Models\RecoverPassword;
 use App\Emails\RecoverPasswordEmail;
 
 class LoginController
@@ -20,9 +21,12 @@ class LoginController
 
     public function postLogin(Request $request)
     {
-        //dd($request->getAllPayload());
         $session = new UsernameSession();
-        //dd($session->getContent());
+
+        // Get all programs and set owned property to TRUE if program is owned;
+        $manager = new OwnedProgramsManager();
+        $programs = $manager->run();
+
         if($session->getContent() == null)
         {
             $user = new User();
@@ -41,7 +45,9 @@ class LoginController
                 if($account == false)
                 {
                     // return to main membership area
-                    Template::setAssign(["programs" => $user->getUserPrograms()])->setDisplay('home/index.tpl');
+                    Template::setAssign([
+                        "programs" => $programs
+                    ])->setDisplay('home/index.tpl');
                 } else {
                     // return to admin main area
                     Template::setDisplay('admin/index.tpl');
@@ -49,74 +55,83 @@ class LoginController
             } else {
                 // go to the login page with error, username or password do not match
                 Template::setAssign([
-                    'error' => true,
+                    'error'        => true,
                     'errorMessage' => 'Datele introduse nu sunt corecte'
                 ])->setDisplay('login/index.tpl');
             }
         } else {
-            dd("user is already logged");
             // Return to the maine membership area
-            Template::setDisplay('home/index.tpl');
+            Template::setAssign([
+                "programs" => $programs
+            ])->setDisplay('home/index.tpl');
         }
     }
 
-    public function recover()
+    public function getRecover()
     {
-        $this->smarty->assign(['error' => false]);
-        $this->smarty->display('login/recover.tpl');
+        Template::setAssign(['error' => false])->setDisplay('login/recover.tpl');
     }
 
-    public function getRecover(Request $request)
+    public function postRecover(Request $request)
     {
-        global $app;
-
+        // Get the user who forgot his password
         $user = new User();
-        $user = $user->where("email", "=", $request->retrive('email'))->select();
+        $user = $user->where("email", "=", $request->out('email'))->selectOne();
+
+        // If user exists in the database
         if($user)
         {
+            // Create the RecoverPassword object and save it in database
             $recover = new RecoverPassword();
-            $recover = $recover->create([
-                'email' => $user['email'],
-                'code' => $recover->generateCode()
+
+            // Generate unique long code
+            $code = $recover->generateCode();
+
+            $recover->create([
+                "email" => $user->email,
+                "code"  => $code
             ]);
 
-            RecoverPasswordEmail::send($user['username'], $recover['email'], $recover['code']);
+            // Send the recover confirmation email
+            RecoverPasswordEmail::send([
+                "username" => $user->username,
+                "email"    => $user->email,
+                "code"     => $code
+            ]);
 
-            $this->smarty->display('login/confirmation.tpl');
+            Template::setDisplay("login/confirmation.tpl");
         } else {
-            $this->smarty->assign([
-                'error' => true,
-                'errorMessage' => 'Emailul furnizat nu a fost gasit in baza de date'
-            ]);
-            $this->smarty->display('login/recover.tpl');
+            // If user email is not found in the database
+            Template::setAssign([
+                "error"        => true,
+                "errorMessage" => "Emailul furnizat nu a fost gasit in baza de date"
+            ])->setDisplay("login/recover.tpl");
         }
     }
 
-    public function changePassword($code, $username)
+    public function getChangePassword(RecoverPassword $code, $username)
     {
-        $recover = new RecoverPassword();
-        $recoverFound = $recover->where('code', '=', $code)->select();
-
-        if($recoverFound)
+        if($code)
         {
-            $recover->where('code', '=', $code)->delete();
-            $this->smarty->assign(['username' => $username]);
-            $this->smarty->display('login/change_password.tpl');
+            $recover = new RecoverPassword();
+            //$recover->where('code', '=', $code->code)->delete();
+            Template::setAssign(['username' => $username])->setDisplay('login/change_password.tpl');
         }
     }
 
-    public function getChangePassword(Request $request)
+    public function postChangePassword(Request $request)
     {
         $user = new User();
-        $user->where('username', '=', $request->retrive('username'))->update([
-            'password' => $request->retrive('password1')
+        $user->where('username', '=', $request->out('username'))->update([
+            'password' => $request->out('password1')
         ]);
-        Login::returnPath();
+        Template::setAssign(['error' => false])->setDisplay('login/index.tpl');
     }
 
     public function logout()
     {
-        Login::logout();
-        Login::returnLogoutPath();
+        $session = new UsernameSession();
+        $session->delete();
+        Template::setAssign(['error' => false])->setDisplay('login/index.tpl');
     }
 }

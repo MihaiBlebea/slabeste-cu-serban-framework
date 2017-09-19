@@ -1,20 +1,16 @@
 <?php
 
-namespace InstaRouter\Controllers;
+namespace App\Controllers;
 
-use InstaRouter\Controllers\Controller;
-use InstaRouter\Model\User;
-use InstaRouter\Model\Account;
-use InstaRouter\Model\Program;
-use InstaRouter\Model\Transaction;
-use InstaRouter\Router\Request;
+use App\Models\User;
+use App\Models\Account;
+use App\Models\Program;
+use App\Models\Transaction;
+use Framework\Router\Request;
+use Framework\Alias\Template;
 
-class ProductController extends Controller
+class ProductController
 {
-    public function index()
-    {
-        $this->smarty->display("admin/index.tpl");
-    }
 
     private function processProducts()
     {
@@ -32,7 +28,7 @@ class ProductController extends Controller
         return $result;
     }
 
-    public function products()
+    public function getProducts()
     {
         $result = $this->processProducts();
 

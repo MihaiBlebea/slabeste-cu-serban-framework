@@ -93,7 +93,7 @@
         </style>
     </head>
     <body>
-        {include 'layouts/admin_navigation.tpl'}
+        {include 'layouts/admin/admin_navigation.tpl'}
 
         {block name="body"}
 

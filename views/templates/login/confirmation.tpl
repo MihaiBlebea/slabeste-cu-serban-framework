@@ -1,5 +1,5 @@
 
-{extends file='layouts/login_layout.tpl'}
+{extends file='layouts/login/login_layout.tpl'}
 
 {block name="body"}
     <div class="container-fluid">

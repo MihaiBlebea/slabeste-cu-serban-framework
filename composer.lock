@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f2d524d50b875a23fcec5555c703e00",
+    "content-hash": "eda4bd844c3d2b3a29d2cf4a0f80249f",
     "packages": [
         {
             "name": "braintree/braintree_php",
@@ -280,16 +280,16 @@
         },
         {
             "name": "serban/framework",
-            "version": "v1.1",
+            "version": "v1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SerbanBlebea/framework.git",
-                "reference": "78368477abc635370da129e773e1e29ee00f5594"
+                "reference": "ff478604963fc9496b6e051a08bac8ff16fa7a14"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SerbanBlebea/framework/zipball/78368477abc635370da129e773e1e29ee00f5594",
-                "reference": "78368477abc635370da129e773e1e29ee00f5594",
+                "url": "https://api.github.com/repos/SerbanBlebea/framework/zipball/ff478604963fc9496b6e051a08bac8ff16fa7a14",
+                "reference": "ff478604963fc9496b6e051a08bac8ff16fa7a14",
                 "shasum": ""
             },
             "require": {
@@ -314,7 +314,7 @@
                 }
             ],
             "description": "My framework project in PHP",
-            "time": "2017-09-16T09:23:26+00:00"
+            "time": "2017-09-19T22:10:54+00:00"
         },
         {
             "name": "smarty/smarty",

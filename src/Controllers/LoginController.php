@@ -3,12 +3,11 @@
 namespace App\Controllers;
 
 use Framework\Alias\Template;
+use Framework\Alias\Router;
 use Framework\Sessions\UsernameSession;
 use App\Models\User;
 use App\Models\Account;
 use Framework\Router\Request;
-use App\Managers\OwnedProgramsManager;
-
 use App\Models\RecoverPassword;
 use App\Emails\RecoverPasswordEmail;
 
@@ -21,49 +20,34 @@ class LoginController
 
     public function postLogin(Request $request)
     {
-        $session = new UsernameSession();
-
-        // Get all programs and set owned property to TRUE if program is owned;
-        $manager = new OwnedProgramsManager();
-        $programs = $manager->run();
-
-        if($session->getContent() == null)
+        // Check if username and passwor match the user in database
+        $user = new User();
+        $user = $user->where("username", "=", $request->out('username'))
+                     ->where("password", "=", $request->out('password'))
+                     ->selectOne();
+        if($user !== false)
         {
-            $user = new User();
-            $user = $user->where("username", "=", $request->out('username'))
-                         ->where("password", "=", $request->out('password'))
-                         ->selectOne();
-            if($user !== false)
-            {
-                $session->setContent($user->username);
+            $session = new UsernameSession();
+            $session->setContent($user->username);
 
-                // Check accounts database for admin tag
-                $account = new Account();
-                $account = $account->where("username", "=", $user->username)
-                                   ->where("program_tag", "=", "admin")
-                                   ->selectOne();
-                if($account == false)
-                {
-                    // return to main membership area
-                    Template::setAssign([
-                        "programs" => $programs
-                    ])->setDisplay('home/index.tpl');
-                } else {
-                    // return to admin main area
-                    Template::setDisplay('admin/index.tpl');
-                }
+            // Check accounts database for admin tag
+            $account = new Account();
+            $account = $account->where("username", "=", $user->username)
+                               ->where("program_tag", "=", "admin")
+                               ->selectOne();
+
+            if($account == false)
+            {
+                Router::goToName("member.home.page")->goToUrl();
             } else {
-                // go to the login page with error, username or password do not match
-                Template::setAssign([
-                    'error'        => true,
-                    'errorMessage' => 'Datele introduse nu sunt corecte'
-                ])->setDisplay('login/index.tpl');
+                Router::goToName("admin.home.page")->goToUrl();
             }
         } else {
-            // Return to the maine membership area
+            // go to the login page with error, username or password do not match
             Template::setAssign([
-                "programs" => $programs
-            ])->setDisplay('home/index.tpl');
+                'error'        => true,
+                'errorMessage' => 'Datele introduse nu sunt corecte'
+            ])->setDisplay('login/index.tpl');
         }
     }
 

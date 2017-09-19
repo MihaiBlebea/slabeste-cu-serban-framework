@@ -1,6 +1,6 @@
 <?php
 
-$this->get("home", "App\\Controllers\\IndexController@index")->as("home");
+// $this->get("home", "App\\Controllers\\IndexController@index")->as("home");
 
 // Landing page routes
 $this->get("landing", "App\\Controllers\\LandingPageController@landing")->as("landing.page");
@@ -29,4 +29,19 @@ $this->group([
     "rules" => ["LoginRule" => "App\\Rules\\AdminRule"]
 ]);
 
-$this->get("main", "App\\Controllers\\AdminController@index")->as("404.page")->belongsTo("admin-group");
+$this->get("main", "App\\Controllers\\AdminController@index")->as("admin.home.page")->belongsTo("admin-group");
+
+$this->get("products", "App\\Controllers\\ProductController@getProducts")->as("admin.products.page")->belongsTo("admin-group");
+
+$this->get("clients", "App\\Controllers\\AdminController@getPages")->as("admin.clients.page")->belongsTo("admin-group");
+
+$this->get("transactions", "App\\Controllers\\AdminController@getTransactions")->as("admin.transactions.page")->belongsTo("admin-group");
+
+// Membership zone
+$this->group([
+    "name" => "member-group",
+    "prefix" => "member",
+    "rules" => ["LoginRule" => "App\\Rules\\AdminRule"]
+]);
+
+$this->get("home", "App\\Controllers\\MembershipController@index")->as("member.home.page")->belongsTo("member-group");

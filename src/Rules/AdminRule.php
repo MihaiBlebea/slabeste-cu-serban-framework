@@ -12,8 +12,7 @@ class AdminRule extends Rule implements RouterRuleInterface
 	public function apply($params = null)
 	{
 		$session = new UsernameSession();
-		$session->setContent("admin");
-		dd($session->getContent());
+		// dd($session->getContent());
 		if(true)
 		{
 			$this->next();

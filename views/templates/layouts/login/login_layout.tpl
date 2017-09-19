@@ -53,7 +53,7 @@
         </style>
     </head>
     <body>
-        {include 'layouts/login_navigation.tpl'}
+        {include 'layouts/login/login_navigation.tpl'}
 
         {block name="body"}
 

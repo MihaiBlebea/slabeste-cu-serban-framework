@@ -8,101 +8,79 @@ use App\Models\Program;
 use App\Models\Transaction;
 use Framework\Router\Request;
 use Framework\Alias\Template;
+use App\Managers\NrOfProgramSoldManager;
 
 class ProductController
 {
-
-    private function processProducts()
-    {
-        $program = new Program();
-        $programs = $program->where('id', '>', 0)->select('array');
-
-        $transaction = new Transaction();
-        $result = array();
-        foreach($programs as $program)
-        {
-            $items = $transaction->where('program_tag', '=', $program['program_tag'])->select('array');
-            $program['clients'] = count($items);
-            array_push($result, $program);
-        }
-        return $result;
-    }
-
+    // Get the main products page
     public function getProducts()
     {
-        $result = $this->processProducts();
+        $manager = new NrOfProgramSoldManager();
+        $programs = $manager->run("");
 
-        $this->smarty->assign([
-            "programs" => $result,
+        Template::setAssign([
+            "programs" => $programs,
             'error' => false
-        ]);
-        $this->smarty->display("admin/products.tpl");
+        ])->setDisplay("admin/products.tpl");
     }
 
-    public function postProduct(Request $request)
+    public function update(Request $request)
     {
         $program = new Program();
-        $result = $program->where('id', '=', $request->retrive('id'))->update([
-            'program_name'       => $request->retrive('program_name'),
-            'program_tag'        => $request->retrive('program_tag'),
-            'program_price'      => $request->retrive('program_price'),
-            'program_sales_page' => $request->retrive('program_sales_page'),
-            'program_status'     => $request->retrive('program_status'),
-            'program_type'       => $request->retrive('program_type'),
-            'program_image'      => $request->retrive('program_image'),
-            'main_page'          => $request->retrive('main_page'),
-            'discount_code'      => $request->retrive('discount_code'),
-            'discount_price'     => $request->retrive('discount_price'),
-            'plan_id'            => $request->retrive('plan_id')
+        $result = $program->where('id', '=', $request->out('id'))->update([
+            'program_name'       => $request->out('program_name'),
+            'program_tag'        => $request->out('program_tag'),
+            'program_price'      => $request->out('program_price'),
+            'program_sales_page' => $request->out('program_sales_page'),
+            'program_status'     => $request->out('program_status'),
+            'program_type'       => $request->out('program_type'),
+            'program_image'      => $request->out('program_image'),
+            'main_page'          => $request->out('main_page'),
+            'discount_code'      => $request->out('discount_code'),
+            'discount_price'     => $request->out('discount_price'),
+            'plan_id'            => $request->out('plan_id')
         ]);
 
-        $result = $this->processProducts();
+        $manager = new NrOfProgramSoldManager();
+        $programs = $manager->run("");
 
         if($result == true)
         {
-            $this->smarty->assign([
-                'programs' => $result,
-                'error' => true,
-                'errorType' => 'success',
+            Template::setAssign([
+                'programs'     => $programs,
+                'error'        => true,
+                'errorType'    => 'success',
                 'errorMessage' => 'Your product was updated with success.'
-            ]);
+            ])->setDisplay("admin/products.tpl");
         } else {
-            $this->smarty->assign([
-                'programs' => $result,
-                'error' => true,
-                'errorType' => 'danger',
+            Template::setAssign([
+                'programs'     => $programs,
+                'error'        => true,
+                'errorType'    => 'danger',
                 'errorMessage' => 'Sorry something went wrong.'
-            ]);
+            ])->setDisplay("admin/products.tpl");
         }
-
-        $this->smarty->display("admin/products.tpl");
     }
 
-    public function deleteProduct($id)
+    public function delete(Program $program)
     {
-        $program = new Program();
-        $program->where('id', '=', $id)->delete();
+        $program->delete();
 
-        $result = $this->processProducts();
+        $manager = new NrOfProgramSoldManager();
+        $programs = $manager->run("");
 
-        $this->smarty->assign([
-            'programs' => $result,
+        Template::setAssign([
+            'programs' => $programs,
             'error' => true,
             'errorType' => 'success',
             'errorMessage' => 'Your product was DELETED.'
-        ]);
-        $this->smarty->display("admin/products.tpl");
+        ])->setDisplay("admin/products.tpl");
     }
 
-    public function product($tag)
+    public function product(Program $program)
     {
-        $program = new Program();
-        $program = $program->where('program_tag', '=', $tag)->select();
-
-        $this->smarty->assign([
+        Template::setAssign([
             "program" => $program
-        ]);
-        $this->smarty->display("admin/edit_product.tpl");
-
+        ])->setDisplay("admin/edit_product.tpl");
     }
 }

@@ -1,7 +1,5 @@
 <?php
 
-// $this->get("home", "App\\Controllers\\IndexController@index")->as("home");
-
 // Landing page routes
 $this->get("landing", "App\\Controllers\\LandingPageController@landing")->as("landing.page");
 
@@ -29,11 +27,52 @@ $this->group([
     "rules" => ["LoginRule" => "App\\Rules\\AdminRule"]
 ]);
 
-$this->get("main", "App\\Controllers\\AdminController@index")->as("admin.home.page")->belongsTo("admin-group");
+// Program's CRUD operations
+$this->get("main", "App\\Controllers\\AdminController@index")
+     ->as("admin.home.page")
+     ->belongsTo("admin-group");
 
-$this->get("products", "App\\Controllers\\ProductController@getProducts")->as("admin.products.page")->belongsTo("admin-group");
+$this->get("programs", "App\\Controllers\\ProductController@getProducts")
+     ->as("admin.products.page")
+     ->belongsTo("admin-group");
 
-$this->get("clients", "App\\Controllers\\AdminController@getPages")->as("admin.clients.page")->belongsTo("admin-group");
+$this->get("program/:program", "App\\Controllers\\ProductController@product")
+     ->bind(["program" => "Program"])
+     ->as("admin.product.page")
+     ->belongsTo("admin-group");
+
+$this->post("program/update", "App\\Controllers\\ProductController@update")
+     ->belongsTo("admin-group");
+
+$this->get("program/delete/:program", "App\\Controllers\\ProductController@delete")
+     ->bind(["program" => "Program"])
+     ->as("delete.product")
+     ->belongsTo("admin-group");
+
+// Client CRUD operations
+$this->get("clients", "App\\Controllers\\ClientController@clients")
+     ->as("admin.clients.page")
+     ->belongsTo("admin-group");
+
+$this->get("client/:client/:search", "App\\Controllers\\ClientController@client")
+     ->as("admin.client.page")
+     ->belongsTo("admin-group");
+
+$this->get("client/delete/:client", "App\\Controllers\\ClientController@delete")
+     ->bind(["client" => "User"])
+     ->as("delete.client.page")
+     ->belongsTo("admin-group");
+
+$this->post("client/update", "App\\Controllers\\ClientController@update")
+     ->as("update.client.page")
+     ->belongsTo("admin-group");
+
+$this->get("client/create", "App\\Controllers\\ClientController@getCreate")
+     ->as("create.client.page")
+     ->belongsTo("admin-group");
+
+$this->post("client/create", "App\\Controllers\\ClientController@postCreate")
+     ->belongsTo("admin-group");
 
 $this->get("transactions", "App\\Controllers\\AdminController@getTransactions")->as("admin.transactions.page")->belongsTo("admin-group");
 

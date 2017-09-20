@@ -1,9 +1,9 @@
 <ul class="nav">
     <li class="nav-item">
-        <a class="nav-link active" href="{$app_path}/admin/home">Home</a>
+        <a class="nav-link active" href="{$app_path}/admin/main">Home</a>
     </li>
     <li class="nav-item">
-        <a class="nav-link active" href="{$app_path}/admin/products">Products</a>
+        <a class="nav-link active" href="{$app_path}/admin/programs">Products</a>
     </li>
     <li class="nav-item">
         <a class="nav-link active" href="{$app_path}/admin/clients">Clients</a>

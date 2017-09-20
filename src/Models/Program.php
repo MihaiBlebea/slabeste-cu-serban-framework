@@ -23,4 +23,7 @@ class Program extends Model
 
 	// property indicating if program is owned by the user or not (default FALSE)
 	public $owned = false;
+
+	// holds the total number of programs sold
+	public $sold = null;
 }

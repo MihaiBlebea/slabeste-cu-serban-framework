@@ -47,17 +47,17 @@
                         {foreach $users as $index => $user}
                             <tr>
                                 <th scope="row">{$index + 1}</th>
-                                <td>{$user['first_name']} {$user['last_name']}</td>
-                                <td>{$user['username']}</td>
-                                <td>{$user['email']}</td>
-                                <td>{$user['programs']}</td>
-                                <td><a href="{$app_path}/client/client/{$user['id']}/id">Edit</a></td>
+                                <td>{$user->first_name} {$user->last_name}</td>
+                                <td>{$user->username}</td>
+                                <td>{$user->email}</td>
+                                <td>{$user->programsBought}</td>
+                                <td><a href="{$app_path}/admin/client/{$user->id}/id">Edit</a></td>
                             </tr>
                         {/foreach}
                     </tbody>
                 </table>
 
-                <a href="{$app_path}/client/get-create-client" class="card-link">Create a new client</a><br />
+                <a href="{$app_path}/admin/client/create" class="card-link">Create a new client</a><br />
             </div>
         </div>
     </div>
@@ -70,7 +70,7 @@
         function sendSearch(mode)
         {
             var client = getSearch();
-            return window.location="client/" + client + "/" + mode;
+            return window.location="{$app_path}/admin/client/" + client + "/" + mode;
         }
     </script>
 {/block}

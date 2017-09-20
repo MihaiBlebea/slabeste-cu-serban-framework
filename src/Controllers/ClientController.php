@@ -1,57 +1,39 @@
 <?php
 
-namespace InstaRouter\Controllers;
+namespace App\Controllers;
 
-use InstaRouter\Controllers\Controller;
-use InstaRouter\Model\User;
-use InstaRouter\Model\Account;
-use InstaRouter\Model\Program;
-use InstaRouter\Model\Transaction;
-use InstaRouter\Router\Request;
-use InstaRouter\Event;
+use App\Models\User;
+use App\Models\Account;
+use App\Models\Program;
+use App\Models\Transaction;
+use Framework\Router\Request;
+// use Framework\Event;
+use Framework\Alias\Template;
+use App\Managers\NrOfProgramsBoughtManager;
 
-class ClientController extends Controller
+class ClientController
 {
     public function clients()
     {
-        $result = $this->processClients();
+        $manager = new NrOfProgramsBoughtManager();
+        $users = $manager->run("");
 
-        $this->smarty->assign([
-            "users" => $result,
+        Template::setAssign([
+            "users" => $users,
             "error" => false
-        ]);
-        $this->smarty->display("admin/clients.tpl");
+        ])->setDisplay("admin/clients.tpl");
     }
 
-    private function processClients()
+    public function client($searchBy)
     {
-        $userModel = new User();
-        $users = $userModel->where('id', '>', 0)->select("array");
-
-        $account = new Account();
-        $result = array();
-        if($users)
-        {
-            foreach($users as $user)
-            {
-                $items = $account->where('username', '=', $user['username'])->select("array");
-                $user['programs'] = count($items);
-                array_push($result, $user);
-            }
-            return $result;
-        }
-        
-    }
-
-    public function client($id, $searchMode)
-    {
+        dd($searchBy);
         $user = new User();
-        $user = $user->where($searchMode, '=', $id)->select();
+        $user = $user->where($searchMode, "=", $searchBy)->selectOne();
 
         if($user)
         {
             $account = new Account();
-            $accounts = $account->where('username', '=', $user['username'])->select("array");
+            $accounts = $account->where('username', '=', $user->username)->select();
             $accountString = '';
 
             foreach(array_column($accounts, 'program_tag') as $index => $account)
@@ -63,109 +45,135 @@ class ClientController extends Controller
                     $accountString .= "&" . $account;
                 }
             }
-            $user['programs'] = $accountString;
+            $user->programString = $accountString;
 
-            $tags = new Program();
-            $tags = $tags->where('id', '>', 0)->select('array');
+            $program = new Program();
+            $tags = $program->where('id', '>', 0)->where("program_status", "=", 1)->select();
 
-            $this->smarty->assign([
+            Template::setAssign([
                 "user" => $user,
                 "tags" => array_column($tags, 'program_tag')
-            ]);
-            $this->smarty->display("admin/edit_client.tpl");
+            ])->setDisplay("admin/edit_client.tpl");
 
         } else {
             dd('no user found');
         }
     }
 
-    public function updateClient(Request $request)
+    public function update(Request $request)
     {
+        // Get old user
         $user = new User();
-        $oldUser = $user->where('id', '=', $request->retrive('id'))->select();
-        $username = $oldUser['username'];
+        $oldUser = $user->where('id', '=', $request->out('id'))->selectOne();
+        $username = $oldUser->username;
 
-        $user->where('id', '=', $request->retrive('id'))->update([
-            'first_name' => $request->retrive('first_name'),
-            'last_name' => $request->retrive('last_name'),
-            'email' => $request->retrive('email')
+        // Update user
+        $user->where('id', '=', $request->out('id'))->update([
+            'first_name' => $request->out('first_name'),
+            'last_name'  => $request->out('last_name'),
+            'email'      => $request->out('email')
         ]);
 
+        // Delete all accounts of the user
         $account = new Account();
         $accounts = $account->where('username', '=', $username)->delete();
-        $updatedAccounts = explode('&', strtolower($request->retrive('accounts')));
 
+        // String of accounts added from the admin console
+        $updatedAccounts = explode('&', strtolower($request->out('accounts')));
+
+        // For each new account added by admin, create a new account entry in the database
         foreach($updatedAccounts as $updatedAccount)
         {
             $account->create([
-                'username' => $username,
-                'password' => 'no password',
+                'username'    => $username,
+                'password'    => 'no password',
                 'program_tag' => $updatedAccount
             ]);
         }
 
-        $result = $this->processClients();
+        $manager = new NrOfProgramsBoughtManager();
+        $users = $manager->run("");
 
-        $this->smarty->assign([
-            "users" => $result,
-            'error' => true,
-            'errorType' => 'success',
+        Template::setAssign([
+            "users"        => $users,
+            'error'        => true,
+            'errorType'    => 'success',
             'errorMessage' => 'The client has been updated.'
-        ]);
-        $this->smarty->display("admin/clients.tpl");
+        ])->setDisplay("admin/clients.tpl");
     }
 
-    public function getCreateClient()
+    public function delete(User $user)
     {
-        $tags = new Program();
-        $tags = $tags->where('id', '>', 0)->select('array');
+        $account = new Account();
+        $accounts = $account->where("username", "=", $user->username)->delete();
 
-        $this->smarty->assign([
+        $user->delete();
+
+        $manager = new NrOfProgramsBoughtManager();
+        $users = $manager->run("");
+
+        Template::setAssign([
+            "users" => $users,
+            "error" => false
+        ])->setDisplay("admin/clients.tpl");
+    }
+
+    public function getCreate()
+    {
+        $program = new Program();
+        $tags = $program->where('id', '>', 0)->select();
+
+        Template::setAssign([
             "tags" => array_column($tags, 'program_tag')
-        ]);
-        $this->smarty->display("admin/edit_client.tpl");
+        ])->setDisplay("admin/edit_client.tpl");
     }
 
-    public function postCreateClient(Request $request)
+    public function postCreate(Request $request)
     {
+        // Generate username and password
         $user = new User();
-        $username = $user->generateUsername($request->retrive('first_name'), $request->retrive('last_name'));
+        $username = $user->generateUsername($request->out('first_name'), $request->out('last_name'));
         $password = $user->generatePassword($length = 10);
+
+        // Create the new user
         $user->create([
-            'first_name' => $request->retrive('first_name'),
-            'last_name' => $request->retrive('last_name'),
-            'username' => $username,
-            'password' => $password,
-            'email' => $request->retrive('email')
+            'first_name' => $request->out('first_name'),
+            'last_name'  => $request->out('last_name'),
+            'username'   => $username,
+            'password'   => $password,
+            'email'      => $request->out('email')
         ]);
 
-        $accounts = explode('&', strtolower($request->retrive('accounts')));
+        // Create the new accounts
+        $accounts = explode('&', strtolower($request->out('accounts')));
         $account = new Account();
         foreach($accounts as $item)
         {
             $account->create([
-                'username' => $username,
-                'password' => 'no password',
+                'username'    => $username,
+                'password'    => 'no password',
                 'program_tag' => $item
             ]);
         }
 
-        Event::event('NewClientEvent', [
-            'userEmail'     => $request->retrive('email'),
-            'firstName'     => $request->retrive("first_name"),
-            'username'      => $username,
-            'password'      => $password,
-            'program_tag'   => 'Admin created',
-            'program_price' => '0'
-        ]);
+        // Event::event('NewClientEvent', [
+        //     'userEmail'     => $request->retrive('email'),
+        //     'firstName'     => $request->retrive("first_name"),
+        //     'username'      => $username,
+        //     'password'      => $password,
+        //     'program_tag'   => 'Admin created',
+        //     'program_price' => '0'
+        // ]);
 
-        $this->smarty->assign([
-            "users" => $this->processClients(),
-            'error' => true,
-            'errorType' => 'success',
+        $manager = new NrOfProgramsBoughtManager();
+        $users = $manager->run("");
+
+        Template::setAssign([
+            "users"        => $users,
+            'error'        => true,
+            'errorType'    => 'success',
             'errorMessage' => 'The client has been created.'
-        ]);
-        $this->smarty->display("admin/clients.tpl");
+        ])->setDisplay("admin/clients.tpl");
     }
 
 }

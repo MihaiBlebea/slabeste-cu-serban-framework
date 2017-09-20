@@ -26,9 +26,9 @@
                         {foreach $programs as $index => $program}
                             <tr>
                                 <th scope="row">{$index + 1}</th>
-                                <td>{$program['program_name']}</td>
-                                <td>{$program['clients']}</td>
-                                <td><a href="{$app_path}/product/product/{$program['program_tag']}">Edit</a></td>
+                                <td>{$program->program_name}</td>
+                                <td>{$program->sold}</td>
+                                <td><a href="{$app_path}/admin/program/{$program->id}">Edit</a></td>
                             </tr>
                         {/foreach}
                     </tbody>

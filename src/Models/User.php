@@ -16,6 +16,12 @@ class User extends Model
     public $email;
     public $bmi;
 
+    // Number of programs bought
+    public $programsBought = null;
+
+    // String of program tags
+    public $programString = null;
+
     public function getUserPrograms()
     {
         $account = new Account();

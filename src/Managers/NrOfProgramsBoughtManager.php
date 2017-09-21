@@ -13,14 +13,12 @@ class NrOfProgramsBoughtManager implements ManagerInterface
 	{
 		// Get all users who bought programs
 		$users = $this->getAllUsers();
-
 		// Add the number of programs bought to user MongoDeleteBatch
 		if($users !== [])
 		{
-			$account = new Account();
 			foreach($users as $user)
 			{
-				$bought = $this->getNrOfProgramsBought($account, $user);
+				$bought = $this->getNrOfProgramsBought($user);
 				$user->programsBought = $bought;
 			}
 		}
@@ -34,8 +32,9 @@ class NrOfProgramsBoughtManager implements ManagerInterface
 		return $user->selectAll();
 	}
 
-	private function getNrOfProgramsBought($account, $user)
+	private function getNrOfProgramsBought($user)
 	{
+		$account = new Account();
 		$items = $account->where('username', '=', $user->username)->select();
 		return count($items);
 	}

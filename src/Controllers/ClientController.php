@@ -7,16 +7,18 @@ use App\Models\Account;
 use App\Models\Program;
 use App\Models\Transaction;
 use Framework\Router\Request;
-// use Framework\Event;
 use Framework\Alias\Template;
 use App\Managers\NrOfProgramsBoughtManager;
+use App\Managers\MoneySpentPerUserManager;
 
 class ClientController
 {
     public function clients()
     {
-        $manager = new NrOfProgramsBoughtManager();
-        $users = $manager->run("");
+        $managerPrograms = new NrOfProgramsBoughtManager();
+        $users = $managerPrograms->run("");
+        $managerMoney = new MoneySpentPerUserManager();
+        $users = $managerMoney->run($users);
 
         Template::setAssign([
             "users" => $users,
@@ -24,9 +26,8 @@ class ClientController
         ])->setDisplay("admin/clients.tpl");
     }
 
-    public function client($searchBy)
+    public function client($searchBy,$searchMode)
     {
-        dd($searchBy);
         $user = new User();
         $user = $user->where($searchMode, "=", $searchBy)->selectOne();
 
@@ -64,8 +65,7 @@ class ClientController
     {
         // Get old user
         $user = new User();
-        $oldUser = $user->where('id', '=', $request->out('id'))->selectOne();
-        $username = $oldUser->username;
+        $userModel = $user->where('id', '=', $request->out('id'))->selectOne();
 
         // Update user
         $user->where('id', '=', $request->out('id'))->update([
@@ -74,23 +74,38 @@ class ClientController
             'email'      => $request->out('email')
         ]);
 
-        // Delete all accounts of the user
-        $account = new Account();
-        $accounts = $account->where('username', '=', $username)->delete();
-
-        // String of accounts added from the admin console
+        // Array of accounts added from the admin console
         $updatedAccounts = explode('&', strtolower($request->out('accounts')));
 
-        // For each new account added by admin, create a new account entry in the database
-        foreach($updatedAccounts as $updatedAccount)
+        // Array of existing accounts
+        $account = new Account();
+        $existingAccounts = $account->where('username', '=', $userModel->username)->select();
+
+        // Delete accounts not present in updatedAccounts
+        $toDelete = array_diff(array_column($existingAccounts, 'program_tag'), $updatedAccounts);
+
+        foreach($toDelete as $value)
         {
-            $account->create([
-                'username'    => $username,
-                'password'    => 'no password',
-                'program_tag' => $updatedAccount
-            ]);
+            $account = new Account();
+            $account->where('username', '=', $userModel->username)
+                    ->where("program_tag", "=", $value)
+                    ->delete();
         }
 
+        // Insert accounts that are not present in the database
+        $toInsert = array_diff($updatedAccounts, array_column($existingAccounts, 'program_tag'));
+
+        foreach($toInsert as $value)
+        {
+            $account = new Account();
+            $account->create([
+                'username'    => $userModel->username,
+                'password'    => 'no password',
+                'program_tag' => $value
+            ]);
+        };
+
+        // Process users
         $manager = new NrOfProgramsBoughtManager();
         $users = $manager->run("");
 

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-20 22:10:54
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-21 19:12:42
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\edit_client.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c2e76e248968_39655275',
+  'unifunc' => 'content_59c40f2ab47166_73057089',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '822042c46ce2ae7a23a71fd160d1ea2b09392dd8' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\edit_client.tpl',
-      1 => 1505944521,
+      1 => 1506021159,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c2e76e248968_39655275 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c40f2ab47166_73057089 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +28,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_45441053959c2e76dcd9da0_83463458', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_55831408059c40f2a777bc0_81383177', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_90255915959c2e76e247350_57328189', "footer");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_35711377059c40f2ab45d31_12209059', "footer");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
 /* {block "body"} */
-class Block_45441053959c2e76dcd9da0_83463458 extends Smarty_Internal_Block
+class Block_55831408059c40f2a777bc0_81383177 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_45441053959c2e76dcd9da0_83463458',
+    0 => 'Block_55831408059c40f2a777bc0_81383177',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -127,7 +127,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                         <div class="col">
                             <div class="form-group">
                                 <label for="exampleSelect2">Current owned programs</label>
-                                <textarea class="form-control" id="owned-tags" name="accounts" style="resize: none;" rows="4" fixed><?php echo (($tmp = @$_smarty_tpl->tpl_vars['user']->value->programsBought)===null||$tmp==='' ? '' : $tmp);?>
+                                <textarea class="form-control" id="owned-tags" name="accounts" style="resize: none;" rows="4" fixed><?php echo (($tmp = @$_smarty_tpl->tpl_vars['user']->value->programString)===null||$tmp==='' ? '' : $tmp);?>
 </textarea>
                             </div>
                         </div>
@@ -163,7 +163,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
             var splitTags = tags.split('&');
             if(checkTagExist(splitTags, tag) == false)
             {
-                tags += '&' + tag;
+                if(tags == "")
+                {
+                    tags += tag;
+                } else {
+                    tags += '&' + tag;
+                }
                 document.getElementById('owned-tags').value = tags;
             }
         }
@@ -183,12 +188,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "body"} */
 /* {block "footer"} */
-class Block_90255915959c2e76e247350_57328189 extends Smarty_Internal_Block
+class Block_35711377059c40f2ab45d31_12209059 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_90255915959c2e76e247350_57328189',
+    0 => 'Block_35711377059c40f2ab45d31_12209059',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

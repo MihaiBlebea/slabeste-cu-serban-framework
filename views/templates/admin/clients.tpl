@@ -40,6 +40,7 @@
                             <th>Username</th>
                             <th>Email</th>
                             <th>Products</th>
+                            <th>Spent</th>
                             <th>Edit</th>
                         </tr>
                     </thead>
@@ -51,6 +52,7 @@
                                 <td>{$user->username}</td>
                                 <td>{$user->email}</td>
                                 <td>{$user->programsBought}</td>
+                                <td>{$user->totalMoney} RON</td>
                                 <td><a href="{$app_path}/admin/client/{$user->id}/id">Edit</a></td>
                             </tr>
                         {/foreach}

@@ -22,6 +22,9 @@ class User extends Model
     // String of program tags
     public $programString = null;
 
+    // Calculate all the money spent by user on the site
+    public $totalMoney;
+
     public function getUserPrograms()
     {
         $account = new Account();

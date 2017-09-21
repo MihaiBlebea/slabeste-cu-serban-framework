@@ -1,71 +1,81 @@
 <?php
 
-namespace InstaRouter\Controllers;
+namespace App\Controllers;
 
-use InstaRouter\Controllers\Controller;
-use InstaRouter\Model\User;
-use InstaRouter\Model\Account;
-use InstaRouter\Model\Program;
-use InstaRouter\Model\Transaction;
-use InstaRouter\Router\Request;
+use App\Models\User;
+use App\Models\Account;
+use App\Models\Program;
+use App\Models\Transaction;
+use Framework\Router\Request;
+use Framework\Alias\Template;
 
-class TransactionController extends Controller
+class TransactionController
 {
-    public function getTransactions()
+    public function transactions()
     {
         $trans = new Transaction();
-        $trans = $trans->where('id', '>', 0)->select("array");
+        $trans = $trans->where('id', '>', 0)->select();
 
-        $this->sendTransactionsToView($trans);
-    }
-
-    private function sendTransactionsToView($trans)
-    {
+        // Calculate sum of money
         $totalValue = 0;
-        foreach($trans as $tran)
+        foreach(array_column($trans, "value") as $tran)
         {
-            $totalValue += $tran['value'];
+            $totalValue += $tran;
         }
 
-        $this->smarty->assign([
+        Template::setAssign([
             'transactions'      => $trans,
             'transaction_count' => count($trans),
             'total_value'       => $totalValue,
             'error'             => false
-        ]);
-        $this->smarty->display("admin/transactions.tpl");
+        ])->setDisplay("admin/transactions.tpl");
     }
 
     public function search($method, $search)
     {
         $trans = new Transaction();
+
+        // Search by username
         if($method == 'username')
         {
-            $trans = $trans->where('username', '=', $search)->select("array");
+            $trans = $trans->where('username', '=', $search)->select();
         }
 
+        // Search by email
         if($method == 'email')
         {
             $user = new User();
             $user = $user->where('email', '=', $search)->select();
-            $trans = $trans->where('username', '=', $user['username'])->select("array");
+            $trans = $trans->where('username', '=', $user['username'])->select();
         }
 
+        // Search by program tag
         if($method == 'program_tag')
         {
-            $trans = $trans->where('program_tag', '=', $search)->select("array");
+            $trans = $trans->where('program_tag', '=', $search)->select();
         }
 
+        // If there are any transactions
         if($trans)
         {
-            $this->sendTransactionsToView($trans);
+            $totalValue = 0;
+            foreach(array_column($trans, "value") as $tran)
+            {
+                $totalValue += $tran;
+            }
+
+            Template::setAssign([
+                'transactions'      => $trans,
+                'transaction_count' => count($trans),
+                'total_value'       => $totalValue,
+                'error'             => false
+            ])->setDisplay("admin/transactions.tpl");
         } else {
-            $this->smarty->assign([
+            Template::setAssign([
                 'error'             => true,
                 'errorType'         => 'danger',
                 'errorMessage'      => 'Could not find any transactions'
-            ]);
-            $this->smarty->display("admin/transactions.tpl");
+            ])->display("admin/transactions.tpl");
         }
     }
 }

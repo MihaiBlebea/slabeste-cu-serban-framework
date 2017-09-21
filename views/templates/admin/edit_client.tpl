@@ -60,7 +60,7 @@
                         <div class="col">
                             <div class="form-group">
                                 <label for="exampleSelect2">Current owned programs</label>
-                                <textarea class="form-control" id="owned-tags" name="accounts" style="resize: none;" rows="4" fixed>{$user->programsBought|default:''}</textarea>
+                                <textarea class="form-control" id="owned-tags" name="accounts" style="resize: none;" rows="4" fixed>{$user->programString|default:''}</textarea>
                             </div>
                         </div>
                     </div>
@@ -90,7 +90,12 @@
             var splitTags = tags.split('&');
             if(checkTagExist(splitTags, tag) == false)
             {
-                tags += '&' + tag;
+                if(tags == "")
+                {
+                    tags += tag;
+                } else {
+                    tags += '&' + tag;
+                }
                 document.getElementById('owned-tags').value = tags;
             }
         }

@@ -74,7 +74,14 @@ $this->get("client/create", "App\\Controllers\\ClientController@getCreate")
 $this->post("client/create", "App\\Controllers\\ClientController@postCreate")
      ->belongsTo("admin-group");
 
-$this->get("transactions", "App\\Controllers\\AdminController@getTransactions")->as("admin.transactions.page")->belongsTo("admin-group");
+// Show and sort transactions
+$this->get("transactions", "App\\Controllers\\TransactionController@transactions")
+     ->as("admin.transactions.page")
+     ->belongsTo("admin-group");
+
+$this->get("transaction/search/:method/:id", "App\\Controllers\\TransactionController@search")
+     ->as("search.transactions.page")
+     ->belongsTo("admin-group");
 
 // Membership zone
 $this->group([

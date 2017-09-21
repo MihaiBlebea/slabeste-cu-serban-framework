@@ -49,10 +49,11 @@
                             {foreach $transactions as $index => $transaction}
                                 <tr>
                                     <th scope="row">{$index + 1}</th>
-                                    <td>{$transaction['regdate']}</td>
-                                    <td>{$transaction['username']}</td>
-                                    <td>{$transaction['program_tag']}</td>
-                                    <td>{$transaction['value']}</td>
+                                    <td>{$transaction->regdate}</td>
+                                    <td>{$transaction->username}</td>
+                                    <td>{$transaction->program_tag}</td>
+                                    <td>{$transaction->value}</td>
+                                    <td>{$transaction->transaction_id}</td>
                                 </tr>
                             {/foreach}
                         {/if}
@@ -60,7 +61,12 @@
                 </table>
                 <hr />
                 <div class="row">
-                    <p>Total value: <strong>{$total_value|default:"0"} RON</strong></p>
+                    <div class="col">
+                        <p>Total value: <strong>{$total_value|default:"0"} RON</strong></p>
+                    </div>
+                    <div class="col">
+                        <a href="{$app_path}/admin/transactions" class="card-link" style="color:red;float: right;">Reset search</a><br />
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,7 +80,7 @@
         function sendSearch(mode)
         {
             var client = getSearch();
-            return window.location="{$app_path}/transaction/search/" + mode + "/" + client;
+            return window.location="{$app_path}/admin/transaction/search/" + mode + "/" + client;
         }
     </script>
 {/block}

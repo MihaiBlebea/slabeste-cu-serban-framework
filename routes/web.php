@@ -91,3 +91,17 @@ $this->group([
 ]);
 
 $this->get("home", "App\\Controllers\\MembershipController@index")->as("member.home.page")->belongsTo("member-group");
+
+// Checkout zone
+$this->group([
+    "name" => "checkout-group",
+    "prefix" => "checkout"
+]);
+
+$this->get(":program", "App\\Controllers\\CheckoutController@index")
+     ->bind(["program" => "Program"])
+     ->as("checkout.page")
+     ->belongsTo("checkout-group");
+
+$this->post("payment", "App\\Controllers\\CheckoutController@pay")
+     ->belongsTo("checkout-group");

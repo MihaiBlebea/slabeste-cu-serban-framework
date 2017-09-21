@@ -14,7 +14,7 @@ class TransactionController
     public function transactions()
     {
         $trans = new Transaction();
-        $trans = $trans->where('id', '>', 0)->select();
+        $trans = $trans->selectAll();
 
         // Calculate sum of money
         $totalValue = 0;
@@ -23,11 +23,19 @@ class TransactionController
             $totalValue += $tran;
         }
 
+        foreach($trans as $tran)
+        {
+            $user = new User();
+            $user = $user->where("username", "=", $tran->username)->selectOne();
+            $tran->firstName = $user->first_name;
+            $tran->lastName = $user->last_name;
+        }
+
         Template::setAssign([
-            'transactions'      => $trans,
-            'transaction_count' => count($trans),
-            'total_value'       => $totalValue,
-            'error'             => false
+            "transactions"      => $trans,
+            "transaction_count" => count($trans),
+            "total_value"       => $totalValue,
+            "error"             => false
         ])->setDisplay("admin/transactions.tpl");
     }
 

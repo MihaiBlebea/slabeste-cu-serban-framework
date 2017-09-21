@@ -171,14 +171,22 @@ class ClientController
             ]);
         }
 
-        // Event::event('NewClientEvent', [
-        //     'userEmail'     => $request->retrive('email'),
-        //     'firstName'     => $request->retrive("first_name"),
-        //     'username'      => $username,
-        //     'password'      => $password,
-        //     'program_tag'   => 'Admin created',
-        //     'program_price' => '0'
-        // ]);
+        // Create the payload object
+        $payloadNotification = [
+            "username"     => $username,
+            "password"     => $password,
+            "email"        => $request->out("email"),
+            "firstName"    => $request->out("first_name"),
+            "lastName"     => $request->out("last_name"),
+            "programName"  => "Program",
+            "programPrice" => 0
+        ]
+
+        // Send notification to Admin and to CLient of the new client event
+        $event = EventFactory::build("NewClient");
+        $listenerEmailAdmin = ListenerFactory::build("NewClientEmailToAdmin");
+        $listenerEmailClient = ListenerFactory::build("NewClientEmailToClient");
+        $event->attach($listenerEmailAdmin)->attach($listenerEmailClient)->trigger($payloadNotification);
 
         $manager = new NrOfProgramsBoughtManager();
         $users = $manager->run("");

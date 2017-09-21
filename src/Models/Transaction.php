@@ -14,4 +14,10 @@ class Transaction extends Model
 	public $program_tag;
 	public $value;
 	public $transaction_id;
+
+	// First name of the buyer
+	public $firstName;
+
+	// Last name of the buyer
+	public $lastName;
 }

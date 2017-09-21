@@ -38,6 +38,7 @@
                         <tr>
                             <th>#</th>
                             <th>Date</th>
+                            <th>Name</th>
                             <th>Username</th>
                             <th>Program tag</th>
                             <th>Value</th>
@@ -50,6 +51,7 @@
                                 <tr>
                                     <th scope="row">{$index + 1}</th>
                                     <td>{$transaction->regdate}</td>
+                                    <td>{$transaction->firstName} {$transaction->lastName}</td>
                                     <td>{$transaction->username}</td>
                                     <td>{$transaction->program_tag}</td>
                                     <td>{$transaction->value}</td>

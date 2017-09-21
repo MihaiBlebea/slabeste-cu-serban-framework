@@ -42,10 +42,10 @@
                         <label for="exampleFormControlTextarea1">Adresa:</label>
                         <textarea name="adress" class="form-control" rows="3"></textarea>
                     </div>
-                    <input name="programTag" type="hidden" value="{$program['program_tag']}">
+                    <input name="programTag" type="hidden" value="{$program->program_tag}">
                 </div>
                 <div class="col-sm-12 col-md-6">
-                    <p>Pret {$program['program_price']} RON</p>
+                    <p>Pret {$program->program_price} RON</p>
                     <div class="form-group">
                         <div id="dropin-container"></div>
                     </div>

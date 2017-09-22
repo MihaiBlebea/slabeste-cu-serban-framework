@@ -72,6 +72,14 @@ class TransactionController
                 $totalValue += $tran;
             }
 
+            foreach($trans as $tran)
+            {
+                $user = new User();
+                $user = $user->where("username", "=", $tran->username)->selectOne();
+                $tran->firstName = $user->first_name;
+                $tran->lastName = $user->last_name;
+            }
+
             Template::setAssign([
                 'transactions'      => $trans,
                 'transaction_count' => count($trans),

@@ -83,6 +83,20 @@ $this->get("transaction/search/:method/:id", "App\\Controllers\\TransactionContr
      ->as("search.transactions.page")
      ->belongsTo("admin-group");
 
+// Show landing pages
+$this->get("landings", "App\\Controllers\\LandingPageController@landings")
+     ->as("admin.landings.page")
+     ->belongsTo("admin-group");
+
+$this->get("landing/:code", "App\\Controllers\\LandingPageController@editPage")
+     ->bind(["code" => "Landing"])
+     ->as("admin.edit.landings.page")
+     ->belongsTo("admin-group");
+
+$this->get("landing/search/:id/:mode", "App\\Controllers\\LandingPageController@search")
+     ->as("admin.search.landing.page")
+     ->belongsTo("admin-group");
+
 // Membership zone
 $this->group([
     "name" => "member-group",
@@ -105,3 +119,17 @@ $this->get(":program", "App\\Controllers\\CheckoutController@index")
 
 $this->post("payment", "App\\Controllers\\CheckoutController@pay")
      ->belongsTo("checkout-group");
+
+// Landing page Controllers
+$this->group([
+    "name" => "landing-group",
+    "prefix" => "landing"
+]);
+
+$this->get(":program/:code", "App\\Controllers\\LandingPageController@landing")
+     ->bind([
+         "program" => "Program",
+         "code"    => "Landing"
+     ])
+     ->as("landing.page")
+     ->belongsTo("landing-group");

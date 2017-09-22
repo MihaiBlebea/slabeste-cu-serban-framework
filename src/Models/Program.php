@@ -7,7 +7,7 @@ use Framework\Models\Model;
 class Program extends Model
 {
 	protected $table = "slabeste_programs";
-	public $tableKey = "id";
+	public $tableKey = "program_tag";
 	public $id;
 	public $program_name;
 	public $program_tag;

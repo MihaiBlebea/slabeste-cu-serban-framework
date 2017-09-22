@@ -88,7 +88,24 @@ $this->get("landings", "App\\Controllers\\LandingPageController@landings")
      ->as("admin.landings.page")
      ->belongsTo("admin-group");
 
-$this->get("landing/:code", "App\\Controllers\\LandingPageController@editPage")
+$this->post("landing/update", "App\\Controllers\\LandingPageController@postUpdate")
+     ->as("admin.update.landing.page")
+     ->belongsTo("admin-group");
+
+$this->get("landing/delete/:landing", "App\\Controllers\\LandingPageController@delete")
+     ->bind(["landing" => "Landing"])
+     ->as("admin.delete.landing.page")
+     ->belongsTo("admin-group");
+
+$this->get("landing/create", "App\\Controllers\\LandingPageController@getCreate")
+     ->as("admin.create.landing.page")
+     ->belongsTo("admin-group");
+
+$this->post("landing/create", "App\\Controllers\\LandingPageController@postCreate")
+     ->as("admin.create.landing.page")
+     ->belongsTo("admin-group");
+
+$this->get("landing/:code", "App\\Controllers\\LandingPageController@getUpdate")
      ->bind(["code" => "Landing"])
      ->as("admin.edit.landings.page")
      ->belongsTo("admin-group");

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-22 20:23:28
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-22 23:03:19
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\landings.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c57140077675_75386608',
+  'unifunc' => 'content_59c596b76f35b0_17800444',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '41647816fabe0433b343abbaae14a4b606898790' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\landings.tpl',
-      1 => 1506111805,
+      1 => 1506121395,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c57140077675_75386608 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c596b76f35b0_17800444 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +28,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_88748957359c57140049395_19265827', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_183699459359c596b76c7117_35498293', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_174725001259c57140075797_00199178', "footer");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_210879907759c596b76f20f7_89550346', "footer");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
 /* {block "body"} */
-class Block_88748957359c57140049395_19265827 extends Smarty_Internal_Block
+class Block_183699459359c596b76c7117_35498293 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_88748957359c57140049395_19265827',
+    0 => 'Block_183699459359c596b76c7117_35498293',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -128,6 +128,10 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                 <div class="row">
                     <div class="col">
                         <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/admin/landing/create" class="card-link">Create a new landing</a><br />
+                    </div>
+                    <div class="col">
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /admin/landings" class="card-link" style="color:red;float: right;">Reset search</a><br />
                     </div>
                 </div>
@@ -154,12 +158,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "body"} */
 /* {block "footer"} */
-class Block_174725001259c57140075797_00199178 extends Smarty_Internal_Block
+class Block_210879907759c596b76f20f7_89550346 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_174725001259c57140075797_00199178',
+    0 => 'Block_210879907759c596b76f20f7_89550346',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

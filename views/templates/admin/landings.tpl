@@ -60,6 +60,9 @@
                 <hr />
                 <div class="row">
                     <div class="col">
+                        <a href="{$app_path}/admin/landing/create" class="card-link">Create a new landing</a><br />
+                    </div>
+                    <div class="col">
                         <a href="{$app_path}/admin/landings" class="card-link" style="color:red;float: right;">Reset search</a><br />
                     </div>
                 </div>

@@ -180,7 +180,7 @@ class ClientController
             "lastName"     => $request->out("last_name"),
             "programName"  => "Program",
             "programPrice" => 0
-        ]
+        ];
 
         // Send notification to Admin and to CLient of the new client event
         $event = EventFactory::build("NewClient");

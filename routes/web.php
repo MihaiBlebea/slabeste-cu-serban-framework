@@ -114,6 +114,11 @@ $this->get("landing/search/:id/:mode", "App\\Controllers\\LandingPageController@
      ->as("admin.search.landing.page")
      ->belongsTo("admin-group");
 
+$this->get("landing/reset/:landing", "App\\Controllers\\LandingPageController@reset")
+     ->bind(["landing" => "Landing"])
+     ->as("admin.reset.landings.page")
+     ->belongsTo("admin-group");
+
 // Membership zone
 $this->group([
     "name" => "member-group",
@@ -150,3 +155,9 @@ $this->get(":program/:code", "App\\Controllers\\LandingPageController@landing")
      ])
      ->as("landing.page")
      ->belongsTo("landing-group");
+
+// Send tracking to this link
+$this->post("tracking/receive", "App\\Controllers\\LandingPageController@receive");
+
+// Send tracking to this link
+$this->post("autoresponder/catch", "App\\Controllers\\LandingPageController@autoresponder");

@@ -1,45 +1,51 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-23 11:17:01
-  from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\landing\index.tpl" */
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-23 12:38:32
+  from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\landing\landing_1.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c642ad715e19_86436868',
+  'unifunc' => 'content_59c655c828c940_50316049',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'ee5f0122f9f70bbde93b5c2c659118d450c0a095' => 
+    '315a528a7bae9fec829a9ee3ead6eb8530bc7e4b' => 
     array (
-      0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\landing\\index.tpl',
-      1 => 1506165418,
+      0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\landing\\landing_1.tpl',
+      1 => 1506170307,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:layouts/landing/modal_name_email.tpl' => 1,
   ),
 ),false)) {
-function content_59c642ad715e19_86436868 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c655c828c940_50316049 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 
+<?php
+$_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "../configs/landing_1.conf", null, 0);
+?>
+
+
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_89877509459c642ad70a377_59215786', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_172657104359c655c825f668_31973723', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/landing/landing_layout.tpl');
 }
 /* {block "body"} */
-class Block_89877509459c642ad70a377_59215786 extends Smarty_Internal_Block
+class Block_172657104359c655c825f668_31973723 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_89877509459c642ad70a377_59215786',
+    0 => 'Block_172657104359c655c825f668_31973723',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -47,20 +53,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     <div class="container-fluid">
 
+        <!-- Include the modal component -->
+        <?php $_smarty_tpl->_subTemplateRender('file:layouts/landing/modal_name_email.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('cta_modal'=>$_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'cta_modal')), 0, false);
+?>
+
         <!-- Offer Start -->
         <div class="background-offer">
             <div class="row offer">
                 <div class="col-md-6 ml-md-auto">
                     <div class="card">
+
                         <div class="card-body">
-                            <h4 class="offer-text-1">Vrei sa scapi de centimetri in plus,</h4>
-                            <h4 class="offer-text-2">antrenandu-te eficient,</h4>
-                            <h4 class="offer-text-3">doar 10 minute pe zi?</h4>
-                            <!-- <a href="<?php echo $_smarty_tpl->tpl_vars['cta']->value;?>
-"> -->
-                            <button data-toggle="modal" data-target="#exampleModal" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;">Block level button</button>
-                            <!-- </a> -->
+                            <h4 class="offer-text-1"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'page_main_title');?>
+</h4>
+                            <h4 class="offer-text-2"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'page_sub_title');?>
+</h4>
+                            <button data-toggle="modal" data-target="#modalRegister" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'cta_page');?>
+</button>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -76,10 +87,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                     <div class="step-text col-10">
                         <div class="step-title">
-                            Inscrie-te
+                            <?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'step_1_title');?>
+
                         </div>
                         <div class="step-content">
-                            Apasa pe butonul verde de inscriere
+                            <?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'step_1_subtitle');?>
+
                         </div>
                     </div>
                 </div>
@@ -89,10 +102,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                     <div class="step-text col-10">
                         <div class="step-title">
-                            Confirma emailul
+                            <?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'step_2_title');?>
+
                         </div>
                         <div class="step-content">
-                            Apasa pe link si confirma inscrierea
+                            <?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'step_2_subtitle');?>
+
                         </div>
                     </div>
                 </div>
@@ -102,10 +117,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                     <div class="step-text col-10">
                         <div class="step-title">
-                            Obtine rezultate
+                            <?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'step_3_title');?>
+
                         </div>
                         <div class="step-content">
-                            Cu 10 minute de antrenament pe zi
+                            <?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'step_3_subtitle');?>
+
                         </div>
                     </div>
                 </div>
@@ -117,18 +134,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div id="benefits" class="row benefits">
             <div class="bullet-point-benefits">
                 <ul>
-                    <li class="benefit-item">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
-                    <li class="benefit-item">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
-                    <li class="benefit-item">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
-                    <li class="benefit-item">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
-                    <li class="benefit-item">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</li>
+                    <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'benefit'), 'benefitItem');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['benefitItem']->value) {
+?>
+                        <li class="benefit-item"><?php echo $_smarty_tpl->tpl_vars['benefitItem']->value;?>
+</li>
+                    <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
+?>
+
                 </ul>
                 <div class="jumbotron">
-                    <h3 class="col mb-4 text-center">Vrei rezultate rapide si sigure?</h3>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['cta']->value;?>
-">
-                        <button type="button" class="col btn btn-warning btn-lg" style="margin:auto;display:block;">Block level button</button>
-                    </a>
+                    <h3 class="col mb-4 text-center"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'cta_offer_1');?>
+</h3>
+                    <button data-toggle="modal" data-target="#modalRegister" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'cta_page');?>
+</button>
                 </div>
             </div>
         </div>
@@ -164,11 +188,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                 </div>
                 <div class="jumbotron">
-                    <h3 class="col mb-4 text-center">Vrei rezultate rapide si sigure?</h3>
-                    <a href="<?php echo $_smarty_tpl->tpl_vars['cta']->value;?>
-">
-                        <button type="button" class="col btn btn-warning btn-lg" style="margin:auto;display:block;">Block level button</button>
-                    </a>
+                    <h3 class="col mb-4 text-center"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'cta_offer_2');?>
+</h3>
+                    <button data-toggle="modal" data-target="#modalRegister" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'cta_page');?>
+</button>
                 </div>
             </div>
         </div>

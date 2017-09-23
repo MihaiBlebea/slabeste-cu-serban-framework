@@ -39,7 +39,9 @@
                             <th>Program</th>
                             <th>Code</th>
                             <th>Template</th>
-                            <th>Count</th>
+                            <th>Traffic</th>
+                            <th>Conv %</th>
+                            <th>Reset</th>
                             <th>Edit</th>
                         </tr>
                     </thead>
@@ -50,8 +52,10 @@
                                 <td>{$landing->name}</td>
                                 <td>{$landing->program_tag}</td>
                                 <td>{$landing->code}</td>
-                                <td>{$landing->template}</td>
+                                <td><a href="{$app_path}/landing/{$landing->program_tag}/{$landing->code}" target="_blank">{$landing->template}</a></td>
                                 <td>{$landing->count}</td>
+                                <td><strong>{$landing->conversionRate()}%</strong></td>
+                                <td><a href="{$app_path}/admin/landing/reset/{$landing->code}">Reset</a></td>
                                 <td><a href="{$app_path}/admin/landing/{$landing->code}">Edit</a></td>
                             </tr>
                         {/foreach}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-22 23:39:51
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-23 14:58:49
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\edit_landing.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c59f47c39df6_65291572',
+  'unifunc' => 'content_59c676a978c0c0_34526975',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'c2ce5b05f0f20f8745ac12bd4e6247c4ce3cd469' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\edit_landing.tpl',
-      1 => 1506123316,
+      1 => 1506178727,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c59f47c39df6_65291572 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c676a978c0c0_34526975 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +28,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175396339859c59f47bc50b6_11324958', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_169164359759c676a9756cb7_49636698', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_213527873759c59f47c38823_21507975', "footer");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_34665489059c676a978ac97_17289567', "footer");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
 /* {block "body"} */
-class Block_175396339859c59f47bc50b6_11324958 extends Smarty_Internal_Block
+class Block_169164359759c676a9756cb7_49636698 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_175396339859c59f47bc50b6_11324958',
+    0 => 'Block_169164359759c676a9756cb7_49636698',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -144,13 +144,39 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Autoresponder list ID</label>
+                                <input name="autoresponder_list" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['landing']->value->autoresponder_list;?>
+">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Automation ID string</label>
+                                <input name="autoresponder_automation" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['landing']->value->autoresponder_automation;?>
+" placeholder="Add id's as strings">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Tags string</label>
+                                <input name="tags" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['landing']->value->tags;?>
+" placeholder="Add tags's as strings">
+                            </div>
+                        </div>
+                    </div>
                     <hr />
-
+                    <?php if ($_smarty_tpl->tpl_vars['landing']->value->lead_count !== '') {?>
+                        <strong>Conversion Rate: <?php echo $_smarty_tpl->tpl_vars['landing']->value->conversionRate();?>
+%</strong>
+                    <?php }?>
                     <input name="id" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['landing']->value->id;?>
 ">
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Save changes</button>
                 </form>
-
+                <hr />
                 <div class="row">
                     <div class="col">
                         <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
@@ -170,12 +196,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "body"} */
 /* {block "footer"} */
-class Block_213527873759c59f47c38823_21507975 extends Smarty_Internal_Block
+class Block_34665489059c676a978ac97_17289567 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_213527873759c59f47c38823_21507975',
+    0 => 'Block_34665489059c676a978ac97_17289567',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

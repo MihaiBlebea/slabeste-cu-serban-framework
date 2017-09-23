@@ -55,6 +55,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Autoresponder list ID</label>
+                                <input name="autoresponder_list" type="text" class="form-control" value="">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="exampleFormControlInput1">Automation ID string</label>
+                                <input name="autoresponder_automation" type="text" class="form-control" value="" placeholder="Add id's as strings">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleFormControlInput1">Tags string</label>
+                            <input name="tags" type="text" class="form-control" value="" placeholder="Add tags's as strings">
+                        </div>
+                    </div>
                     <hr />
 
                     <button type="submit" class="btn btn-primary btn-lg btn-block">Save changes</button>

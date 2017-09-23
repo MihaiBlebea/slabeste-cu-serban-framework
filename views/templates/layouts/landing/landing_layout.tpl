@@ -4,8 +4,10 @@
         <title>{$app_name}</title>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/popper.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+        <link rel="stylesheet" href="{$app_path}/css/social-media-buttons.css">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script src="https://js.braintreegateway.com/js/braintree-2.27.0.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -17,6 +19,7 @@
             }
             a:hover {
                 color: inherit;
+                cursor: pointer;
             }
             a.card-link {
                 color: #0A82C5;
@@ -26,16 +29,22 @@
                 font-weight: bold;
             }
             .nav {
-                background-color: #0A82C5;
-                color:white;
+                /*background-color: #0A82C5;*/
+                background-color: white;
+                color:black;
                 z-index: 3;
                 overflow: hidden;
                 position: fixed;
                 top: 0;
                 width: 100%;
+                display: flex;
+                align-items: center;
+            }
+            .nav-item {
+                font-weight: bold;
             }
             .nav-item:hover {
-                color: yellow;
+                color: #0A82C5;
                 padding:0px auto;
             }
             .container-fluid {
@@ -137,17 +146,44 @@
             .jumbotron {
                 background-color:inherit;
             }
+            .img-logo {
+                max-height: 35px;
+            }
+            .text-center {
+                text-align: center;
+            }
+            footer {
+                height:60px;
+                background-color: #0A82C5;
+                color:white;
+                padding:20px;
+            }
+            .social-buttons-container {
+                display: flex;
+                justify-content: flex-end;
+            }
         </style>
     </head>
     <body>
+        <!-- Include the navigation component-->
         {include 'layouts/landing/landing_navigation.tpl'}
 
         {block name="body"}
 
         {/block}
 
-        {block name="footer"}
-
-        {/block}
+        <footer style="display:flex;align-items:center;" class="footer">
+                <div class="col">
+                    Slabeste Cu Serban
+                </div>
+                <div class="col social-buttons-container">
+                    <a href="#" class="icon-button twitter"><i class="icon-twitter"></i><span></span></a>
+                    <a href="#" class="icon-button facebook"><i class="icon-facebook"></i><span></span></a>
+                    <a href="#" class="icon-button google-plus"><i class="icon-google-plus"></i><span></span></a>
+                    <a href="#" class="icon-button youtube"><i class="fa fa-youtube"></i><span></span></a>
+                    <a href="#" class="icon-button pinterest"><i class="fa fa-pinterest"></i><span></span></a>
+                </div>
+        </footer>
+        <script src="{$app_path}/js/tracking.js"></script>
     </body>
 <body>

@@ -126,7 +126,14 @@ $this->group([
     "rules" => ["LoginRule" => "App\\Rules\\AdminRule"]
 ]);
 
-$this->get("home", "App\\Controllers\\MembershipController@index")->as("member.home.page")->belongsTo("member-group");
+$this->get("home", "App\\Controllers\\MembershipController@index")
+     ->as("member.home.page")
+     ->belongsTo("member-group");
+
+$this->get(":program/:page", "App\\Controllers\\MembershipController@page")
+     ->bind(["program" => "Program", "page" => "Page"])
+     ->as("membership.page")
+     ->belongsTo("member-group");
 
 // Checkout zone
 $this->group([

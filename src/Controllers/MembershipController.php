@@ -3,12 +3,13 @@
 namespace App\Controllers;
 
 use Framework\Alias\Template;
-use App\Controllers\Controller;
 use App\Models\User;
-use App\Models\Account;
+use App\Models\Page;
 use App\Models\Program;
 use Framework\Router\Request;
 use App\Managers\OwnedProgramsManager;
+use App\Managers\PrepareChaptersAndLessonsManager;
+use Framework\Sessions\UsernameSession;
 
 class MembershipController
 {
@@ -20,49 +21,41 @@ class MembershipController
         ])->setDisplay("home/index.tpl");
     }
 
-    // private function filterOwnedPrograms()
-    // {
-    //     $programs = new Program();
-    //     $programs = $programs->where('id', '>', 0)->where('program_status', '=', 1)->select('array');
-    //
-    //     if(Login::isLogin())
-    //     {
-    //         $auth = Login::getLoggedUser();
-    //         $account = new Account();
-    //         $accounts = $account->where('username', '=', $auth)->select("array");
-    //
-    //         $result = array();
-    //         foreach($programs as $program)
-    //         {
-    //             if(in_array($program['program_tag'], array_column($accounts, "program_tag")))
-    //             {
-    //                 $program['owned'] = 1;
-    //             } else {
-    //                 $program['owned'] = 0;
-    //             }
-    //             array_push($result, $program);
-    //         }
-    //         return $result;
-    //     }
-    // }
-
-    public function program($program, $lesson = null)
+    public function page(Program $program, Page $page)
     {
-        $chapters = require_once('../config/' . $program . '.php');
+        $managerChapters = new PrepareChaptersAndLessonsManager();
+        $chapters = $managerChapters->run($program);
 
-        if(gettype($lesson) !== 'string')
-        {
-            $path = $chapters[0]['pages'][0]['path'];
-        } else {
-            $path =  $program . "/" . $lesson;
-        }
+        $managerPrograms = new OwnedProgramsManager();
+        $programs = $managerPrograms->run();
 
-        $filteredPrograms = $this->filterOwnedPrograms();
-
-        $this->smarty->assign([
-            "chapters" => $chapters,
-            "programs" => $filteredPrograms
-        ]);
-        $this->smarty->display("programs/" . $path . ".tpl");
+        $auth = new UsernameSession();
+        $auth = $auth->getContent();
+        
+        Template::setAssign([
+                "auth"     => $auth,
+                "chapters" => $chapters,
+                "programs" => $programs
+        ])->setDisplay($page->page_url);
     }
+
+    // public function program($program, $lesson = null)
+    // {
+    //     $chapters = require_once('../config/' . $program . '.php');
+    //
+    //     if(gettype($lesson) !== 'string')
+    //     {
+    //         $path = $chapters[0]['pages'][0]['path'];
+    //     } else {
+    //         $path =  $program . "/" . $lesson;
+    //     }
+    //
+    //     $filteredPrograms = $this->filterOwnedPrograms();
+    //
+    //     $this->smarty->assign([
+    //         "chapters" => $chapters,
+    //         "programs" => $filteredPrograms
+    //     ]);
+    //     $this->smarty->display("programs/" . $path . ".tpl");
+    // }
 }

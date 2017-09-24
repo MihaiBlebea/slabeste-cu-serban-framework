@@ -98,10 +98,10 @@
             <div class="row">
                 <div class="col-md-2 .hidden-sm-down sidebar">
                     {foreach $chapters as $chapter}
-                        <h5>{$chapter['name']}</h5>
+                        <h5>{$chapter["name"]}</h5>
                         <nav class="nav flex-column">
                             {foreach $chapter['pages'] as $page}
-                                <a class="nav-link" href="{$app_path}/membership/program/{$page['path']}">{$page['name']}</a>
+                                <a class="nav-link" href="{$app_path}/{$page['url']}">{$page['name']}</a>
                             {/foreach}
                         </nav>
                         <hr />
@@ -118,14 +118,14 @@
                         <h4>Acest program aduce rezultate maxime impreuna cu:</h4>
                         <div class="row">
                             {foreach $programs as $program}
-                                {if $program['owned'] == 0}
+                                {if $program->owned == false}
                                     <div class="card program-card" style="width: 15rem;">
-                                        <a href="{$program['program_sales_page']}">
-                                            <img class="card-img-top" style="filter: grayscale(100%);" src="{$program['program_image']}">
+                                        <a href="{$program->program_sales_page}">
+                                            <img class="card-img-top" style="filter: grayscale(100%);" src="{$program->program_image}">
                                         </a>
                                         <div class="card-body">
-                                            <h5 class="card-title" style="text-align:center;">{$program['program_name']}</h5>
-                                            <a href="{$program['program_sales_page']}" class="btn btn-primary" style="display:block;margin:auto;">Afla mai multe</a>
+                                            <h5 class="card-title" style="text-align:center;">{$program->program_name}</h5>
+                                            <a href="{$program->program_sales_page}" class="btn btn-primary" style="display:block;margin:auto;">Afla mai multe</a>
                                         </div>
                                     </div>
                                 {/if}

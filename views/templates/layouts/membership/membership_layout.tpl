@@ -90,13 +90,29 @@
             .other-programs-section {
 
             }
+            .download-card-img {
+                display: block;
+                margin: auto;
+                max-width: 300px;
+                max-height: 350px;
+                transition: all 0.6s ease-in-out;
+            }
+            .download-card-img:hover {
+                opacity: 0.6;
+            }
+            /* Mobile version */
+            @media only screen and (max-width: 900px) {
+                .sidebar {
+                    display:none;
+                }
+            }
         </style>
     </head>
     <body>
         {include 'layouts/membership/membership_navigation.tpl'}
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 .hidden-sm-down sidebar">
+                <div class="col-md-2 sidebar col-12 col-md-3 col-xl-2 bd-sidebar">
                     {foreach $chapters as $chapter}
                         <h5>{$chapter["name"]}</h5>
                         <nav class="nav flex-column">
@@ -107,7 +123,7 @@
                         <hr />
                     {/foreach}
                 </div>
-                <div class="col-md-2 .hidden-sm-down" style="z-index: -1;position: relative;">
+                <div class="col-md-2 sidebar" style="z-index: -1;position: relative;">
                 </div>
                 <div class="col-md-10 col-sm-12 content">
                     {block name="body"}
@@ -121,7 +137,7 @@
                                 {if $program->owned == false}
                                     <div class="card program-card" style="width: 15rem;">
                                         <a href="{$program->program_sales_page}">
-                                            <img class="card-img-top" style="filter: grayscale(100%);" src="{$program->program_image}">
+                                            <img class="card-img-top" style="filter: grayscale(100%);" src="{$app_path}/{$program->program_image}">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title" style="text-align:center;">{$program->program_name}</h5>
@@ -132,7 +148,6 @@
                             {/foreach}
                         </div>
                     </div>
-                    {include 'layouts/membership/membership_footer.tpl'}
                 </div>
             </div>
         </div>

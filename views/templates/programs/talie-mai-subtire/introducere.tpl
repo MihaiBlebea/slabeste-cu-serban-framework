@@ -18,7 +18,7 @@
                     <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/175065719"></iframe>
                 </div>
 
-                <a class="btn btn-primary btn-lg button-center" href="{$app_path}/membership/program/talie-mai-subtire/antrenament-sapt-1">Sunt pregatita sa incep</a>
+                <a class="btn btn-primary btn-lg button-center" href="{$app_path}/member/talie-mai-subtire/saptamana-1">Sunt pregatita sa incep</a>
             </div>
         </div>
     </div>

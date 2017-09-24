@@ -1,28 +1,27 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 09:47:53
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 13:47:42
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\membership\membership_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c77f49dce5c1_05698273',
+  'unifunc' => 'content_59c7b77e732766_54360720',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2138aa5612f526196a8b5a15ea4af0a57e346162' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\membership\\membership_layout.tpl',
-      1 => 1506246470,
+      1 => 1506260856,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:layouts/membership/membership_navigation.tpl' => 1,
-    'file:layouts/membership/membership_footer.tpl' => 1,
   ),
 ),false)) {
-function content_59c77f49dce5c1_05698273 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c7b77e732766_54360720 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -129,6 +128,22 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
             .other-programs-section {
 
             }
+            .download-card-img {
+                display: block;
+                margin: auto;
+                max-width: 300px;
+                max-height: 350px;
+                transition: all 0.6s ease-in-out;
+            }
+            .download-card-img:hover {
+                opacity: 0.6;
+            }
+            /* Mobile version */
+            @media only screen and (max-width: 900px) {
+                .sidebar {
+                    display:none;
+                }
+            }
         </style>
     </head>
     <body>
@@ -137,7 +152,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 .hidden-sm-down sidebar">
+                <div class="col-md-2 sidebar col-12 col-md-3 col-xl-2 bd-sidebar">
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['chapters']->value, 'chapter');
 if ($_from !== null) {
@@ -170,11 +185,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 ?>
 
                 </div>
-                <div class="col-md-2 .hidden-sm-down" style="z-index: -1;position: relative;">
+                <div class="col-md-2 sidebar" style="z-index: -1;position: relative;">
                 </div>
                 <div class="col-md-10 col-sm-12 content">
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_33434645959c77f49dc1060_71794946', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_59811224759c7b77e71bdf3_56474200', "body");
 ?>
 
 
@@ -190,7 +205,8 @@ foreach ($_from as $_smarty_tpl->tpl_vars['program']->value) {
                                     <div class="card program-card" style="width: 15rem;">
                                         <a href="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_sales_page;?>
 ">
-                                            <img class="card-img-top" style="filter: grayscale(100%);" src="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
+                                            <img class="card-img-top" style="filter: grayscale(100%);" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
 ">
                                         </a>
                                         <div class="card-body">
@@ -209,9 +225,6 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 
                         </div>
                     </div>
-                    <?php $_smarty_tpl->_subTemplateRender('file:layouts/membership/membership_footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
-
                 </div>
             </div>
         </div>
@@ -219,12 +232,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 <body>
 <?php }
 /* {block "body"} */
-class Block_33434645959c77f49dc1060_71794946 extends Smarty_Internal_Block
+class Block_59811224759c7b77e71bdf3_56474200 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_33434645959c77f49dc1060_71794946',
+    0 => 'Block_59811224759c7b77e71bdf3_56474200',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

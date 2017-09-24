@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-17 21:09:01
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 13:53:20
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\home\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59bee46d321fa2_86924948',
+  'unifunc' => 'content_59c7b8d08d6a62_88730929',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9b383f133351fc0bb2cb71f18aa36ed3e50801c7' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\home\\index.tpl',
-      1 => 1505682045,
+      1 => 1506261139,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59bee46d321fa2_86924948 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c7b8d08d6a62_88730929 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,18 +28,18 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_146699776059bee46d2fe374_20890162', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_163082125559c7b8d08add95_75743476', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/home_page_layout.tpl');
 }
 /* {block "body"} */
-class Block_146699776059bee46d2fe374_20890162 extends Smarty_Internal_Block
+class Block_163082125559c7b8d08add95_75743476 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_146699776059bee46d2fe374_20890162',
+    0 => 'Block_163082125559c7b8d08add95_75743476',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,14 +68,16 @@ foreach ($_from as $_smarty_tpl->tpl_vars['program']->value) {
                 <?php if ($_smarty_tpl->tpl_vars['program']->value->owned == false) {?>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_sales_page;?>
 ">
-                        <img class="card-img-top" style="filter: grayscale(100%);" src="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
+                        <img class="card-img-top" style="filter: grayscale(100%);" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
 ">
                     </a>
                 <?php } else { ?>
                     <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;
 echo $_smarty_tpl->tpl_vars['program']->value->main_page;?>
 ">
-                        <img class="card-img-top" src="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
+                        <img class="card-img-top program-main-image" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
 ">
                     </a>
                 <?php }?>

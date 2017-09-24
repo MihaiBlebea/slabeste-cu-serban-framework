@@ -7,6 +7,24 @@
             <p class="lead">A doua etapa a antrenamentelor se bazeaza pe subtierea taliei</p>
             <hr class="my-4">
             <div class="program-section">
+
+                <div class="card mb-4">
+                    <div class="row">
+                        <div class="col p-3">
+                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-2.pdf">
+                                <img class="card-img-top download-card-img" src="{$app_path}/img/talie-mai-subtire/antrenament-saptamana-2.png">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h4 class="card-title">Fisa de antrenament pentru saptamana 2</h4>
+                                <p class="card-text">Apasa pe butonul de mai jos pentru a descarca fisa de antrenament pentru cea de-a doua saptamana a programului</p>
+                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-2.pdf" class="btn btn-primary">Descarca</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="subtitle">
                     <h4>Antrenamentul A1</h4>
                 </div>

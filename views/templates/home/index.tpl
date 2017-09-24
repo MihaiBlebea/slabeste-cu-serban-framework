@@ -20,11 +20,11 @@
             <div class="card program-card" style="width: 20rem;">
                 {if $program->owned == false}
                     <a href="{$program->program_sales_page}">
-                        <img class="card-img-top" style="filter: grayscale(100%);" src="{$program->program_image}">
+                        <img class="card-img-top" style="filter: grayscale(100%);" src="{$app_path}/{$program->program_image}">
                     </a>
                 {else}
                     <a href="{$app_path}{$program->main_page}">
-                        <img class="card-img-top" src="{$program->program_image}">
+                        <img class="card-img-top program-main-image" src="{$app_path}/{$program->program_image}">
                     </a>
                 {/if}
                 <div class="card-body">

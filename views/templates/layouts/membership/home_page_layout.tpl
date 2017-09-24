@@ -68,6 +68,12 @@
                 padding-right:0px;
                 margin:0;
             }
+            .program-main-image {
+                transition: all 0.6s ease-in-out;
+            }
+            .program-main-image:hover {
+                opacity: 0.6;
+            }
         </style>
     </head>
     <body>
@@ -79,6 +85,5 @@
                 {/block}
             </div>
         </div>
-        {include 'layouts/membership/membership_footer.tpl'}
     </body>
 <body>

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 10:19:36
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 13:41:35
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\talie-mai-subtire\antrenament-sapt-2.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c786b8a2ed26_32380221',
+  'unifunc' => 'content_59c7b60fac8568_09936016',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '87d701cd08058621071be6bce29736922ba3dff5' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\talie-mai-subtire\\antrenament-sapt-2.tpl',
-      1 => 1506248374,
+      1 => 1506260456,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c786b8a2ed26_32380221 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c7b60fac8568_09936016 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_129233600159c786b8a2cb30_19728017', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7650777159c7b60fac0353_29693362', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_129233600159c786b8a2cb30_19728017 extends Smarty_Internal_Block
+class Block_7650777159c7b60fac0353_29693362 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_129233600159c786b8a2cb30_19728017',
+    0 => 'Block_7650777159c7b60fac0353_29693362',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -50,6 +50,25 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <p class="lead">A doua etapa a antrenamentelor se bazeaza pe subtierea taliei</p>
             <hr class="my-4">
             <div class="program-section">
+
+                <div class="card mb-4">
+                    <div class="row">
+                        <div class="col p-3">
+                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-2.pdf">
+                                <img class="card-img-top download-card-img" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/img/talie-mai-subtire/antrenament-saptamana-2.png">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h4 class="card-title">Fisa de antrenament pentru saptamana 2</h4>
+                                <p class="card-text">Apasa pe butonul de mai jos pentru a descarca fisa de antrenament pentru cea de-a doua saptamana a programului</p>
+                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-2.pdf" class="btn btn-primary">Descarca</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="subtitle">
                     <h4>Antrenamentul A1</h4>
                 </div>

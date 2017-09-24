@@ -4,9 +4,27 @@
     <div class="row">
         <div class="jumbotron">
             <h1 class="display-3">Antrenament Saptamana 3</h1>
-            <p class="lead">Descarca fisa de antrenament pentru a treia saptamana. In cadrul acesteia, vei gasi informatii detaliate despre cum sa combini antrenamentele video pentru a duce la bun sfarsit programul ultimei saptamani de antrenament.</p>
+            <p class="lead">In cea de-a treia saptamana a programului ne vom concentra pe ...</p>
             <hr class="my-4">
             <div class="program-section">
+
+                <div class="card mb-4">
+                    <div class="row">
+                        <div class="col p-3">
+                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf">
+                                <img class="card-img-top download-card-img" src="{$app_path}/img/talie-mai-subtire/antrenament-saptamana-3.png">
+                            </a>
+                        </div>
+                        <div class="col">
+                            <div class="card-body">
+                                <h4 class="card-title">Fisa de antrenament pentru saptamana 3</h4>
+                                <p class="card-text">Apasa pe butonul de mai jos pentru a descarca fisa de antrenament a celei de-a treia saptamani.</p>
+                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf" class="btn btn-primary">Descarca</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="subtitle">
                     <h4>Antrenamentul A1</h4>
                 </div>

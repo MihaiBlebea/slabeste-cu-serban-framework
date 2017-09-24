@@ -3,10 +3,12 @@
 
 {block name="body"}
     <div class="container-fluid">
-        <div class="alert alert-success" style="width:100%;margin-top:100px;" role="alert">
-            <h6>Succes!</h6>
-            Ti-am trimis un email de confirmare pe adresa furnizata. Verifica-ti emailul si apasa pe link-ul de confirmare pentru a reseta parola.
-        </div>
+        {if $error == true}
+            <div class="alert alert-{$type}" style="width:100%;margin-top:100px;" role="alert">
+                <h6 style="text-transform: uppercase;">{$type}!</h6>
+                {$errorMessage}
+            </div>
+        {/if}
     </div>
 {/block}
 

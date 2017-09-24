@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Framework\Models\Model;
+use App\Auth\Bcrypt;
 
 class User extends Model
 {
@@ -25,6 +26,19 @@ class User extends Model
     // Calculate all the money spent by user on the site
     public $totalMoney;
 
+    // Check if password is correct or is invalid
+    public function checkPassword($password)
+    {
+        return Bcrypt::check($password, $this->password);
+    }
+
+    // Hash password
+    public function hashPassword($password)
+    {
+        return Bcrypt::hash($password);
+    }
+
+    // Get the programs owned by this user
     public function getUserPrograms()
     {
         $account = new Account();
@@ -47,6 +61,7 @@ class User extends Model
         }
     }
 
+    // Generate string for password
     public function generatePassword($length = 10)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -60,6 +75,7 @@ class User extends Model
         return $randomString;
     }
 
+    // Generate username
     public function generateUsername($firstName, $lastName)
     {
         return strtolower($firstName . '.' . $lastName);

@@ -20,7 +20,7 @@
                         <input onkeyup="getFormData();" id="password2" type="password" name="password2" class="form-control" placeholder="Noua parola">
                     </div>
                     <input type="hidden" name="username" class="form-control" value="{$username}">
-                    <input disabled id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block" value="Salveaza parola">
+                    <input disabled id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block" value="Parola nu coincide">
                 </form>
 
                 <a href="{$app_path}/login" class="card-link">Inapoi la formular</a><br />
@@ -35,10 +35,10 @@
             if(password1 == password2)
             {
                 document.getElementById("submit-button").disabled = false;
-                document.getElementById("submit-button").value = "Parola nu coincide";
+                document.getElementById("submit-button").value = "Salveaza parola";
             } else {
                 document.getElementById("submit-button").disabled = true;
-                document.getElementById("submit-button").value = "Salveaza parola";
+                document.getElementById("submit-button").value = "Parola nu coincide";
             }
         }
     </script>

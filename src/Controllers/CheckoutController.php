@@ -38,6 +38,8 @@ class CheckoutController
         $user = new User();
         $username = $user->generateUsername($request->out("firstName"), $request->out("lastName"));
         $password = $user->generatePassword(8);
+        // Hash the password
+        $hashPassword = $user->hashPassword($password);
 
         if($program->program_type == 'simple')
         {
@@ -74,24 +76,33 @@ class CheckoutController
             {
                 $username = $checkUser->username;
                 $password = 'parola initiala';
+
+                // Save the new account, but under the same client
+                $account = new Account();
+                $account->create([
+                    'username'    => $checkUser->username,
+                    'password'    => $password,
+                    'program_tag' => $program->program_tag
+                ]);
+
             } else {
                 // Create new client
                 $user->create([
                     'first_name' => $request->out("firstName"),
                     'last_name'  => $request->out("lastName"),
                     'username'   => $username,
-                    'password'   => $password,
+                    'password'   => $hashPassword,
                     'email'      => $request->out("email")
                 ]);
-            }
 
-            // Add new accounts
-            $account = new Account();
-            $account->create([
-                'username'    => $username,
-                'password'    => $password,
-                'program_tag' => $program->program_tag
-            ]);
+                // Add new accounts, under the new created client
+                $account = new Account();
+                $account->create([
+                    'username'    => $username,
+                    'password'    => $password,
+                    'program_tag' => $program->program_tag
+                ]);
+            }
 
             // Create a new transaction
             $transaction = new Transaction();

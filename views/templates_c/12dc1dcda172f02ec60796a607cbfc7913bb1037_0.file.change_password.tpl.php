@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-19 20:35:31
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 17:36:48
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\login\change_password.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c17f939ae2b9_07871447',
+  'unifunc' => 'content_59c7ed307fbcc0_28736720',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '12dc1dcda172f02ec60796a607cbfc7913bb1037' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\login\\change_password.tpl',
-      1 => 1505689108,
+      1 => 1506274604,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c17f939ae2b9_07871447 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c7ed307fbcc0_28736720 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +28,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_10914407559c17f93312d25_10844781', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_149225208059c7ed307ec2b3_43635394', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_127176153659c17f939acaf7_18024550', "footer");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_148344331959c7ed307f9838_78324750', "footer");
 ?>
 
-<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/login_layout.tpl');
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/login/login_layout.tpl');
 }
 /* {block "body"} */
-class Block_10914407559c17f93312d25_10844781 extends Smarty_Internal_Block
+class Block_149225208059c7ed307ec2b3_43635394 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_10914407559c17f93312d25_10844781',
+    0 => 'Block_149225208059c7ed307ec2b3_43635394',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -71,7 +71,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                     <input type="hidden" name="username" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 ">
-                    <input disabled id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block" value="Salveaza parola">
+                    <input disabled id="submit-button" type="submit" class="btn btn-primary btn-lg btn-block" value="Parola nu coincide">
                 </form>
 
                 <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
@@ -88,10 +88,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             if(password1 == password2)
             {
                 document.getElementById("submit-button").disabled = false;
-                document.getElementById("submit-button").value = "Parola nu coincide";
+                document.getElementById("submit-button").value = "Salveaza parola";
             } else {
                 document.getElementById("submit-button").disabled = true;
-                document.getElementById("submit-button").value = "Salveaza parola";
+                document.getElementById("submit-button").value = "Parola nu coincide";
             }
         }
     <?php echo '</script'; ?>
@@ -101,12 +101,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "body"} */
 /* {block "footer"} */
-class Block_127176153659c17f939acaf7_18024550 extends Smarty_Internal_Block
+class Block_148344331959c7ed307f9838_78324750 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_127176153659c17f939acaf7_18024550',
+    0 => 'Block_148344331959c7ed307f9838_78324750',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

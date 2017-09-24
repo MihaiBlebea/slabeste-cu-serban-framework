@@ -14,8 +14,8 @@ $this->get("recover-password", "App\\Controllers\\LoginController@getRecover")->
 $this->post("recover-password", "App\\Controllers\\LoginController@postRecover")->as("post.recover.page");
 
 $this->get("change-password/:code/:username", "App\\Controllers\\LoginController@getChangePassword")
-     ->bind(["code" => "RecoverPassword"])
      ->as("get.change.password.page");
+     
 $this->post("change-password", "App\\Controllers\\LoginController@postChangePassword")->as("post.change.password.page");
 
 $this->get("logout", "App\\Controllers\\LoginController@logout")->as("logout");

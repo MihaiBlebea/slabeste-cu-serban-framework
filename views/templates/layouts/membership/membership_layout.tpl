@@ -43,7 +43,8 @@
             .sidebar {
                 position: fixed;
                 padding: 50px 20px;
-                background-color: #f5f5f3;
+                border-right: solid 0.6px grey;
+                background-color: white;
                 height: 100%;
                 text-align: center;
             }

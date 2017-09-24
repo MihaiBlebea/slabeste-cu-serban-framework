@@ -5,19 +5,26 @@ namespace App\Rules;
 use Framework\Interfaces\RouterRuleInterface;
 use Framework\Injectables\Injector;
 use Framework\RouterRules\Rule;
+use Framework\Sessions\UsernameSession;
+use Framework\Alias\Router;
 
 class LoginRule extends Rule implements RouterRuleInterface
 {
-    public static function apply($params = null)
+    public function apply($params = null)
     {
-        if(true)
+        $session = new UsernameSession();
+
+        if($session->getContent() !== null)
         {
             $this->next();
+        } else {
+            $this->fail();
         }
     }
 
-    public static function fail()
+    public function fail()
     {
-        dd("failed rule");
+        Router::goToUrl("login");
+        // dd("failed rule => redirect to login");
     }
 }

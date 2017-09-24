@@ -152,5 +152,8 @@
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            Slabeste cu Serban
+        </footer>
     </body>
 <body>

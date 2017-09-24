@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 14:22:19
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 15:37:44
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\membership\membership_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c7bf9b295717_08630687',
+  'unifunc' => 'content_59c7d14848f1b0_90667507',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2138aa5612f526196a8b5a15ea4af0a57e346162' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\membership\\membership_layout.tpl',
-      1 => 1506262936,
+      1 => 1506267448,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layouts/membership/membership_navigation.tpl' => 1,
   ),
 ),false)) {
-function content_59c7bf9b295717_08630687 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c7d14848f1b0_90667507 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -190,7 +190,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                 </div>
                 <div class="col-md-10 col-sm-12 content">
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_65419870559c7bf9b27e5c8_88989501', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_152165812159c7d14847f6f3_62934303', "body");
 ?>
 
 
@@ -229,16 +229,19 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                 </div>
             </div>
         </div>
+        <footer class="footer">
+            Slabeste cu Serban
+        </footer>
     </body>
 <body>
 <?php }
 /* {block "body"} */
-class Block_65419870559c7bf9b27e5c8_88989501 extends Smarty_Internal_Block
+class Block_152165812159c7d14847f6f3_62934303 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_65419870559c7bf9b27e5c8_88989501',
+    0 => 'Block_152165812159c7d14847f6f3_62934303',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

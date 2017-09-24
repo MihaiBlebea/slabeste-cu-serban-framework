@@ -123,12 +123,12 @@ $this->get("landing/reset/:landing", "App\\Controllers\\LandingPageController@re
 $this->group([
     "name" => "member-group",
     "prefix" => "member",
-    "rules" => ["LoginRule" => "App\\Rules\\AdminRule"]
+    "rules" => ["LoginRule" => "App\\Rules\\LoginRule", "ProgramRule" => "App\\Rules\\ProgramRule"]
 ]);
 
-$this->get("home", "App\\Controllers\\MembershipController@index")
+$this->get("member/home", "App\\Controllers\\MembershipController@index")
      ->as("member.home.page")
-     ->belongsTo("member-group");
+     ->rules(["LoginRule" => "App\\Rules\\LoginRule"]);
 
 $this->get(":program/:page", "App\\Controllers\\MembershipController@page")
      ->bind(["program" => "Program", "page" => "Page"])

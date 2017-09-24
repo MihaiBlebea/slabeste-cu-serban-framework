@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 13:53:42
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 15:37:46
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\membership\home_page_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c7b8e6653617_67376613',
+  'unifunc' => 'content_59c7d14a548643_95893268',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f1874ce6c88f7f8e2c16fe9346b203bd5976c0c9' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\membership\\home_page_layout.tpl',
-      1 => 1506261218,
+      1 => 1506267461,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layouts/membership/membership_navigation.tpl' => 1,
   ),
 ),false)) {
-function content_59c7b8e6653617_67376613 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c7d14a548643_95893268 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -121,21 +121,24 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         <div class="container-fluid">
             <div class="content">
                 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_87911165959c7b8e6650322_86329645', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_121108939259c7d14a546433_92440621', "body");
 ?>
 
             </div>
         </div>
+        <footer class="footer">
+            Slabeste cu Serban
+        </footer>
     </body>
 <body>
 <?php }
 /* {block "body"} */
-class Block_87911165959c7b8e6650322_86329645 extends Smarty_Internal_Block
+class Block_121108939259c7d14a546433_92440621 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_87911165959c7b8e6650322_86329645',
+    0 => 'Block_121108939259c7d14a546433_92440621',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

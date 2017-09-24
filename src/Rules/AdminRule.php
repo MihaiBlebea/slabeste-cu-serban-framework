@@ -13,7 +13,7 @@ class AdminRule extends Rule implements RouterRuleInterface
 	{
 		$session = new UsernameSession();
 		// dd($session->getContent());
-		if(true)
+		if(1 == 2)
 		{
 			$this->next();
 		}

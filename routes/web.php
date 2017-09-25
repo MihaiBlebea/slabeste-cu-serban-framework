@@ -15,7 +15,7 @@ $this->post("recover-password", "App\\Controllers\\LoginController@postRecover")
 
 $this->get("change-password/:code/:username", "App\\Controllers\\LoginController@getChangePassword")
      ->as("get.change.password.page");
-     
+
 $this->post("change-password", "App\\Controllers\\LoginController@postChangePassword")->as("post.change.password.page");
 
 $this->get("logout", "App\\Controllers\\LoginController@logout")->as("logout");
@@ -130,8 +130,8 @@ $this->get("member/home", "App\\Controllers\\MembershipController@index")
      ->as("member.home.page")
      ->rules(["LoginRule" => "App\\Rules\\LoginRule"]);
 
-$this->get(":program/:page", "App\\Controllers\\MembershipController@page")
-     ->bind(["program" => "Program", "page" => "Page"])
+$this->get(":program/:slug", "App\\Controllers\\MembershipController@page")
+     ->bind(["program" => "Program"])
      ->as("membership.page")
      ->belongsTo("member-group");
 

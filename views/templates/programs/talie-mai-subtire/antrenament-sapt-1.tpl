@@ -3,11 +3,10 @@
 {block name="body"}
     <div class="row">
         <div class="jumbotron">
-            <h1 class="display-3">Antrenament Saptamana 1</h1>
-            <p class="lead">Prima etapa a antrenamentelor se bazeaza pe subtierea taliei</p>
-            <hr class="my-4">
-
             <div class="program-section">
+                <h1 class="display-3">Antrenament Saptamana 1</h1>
+                <p class="lead">Prima etapa a antrenamentelor se bazeaza pe subtierea taliei</p>
+                <hr class="my-4">
 
                 <div class="card mb-4">
                     <div class="row">

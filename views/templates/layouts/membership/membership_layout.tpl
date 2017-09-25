@@ -101,6 +101,9 @@
             .download-card-img:hover {
                 opacity: 0.6;
             }
+            .display-3 {
+                font-size: 3rem;
+            }
             /* Mobile version */
             @media only screen and (max-width: 900px) {
                 .sidebar {

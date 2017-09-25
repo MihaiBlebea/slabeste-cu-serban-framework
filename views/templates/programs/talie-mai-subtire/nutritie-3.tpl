@@ -3,10 +3,10 @@
 {block name="body"}
     <div class="row">
         <div class="jumbotron">
-            <h1 class="display-3">Nutritie Saptamana 3</h1>
-            <p class="lead">In a treia saptamana vom pune accentul pe ...</p>
-            <hr class="my-4">
             <div class="program-section">
+                <h1 class="display-3">Nutritie Saptamana 3</h1>
+                <p class="lead">In a treia saptamana vom pune accentul pe ...</p>
+                <hr class="my-4">
 
                 <div class="text-section">
                     <p>Descarca planul de alimentatie si lista de cumparaturi pentru a III-a saptamana din cadrul programului Talie Mai Subtire.</p>

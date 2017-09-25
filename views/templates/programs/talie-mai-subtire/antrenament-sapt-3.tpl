@@ -3,10 +3,10 @@
 {block name="body"}
     <div class="row">
         <div class="jumbotron">
-            <h1 class="display-3">Antrenament Saptamana 3</h1>
-            <p class="lead">In cea de-a treia saptamana a programului ne vom concentra pe ...</p>
-            <hr class="my-4">
             <div class="program-section">
+                <h1 class="display-3">Antrenament Saptamana 3</h1>
+                <p class="lead">In cea de-a treia saptamana a programului ne vom concentra pe ...</p>
+                <hr class="my-4">
 
                 <div class="card mb-4">
                     <div class="row">

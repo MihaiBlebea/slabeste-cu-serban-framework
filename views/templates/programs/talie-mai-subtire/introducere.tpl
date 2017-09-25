@@ -3,10 +3,10 @@
 {block name="body"}
     <div class="row">
         <div class="jumbotron">
-            <h1 class="display-3">Talie Mai Subtire In 21 De Zile</h1>
-            <p class="lead">Bine ai venit in program {$auth}</p>
-            <hr class="my-4">
             <div class="program-section">
+                <h1 class="display-3">Talie Mai Subtire In 21 De Zile</h1>
+                <p class="lead">Bine ai venit in program {$auth->first_name} {$auth->last_name}</p>
+                <hr class="my-4">
 
                 <div class="text-section">
                     <p>Talie Mai Subtire in 21 de zile este rezultatul a peste 7 ani de experienta in domeniul transformarilor corporale.</p>

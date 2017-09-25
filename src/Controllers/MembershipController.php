@@ -21,19 +21,31 @@ class MembershipController
         ])->setDisplay("home/index.tpl");
     }
 
-    public function page(Program $program, Page $page)
+    public function page(Program $program, $slug)
     {
+        // Get the specific page to display
+        $page = new Page();
+        $page = $page->where("program_tag", "=", $program->program_tag)
+                     ->where("page_slug", "=", $slug)
+                     ->selectOne();
+
+        // Get all the chapters
         $managerChapters = new PrepareChaptersAndLessonsManager();
         $chapters = $managerChapters->run($program);
 
+        // Get all the programs that the user didn't buy
         $managerPrograms = new OwnedProgramsManager();
         $programs = $managerPrograms->run();
 
+        // Get the auth
         $auth = new UsernameSession();
         $auth = $auth->getContent();
+
+        $user = new User();
+        $user = $user->where("username", "=", $auth)->selectOne();
         
         Template::setAssign([
-                "auth"     => $auth,
+                "auth"     => $user,
                 "chapters" => $chapters,
                 "programs" => $programs
         ])->setDisplay($page->page_url);

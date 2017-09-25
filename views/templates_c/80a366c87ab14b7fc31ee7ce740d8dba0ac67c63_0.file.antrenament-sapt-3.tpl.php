@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 13:42:40
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-25 19:01:03
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\talie-mai-subtire\antrenament-sapt-3.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c7b650cd6229_27230923',
+  'unifunc' => 'content_59c9526fb10042_78196795',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '80a366c87ab14b7fc31ee7ce740d8dba0ac67c63' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\talie-mai-subtire\\antrenament-sapt-3.tpl',
-      1 => 1506260559,
+      1 => 1506366046,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c7b650cd6229_27230923 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59c9526fb10042_78196795 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_138337393059c7b650cce876_61001852', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_38630877759c9526fb08087_14623292', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_138337393059c7b650cce876_61001852 extends Smarty_Internal_Block
+class Block_38630877759c9526fb08087_14623292 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_138337393059c7b650cce876_61001852',
+    0 => 'Block_38630877759c9526fb08087_14623292',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -46,10 +46,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     <div class="row">
         <div class="jumbotron">
-            <h1 class="display-3">Antrenament Saptamana 3</h1>
-            <p class="lead">In cea de-a treia saptamana a programului ne vom concentra pe ...</p>
-            <hr class="my-4">
             <div class="program-section">
+                <h1 class="display-3">Antrenament Saptamana 3</h1>
+                <p class="lead">In cea de-a treia saptamana a programului ne vom concentra pe ...</p>
+                <hr class="my-4">
 
                 <div class="card mb-4">
                     <div class="row">

@@ -3,10 +3,10 @@
 {block name="body"}
     <div class="row">
         <div class="jumbotron">
-            <h1 class="display-3">Nutritie Saptamana 1</h1>
-            <p class="lead">In prima saptamana a programului ne focusam pe ...</p>
-            <hr class="my-4">
             <div class="program-section">
+                <h1 class="display-3">Nutritie Saptamana 1</h1>
+                <p class="lead">In prima saptamana a programului ne focusam pe ...</p>
+                <hr class="my-4">
 
                 <div class="text-section">
                     <p>Descarca planul de alimentatie si lista de cumparaturi pentru prima saptamana. Iti recomand sa iti planifici mesele in avans pentru a te asigura ca nu iei decizii eronate in privinta alimentatiei, atunci cand esti obosita sau stresata si cand autocontroul tau este scazut.</p>

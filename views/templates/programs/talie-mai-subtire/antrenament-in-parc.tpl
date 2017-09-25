@@ -3,10 +3,11 @@
 {block name="body"}
     <div class="row">
         <div class="jumbotron">
-            <h1 class="display-3">Antrenament in aer liber</h1>
-            <p class="lead">Descarca fisa de antrenament pentru a treia saptamana. In cadrul acesteia, vei gasi informatii detaliate despre cum sa combini antrenamentele video pentru a duce la bun sfarsit programul ultimei saptamani de antrenament.</p>
-            <hr class="my-4">
             <div class="program-section">
+                <h1 class="display-3">Antrenament in aer liber</h1>
+                <p class="lead">Descarca fisa de antrenament pentru a treia saptamana. In cadrul acesteia, vei gasi informatii detaliate despre cum sa combini antrenamentele video pentru a duce la bun sfarsit programul ultimei saptamani de antrenament.</p>
+                <hr class="my-4">
+
                 <div class="subtitle">
                     <h4>Antrenamentul D1</h4>
                 </div>

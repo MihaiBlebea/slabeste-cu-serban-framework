@@ -181,7 +181,7 @@ class LandingPageController
                     "lead_count" => $leadCount
                 ]);
                 // If automation is successful then go to the database link
-                Router::goToUrl($landing->link);
+                Router::goToUrl("landing/" . $landing->link);
             }
         }
         // If contact adding fails then go back to the landing page

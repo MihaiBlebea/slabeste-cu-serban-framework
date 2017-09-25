@@ -32,6 +32,7 @@ class Autoresponder
 
     	if (!(int)$contact_sync->success)
         {
+            dd($contact_sync->error);
     		// request failed
     		// echo "<p>Syncing contact failed. Error returned: " . $contact_sync->error . "</p>";
     		return false;

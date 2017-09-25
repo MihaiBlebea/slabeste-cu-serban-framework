@@ -11,15 +11,15 @@
                 <form action="{$app_path}/autoresponder/catch" method="POST">
                     <div class="form-group">
                         <label class="form-control-label" for="formGroupExampleInput">Prenumele tau:</label>
-                        <input name="name" type="text" class="form-control" id="form-name" placeholder="Introdu doar prenumele tau">
+                        <input onkeyup="getInput('name');validate('name');" name="name" type="text" class="form-control" id="name" autocomplete="off" placeholder="Introdu doar prenumele tau">
                     </div>
                     <div class="form-group">
                         <label class="form-control-label" for="formGroupExampleInput2">Emailul tau principal:</label>
-                        <input name="email" type="text" class="form-control" id="form-email" placeholder="Introdu emailul tau pe care vrei sa primesti materialele">
+                        <input onkeyup="getInput('email');validate('email');" name="email" type="text" class="form-control" id="email" autocomplete="off" placeholder="Introdu emailul tau pe care vrei sa primesti materialele">
                     </div>
                     <input type="hidden" name="page_code" value="{$landing->code}">
                     <div class="form-group" style="display: flex;justify-content: center;">
-                        <button type="submit" class="btn btn-primary">{#cta_modal#}</button>
+                        <input id="submit" type="submit" class="btn btn-primary" value="{#cta_modal#}">
                     </div>
                 </form>
             </div>

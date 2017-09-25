@@ -57,10 +57,7 @@
                 max-width:900px;
             }
             .background-offer {
-                background-image: url('https://image.freepik.com/free-photo/sport-active-running-fitness-background_1220-1011.jpg');
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
+
                 margin-left: -15px;
                 margin-right: -15px;
             }
@@ -144,6 +141,7 @@
             }
             .jumbotron {
                 background-color:inherit;
+                text-align: center;
             }
             .img-logo {
                 max-height: 35px;
@@ -160,6 +158,9 @@
             .social-buttons-container {
                 display: flex;
                 justify-content: flex-end;
+            }
+            .card {
+                margin-top:0;
             }
         </style>
     </head>

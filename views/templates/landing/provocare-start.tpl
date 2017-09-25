@@ -1,7 +1,7 @@
 
 {extends file='layouts/landing/landing_layout.tpl'}
 
-{config_load file="../configs/landing_1.conf"}
+{config_load file="../configs/provocare-start.conf"}
 
 {block name="body"}
     <div class="container-fluid">
@@ -126,4 +126,36 @@
         <!-- Testimonials End -->
 
     </div>
+{/block}
+
+{block name="script"}
+    <script>
+        document.getElementById("submit").disabled = true;
+        function validate(el)
+        {
+            if(el == "email")
+            {
+                var email = document.getElementById(el).value;
+                if(email.search("@") < 0)
+                {
+                    document.getElementById("submit").disabled = true;
+                    document.getElementById("submit").value = "Emailul nu este valid";
+                }
+            } else if(el == "name") {
+                var name = document.getElementById(el).value;
+                if(name.length == 0)
+                {
+                    document.getElementById("submit").disabled = true;
+                    document.getElementById("submit").value = "Numele este prea scurt";
+                }
+            }
+        }
+
+        var check = checkIfLocalStorage();
+        if(check == true)
+        {
+            document.getElementById("name").value = getData("name");
+            document.getElementById("email").value = getData("email");
+        }
+    </script>
 {/block}

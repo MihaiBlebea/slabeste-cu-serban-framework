@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 14:19:46
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-27 23:31:09
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\home\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c7bf025072e2_68707785',
+  'unifunc' => 'content_59cc34bde7e3d2_17158554',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9b383f133351fc0bb2cb71f18aa36ed3e50801c7' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\home\\index.tpl',
-      1 => 1506262782,
+      1 => 1506555066,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c7bf025072e2_68707785 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59cc34bde7e3d2_17158554 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,18 +28,18 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1148974659c7bf024e2925_05867522', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_87360926659cc34bde1b549_86279528', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/home_page_layout.tpl');
 }
 /* {block "body"} */
-class Block_1148974659c7bf024e2925_05867522 extends Smarty_Internal_Block
+class Block_87360926659cc34bde1b549_86279528 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1148974659c7bf024e2925_05867522',
+    0 => 'Block_87360926659cc34bde1b549_86279528',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -68,7 +68,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             </div>
 
             <div class="carousel-item">
-                <img class="d-block w-100" style="max-height:500px;" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="http://cdn-maf3.heartyhosting.com/sites/muscleandfitness.com/files/media/campus-muscle-trainint-partner-4.jpg" data-holder-rendered="true">
+                <img class="d-block w-100" style="max-height:500px;" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="http://ghk.h-cdn.co/assets/16/50/980x490/landscape-1481735668-gettyimages-634475035.jpg" data-holder-rendered="true">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Second slide label</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

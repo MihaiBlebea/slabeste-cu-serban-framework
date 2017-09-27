@@ -25,7 +25,7 @@
             </div>
 
             <div class="carousel-item">
-                <img class="d-block w-100" style="max-height:500px;" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="http://cdn-maf3.heartyhosting.com/sites/muscleandfitness.com/files/media/campus-muscle-trainint-partner-4.jpg" data-holder-rendered="true">
+                <img class="d-block w-100" style="max-height:500px;" data-src="holder.js/800x400?auto=yes&amp;bg=666&amp;fg=444&amp;text=Second slide" alt="Second slide [800x400]" src="http://ghk.h-cdn.co/assets/16/50/980x490/landscape-1481735668-gettyimages-634475035.jpg" data-holder-rendered="true">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>Second slide label</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>

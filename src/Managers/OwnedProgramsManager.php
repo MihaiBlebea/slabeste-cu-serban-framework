@@ -25,6 +25,7 @@ class OwnedProgramsManager implements ManagerInterface
                     $program->owned = true;
                 }
             }
+
 			return $programs;
 		}
 	}

@@ -37,37 +37,25 @@ class MembershipController
         $managerPrograms = new OwnedProgramsManager();
         $programs = $managerPrograms->run();
 
+        // Select just the programs that are not owned
+        $programs = array_filter($programs, function($program) {
+            return $program->owned == false;
+        });
+
+        // Reset program indexes
+        $programs = array_values($programs);
+
         // Get the auth
         $auth = new UsernameSession();
         $auth = $auth->getContent();
 
         $user = new User();
         $user = $user->where("username", "=", $auth)->selectOne();
-        
+
         Template::setAssign([
                 "auth"     => $user,
                 "chapters" => $chapters,
                 "programs" => $programs
         ])->setDisplay($page->page_url);
     }
-
-    // public function program($program, $lesson = null)
-    // {
-    //     $chapters = require_once('../config/' . $program . '.php');
-    //
-    //     if(gettype($lesson) !== 'string')
-    //     {
-    //         $path = $chapters[0]['pages'][0]['path'];
-    //     } else {
-    //         $path =  $program . "/" . $lesson;
-    //     }
-    //
-    //     $filteredPrograms = $this->filterOwnedPrograms();
-    //
-    //     $this->smarty->assign([
-    //         "chapters" => $chapters,
-    //         "programs" => $filteredPrograms
-    //     ]);
-    //     $this->smarty->display("programs/" . $path . ".tpl");
-    // }
 }

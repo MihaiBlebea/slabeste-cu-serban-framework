@@ -104,6 +104,20 @@
             .display-3 {
                 font-size: 3rem;
             }
+            .img-content {
+                max-width:700px;
+            }
+            .content-link {
+                color:blue;
+                margin-bottom:20px;
+            }
+            .image-program-footer {
+                filter: grayscale(100%);
+                transition: all 0.8s ease-in-out;
+            }
+            .image-program-footer:hover {
+                filter: grayscale(0%);
+            }
             /* Mobile version */
             @media only screen and (max-width: 900px) {
                 .sidebar {
@@ -137,11 +151,11 @@
                     <div class="other-programs-section">
                         <h4>Acest program aduce rezultate maxime impreuna cu:</h4>
                         <div class="row">
-                            {foreach $programs as $program}
-                                {if $program->owned == false}
+                            {foreach $programs as $index => $program}
+                                {if $index < 4}
                                     <div class="card program-card" style="width: 15rem;">
                                         <a href="{$program->program_sales_page}">
-                                            <img class="card-img-top" style="filter: grayscale(100%);" src="{$app_path}/{$program->program_image}">
+                                            <img class="card-img-top image-program-footer" src="{$app_path}/{$program->program_image}">
                                         </a>
                                         <div class="card-body">
                                             <h5 class="card-title" style="text-align:center;">{$program->program_name}</h5>

@@ -18,6 +18,16 @@ class Autoresponder
         $this->ac = new \ActiveCampaign($this->config["active_campaign_api_url"], $this->config["active_campaign_api_key"]);
     }
 
+    // public function getContactDetails($contactId)
+    // {
+    //     $contact = array(
+    // 		"ID" => $contactId,
+    // 	);
+    //
+    // 	$contact_sync = $this->ac->api("contact/view", $contact);
+    //     dd($contact_sync);
+    // }
+
     public function addToList(string $list, $name, $email)
     {
         $contact = array(

@@ -118,10 +118,26 @@
             .image-program-footer:hover {
                 filter: grayscale(0%);
             }
+            #sticky-sidebar {
+            	margin-top:10px;
+            	position:fixed;
+            	max-width: 15%;
+            	border-right: solid 1px grey;
+            	height:100vw;
+            	z-index:2;
+            }
+            #main {
+                max-width: 80%;
+                margin-left: 20%;
+            }
             /* Mobile version */
-            @media only screen and (max-width: 900px) {
+            @media only screen and (max-width: 1000px) {
                 .sidebar {
                     display:none;
+                }
+                #main {
+                    max-width: 100%;
+                    margin-left: 0px;
                 }
             }
         </style>
@@ -130,7 +146,7 @@
         {include 'layouts/membership/membership_navigation.tpl'}
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 sidebar col-12 col-md-3 col-xl-2 bd-sidebar">
+                <div class="col-md-2 sidebar col-12 col-md-3 col-xl-2 bd-sidebar" id="sticky-sidebar">
                     {foreach $chapters as $chapter}
                         <h5>{$chapter["name"]}</h5>
                         <nav class="nav flex-column">
@@ -141,12 +157,13 @@
                         <hr />
                     {/foreach}
                 </div>
-                <div class="col-md-2 sidebar" style="z-index: -1;position: relative;">
-                </div>
-                <div class="col-md-10 col-sm-12 content">
+                {* <div class="col-md-2 sidebar" style="z-index: -1;position: relative;">
+                </div> *}
+                <div class="col-xs-12 col-sm-12" id="main">
                     {block name="body"}
 
                     {/block}
+
 
                     <div class="other-programs-section">
                         <h4>Acest program aduce rezultate maxime impreuna cu:</h4>

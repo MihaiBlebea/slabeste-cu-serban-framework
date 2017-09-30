@@ -9,7 +9,7 @@
                 <hr class="my-4">
 
                 <div class="text-section">
-                    <p>Dupa ce vei parcurge aceasta sectiune, vei putea sa fii propriul tau nutritionist.In continuare, vei invata:</p>
+                    <p>Dupa ce vei parcurge aceasta lectie, vei putea sa fii propriul tau nutritionist.In continuare, vei invata:</p>
                     <ul class="exercise-section">
                         <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Cum sa alegi alimentele care te ajuta sa slabesti?</li>
                         <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Ce sunt macronutrienti si cum sa ii folosesti macronutrientii in avantajul tau?</li>
@@ -278,7 +278,56 @@
                     <p>Asadar, consuma mai multi carbohidrati in zilele in care te antrenezi. Daca nu ai o activitate fizica intensa, limiteaza consumul de carbohidrati.</p>
                 </div>
 
-                <img class="img-content" src="{$app_path}/img/accelereaza-metabolismul/ghid_carbohidrati.png">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Alimente cu continut optim de carbohidrati complecsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Orez</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Fasole</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Ovaz</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Amarath</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Cereale integrale</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Cartofi dulci</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Mazare</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Quinoa</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Psyllium</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>Paste integrale</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <div class="card mb-4">
                     <div class="row">
@@ -308,7 +357,36 @@
                     <p>Iti recomand ca sursa principala de lipide nucile, migdalele, advocado sau uleiul de peste.</p>
                 </div>
 
-                <img class="img-content" src="{$app_path}/img/accelereaza-metabolismul/ghid_grasimi.png">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Grasimi saturate</th>
+                            <th>Grasimi monosaturate</th>
+                            <th>Grasimi polisaturate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Oua</td>
+                            <td>Ulei de masline</td>
+                            <td>Ulei de peste</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Lactate</td>
+                            <td>Nuci</td>
+                            <td>Seminte de in</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Carne</td>
+                            <td>Avocado</td>
+                            <td>Nuci</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <div class="card mb-4">
                     <div class="row">

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-27 23:24:21
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-30 10:44:51
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\accelereaza-metabolismul\lectia-2.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59cc3325df4ad8_24604483',
+  'unifunc' => 'content_59cf75a35c7e36_10998594',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b244ae2e0f26aad176cb1ed9ec9c232c29733c4f' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\accelereaza-metabolismul\\lectia-2.tpl',
-      1 => 1506554640,
+      1 => 1506768272,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59cc3325df4ad8_24604483 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59cf75a35c7e36_10998594 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_153707230159cc3325de9de1_07737512', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_30822884459cf75a35bda87_96004971', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_153707230159cc3325de9de1_07737512 extends Smarty_Internal_Block
+class Block_30822884459cf75a35bda87_96004971 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_153707230159cc3325de9de1_07737512',
+    0 => 'Block_30822884459cf75a35bda87_96004971',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -324,8 +324,56 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <p>Asadar, consuma mai multi carbohidrati in zilele in care te antrenezi. Daca nu ai o activitate fizica intensa, limiteaza consumul de carbohidrati.</p>
                 </div>
 
-                <img class="img-content" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
-/img/accelereaza-metabolismul/ghid_carbohidrati.png">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Alimente cu continut optim de carbohidrati complecsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Orez</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Fasole</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Ovaz</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Amarath</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">5</th>
+                            <td>Cereale integrale</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">6</th>
+                            <td>Cartofi dulci</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">7</th>
+                            <td>Mazare</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">8</th>
+                            <td>Quinoa</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">9</th>
+                            <td>Psyllium</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">10</th>
+                            <td>Paste integrale</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <div class="card mb-4">
                     <div class="row">
@@ -356,8 +404,36 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <p>Iti recomand ca sursa principala de lipide nucile, migdalele, advocado sau uleiul de peste.</p>
                 </div>
 
-                <img class="img-content" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
-/img/accelereaza-metabolismul/ghid_grasimi.png">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Grasimi saturate</th>
+                            <th>Grasimi monosaturate</th>
+                            <th>Grasimi polisaturate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Oua</td>
+                            <td>Ulei de masline</td>
+                            <td>Ulei de peste</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Lactate</td>
+                            <td>Nuci</td>
+                            <td>Seminte de in</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Carne</td>
+                            <td>Avocado</td>
+                            <td>Nuci</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <div class="card mb-4">
                     <div class="row">

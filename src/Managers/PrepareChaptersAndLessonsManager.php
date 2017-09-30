@@ -21,7 +21,7 @@ class PrepareChaptersAndLessonsManager implements ManagerInterface
 	private function getAllPages($program)
 	{
 		$page = new Page();
-		return $page->where("program_tag", "=", $program->program_tag)->select();
+		return $page->where("program_tag", "=", $program->program_tag)->sortBy("id", "ASC")->select();
 	}
 
 	private function extractChapters($pages)

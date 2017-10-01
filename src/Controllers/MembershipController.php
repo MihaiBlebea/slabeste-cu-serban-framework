@@ -51,10 +51,11 @@ class MembershipController
 
         $user = new User();
         $user = $user->where("username", "=", $auth)->selectOne();
-
+        
         Template::setAssign([
                 "auth"     => $user,
                 "chapters" => $chapters,
+                "program"  => $program,
                 "programs" => $programs
         ])->setDisplay($page->page_url);
     }

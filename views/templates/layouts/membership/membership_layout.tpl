@@ -40,9 +40,16 @@
             .nav-item.top:hover {
                 color: yellow;
             }
+            .sidebar-link-item {
+                transition: all 0.3s ease-in-out;
+            }
+            .sidebar-link-item:hover {
+                color: #1B6389;
+                font-weight: bold;
+            }
             .sidebar {
                 position: fixed;
-                padding: 50px 20px;
+                /*padding: 50px 20px;*/
                 border-right: solid 0.6px grey;
                 background-color: white;
                 height: 100%;
@@ -121,7 +128,7 @@
             #sticky-sidebar {
             	margin-top:10px;
             	position:fixed;
-            	max-width: 15%;
+            	max-width: 20%;
             	border-right: solid 1px grey;
             	height:100vw;
             	z-index:2;
@@ -129,6 +136,12 @@
             #main {
                 max-width: 80%;
                 margin-left: 20%;
+            }
+            .sidebar-content {
+
+            }
+            .sidebar-program-image {
+                max-width: 100%;
             }
             /* Mobile version */
             @media only screen and (max-width: 1000px) {
@@ -146,16 +159,19 @@
         {include 'layouts/membership/membership_navigation.tpl'}
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-2 sidebar col-12 col-md-3 col-xl-2 bd-sidebar" id="sticky-sidebar">
-                    {foreach $chapters as $chapter}
-                        <h5>{$chapter["name"]}</h5>
-                        <nav class="nav flex-column">
-                            {foreach $chapter['pages'] as $page}
-                                <a class="nav-link" href="{$app_path}/{$page['url']}">{$page['name']}</a>
-                            {/foreach}
-                        </nav>
-                        <hr />
-                    {/foreach}
+                <div style="padding:0px;" class="col-md-2 sidebar col-12 col-md-3 col-xl-2 bd-sidebar" id="sticky-sidebar">
+                    <img class="sidebar-program-image mt-4 mb-5" src="{$app_path}/{$program->program_image}" />
+                    <div class="sidebar-content">
+                        {foreach $chapters as $chapter}
+                            <h5>{$chapter["name"]}</h5>
+                            <nav class="nav flex-column">
+                                {foreach $chapter['pages'] as $page}
+                                    <a class="nav-link sidebar-link-item" href="{$app_path}/{$page['url']}">{$page['name']}</a>
+                                {/foreach}
+                            </nav>
+                            <hr />
+                        {/foreach}
+                    </div>
                 </div>
                 {* <div class="col-md-2 sidebar" style="z-index: -1;position: relative;">
                 </div> *}

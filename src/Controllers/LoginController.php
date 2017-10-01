@@ -30,6 +30,7 @@ class LoginController
         {
             // Username maches with the one in the database
             $check = $user->checkPassword($request->out('password'));
+
             if($check == false)
             {
                 // If password check fails
@@ -47,7 +48,7 @@ class LoginController
                 $account = $account->where("username", "=", $user->username)
                                    ->where("program_tag", "=", "admin")
                                    ->selectOne();
-
+        
                 if($account == false)
                 {
                     Router::goToName("member.home.page")->goToUrl();

@@ -135,6 +135,9 @@ $this->get(":program/:slug", "App\\Controllers\\MembershipController@page")
      ->as("membership.page")
      ->belongsTo("member-group");
 
+$this->get("ebook/:program/:extension/:file", "App\\Controllers\\MembershipController@ebook")
+     ->rules(["LoginRule" => "App\\Rules\\LoginRule"]);
+
 // Checkout zone
 $this->group([
     "name" => "checkout-group",

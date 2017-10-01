@@ -10,6 +10,7 @@ use Framework\Router\Request;
 use App\Managers\OwnedProgramsManager;
 use App\Managers\PrepareChaptersAndLessonsManager;
 use Framework\Sessions\UsernameSession;
+use Framework\Alias\Router;
 
 class MembershipController
 {
@@ -51,12 +52,18 @@ class MembershipController
 
         $user = new User();
         $user = $user->where("username", "=", $auth)->selectOne();
-        
+
         Template::setAssign([
                 "auth"     => $user,
                 "chapters" => $chapters,
                 "program"  => $program,
                 "programs" => $programs
         ])->setDisplay($page->page_url);
+    }
+
+    // Download files from the system, like ebooks, cheatsheets, etc
+    public function ebook($program, $extension, $file)
+    {
+        Router::goToUrl("ebooks/" . $program . "/" . $file . "." . $extension);
     }
 }

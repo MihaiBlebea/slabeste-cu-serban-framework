@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-06 20:29:51
-  from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\fit-si-supla-2\nutritie.tpl" */
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-06 20:32:16
+  from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\fit-si-supla-3\nutritie.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59d7e7bf0a9274_54299038',
+  'unifunc' => 'content_59d7e85061ee76_98175924',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    'e7cc3ef44e0d243135cd880cb28e80abe63db787' => 
+    '4bb7309f655b0145fa26def15413cc12884d20cf' => 
     array (
-      0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\fit-si-supla-2\\nutritie.tpl',
-      1 => 1507321788,
+      0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\fit-si-supla-3\\nutritie.tpl',
+      1 => 1507321920,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59d7e7bf0a9274_54299038 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59d7e85061ee76_98175924 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_146675815959d7e7bf09c2e8_92989935', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_175924563759d7e850615716_07971909', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_146675815959d7e7bf09c2e8_92989935 extends Smarty_Internal_Block
+class Block_175924563759d7e850615716_07971909 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_146675815959d7e7bf09c2e8_92989935',
+    0 => 'Block_175924563759d7e850615716_07971909',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,10 +52,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <hr class="my-4">
 
                 <div class="text-section">
-                    <p>Felicitari! Esti deja in a doua luna a programului de transformare Fit si Supla.</p>
-                    <p>Daca ai urmat planul de alimentatie din primul modul, cu siguranta ca acum iti este mult mai usor sa adopti zi de zi obiceiuri alimentare sanatoase.</p>
-                    <p>Descarca planul de alimentatie pentru a doua luna a transformarii tale, lista de cumparaturi si ebook-ul cu retete sanatoase.</p>
-                    <p>De asemenea, nu uita sa parcurgi ghidul Fit si Supla, intrucat vei avea nevoie de informatiile prezenate in cadrul acestuia nu doar ca sa scapi de kilogramele in plus, ci si sa iti mentii rezultatele pe termen lung.</p>
+                    <p>Mai jos gasesti planul de alimentatie, listele de cumparaturi si ghidul cu retete aferente modulului III.</p>
+                    <p>Mai sunt doar 30 de zile pana la finalizarea programului Fit si Supla in 90 de Zile, insa povestea transformarii tale nu se opreste aici.</p>
+                    <p>Chiar daca ti-ai atins obiectivele, continua sa mananci sanatos si sa faci miscare - acesta este doar inceputul calatoriei tale catre un corp fit, suplu si sanatos.</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">
@@ -83,16 +82,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="card mb-4 mt-4">
                     <div class="row">
                         <div class="col p-3">
-                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/08/Plan-alimentar-Fit-si-Supla-Luna-II.pdf">
+                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/08/Plan-alimentar-Fit-si-Supla-Luna-III.pdf">
                                 <img class="card-img-top download-card-img" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
-/img/fit-si-supla-2/plan_nutritie_2.png">
+/img/fit-si-supla-3/plan_nutritie_3.png">
                             </a>
                         </div>
                         <div class="col">
                             <div class="card-body">
-                                <h4 class="card-title">Planul de nutritie (Modulul 2)</h4>
-                                <p>Da click pe imaginea alaturata sau pe butonul de mai jos pentru a descarca Planul de nutritie (Modulul 2)<p>
-                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/08/Plan-alimentar-Fit-si-Supla-Luna-II.pdf" class="btn btn-primary">Descarca</a>
+                                <h4 class="card-title">Planul de nutritie (Modulul 3)</h4>
+                                <p>Da click pe imaginea alaturata sau pe butonul de mai jos pentru a descarca Planul de nutritie (Modulul 3)<p>
+                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/08/Plan-alimentar-Fit-si-Supla-Luna-III.pdf" class="btn btn-primary">Descarca</a>
                             </div>
                         </div>
                     </div>
@@ -101,16 +100,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="card mb-4 mt-4">
                     <div class="row">
                         <div class="col p-3">
-                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/08/Retete-Fit-si-Supla-Luna-II.pdf">
+                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/08/Retete-Fit-si-Supla-Luna-III.pdf">
                                 <img class="card-img-top download-card-img" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
-/img/fit-si-supla-2/retete_2.png">
+/img/fit-si-supla-3/retete_3.png">
                             </a>
                         </div>
                         <div class="col">
                             <div class="card-body">
-                                <h4 class="card-title">Lista de retete (Modulul 2)</h4>
-                                <p>Da click pe imaginea alaturata sau pe butonul de mai jos pentru a descarca Lista de retete (Modulul 2).<p>
-                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/08/Retete-Fit-si-Supla-Luna-II.pdf" class="btn btn-primary">Descarca</a>
+                                <h4 class="card-title">Lista de retete (Modulul 3)</h4>
+                                <p>Da click pe imaginea alaturata sau pe butonul de mai jos pentru a descarca Lista de retete (Modulul 3).<p>
+                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/08/Retete-Fit-si-Supla-Luna-III.pdf" class="btn btn-primary">Descarca</a>
                             </div>
                         </div>
                     </div>

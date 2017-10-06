@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-01 20:58:32
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-06 20:34:46
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\membership\membership_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59d156f82827c9_90841027',
+  'unifunc' => 'content_59d7e8e63e1b16_77225893',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2138aa5612f526196a8b5a15ea4af0a57e346162' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\membership\\membership_layout.tpl',
-      1 => 1506856633,
+      1 => 1507322078,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layouts/membership/membership_navigation.tpl' => 1,
   ),
 ),false)) {
-function content_59d156f82827c9_90841027 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59d7e8e63e1b16_77225893 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -240,11 +240,11 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                 
                 <div class="col-xs-12 col-sm-12" id="main">
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_168298288859d156f81b1131_40004037', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_54108640259d7e8e62b0387_88217532', "body");
 ?>
 
 
-
+                    <?php if (count($_smarty_tpl->tpl_vars['programs']->value) > 0) {?>
                     <div class="other-programs-section">
                         <h4>Acest program aduce rezultate maxime impreuna cu:</h4>
                         <div class="row">
@@ -277,6 +277,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 
                         </div>
                     </div>
+                    <?php }?>
                 </div>
             </div>
         </div>
@@ -287,12 +288,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 <body>
 <?php }
 /* {block "body"} */
-class Block_168298288859d156f81b1131_40004037 extends Smarty_Internal_Block
+class Block_54108640259d7e8e62b0387_88217532 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_168298288859d156f81b1131_40004037',
+    0 => 'Block_54108640259d7e8e62b0387_88217532',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

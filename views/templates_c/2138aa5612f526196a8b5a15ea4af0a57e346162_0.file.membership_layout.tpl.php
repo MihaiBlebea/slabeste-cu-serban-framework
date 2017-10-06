@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-06 20:34:46
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-06 20:37:20
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\membership\membership_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59d7e8e63e1b16_77225893',
+  'unifunc' => 'content_59d7e9809a3165_11387903',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2138aa5612f526196a8b5a15ea4af0a57e346162' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\membership\\membership_layout.tpl',
-      1 => 1507322078,
+      1 => 1507322097,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layouts/membership/membership_navigation.tpl' => 1,
   ),
 ),false)) {
-function content_59d7e8e63e1b16_77225893 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59d7e9809a3165_11387903 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -240,43 +240,43 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                 
                 <div class="col-xs-12 col-sm-12" id="main">
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_54108640259d7e8e62b0387_88217532', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_28343715959d7e980994672_71219123', "body");
 ?>
 
 
                     <?php if (count($_smarty_tpl->tpl_vars['programs']->value) > 0) {?>
-                    <div class="other-programs-section">
-                        <h4>Acest program aduce rezultate maxime impreuna cu:</h4>
-                        <div class="row">
-                            <?php
+                        <div class="other-programs-section">
+                            <h4>Acest program aduce rezultate maxime impreuna cu:</h4>
+                            <div class="row">
+                                <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['programs']->value, 'program', false, 'index');
 if ($_from !== null) {
 foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['program']->value) {
 ?>
-                                <?php if ($_smarty_tpl->tpl_vars['index']->value < 4) {?>
-                                    <div class="card program-card" style="width: 15rem;">
-                                        <a href="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_sales_page;?>
+                                    <?php if ($_smarty_tpl->tpl_vars['index']->value < 4) {?>
+                                        <div class="card program-card" style="width: 15rem;">
+                                            <a href="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_sales_page;?>
 ">
-                                            <img class="card-img-top image-program-footer" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+                                                <img class="card-img-top image-program-footer" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
 ">
-                                        </a>
-                                        <div class="card-body">
-                                            <h5 class="card-title" style="text-align:center;"><?php echo $_smarty_tpl->tpl_vars['program']->value->program_name;?>
+                                            </a>
+                                            <div class="card-body">
+                                                <h5 class="card-title" style="text-align:center;"><?php echo $_smarty_tpl->tpl_vars['program']->value->program_name;?>
 </h5>
-                                            <a href="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_sales_page;?>
+                                                <a href="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_sales_page;?>
 " class="btn btn-primary" style="display:block;margin:auto;">Afla mai multe</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                <?php }?>
-                            <?php
+                                    <?php }?>
+                                <?php
 }
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 ?>
 
+                            </div>
                         </div>
-                    </div>
                     <?php }?>
                 </div>
             </div>
@@ -288,12 +288,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 <body>
 <?php }
 /* {block "body"} */
-class Block_54108640259d7e8e62b0387_88217532 extends Smarty_Internal_Block
+class Block_28343715959d7e980994672_71219123 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_54108640259d7e8e62b0387_88217532',
+    0 => 'Block_28343715959d7e980994672_71219123',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

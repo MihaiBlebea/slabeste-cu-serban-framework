@@ -138,7 +138,11 @@ class CheckoutController
         Template::setAssign([
             'username'     => $username,
             'password'     => $password,
+            'email'        => $request->out("email"),
+            'first_name'   => $request->out("firstName"),
+            'last_name'    => $request->out("lastName"),
             'programImage' => $program->program_image,
+            'program_name' => $program->program_name,
             'mainPage'     => $program->main_page
         ])->setDisplay('confirmation/index.tpl');
     }

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-21 21:38:50
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-06 21:06:51
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\confirmation\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c4316a88b865_11521228',
+  'unifunc' => 'content_59d7f06bab65a3_66627685',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9486c9431bec1490dab14160efde3a3b5940f5f7' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\confirmation\\index.tpl',
-      1 => 1503768554,
+      1 => 1507323968,
       2 => 'file',
     ),
   ),
@@ -20,35 +20,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c4316a88b865_11521228 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59d7f06bab65a3_66627685 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_140149961559c4316a87dd95_34101997', "nav");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_34868445159d7f06baa4f80_28137596', "nav");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_116188351759c4316a8802a7_39849672', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_159021499259d7f06baa7547_03512250', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_193705231659c4316a88a3e3_32774559', "footer");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_170701639359d7f06bab5042_90184575', "footer");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/confirmation_layout.tpl');
 }
 /* {block "nav"} */
-class Block_140149961559c4316a87dd95_34101997 extends Smarty_Internal_Block
+class Block_34868445159d7f06baa4f80_28137596 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'nav' => 
   array (
-    0 => 'Block_140149961559c4316a87dd95_34101997',
+    0 => 'Block_34868445159d7f06baa4f80_28137596',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -73,38 +73,70 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "nav"} */
 /* {block "body"} */
-class Block_116188351759c4316a8802a7_39849672 extends Smarty_Internal_Block
+class Block_159021499259d7f06baa7547_03512250 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_116188351759c4316a8802a7_39849672',
+    0 => 'Block_159021499259d7f06baa7547_03512250',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <div class="container-fluid">
-        <p><?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-3">Felicitari <?php echo $_smarty_tpl->tpl_vars['first_name']->value;?>
+ <?php echo $_smarty_tpl->tpl_vars['last_name']->value;?>
+!</h1>
+                <p class="lead">Ai achizitionat cu succes programul <?php echo $_smarty_tpl->tpl_vars['program_name']->value;?>
+. Verifica datele tale de acces de mai jos.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;
+echo $_smarty_tpl->tpl_vars['mainPage']->value;?>
+">
+                    <img style="max-width:100%;" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['programImage']->value;?>
+" />
+                </a>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div style="padding:20px;" class="card-block">
+                        <h4 class="card-title">Datele tale private de access</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Verifica cu atentie datele de mai jos apoi apasa pe butonul "Acceseaza programul"</h6>
+                        <p class="card-text">
+                            Ti-am trimis date tale private de access si pe emailul tau (<strong><?php echo $_smarty_tpl->tpl_vars['email']->value;?>
+</strong>), asa ca le poti accesa oricand. Daca nu ai primit emailul cu datele de access in urmatoarele 5 minute, atunci verifica si casuta ta de SPAM. In 99% din cazurile in care "nu ai primit" emailul, acesta ajunge in sectiunea de SPAM.
+                        </p>
+                        <p class="card-text"><strong>Username:</strong> <?php echo $_smarty_tpl->tpl_vars['username']->value;?>
 </p>
-        <p><?php echo $_smarty_tpl->tpl_vars['password']->value;?>
+                        <p class="card-text"><strong>Parola:</strong> <?php echo $_smarty_tpl->tpl_vars['password']->value;?>
 </p>
-        <p><?php echo $_smarty_tpl->tpl_vars['programImage']->value;?>
-</p>
-        <p><?php echo $_smarty_tpl->tpl_vars['mainPage']->value;?>
-</p>
+                        <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;
+echo $_smarty_tpl->tpl_vars['mainPage']->value;?>
+" class="btn btn-primary" style="display:block; margin:auto;">Acceseaza programul</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 <?php
 }
 }
 /* {/block "body"} */
 /* {block "footer"} */
-class Block_193705231659c4316a88a3e3_32774559 extends Smarty_Internal_Block
+class Block_170701639359d7f06bab5042_90184575 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_193705231659c4316a88a3e3_32774559',
+    0 => 'Block_170701639359d7f06bab5042_90184575',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

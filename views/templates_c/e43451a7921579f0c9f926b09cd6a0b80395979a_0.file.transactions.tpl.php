@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-21 22:12:01
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-07 22:35:43
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\transactions.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c439319a40f9_84315945',
+  'unifunc' => 'content_59d956bf2342b9_49653223',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e43451a7921579f0c9f926b09cd6a0b80395979a' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\transactions.tpl',
-      1 => 1506031814,
+      1 => 1507415740,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c439319a40f9_84315945 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59d956bf2342b9_49653223 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +28,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_189234012159c43931957ea8_65770114', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_105671621859d956bf1f0340_19316359', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204685680159c439319a2b20_02146540', "footer");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_58252158359d956bf232075_34063779', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
 /* {block "body"} */
-class Block_189234012159c43931957ea8_65770114 extends Smarty_Internal_Block
+class Block_105671621859d956bf1f0340_19316359 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_189234012159c43931957ea8_65770114',
+    0 => 'Block_105671621859d956bf1f0340_19316359',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -84,6 +84,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </div>
                 </div>
                 <!-- <hr /> -->
+                <div class="row">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -162,21 +165,39 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 }
 /* {/block "body"} */
-/* {block "footer"} */
-class Block_204685680159c439319a2b20_02146540 extends Smarty_Internal_Block
+/* {block "script"} */
+class Block_58252158359d956bf232075_34063779 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
-  'footer' => 
+  'script' => 
   array (
-    0 => 'Block_204685680159c439319a2b20_02146540',
+    0 => 'Block_58252158359d956bf232075_34063779',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+    <?php echo '<script'; ?>
+>
+        axios.get("<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/api/get/transactions").then((response)=> {
+            return response.data;
+        }).then((data)=> {
+            var result = data;
+        })
+        console.log(result);
 
+
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'line'
+            // data: getTransactions()
+        });
+    <?php echo '</script'; ?>
+>
 <?php
 }
 }
-/* {/block "footer"} */
+/* {/block "script"} */
 }

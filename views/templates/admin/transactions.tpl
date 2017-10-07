@@ -33,6 +33,9 @@
                     </div>
                 </div>
                 <!-- <hr /> -->
+                <div class="row">
+                    <canvas id="myChart" width="400" height="400"></canvas>
+                </div>
                 <table class="table">
                     <thead>
                         <tr>
@@ -87,6 +90,21 @@
     </script>
 {/block}
 
-{block name="footer"}
+{block name="script"}
+    <script>
+        axios.get("{$app_path}/api/get/transactions").then((response)=> {
+            return response.data;
+        }).then((data)=> {
+            var result = data;
+        })
+        console.log(result);
 
+
+
+        var ctx = document.getElementById("myChart").getContext('2d');
+        var myLineChart = new Chart(ctx, {
+            type: 'line'
+            // data: getTransactions()
+        });
+    </script>
 {/block}

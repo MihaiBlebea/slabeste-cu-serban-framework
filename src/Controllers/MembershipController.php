@@ -105,8 +105,11 @@ class MembershipController
         if(!empty($request->out("password1")) && $request->out("password1") !== "")
         {
             $user = new User();
+            // Hash the user changed password
+            $hashPassword = $user->hashPassword($request->out("password1"));
+
             $user->where("username", "=", $auth)->update([
-                "password" => $request->out("password1")
+                "password" => $hashPassword
             ]);
         }
 

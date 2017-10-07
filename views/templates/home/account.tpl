@@ -25,7 +25,7 @@
                         </fieldset>
                         <div class="form-group">
                             <div id="password-error" class="alert alert-danger" role="alert">
-                                <strong>Atentie!</strong> Cele 2 campuri cu parole nu coincid.
+                                <strong>Atentie!</strong> Cele 2 campuri cu parole nu coincid sau parola este mai mica de 6 caractere.
                             </div>
                             <label for="exampleInputEmail1">Schimba parola:</label>
                             <input id="password1" onkeyup="checkIfPasswordMatch();" name="password1" type="password" class="form-control" id="password1" placeholder="Introdu noua parola">
@@ -69,7 +69,7 @@
             var password1 = document.getElementById("password1").value;
             var password2 = document.getElementById("password2").value;
 
-            if(password1 !== password2)
+            if(password1 !== password2 || password1.length < 6)
             {
                 document.getElementById("password-error").style.display = "block";
                 document.getElementById("submit-button").disabled = true;

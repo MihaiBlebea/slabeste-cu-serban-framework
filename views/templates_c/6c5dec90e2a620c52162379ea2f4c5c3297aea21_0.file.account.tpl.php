@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-07 17:19:19
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-07 17:28:54
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\home\account.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59d90c97186b89_84129326',
+  'unifunc' => 'content_59d90ed6702ed1_25957685',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c5dec90e2a620c52162379ea2f4c5c3297aea21' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\home\\account.tpl',
-      1 => 1507396757,
+      1 => 1507397332,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59d90c97186b89_84129326 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59d90ed6702ed1_25957685 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +28,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39056804259d90c9715b928_44467850', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_79389369959d90ed66ddf25_46650891', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_128379553559d90c97184831_81175666', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_51138368059d90ed6700f96_41437411', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/home_page_layout.tpl');
 }
 /* {block "body"} */
-class Block_39056804259d90c9715b928_44467850 extends Smarty_Internal_Block
+class Block_79389369959d90ed66ddf25_46650891 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_39056804259d90c9715b928_44467850',
+    0 => 'Block_79389369959d90ed66ddf25_46650891',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -78,7 +78,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         </fieldset>
                         <div class="form-group">
                             <div id="password-error" class="alert alert-danger" role="alert">
-                                <strong>Atentie!</strong> Cele 2 campuri cu parole nu coincid.
+                                <strong>Atentie!</strong> Cele 2 campuri cu parole nu coincid sau parola este mai mica de 6 caractere.
                             </div>
                             <label for="exampleInputEmail1">Schimba parola:</label>
                             <input id="password1" onkeyup="checkIfPasswordMatch();" name="password1" type="password" class="form-control" id="password1" placeholder="Introdu noua parola">
@@ -131,12 +131,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_128379553559d90c97184831_81175666 extends Smarty_Internal_Block
+class Block_51138368059d90ed6700f96_41437411 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_128379553559d90c97184831_81175666',
+    0 => 'Block_51138368059d90ed6700f96_41437411',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -150,7 +150,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             var password1 = document.getElementById("password1").value;
             var password2 = document.getElementById("password2").value;
 
-            if(password1 !== password2)
+            if(password1 !== password2 || password1.length < 6)
             {
                 document.getElementById("password-error").style.display = "block";
                 document.getElementById("submit-button").disabled = true;

@@ -66,4 +66,59 @@ class MembershipController
     {
         Router::goToUrl("ebooks/" . $program . "/" . $file . "." . $extension);
     }
+
+    // Get the account information
+    public function getAccount()
+    {
+        $auth = new UsernameSession();
+        $auth = $auth->getContent();
+
+        $user = new User();
+        $user = $user->where("username", "=", $auth)->selectOne();
+
+        $managerPrograms = new OwnedProgramsManager();
+        $programs = $managerPrograms->run();
+        // dd($programs);
+        Template::setAssign([
+                "user"     => $user,
+                "programs" => $programs,
+                "error"    => false,
+        ])->setDisplay("home/account.tpl");
+    }
+
+    public function postAccount(Request $request)
+    {
+        $auth = new UsernameSession();
+        $auth = $auth->getContent();
+
+        $managerPrograms = new OwnedProgramsManager();
+        $programs = $managerPrograms->run();
+
+        if($request->out("email"))
+        {
+            $user = new User();
+            $user->where("username", "=", $auth)->update([
+                "email" => $request->out("email")
+            ]);
+        }
+
+        if(!empty($request->out("password1")) && $request->out("password1") !== "")
+        {
+            $user = new User();
+            $user->where("username", "=", $auth)->update([
+                "password" => $request->out("password1")
+            ]);
+        }
+
+        $user = $user->where("username", "=", $auth)->selectOne();
+
+        Template::setAssign([
+                "user"         => $user,
+                "programs"     => $programs,
+                "error"        => true,
+                "type"         => "success",
+                "errorTitle"   => "Succes!",
+                "errorMessage" => "Modificarile tale au fost salvate"
+        ])->setDisplay("home/account.tpl");
+    }
 }

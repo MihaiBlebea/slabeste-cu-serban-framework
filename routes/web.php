@@ -130,6 +130,12 @@ $this->get("member/home", "App\\Controllers\\MembershipController@index")
      ->as("member.home.page")
      ->rules(["LoginRule" => "App\\Rules\\LoginRule"]);
 
+$this->get("member/account", "App\\Controllers\\MembershipController@getAccount")
+     ->rules(["LoginRule" => "App\\Rules\\LoginRule"]);
+
+$this->post("member/account", "App\\Controllers\\MembershipController@postAccount")
+     ->rules(["LoginRule" => "App\\Rules\\LoginRule"]);
+
 $this->get(":program/:slug", "App\\Controllers\\MembershipController@page")
      ->bind(["program" => "Program"])
      ->as("membership.page")

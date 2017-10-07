@@ -1,13 +1,11 @@
-<ul class="nav top">
+<ul class="nav top mr-auto">
     <li class="nav-item top">
         <a class="nav-link active" href="{$app_path}/member/home">Home</a>
     </li>
     <li class="nav-item top">
-        <a class="nav-link active" href="{$app_path}/logout">Logout</a>
+        <a class="nav-link" href="{$app_path}/member/account">Contul Meu</a>
     </li>
-    <!--
     <li class="nav-item top">
-        <a class="nav-link active" href="{$app_path}/login/logout">{*{$auth}*}</a>
+        <a class="nav-link" href="{$app_path}/logout">Logout</a>
     </li>
-    -->
 </ul>

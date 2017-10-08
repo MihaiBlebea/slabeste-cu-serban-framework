@@ -21,6 +21,30 @@
             .btn {
                 cursor: pointer;
             }
+            .program-name {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+            .program-price-text {
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #0A82C5;
+            }
+            .program-price {
+                font-size: 3.2em;
+                font-weight: bold;
+            }
+            .strike {
+                text-decoration: line-through;
+            }
+            .footer {
+                padding:5px;
+                background-color:#1B6389;
+                color:#fff;
+            }
+            .guarantee {
+                background-color: #F1F1F1;
+            }
         </style>
     </head>
     <body>
@@ -32,10 +56,13 @@
 
         {/block}
 
-        {block name="footer"}
+        <footer class="footer">
+            Slabeste cu Serban
+        </footer>
+
+        {block name="script"}
 
         {/block}
-
         <script>
             braintree.setup("{$braintree_token}", 'dropin', {
                 container: 'dropin-container',

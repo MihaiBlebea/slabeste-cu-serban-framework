@@ -18,13 +18,27 @@ use Framework\Factory\ListenerFactory;
 
 class CheckoutController
 {
-    public function index(Program $program)
+    public function index(Request $request = null, Program $program)
     {
+        $discountPrice = false;
+        $programPrice = $program->program_price;
+        if($request !== null)
+        {
+            $discount = $request->out("discount");
+            if($program->discount_code == $discount)
+            {
+                $discountPrice = $program->discount_price;
+                $programPrice = $program->discount_price;
+            }
+        }
+
         $token = Payment::generateToken();
 
         Template::setAssign([
-            'program' => $program,
-            'braintree_token' => $token
+            "program"         => $program,
+            "discountPrice"   => $discountPrice,
+            "programPrice"    => $programPrice,
+            "braintree_token" => $token
         ])->setDisplay("checkout/index.tpl");
     }
 
@@ -45,7 +59,7 @@ class CheckoutController
         {
             // Create a simple payment
             $transactionID = Payment::simplePay([
-                "price"        => $program->program_price,
+                "price"        => $request->out("program_price"),
                 "paymentNonce" => $request->out("payment_method_nonce"),
                 "firstName"    => $request->out("firstName"),
                 "lastName"     => $request->out("lastName"),

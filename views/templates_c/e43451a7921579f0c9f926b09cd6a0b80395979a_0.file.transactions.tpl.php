@@ -1,26 +1,28 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-07 22:35:43
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-08 11:23:38
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\transactions.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59d956bf2342b9_49653223',
+  'unifunc' => 'content_59da0aba90b813_87680523',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e43451a7921579f0c9f926b09cd6a0b80395979a' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\transactions.tpl',
-      1 => 1507415740,
+      1 => 1507461814,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:layouts/admin/admin_paginate_notification.tpl' => 1,
+    'file:layouts/admin/admin_pagination.tpl' => 1,
   ),
 ),false)) {
-function content_59d956bf2342b9_49653223 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59da0aba90b813_87680523 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +30,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_105671621859d956bf1f0340_19316359', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_212984935659da0aba8d61b4_25190486', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_58252158359d956bf232075_34063779', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_984269659da0aba9096d3_66168999', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
 /* {block "body"} */
-class Block_105671621859d956bf1f0340_19316359 extends Smarty_Internal_Block
+class Block_212984935659da0aba8d61b4_25190486 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_105671621859d956bf1f0340_19316359',
+    0 => 'Block_212984935659da0aba8d61b4_25190486',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -83,10 +85,18 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         </div>
                     </div>
                 </div>
-                <!-- <hr /> -->
+                <hr />
                 <div class="row">
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <canvas id="myChart" style="height:50vh; width:80vw"></canvas>
                 </div>
+
+                <!-- Paginate notification start -->
+                <?php $_smarty_tpl->_subTemplateRender("file:layouts/admin/admin_paginate_notification.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+                <!-- Paginate notification end -->
+                
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -102,12 +112,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <tbody>
                         <?php if (isset($_smarty_tpl->tpl_vars['transactions']->value)) {?>
                             <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['transactions']->value, 'transaction', false, 'index');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['transactions']->value, 'transaction');
 if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['transaction']->value) {
+foreach ($_from as $_smarty_tpl->tpl_vars['transaction']->value) {
 ?>
                                 <tr>
-                                    <th scope="row"><?php echo $_smarty_tpl->tpl_vars['index']->value+1;?>
+                                    <th scope="row"><?php echo $_smarty_tpl->tpl_vars['transaction']->value->index;?>
 </th>
                                     <td><?php echo $_smarty_tpl->tpl_vars['transaction']->value->regdate;?>
 </td>
@@ -119,7 +129,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_v
                                     <td><?php echo $_smarty_tpl->tpl_vars['transaction']->value->program_tag;?>
 </td>
                                     <td><?php echo $_smarty_tpl->tpl_vars['transaction']->value->value;?>
-</td>
+ron</td>
                                     <td><?php echo $_smarty_tpl->tpl_vars['transaction']->value->transaction_id;?>
 </td>
                                 </tr>
@@ -132,6 +142,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                         <?php }?>
                     </tbody>
                 </table>
+
+                <!-- Insert pagination here -->
+                <!-- Pagination start -->
+                <?php $_smarty_tpl->_subTemplateRender("file:layouts/admin/admin_pagination.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('path_item'=>"transactions"), 0, false);
+?>
+
+                <!-- Pagination end -->
+
                 <hr />
                 <div class="row">
                     <div class="col">
@@ -146,6 +164,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
             </div>
         </div>
     </div>
+<?php
+}
+}
+/* {/block "body"} */
+/* {block "script"} */
+class Block_984269659da0aba9096d3_66168999 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'script' => 
+  array (
+    0 => 'Block_984269659da0aba9096d3_66168999',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
     <?php echo '<script'; ?>
 >
         function getSearch()
@@ -161,39 +195,41 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
         }
     <?php echo '</script'; ?>
 >
-<?php
-}
-}
-/* {/block "body"} */
-/* {block "script"} */
-class Block_58252158359d956bf232075_34063779 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'script' => 
-  array (
-    0 => 'Block_58252158359d956bf232075_34063779',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
     <?php echo '<script'; ?>
 >
         axios.get("<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /api/get/transactions").then((response)=> {
             return response.data;
         }).then((data)=> {
-            var result = data;
+
+            console.log(Object.values(data));
+            var ctx = document.getElementById("myChart").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Object.keys(data),
+                    datasets: [{
+                        label: 'RON',
+                        borderColor: "blue",
+                        data: Object.values(data),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Last 30 days transactions'
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
         })
-        console.log(result);
-
-
-
-        var ctx = document.getElementById("myChart").getContext('2d');
-        var myLineChart = new Chart(ctx, {
-            type: 'line'
-            // data: getTransactions()
-        });
     <?php echo '</script'; ?>
 >
 <?php

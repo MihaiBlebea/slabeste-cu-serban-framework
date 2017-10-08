@@ -10,19 +10,39 @@ use Framework\Router\Request;
 use Framework\Alias\Template;
 use App\Managers\NrOfProgramsBoughtManager;
 use App\Managers\MoneySpentPerUserManager;
+use Framework\Factory\EventFactory;
+use Framework\Factory\ListenerFactory;
 
 class ClientController
 {
-    public function clients()
+    public function clients(Request $request = null)
     {
+        // Set and get pagination
+        if($request !== null && $request->out("page") !== null)
+        {
+            $page = $request->out("page") - 1;
+        } else {
+            $page = 0;
+        }
+
         $managerPrograms = new NrOfProgramsBoughtManager();
         $users = $managerPrograms->run("");
         $managerMoney = new MoneySpentPerUserManager();
         $users = $managerMoney->run($users);
 
+        foreach($users as $index => $user)
+        {
+            $user->index = $index + 1;
+        }
+
+        $paginated = array_chunk($users, 10);
+
         Template::setAssign([
-            "users" => $users,
-            "error" => false
+            "users"         => $paginated[$page],
+            "paginateCount" => count($paginated),
+            "previousPage"  => $page,
+            "nextPage"      => $page + 2,
+            "error"         => false
         ])->setDisplay("admin/clients.tpl");
     }
 

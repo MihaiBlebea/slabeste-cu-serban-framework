@@ -1,26 +1,28 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-21 20:11:38
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-08 11:26:21
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\clients.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c41cfa6a1773_08557301',
+  'unifunc' => 'content_59da0b5d963888_97972831',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '72ea9704e02802b4387350eab01235ac7184c7a8' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\clients.tpl',
-      1 => 1506024604,
+      1 => 1507461978,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:layouts/admin/admin_paginate_notification.tpl' => 1,
+    'file:layouts/admin/admin_pagination.tpl' => 1,
   ),
 ),false)) {
-function content_59c41cfa6a1773_08557301 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59da0b5d963888_97972831 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +30,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_78283812259c41cf9d495f9_31895357', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_105472604359da0b5d92cf09_82040569', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_29282594059c41cfa69f6e8_00977198', "footer");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5948538659da0b5d962071_76985760', "footer");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
 /* {block "body"} */
-class Block_78283812259c41cf9d495f9_31895357 extends Smarty_Internal_Block
+class Block_105472604359da0b5d92cf09_82040569 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_78283812259c41cf9d495f9_31895357',
+    0 => 'Block_105472604359da0b5d92cf09_82040569',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -81,7 +83,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         </div>
                     </div>
                 </div>
-                <!-- <hr /> -->
+                <hr />
+
+                <!-- Paginate notification start -->
+                <?php $_smarty_tpl->_subTemplateRender("file:layouts/admin/admin_paginate_notification.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+                <!-- Paginate notification end -->
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -96,12 +105,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     </thead>
                     <tbody>
                         <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['users']->value, 'user', false, 'index');
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['users']->value, 'user');
 if ($_from !== null) {
-foreach ($_from as $_smarty_tpl->tpl_vars['index']->value => $_smarty_tpl->tpl_vars['user']->value) {
+foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
 ?>
                             <tr>
-                                <th scope="row"><?php echo $_smarty_tpl->tpl_vars['index']->value+1;?>
+                                <th scope="row"><?php echo $_smarty_tpl->tpl_vars['user']->value->index;?>
 </th>
                                 <td><?php echo $_smarty_tpl->tpl_vars['user']->value->first_name;?>
  <?php echo $_smarty_tpl->tpl_vars['user']->value->last_name;?>
@@ -126,6 +135,14 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 
                     </tbody>
                 </table>
+
+                <!-- Insert pagination here -->
+                <!-- Pagination start -->
+                <?php $_smarty_tpl->_subTemplateRender("file:layouts/admin/admin_pagination.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('path_item'=>"clients"), 0, false);
+?>
+
+                <!-- Pagination end -->
+                <hr />
 
                 <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /admin/client/create" class="card-link">Create a new client</a><br />
@@ -152,12 +169,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "body"} */
 /* {block "footer"} */
-class Block_29282594059c41cfa69f6e8_00977198 extends Smarty_Internal_Block
+class Block_5948538659da0b5d962071_76985760 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_29282594059c41cfa69f6e8_00977198',
+    0 => 'Block_5948538659da0b5d962071_76985760',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

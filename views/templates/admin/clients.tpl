@@ -31,7 +31,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- <hr /> -->
+                <hr />
+
+                <!-- Paginate notification start -->
+                {include "layouts/admin/admin_paginate_notification.tpl"}
+                <!-- Paginate notification end -->
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -45,9 +50,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {foreach $users as $index => $user}
+                        {foreach $users as $user}
                             <tr>
-                                <th scope="row">{$index + 1}</th>
+                                <th scope="row">{$user->index}</th>
                                 <td>{$user->first_name} {$user->last_name}</td>
                                 <td>{$user->username}</td>
                                 <td>{$user->email}</td>
@@ -58,6 +63,12 @@
                         {/foreach}
                     </tbody>
                 </table>
+
+                <!-- Insert pagination here -->
+                <!-- Pagination start -->
+                {include "layouts/admin/admin_pagination.tpl" path_item="clients"}
+                <!-- Pagination end -->
+                <hr />
 
                 <a href="{$app_path}/admin/client/create" class="card-link">Create a new client</a><br />
             </div>

@@ -32,10 +32,15 @@
                         </div>
                     </div>
                 </div>
-                <!-- <hr /> -->
+                <hr />
                 <div class="row">
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <canvas id="myChart" style="height:50vh; width:80vw"></canvas>
                 </div>
+
+                <!-- Paginate notification start -->
+                {include "layouts/admin/admin_paginate_notification.tpl"}
+                <!-- Paginate notification end -->
+
                 <table class="table">
                     <thead>
                         <tr>
@@ -50,20 +55,26 @@
                     </thead>
                     <tbody>
                         {if isset($transactions)}
-                            {foreach $transactions as $index => $transaction}
+                            {foreach $transactions as $transaction}
                                 <tr>
-                                    <th scope="row">{$index + 1}</th>
+                                    <th scope="row">{$transaction->index}</th>
                                     <td>{$transaction->regdate}</td>
                                     <td>{$transaction->firstName} {$transaction->lastName}</td>
                                     <td>{$transaction->username}</td>
                                     <td>{$transaction->program_tag}</td>
-                                    <td>{$transaction->value}</td>
+                                    <td>{$transaction->value}ron</td>
                                     <td>{$transaction->transaction_id}</td>
                                 </tr>
                             {/foreach}
                         {/if}
                     </tbody>
                 </table>
+
+                <!-- Insert pagination here -->
+                <!-- Pagination start -->
+                {include "layouts/admin/admin_pagination.tpl" path_item="transactions"}
+                <!-- Pagination end -->
+
                 <hr />
                 <div class="row">
                     <div class="col">
@@ -76,6 +87,9 @@
             </div>
         </div>
     </div>
+{/block}
+
+{block name="script"}
     <script>
         function getSearch()
         {
@@ -88,23 +102,38 @@
             return window.location="{$app_path}/admin/transaction/search/" + mode + "/" + client;
         }
     </script>
-{/block}
-
-{block name="script"}
     <script>
         axios.get("{$app_path}/api/get/transactions").then((response)=> {
             return response.data;
         }).then((data)=> {
-            var result = data;
+
+            console.log(Object.values(data));
+            var ctx = document.getElementById("myChart").getContext('2d');
+            var myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: Object.keys(data),
+                    datasets: [{
+                        label: 'RON',
+                        borderColor: "blue",
+                        data: Object.values(data),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    title: {
+                        display: true,
+                        text: 'Last 30 days transactions'
+                    },
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
         })
-        console.log(result);
-
-
-
-        var ctx = document.getElementById("myChart").getContext('2d');
-        var myLineChart = new Chart(ctx, {
-            type: 'line'
-            // data: getTransactions()
-        });
     </script>
 {/block}

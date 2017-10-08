@@ -13,13 +13,30 @@ use App\Managers\NrOfProgramSoldManager;
 class ProductController
 {
     // Get the main products page
-    public function getProducts()
+    public function products(Request $request = null)
     {
+        if($request !== null && $request->out("page") !== null)
+        {
+            $page = $request->out("page") - 1;
+        } else {
+            $page = 0;
+        }
+
         $manager = new NrOfProgramSoldManager();
         $programs = $manager->run("");
 
+        foreach($programs as $index => $program)
+        {
+            $program->index = $index + 1;
+        }
+
+        $paginated = array_chunk($programs, 10);
+
         Template::setAssign([
-            "programs" => $programs,
+            "programs"      => $paginated[$page],
+            "paginateCount" => count($paginated),
+            "previousPage"  => $page,
+            "nextPage"      => $page + 2,
             'error' => false
         ])->setDisplay("admin/products.tpl");
     }

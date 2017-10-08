@@ -38,7 +38,7 @@ class TransactionController
             $user = $user->where("username", "=", $tran->username)->selectOne();
             $tran->firstName = $user->first_name;
             $tran->lastName = $user->last_name;
-            
+
             // Add index to the object shadow property
             $tran->index = $index + 1;
         }
@@ -58,8 +58,16 @@ class TransactionController
         ])->setDisplay("admin/transactions.tpl");
     }
 
-    public function search($method, $search)
+    public function search($method, $search, Request $request = null)
     {
+        // Set and get pagination
+        if($request !== null && $request->out("page") !== null)
+        {
+            $page = $request->out("page") - 1;
+        } else {
+            $page = 0;
+        }
+
         $trans = new Transaction();
 
         // Search by username
@@ -91,17 +99,26 @@ class TransactionController
                 $totalValue += $tran;
             }
 
-            foreach($trans as $tran)
+            foreach($trans as $index => $tran)
             {
                 $user = new User();
                 $user = $user->where("username", "=", $tran->username)->selectOne();
                 $tran->firstName = $user->first_name;
                 $tran->lastName = $user->last_name;
+
+                // Add index to the object shadow property
+                $tran->index = $index + 1;
             }
 
+            // Apply pagination here
+            $paginated = array_chunk($trans, 10);
+
             Template::setAssign([
-                'transactions'      => $trans,
+                'transactions'      => $paginated[$page],
                 'transaction_count' => count($trans),
+                "paginateCount"     => count($paginated),
+                "previousPage"      => $page,
+                "nextPage"          => $page + 2,
                 'total_value'       => $totalValue,
                 'error'             => false
             ])->setDisplay("admin/transactions.tpl");

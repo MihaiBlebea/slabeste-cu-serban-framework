@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-08 11:20:21
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-08 12:12:03
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\admin\admin_pagination.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59da09f50bae02_87777988',
+  'unifunc' => 'content_59da16132ec6a2_60432182',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fc19ac28b628afc069c7fa6173b48a1a2448c6a6' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\admin\\admin_pagination.tpl',
-      1 => 1507461611,
+      1 => 1507464718,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59da09f50bae02_87777988 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59da16132ec6a2_60432182 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <nav class="row justify-content-center" aria-label="Page navigation example">

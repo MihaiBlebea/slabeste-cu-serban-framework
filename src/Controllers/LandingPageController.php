@@ -25,14 +25,31 @@ class LandingPageController
     }
 
     // Admin pages from here
-    public function landings()
+    public function landings(Request $request = null)
     {
+        if($request !== null && $request->out("page") !== null)
+        {
+            $page = $request->out("page") - 1;
+        } else {
+            $page = 0;
+        }
+
         $landing = new Landing();
         $landings = $landing->selectAll();
 
+        foreach($landings as $index => $landing)
+        {
+            $landing->index = $index + 1;
+        }
+
+        $paginated = array_chunk($landings, 10);
+
         Template::setAssign([
-            "error"    => false,
-            "landings" => $landings
+            "error"         => false,
+            "landings"      => $paginated[$page],
+            "paginateCount" => count($paginated),
+            "previousPage"  => $page,
+            "nextPage"      => $page + 2,
         ])->setDisplay("admin/landings.tpl");
     }
 
@@ -121,14 +138,31 @@ class LandingPageController
         return $this->landings();
     }
 
-    public function search($id, $mode)
+    public function search($id, $mode, Request $request = null)
     {
+        if($request !== null && $request->out("page") !== null)
+        {
+            $page = $request->out("page") - 1;
+        } else {
+            $page = 0;
+        }
+
         $landing = new Landing();
         $landings = $landing->where($mode, "=", $id)->select();
 
+        foreach($landings as $index => $landing)
+        {
+            $landing->index = $index + 1;
+        }
+
+        $paginated = array_chunk($landings, 10);
+
         Template::setAssign([
             "error"    => false,
-            "landings" => $landings
+            "landings" => $paginated[$page],
+            "paginateCount" => count($paginated),
+            "previousPage"  => $page,
+            "nextPage"      => $page + 2,
         ])->setDisplay("admin/landings.tpl");
     }
 

@@ -32,7 +32,7 @@ $this->get("main", "App\\Controllers\\AdminController@index")
      ->as("admin.home.page")
      ->belongsTo("admin-group");
 
-$this->get("programs", "App\\Controllers\\ProductController@getProducts")
+$this->get("programs", "App\\Controllers\\ProductController@products")
      ->as("admin.products.page")
      ->belongsTo("admin-group");
 

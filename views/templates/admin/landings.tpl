@@ -30,6 +30,11 @@
                         </div>
                     </div>
                 </div>
+                <hr />
+
+                <!-- Paginate notification start -->
+                {include "layouts/admin/admin_paginate_notification.tpl"}
+                <!-- Paginate notification end -->
 
                 <table class="table">
                     <thead>
@@ -46,9 +51,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {foreach $landings as $index => $landing}
+                        {foreach $landings as $landing}
                             <tr>
-                                <th scope="row">{$index + 1}</th>
+                                <th scope="row">{$landing->index}</th>
                                 <td>{$landing->name}</td>
                                 <td>{$landing->program_tag}</td>
                                 <td>{$landing->code}</td>
@@ -61,6 +66,12 @@
                         {/foreach}
                     </tbody>
                 </table>
+
+                <!-- Insert pagination here -->
+                <!-- Pagination start -->
+                {include "layouts/admin/admin_pagination.tpl" path_item="landings"}
+                <!-- Pagination end -->
+
                 <hr />
                 <div class="row">
                     <div class="col">

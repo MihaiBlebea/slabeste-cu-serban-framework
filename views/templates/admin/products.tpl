@@ -12,6 +12,11 @@
             <div class="card-body">
                 <h4 class="card-title">All products</h4>
                 <h6 class="card-subtitle mb-2 text-muted">Set up, edit and delete products</h6>
+                <hr />
+
+                <!-- Paginate notification start -->
+                {include "layouts/admin/admin_paginate_notification.tpl"}
+                <!-- Paginate notification end -->
 
                 <table class="table">
                     <thead>
@@ -23,9 +28,9 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {foreach $programs as $index => $program}
+                        {foreach $programs as $program}
                             <tr>
-                                <th scope="row">{$index + 1}</th>
+                                <th scope="row">{$program->index}</th>
                                 <td>{$program->program_name}</td>
                                 <td>{$program->sold}</td>
                                 <td><a href="{$app_path}/admin/program/{$program->id}">Edit</a></td>
@@ -33,6 +38,12 @@
                         {/foreach}
                     </tbody>
                 </table>
+
+                <!-- Insert pagination here -->
+                <!-- Pagination start -->
+                {include "layouts/admin/admin_pagination.tpl" path_item="programs"}
+                <!-- Pagination end -->
+
             </div>
         </div>
     </div>

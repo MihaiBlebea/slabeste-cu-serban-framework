@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-30 10:44:51
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-09 19:31:17
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\accelereaza-metabolismul\lectia-2.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59cf75a35c7e36_10998594',
+  'unifunc' => 'content_59dbce85d0a2e9_34118803',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b244ae2e0f26aad176cb1ed9ec9c232c29733c4f' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\accelereaza-metabolismul\\lectia-2.tpl',
-      1 => 1506768272,
+      1 => 1506770178,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59cf75a35c7e36_10998594 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59dbce85d0a2e9_34118803 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_30822884459cf75a35bda87_96004971', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_57869946859dbce85cf5194_10054340', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_30822884459cf75a35bda87_96004971 extends Smarty_Internal_Block
+class Block_57869946859dbce85cf5194_10054340 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_30822884459cf75a35bda87_96004971',
+    0 => 'Block_57869946859dbce85cf5194_10054340',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,7 +52,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <hr class="my-4">
 
                 <div class="text-section">
-                    <p>Dupa ce vei parcurge aceasta sectiune, vei putea sa fii propriul tau nutritionist.In continuare, vei invata:</p>
+                    <p>Dupa ce vei parcurge aceasta lectie, vei putea sa fii propriul tau nutritionist.In continuare, vei invata:</p>
                     <ul class="exercise-section">
                         <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Cum sa alegi alimentele care te ajuta sa slabesti?</li>
                         <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Ce sunt macronutrienti si cum sa ii folosesti macronutrientii in avantajul tau?</li>

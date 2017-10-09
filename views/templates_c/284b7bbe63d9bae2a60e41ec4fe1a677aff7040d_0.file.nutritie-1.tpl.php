@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-24 13:11:33
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-09 19:26:00
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\talie-mai-subtire\nutritie-1.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c7af05ecd1c4_38309234',
+  'unifunc' => 'content_59dbcd48185898_16933681',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '284b7bbe63d9bae2a60e41ec4fe1a677aff7040d' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\talie-mai-subtire\\nutritie-1.tpl',
-      1 => 1506258690,
+      1 => 1506365991,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c7af05ecd1c4_38309234 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59dbcd48185898_16933681 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12914010559c7af05ec5002_23767303', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_71433701559dbcd480cbcb9_93124079', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_12914010559c7af05ec5002_23767303 extends Smarty_Internal_Block
+class Block_71433701559dbcd480cbcb9_93124079 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_12914010559c7af05ec5002_23767303',
+    0 => 'Block_71433701559dbcd480cbcb9_93124079',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -46,10 +46,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
     <div class="row">
         <div class="jumbotron">
-            <h1 class="display-3">Nutritie Saptamana 1</h1>
-            <p class="lead">In prima saptamana a programului ne focusam pe ...</p>
-            <hr class="my-4">
             <div class="program-section">
+                <h1 class="display-3">Nutritie Saptamana 1</h1>
+                <p class="lead">In prima saptamana a programului ne focusam pe ...</p>
+                <hr class="my-4">
 
                 <div class="text-section">
                     <p>Descarca planul de alimentatie si lista de cumparaturi pentru prima saptamana. Iti recomand sa iti planifici mesele in avans pentru a te asigura ca nu iei decizii eronate in privinta alimentatiei, atunci cand esti obosita sau stresata si cand autocontroul tau este scazut.</p>

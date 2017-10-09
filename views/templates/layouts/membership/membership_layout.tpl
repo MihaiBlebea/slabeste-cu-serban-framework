@@ -2,14 +2,14 @@
 <html>
     <head>
         <title>{$app_name}</title>
-        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/popper.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script src="https://js.braintreegateway.com/js/braintree-2.27.0.min.js"></script>
         <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <style>
             body {
 
@@ -130,7 +130,7 @@
             	position:fixed;
             	max-width: 20%;
             	border-right: solid 1px grey;
-            	height:100vw;
+            	height:100%;
             	z-index:2;
             }
             #main {
@@ -138,15 +138,37 @@
                 margin-left: 20%;
             }
             .sidebar-content {
-
+                height: 60%;
+                overflow: auto;
+                overflow-x: hidden;
             }
             .sidebar-program-image {
                 max-width: 100%;
+            }
+            .menu-desktop {
+                display:flex;
+            }
+            .menu-mobile {
+                display:none
             }
             /* Mobile version */
             @media only screen and (max-width: 1000px) {
                 .sidebar {
                     display:none;
+                }
+                .menu-desktop {
+                    display:none;
+                }
+                .menu-mobile {
+                    display:block;
+                    background-color: #0A82C5;
+                    color:white;
+                }
+                .navbar {
+                    justify-content: start;
+                }
+                .navbar-toggler {
+                    border: 1px solid white;
                 }
                 #main {
                     max-width: 100%;
@@ -159,7 +181,7 @@
         {include 'layouts/membership/membership_navigation.tpl'}
         <div class="container-fluid">
             <div class="row">
-                <div style="padding:0px;" class="col-md-2 sidebar col-12 col-md-3 col-xl-2 bd-sidebar" id="sticky-sidebar">
+                <div style="padding:0px;" class="col-md-2 sidebar col-12 col-md-3 col-xl-2 bd-sidebar animated fadeInLeft" id="sticky-sidebar">
                     <img class="sidebar-program-image mt-4 mb-5" src="{$app_path}/{$program->program_image}" />
                     <div class="sidebar-content">
                         {foreach $chapters as $chapter}
@@ -203,6 +225,7 @@
                 </div>
             </div>
         </div>
+
         <footer class="footer">
             Slabeste cu Serban
         </footer>

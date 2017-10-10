@@ -53,8 +53,6 @@ class ProductController
             'program_type'       => $request->out('program_type'),
             'program_image'      => $request->out('program_image'),
             'main_page'          => $request->out('main_page'),
-            'discount_code'      => $request->out('discount_code'),
-            'discount_price'     => $request->out('discount_price'),
             'plan_id'            => $request->out('plan_id')
         ]);
 

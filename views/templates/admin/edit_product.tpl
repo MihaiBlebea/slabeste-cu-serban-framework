@@ -73,7 +73,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    {* <div class="row">
                         <div class="col">
                             <div class="form-group">
                                 <label for="exampleFormControlInput1">Program discount price:</label>
@@ -86,7 +86,7 @@
                                 <input name="discount_code" type="text" class="form-control" value="{$program->discount_code}">
                             </div>
                         </div>
-                    </div>
+                    </div> *}
                     <div class="row">
                         <div class="col">
                             <div class="form-group">

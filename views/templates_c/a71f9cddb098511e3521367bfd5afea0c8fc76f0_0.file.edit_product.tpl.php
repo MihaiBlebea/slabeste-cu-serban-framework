@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-20 21:22:55
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-10 20:28:28
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\edit_product.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c2dc2f523737_63998563',
+  'unifunc' => 'content_59dd2d6c4095d5_78422024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a71f9cddb098511e3521367bfd5afea0c8fc76f0' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\edit_product.tpl',
-      1 => 1505942572,
+      1 => 1507667290,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c2dc2f523737_63998563 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59dd2d6c4095d5_78422024 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -28,23 +28,23 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_130466042059c2dc2f501607_87280240', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_195457852459dd2d6c3edea5_77154514', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_73627497059c2dc2f521187_64364113', "footer");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_69695643959dd2d6c407475_02135708', "footer");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
 /* {block "body"} */
-class Block_130466042059c2dc2f501607_87280240 extends Smarty_Internal_Block
+class Block_195457852459dd2d6c3edea5_77154514 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_130466042059c2dc2f501607_87280240',
+    0 => 'Block_195457852459dd2d6c3edea5_77154514',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -131,22 +131,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Program discount price:</label>
-                                <input name="discount_price" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['program']->value->discount_price;?>
-">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="form-group">
-                                <label for="exampleFormControlInput1">Program discount code:</label>
-                                <input name="discount_code" type="text" class="form-control" value="<?php echo $_smarty_tpl->tpl_vars['program']->value->discount_code;?>
-">
-                            </div>
-                        </div>
-                    </div>
+                    
                     <div class="row">
                         <div class="col">
                             <div class="form-group">
@@ -180,12 +165,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "body"} */
 /* {block "footer"} */
-class Block_73627497059c2dc2f521187_64364113 extends Smarty_Internal_Block
+class Block_69695643959dd2d6c407475_02135708 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'footer' => 
   array (
-    0 => 'Block_73627497059c2dc2f521187_64364113',
+    0 => 'Block_69695643959dd2d6c407475_02135708',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

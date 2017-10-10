@@ -2,33 +2,40 @@
 
 namespace App\Controllers;
 
-// use Braintree\ClientToken;
-// use Braintree\Transaction;
-// use Braintree\Customer;
-// use Braintree\Subscription;
 use Framework\Alias\Template;
 use Framework\Router\Request;
 use App\Models\Program;
 use App\Models\User;
 use App\Models\Account;
 use App\Models\Transaction;
+use App\Models\Offer;
 use Framework\Alias\Payment;
 use Framework\Factory\EventFactory;
 use Framework\Factory\ListenerFactory;
 
 class CheckoutController
 {
-    public function index(Request $request = null, Program $program)
+    public function index(Program $program, Request $request = null)
     {
-        $discountPrice = false;
-        $programPrice = $program->program_price;
+        // Set discount equal to false
+        $discount = false;
+
+        // Check if discount code expists and is the correct one
         if($request !== null)
         {
             $discount = $request->out("discount");
-            if($program->discount_code == $discount)
+
+            // Check discount code in the database
+            $offer = new Offer();
+            $offer = $offer->where("code", "=", $discount)
+                           ->where("program_tag", "=", $program->program_tag)
+                           ->selectOne();
+
+            // If offer is found in the database, then set discount true and pass the discounted price
+            if($offer)
             {
-                $discountPrice = $program->discount_price;
-                $programPrice = $program->discount_price;
+                $discount = true;
+                $discountPrice = $offer->price;
             }
         }
 
@@ -36,8 +43,8 @@ class CheckoutController
 
         Template::setAssign([
             "program"         => $program,
-            "discountPrice"   => $discountPrice,
-            "programPrice"    => $programPrice,
+            "discount"        => $discount,
+            "discountPrice"   => isset($discountPrice) ? $discountPrice : $program->program_price,
             "braintree_token" => $token
         ])->setDisplay("checkout/index.tpl");
     }

@@ -17,8 +17,7 @@ class Program extends Model
 	public $program_type;
 	public $program_image;
 	public $main_page;
-	public $discount_code;
-	public $discount_price;
+	public $offer_id;
 	public $plan_id;
 
 	// property indicating if program is owned by the user or not (default FALSE)

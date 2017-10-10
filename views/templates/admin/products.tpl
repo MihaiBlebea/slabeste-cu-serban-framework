@@ -33,7 +33,7 @@
                                 <th scope="row">{$program->index}</th>
                                 <td>{$program->program_name}</td>
                                 <td>{$program->sold}</td>
-                                <td><a href="{$app_path}/admin/program/{$program->id}">Edit</a></td>
+                                <td><a href="{$app_path}/admin/program/{$program->program_tag}">Edit</a></td>
                             </tr>
                         {/foreach}
                     </tbody>

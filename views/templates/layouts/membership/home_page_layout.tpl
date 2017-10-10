@@ -77,7 +77,7 @@
         </style>
     </head>
     <body>
-        {include 'layouts/membership/membership_navigation.tpl'}
+        {include 'layouts/membership/membership_home_navigation.tpl'}
         <div class="container-fluid">
             <div class="content">
                 {block name="body"}

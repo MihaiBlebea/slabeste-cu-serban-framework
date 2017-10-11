@@ -12,6 +12,7 @@ $frame = new Frame();
 
 $frame->boot();
 
+// Test if app is run from browser(HTTP) or from console command line(CLI)
 if(php_sapi_name() !== "cli")
 {
     $frame->init();

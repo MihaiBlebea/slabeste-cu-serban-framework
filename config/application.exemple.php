@@ -22,6 +22,8 @@ return [
 
     "rule_namespace"       => "App\\Rules\\",
 
+    "app_environment"      => "production",
+
     "app_name"             => "Framework",
 
     "app_path"             => "http://localhost:8070/slabeste-cu-serban/slabeste-cu-serban-framework/public"

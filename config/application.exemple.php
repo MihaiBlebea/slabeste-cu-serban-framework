@@ -22,7 +22,7 @@ return [
 
     "rule_namespace"       => "App\\Rules\\",
 
-    "app_environment"      => "production",
+    "app_environment"      => "development",
 
     "app_name"             => "Framework",
 

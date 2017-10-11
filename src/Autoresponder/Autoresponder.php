@@ -23,10 +23,9 @@ class Autoresponder
         return $this->config[$type][$name];
     }
 
-    // Get get contact details
     public function getContactDetails($contactId)
     {
-        return $response = $ac->api("contact/view?id=" . $contactId);
+        return $response = $this->ac->api("contact/view?id=" . $contactId);
     }
 
     // Get active lists with details
@@ -71,7 +70,7 @@ class Autoresponder
         $schema = "";
         foreach($tags as $index => $tag)
         {
-            $schema .= "tags[" . $index . "]": $tag,
+            $schema .= "tags[" . $index . "]: '" . $tag . "'";
         }
 
         $data = get_object_vars(json_decode('{"id": "' . $contactId . '", ' . $schema . '}'));

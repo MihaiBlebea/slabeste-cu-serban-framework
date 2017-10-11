@@ -10,12 +10,13 @@ use App\Models\Account;
 use App\Models\Transaction;
 use App\Models\Offer;
 use Framework\Alias\Payment;
+use App\Autoresponder\Autoresponder;
 use Framework\Factory\EventFactory;
 use Framework\Factory\ListenerFactory;
 
 class CheckoutController
 {
-    public function index(Program $program, Request $request = null)
+    public function index(Program $program, Request $request = null, $error = null)
     {
         // Set discount equal to false
         $discount = false;
@@ -91,7 +92,7 @@ class CheckoutController
         // Payment is done, now it's time to process the user and accounts
         if ($transactionID !== false)
         {
-            // Check if client is already in the database
+            // Check if client is already in the database and if not add him
             $checkUser = $user->where('email', '=', $request->out("email"))->selectOne();
             if($checkUser !== false)
             {
@@ -134,6 +135,27 @@ class CheckoutController
                 'value'          => $program->program_price,
                 'transaction_id' => $transactionID,
             ]);
+
+            // Add new user to the active campaign list (ASCENSION)
+            $ac = new Autoresponder();
+
+            // Add user to list
+            $list = $ac->addToList(5, $request->out("firstName"), $request->out("email"));
+
+            // Add user to the automation
+            if($list->success == 1)
+            {
+                $automation = $ac->addToAutomation($list->subscriber_id, "47");
+
+                // Add tag to exclude from automations
+                // if($automation->success == 1)
+                // {
+                //     $tag = "cumparat-" . $program->program_tag;
+                //     $result = $ac->addTags($list->subscriber_id, [$tag]);
+                //     dd($result);
+                // }
+            }
+
         } else {
             // Add tempalte for payment not processed, and send back to Checkout page
             dd('Plata nu a fost efectuata');

@@ -187,3 +187,13 @@ $this->group([
 
 $this->get("get/transactions", "App\\Controllers\\ApiController@getTransactions")
      ->belongsTo("api-group");
+
+
+// Admin API - just get requests for data json
+$this->group([
+    "name" => "cron-group",
+    "prefix" => "cron"
+]);
+
+$this->get("email/daily", "App\\Controllers\\CronController@sendDailyEmailToAdmin")
+     ->belongsTo("cron-group");

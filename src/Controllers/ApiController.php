@@ -21,7 +21,7 @@ class ApiController
 
         foreach($trans as $index => $tran)
         {
-            $regDate = Carbon::parse($tran->regdate)->toDateString();
+            $regDate = Carbon::parse($tran->reg_date)->toDateString();
             if($regDate > $start)
             {
                 $dates[$regDate] += $tran->value;

@@ -25,7 +25,7 @@
                                     <a class="dropdown-item" onclick="sendSearch('username');">Username</a>
                                     <a class="dropdown-item" onclick="sendSearch('email');">Email</a>
                                     <a class="dropdown-item" onclick="sendSearch('program_tag');">Program Tag</a>
-                                    <a class="dropdown-item" onclick="sendSearch('regdate');">After date</a>
+                                    <a class="dropdown-item" onclick="sendSearch('reg_date');">After date</a>
                                 </div>
                             </div>
                             <input id="search-input" type="text" class="form-control" aria-label="Text input with dropdown button">
@@ -58,7 +58,7 @@
                             {foreach $transactions as $transaction}
                                 <tr>
                                     <th scope="row">{$transaction->index}</th>
-                                    <td>{$transaction->regdate}</td>
+                                    <td>{$transaction->reg_date}</td>
                                     <td>{$transaction->firstName} {$transaction->lastName}</td>
                                     <td>{$transaction->username}</td>
                                     <td>{$transaction->program_tag}</td>

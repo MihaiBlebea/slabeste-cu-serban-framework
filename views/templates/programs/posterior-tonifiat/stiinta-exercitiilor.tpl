@@ -5,7 +5,7 @@
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Stiinta exercitiilor pentru posterior</h1>
-                <p class="lead">Explicatie</p>
+                <p class="lead">Este ca si cum ai avea un antrenor personal chiar langa tine...</p>
                 <hr class="my-4">
 
                 <div class="text-section">

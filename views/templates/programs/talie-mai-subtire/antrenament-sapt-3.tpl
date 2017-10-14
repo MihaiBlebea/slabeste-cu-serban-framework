@@ -5,13 +5,13 @@
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Antrenament Saptamana 3</h1>
-                <p class="lead">In cea de-a treia saptamana a programului ne vom concentra pe ...</p>
+                <p class="lead">Felicitari! Ai ajuns in ultima saptamana a programului...</p>
                 <hr class="my-4">
 
                 <div class="card mb-4">
                     <div class="row">
                         <div class="col p-3">
-                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf">
+                            <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_3.pdf">
                                 <img class="card-img-top download-card-img" src="{$app_path}/img/talie-mai-subtire/antrenament-saptamana-3.png">
                             </a>
                         </div>
@@ -19,10 +19,18 @@
                             <div class="card-body">
                                 <h4 class="card-title">Fisa de antrenament pentru saptamana 3</h4>
                                 <p class="card-text">Apasa pe butonul de mai jos pentru a descarca fisa de antrenament a celei de-a treia saptamani.</p>
-                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf" class="btn btn-primary">Descarca</a>
+                                <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_3.pdf" class="btn btn-primary">Descarca</a>
                             </div>
                         </div>
                     </div>
+                </div>
+
+                <div class="subtitle">
+                    <h4>Inainte de a incepe...</h4>
+                </div>
+
+                <div class="text-section">
+                    <p>Felicitari! Ai ajuns in ultima saptamana a programului. Cu siguranta ca simti deja progresele pe care le-ai facut si primele rezultate. Incearca sa te concentrezi mai mult pe forma de executie. Daca simti nevoia si nu ai ajuns inca acolo unde iti doresti, poti relua programul inca o data sau poti alege alt program de antrenament. </p>
                 </div>
 
                 <div class="subtitle">
@@ -31,7 +39,7 @@
 
                 <div class="text-section">
                     <p>Acum ca esti in saptamana 3 sunt convins ca nu mai ai probleme cu febra musculara. Asa ca a venit momentul sa intensificam putin circuitele. Pentru acest antrenament, foloseste un buretel sau un material pe care te poti aseza confortabil in pozitie de intins.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf" style="color:blue;">Programul de antrenament Saptamana 3</a>).</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_3.pdf" style="color:blue;">Programul de antrenament Saptamana 3</a>).</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">
@@ -57,7 +65,7 @@
 
                 <div class="text-section">
                     <p>Foarte multe miscari de izometrie incluse in circuitul de astazi, dar iti garantez ca va merita efortul. Este important timpul pe care il petreci in stare de incordare, NU conteaza numarul de repetari. Nu ai nevoie de materiale aditionale pentru acest circuit.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf" style="color:blue;">Programul de antrenament Saptamana 3</a>).</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_3.pdf" style="color:blue;">Programul de antrenament Saptamana 3</a>).</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">
@@ -82,7 +90,7 @@
 
                 <div class="text-section">
                     <p>In cadrul acestui antrenament am inclus mersul pe brate - o miscare excelenta atat pentru abdomen, cat si pentru musculatura bratelor si a umerilor. Acest antrenament necesita o pereche de gantere usoare, dar poti improviza cu doua sticle de apa.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf" style="color:blue;">Programul de antrenament Saptamana 3</a>)</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_3.pdf" style="color:blue;">Programul de antrenament Saptamana 3</a>)</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">

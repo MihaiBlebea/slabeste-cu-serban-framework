@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-25 19:00:58
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-14 14:33:19
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\talie-mai-subtire\antrenament-sapt-1.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c9526ae4c211_78973263',
+  'unifunc' => 'content_59e2202f5d6536_82936839',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'eef4f5bb9354b971d8cb7a16026c02b19dfe4cf5' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\talie-mai-subtire\\antrenament-sapt-1.tpl',
-      1 => 1506366030,
+      1 => 1507991595,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c9526ae4c211_78973263 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e2202f5d6536_82936839 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_75761757059c9526ae44488_56116299', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_89944438659e2202f5c87c5_07863836', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_75761757059c9526ae44488_56116299 extends Smarty_Internal_Block
+class Block_89944438659e2202f5c87c5_07863836 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_75761757059c9526ae44488_56116299',
+    0 => 'Block_89944438659e2202f5c87c5_07863836',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -48,13 +48,14 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Antrenament Saptamana 1</h1>
-                <p class="lead">Prima etapa a antrenamentelor se bazeaza pe subtierea taliei</p>
+                <p class="lead">In prima saptamana vei incepe sa iti intaresti si tonifiezi zona mediana a corpului...</p>
                 <hr class="my-4">
 
                 <div class="card mb-4">
                     <div class="row">
                         <div class="col p-3">
-                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf">
+                            <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf">
                                 <img class="card-img-top download-card-img" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /img/talie-mai-subtire/antrenament-saptamana-1.png">
                             </a>
@@ -63,11 +64,21 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             <div class="card-body">
                                 <h4 class="card-title">Fisa de antrenament pentru saptamana 1</h4>
                                 <p class="card-text">Apasa pe butonul de mai jos pentru a descarca fisa de antrenament pentru prima saptamana a programului.</p>
-                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" class="btn btn-primary">Descarca</a>
+                                <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf" class="btn btn-primary">Descarca</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="subtitle">
+                    <h4>Inainte de a incepe...</h4>
+                </div>
+
+                <div class="text-section">
+                    <p>In prima saptamana vei incepe sa iti intaresti si tonifiezi zona mediana a corpului cu antrenamentele A si A2. Insa doar exercitiile pentru abdomen nu sunt suficiente daca iti doresti sa elimini excesul de grasime. De aceea, antrenamentele B si C sunt special concepute pentru a te ajua sa arzi calorii si sa iti accelerezi metabolismul.</p>
+                </div>
+
 
                 <div class="subtitle">
                     <h4>Antrenamentul A1</h4>
@@ -75,7 +86,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                 <div class="text-section">
                     <p>Acesta este un antrenament care pune accentul pe muschii abdominali, dar contine si un element de cardio la final pentru a te ajuta sa accelerezi metabolismul si sa consumi mai multe calorii. Pentru acest antrenament ai nevoie doar de un buretel sau un material moale pe care sa faci abdomenele.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">
@@ -101,7 +113,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                 <div class="text-section">
                     <p>Antrenamentul A2 lucreaza in principal muschii mai mici ai abdomenului, precum si zona lombara prin miscari de isometrie si sustinere. Este mai important timpul pe care il petreci in stare de incordare, decat numarul de repetari. Nu ai nevoie de materiale aditionale.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">
@@ -112,7 +125,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Superman</li>
                     <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Scandura</li>
                     <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Podul de jos</li>
-                    <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Scandura cu brat in fata</li>
+                    <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Repeta podul de jos</li>
                 </ul>
                 <hr />
             </div>
@@ -125,7 +138,8 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
                 <div class="text-section">
                     <p>Acesta este un antrenament menit sa lucreze toate grupele musculare principale ale corpului tau prin cele mai eficiente exercitii posibile. Grupele muscualre mari consuma mai multe calorii, asta inseamna ca vei inlatura mai multi centimetri din jurul taliei si vei obtine un abdomen tonifiat in acelasi timp. Acest antrenament necesita o pereche de gantere usoare, dar poti improviza cu doua sticle de apa.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>a>)</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>a>)</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">

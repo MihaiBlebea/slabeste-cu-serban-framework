@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-25 18:59:32
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-14 14:51:20
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\talie-mai-subtire\introducere.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c952149680b5_82160224',
+  'unifunc' => 'content_59e224684a83f6_65868283',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '26c7ab7a19cbfb8b63cb65dc25d6efa04b31d518' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\talie-mai-subtire\\introducere.tpl',
-      1 => 1506365967,
+      1 => 1507991414,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c952149680b5_82160224 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e224684a83f6_65868283 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_171914938659c9521495cfd4_13493565', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_72474807859e224684969c6_08115911', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_171914938659c9521495cfd4_13493565 extends Smarty_Internal_Block
+class Block_72474807859e224684969c6_08115911 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_171914938659c9521495cfd4_13493565',
+    0 => 'Block_72474807859e224684969c6_08115911',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -4,8 +4,8 @@
     <div class="row">
         <div class="jumbotron">
             <div class="program-section">
-                <h1 class="display-3">Antrenament in aer liber</h1>
-                <p class="lead">Descarca fisa de antrenament pentru a treia saptamana. In cadrul acesteia, vei gasi informatii detaliate despre cum sa combini antrenamentele video pentru a duce la bun sfarsit programul ultimei saptamani de antrenament.</p>
+                <h1 class="display-3">Antrenamentul D</h1>
+                <p class="lead">Alege una dintre variatiile de mai jos atunci cand ai de facut antrenamentul D.</p>
                 <hr class="my-4">
 
                 <div class="subtitle">

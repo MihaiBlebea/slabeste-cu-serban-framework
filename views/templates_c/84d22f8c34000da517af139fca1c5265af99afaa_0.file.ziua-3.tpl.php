@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-25 19:26:17
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-14 14:44:44
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\posterior-tonifiat\ziua-3.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c958593060f2_32806478',
+  'unifunc' => 'content_59e222dc5aafb8_90249226',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '84d22f8c34000da517af139fca1c5265af99afaa' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\posterior-tonifiat\\ziua-3.tpl',
-      1 => 1506367574,
+      1 => 1507992101,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c958593060f2_32806478 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e222dc5aafb8_90249226 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_33624216759c958592fca26_08111273', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_43986851559e222dc5a2bf1_06036261', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_33624216759c958592fca26_08111273 extends Smarty_Internal_Block
+class Block_43986851559e222dc5a2bf1_06036261 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_33624216759c958592fca26_08111273',
+    0 => 'Block_43986851559e222dc5a2bf1_06036261',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -48,12 +48,17 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Antrenament ziua 3: Plyo Booty</h1>
-                <p class="lead">Explicatie</p>
+                <p class="lead">Circuitul include in partea de final exercitii de pliometrie care...</p>
                 <hr class="my-4">
 
+                <div class="subtitle">
+                    <h4>Inainte de a incepe...</h4>
+                </div>
+
                 <div class="text-section">
-                    <p>Acesta este un antrenament care pune accentul pe muschii abdominali, dar contine si un element de cardio la final pentru a te ajuta sa accelerezi metabolismul si sa consumi mai multe calorii. Pentru acest antrenament ai nevoie doar de un buretel sau un material moale pe care sa faci abdomenele.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
+                    <p>Circuitul include in partea de final exercitii de pliometrie care activeaza fibre musculare diferite si ajuta la cresterea fortei musculara.</p>
+                    <p>Pulsul va creste si el si metabolismul tau va arde mai multe calorii in urmatoarele 24 de ore.</p>
+                    <p>Daca nu poti executa exercitiile cu saritura sau ai mai mutl de 7kg in plus, iti recomand sa le executi cu atentie sau sa le inlocuiesti cu o forma mai usoara a acestora (eg. Inlocuieste genuflexiunile cu saritura cu genuflexiuni simple).</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">

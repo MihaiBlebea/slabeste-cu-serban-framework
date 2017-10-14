@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-09 19:26:07
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-14 14:53:52
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\talie-mai-subtire\nutritie-2.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59dbcd4f37e390_44996761',
+  'unifunc' => 'content_59e22500b99fc7_13256459',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'f70035e4ea48fa47992d14b5d021717dff44b75b' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\talie-mai-subtire\\nutritie-2.tpl',
-      1 => 1506366001,
+      1 => 1507992820,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59dbcd4f37e390_44996761 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e22500b99fc7_13256459 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5902111059dbcd4f376314_67919106', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_75949488059e22500b916f6_37147296', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_5902111059dbcd4f376314_67919106 extends Smarty_Internal_Block
+class Block_75949488059e22500b916f6_37147296 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_5902111059dbcd4f376314_67919106',
+    0 => 'Block_75949488059e22500b916f6_37147296',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -48,7 +48,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Nutritie Saptamana 2</h1>
-                <p class="lead">In a doua saptamana ne vom focusa pe ...</p>
+                <p class="lead">"Unge 2 crackersi wasa cu branza lacteea si..."</p>
                 <hr class="my-4">
 
                 <div class="text-section">

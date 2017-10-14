@@ -5,7 +5,7 @@
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Nutritie Saptamana 3</h1>
-                <p class="lead">In a treia saptamana vom pune accentul pe ...</p>
+                <p class="lead">"Carnea de vita tocata se amesteca cu ceapa, ciupercile si..."</p>
                 <hr class="my-4">
 
                 <div class="text-section">

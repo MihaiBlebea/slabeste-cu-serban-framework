@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-25 19:43:13
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-14 14:48:59
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\posterior-tonifiat\stiinta-exercitiilor.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c95c517d3ee0_69619520',
+  'unifunc' => 'content_59e223dba66cf9_83272587',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '925c8c7c3720d94889e2f4cb839c04a5779516bf' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\posterior-tonifiat\\stiinta-exercitiilor.tpl',
-      1 => 1506368591,
+      1 => 1507992509,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c95c517d3ee0_69619520 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e223dba66cf9_83272587 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_132790200659c95c517d1466_68461848', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_210034891159e223dba64c54_19318166', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_132790200659c95c517d1466_68461848 extends Smarty_Internal_Block
+class Block_210034891159e223dba64c54_19318166 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_132790200659c95c517d1466_68461848',
+    0 => 'Block_210034891159e223dba64c54_19318166',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -48,7 +48,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Stiinta exercitiilor pentru posterior</h1>
-                <p class="lead">Explicatie</p>
+                <p class="lead">Este ca si cum ai avea un antrenor personal chiar langa tine...</p>
                 <hr class="my-4">
 
                 <div class="text-section">

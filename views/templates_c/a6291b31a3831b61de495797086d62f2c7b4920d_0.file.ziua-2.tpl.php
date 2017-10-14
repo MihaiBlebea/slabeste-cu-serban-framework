@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-25 19:21:56
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-14 14:40:06
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\posterior-tonifiat\ziua-2.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c95754bae985_52231661',
+  'unifunc' => 'content_59e221c6c33b19_46041956',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a6291b31a3831b61de495797086d62f2c7b4920d' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\posterior-tonifiat\\ziua-2.tpl',
-      1 => 1506367306,
+      1 => 1507991992,
       2 => 'file',
     ),
   ),
@@ -20,25 +20,25 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c95754bae985_52231661 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59e221c6c33b19_46041956 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_79250206359c95754ba4b18_52691636', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_179170444859e221c6c2bf89_56506037', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_79250206359c95754ba4b18_52691636 extends Smarty_Internal_Block
+class Block_179170444859e221c6c2bf89_56506037 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_79250206359c95754ba4b18_52691636',
+    0 => 'Block_179170444859e221c6c2bf89_56506037',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -48,12 +48,15 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Antrenament ziua 2: Booty Sculpt</h1>
-                <p class="lead">Explicatie</p>
+                <p class="lead">Booty sculpt iti va activa muschii din zona inferioara a corpului...</p>
                 <hr class="my-4">
 
+                <div class="subtitle">
+                    <h4>Inainte de a incepe...</h4>
+                </div>
+
                 <div class="text-section">
-                    <p>Acesta este un antrenament care pune accentul pe muschii abdominali, dar contine si un element de cardio la final pentru a te ajuta sa accelerezi metabolismul si sa consumi mai multe calorii. Pentru acest antrenament ai nevoie doar de un buretel sau un material moale pe care sa faci abdomenele.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
+                    <p>Booty sculpt iti va activa muschii din zona inferioara a corpului si , in acelasi timp, include exercitii menite sa iti creasca pulsul si sa iti accelereze metabolismul. Nu sari peste incalzire si fa putin streching la final daca simti nevoia.</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">

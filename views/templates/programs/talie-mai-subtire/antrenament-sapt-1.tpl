@@ -5,13 +5,13 @@
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Antrenament Saptamana 1</h1>
-                <p class="lead">Prima etapa a antrenamentelor se bazeaza pe subtierea taliei</p>
+                <p class="lead">In prima saptamana vei incepe sa iti intaresti si tonifiezi zona mediana a corpului...</p>
                 <hr class="my-4">
 
                 <div class="card mb-4">
                     <div class="row">
                         <div class="col p-3">
-                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf">
+                            <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf">
                                 <img class="card-img-top download-card-img" src="{$app_path}/img/talie-mai-subtire/antrenament-saptamana-1.png">
                             </a>
                         </div>
@@ -19,11 +19,20 @@
                             <div class="card-body">
                                 <h4 class="card-title">Fisa de antrenament pentru saptamana 1</h4>
                                 <p class="card-text">Apasa pe butonul de mai jos pentru a descarca fisa de antrenament pentru prima saptamana a programului.</p>
-                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" class="btn btn-primary">Descarca</a>
+                                <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf" class="btn btn-primary">Descarca</a>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="subtitle">
+                    <h4>Inainte de a incepe...</h4>
+                </div>
+
+                <div class="text-section">
+                    <p>In prima saptamana vei incepe sa iti intaresti si tonifiezi zona mediana a corpului cu antrenamentele A si A2. Insa doar exercitiile pentru abdomen nu sunt suficiente daca iti doresti sa elimini excesul de grasime. De aceea, antrenamentele B si C sunt special concepute pentru a te ajua sa arzi calorii si sa iti accelerezi metabolismul.</p>
+                </div>
+
 
                 <div class="subtitle">
                     <h4>Antrenamentul A1</h4>
@@ -31,7 +40,7 @@
 
                 <div class="text-section">
                     <p>Acesta este un antrenament care pune accentul pe muschii abdominali, dar contine si un element de cardio la final pentru a te ajuta sa accelerezi metabolismul si sa consumi mai multe calorii. Pentru acest antrenament ai nevoie doar de un buretel sau un material moale pe care sa faci abdomenele.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">
@@ -57,7 +66,7 @@
 
                 <div class="text-section">
                     <p>Antrenamentul A2 lucreaza in principal muschii mai mici ai abdomenului, precum si zona lombara prin miscari de isometrie si sustinere. Este mai important timpul pe care il petreci in stare de incordare, decat numarul de repetari. Nu ai nevoie de materiale aditionale.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>).</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">
@@ -68,7 +77,7 @@
                     <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Superman</li>
                     <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Scandura</li>
                     <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Podul de jos</li>
-                    <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Scandura cu brat in fata</li>
+                    <li class="program-details"><i class="fa fa-check" aria-hidden="true"></i> Repeta podul de jos</li>
                 </ul>
                 <hr />
             </div>
@@ -81,7 +90,7 @@
 
                 <div class="text-section">
                     <p>Acesta este un antrenament menit sa lucreze toate grupele musculare principale ale corpului tau prin cele mai eficiente exercitii posibile. Grupele muscualre mari consuma mai multe calorii, asta inseamna ca vei inlatura mai multi centimetri din jurul taliei si vei obtine un abdomen tonifiat in acelasi timp. Acest antrenament necesita o pereche de gantere usoare, dar poti improviza cu doua sticle de apa.</p>
-                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>a>)</p>
+                    <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="{$app_path}/ebooks/talie-mai-subtire/plan_antrenament_sapt_1.pdf" style="color:blue;">Programul de antrenament Saptamana 1</a>a>)</p>
                 </div>
 
                 <div class="embed-responsive embed-responsive-16by9 video-section">

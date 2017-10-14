@@ -5,7 +5,7 @@
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Planul de Nutritie Posterior Tonifiat in 28 de zile!</h1>
-                <p class="lead">Explicatie</p>
+                <p class="lead">Iarasi dieta? In niciun caz...</p>
                 <hr class="my-4">
 
                 <div class="text-section">

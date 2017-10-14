@@ -44,7 +44,7 @@ class CronController
                     $money += $prog_tran->value;
                 }
                 // dd($total_money);
-                $result[$program->program_tag] = [
+                $result[$program->program_name] = [
                     "money"   => $money,
                     "count" => count($prog_trans)
                 ];

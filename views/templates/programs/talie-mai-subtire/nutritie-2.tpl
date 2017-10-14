@@ -5,7 +5,7 @@
         <div class="jumbotron">
             <div class="program-section">
                 <h1 class="display-3">Nutritie Saptamana 2</h1>
-                <p class="lead">In a doua saptamana ne vom focusa pe ...</p>
+                <p class="lead">"Unge 2 crackersi wasa cu branza lacteea si..."</p>
                 <hr class="my-4">
 
                 <div class="text-section">

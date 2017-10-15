@@ -78,6 +78,16 @@ class User extends Model
     // Generate username
     public function generateUsername($firstName, $lastName)
     {
-        return strtolower($firstName . '.' . $lastName);
+        return strtolower($this->checkNameForSpaces($firstName) . '.' . $this->checkNameForSpaces($lastName));
+    }
+
+    public function checkNameForSpaces($name)
+    {
+        if(strpos($name, " ") !== false)
+        {
+            return str_replace(" ", ".", $name);
+        } else {
+            return $name;
+        }
     }
 }

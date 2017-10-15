@@ -189,7 +189,7 @@ $this->get("get/transactions", "App\\Controllers\\ApiController@getTransactions"
      ->belongsTo("api-group");
 
 
-// Admin API - just get requests for data json
+// Cron Job - all the paths for cron job
 $this->group([
     "name" => "cron-group",
     "prefix" => "cron"
@@ -200,3 +200,12 @@ $this->get("email/daily", "App\\Controllers\\CronController@sendDailyEmailToAdmi
 
 $this->get("delete/recover-password", "App\\Controllers\\CronController@deleteRecoverPasswordTokens")
      ->belongsTo("cron-group");
+
+// Weebhooks and othe misc requests
+$this->group([
+    "name" => "webhook-group",
+    "prefix" => "webhook"
+]);
+
+$this->get("subscription/braintree", "App\\Controllers\\WebhookController@getRequest")
+     ->belongsTo("webhook-group");

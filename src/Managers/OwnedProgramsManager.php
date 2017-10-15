@@ -33,7 +33,7 @@ class OwnedProgramsManager implements ManagerInterface
 	private function getAllPrograms()
 	{
 		$programs = new Program();
-		return $programs->selectAll();
+		return $programs->where("program_status", "=", 1)->select();
 	}
 
 	private function getAccounts($session)

@@ -13,6 +13,7 @@ use Framework\Alias\Payment;
 use App\Autoresponder\Autoresponder;
 use Framework\Factory\EventFactory;
 use Framework\Factory\ListenerFactory;
+use App\Managers\CreateAccountManager;
 
 class CheckoutController
 {
@@ -100,11 +101,11 @@ class CheckoutController
                 $password = 'parola initiala';
 
                 // Save the new account, but under the same client
-                $account = new Account();
-                $account->create([
-                    'username'    => $checkUser->username,
-                    'password'    => $password,
-                    'program_tag' => $program->program_tag
+                $manager = new CreateAccountManager();
+                $manager->run([
+                    "username"    => $checkUser->username,
+                    "password"    => $password,
+                    "program_tag" => $program->program_tag
                 ]);
 
             } else {
@@ -118,11 +119,11 @@ class CheckoutController
                 ]);
 
                 // Add new accounts, under the new created client
-                $account = new Account();
-                $account->create([
-                    'username'    => $username,
-                    'password'    => $password,
-                    'program_tag' => $program->program_tag
+                $manager = new CreateAccountManager();
+                $manager->run([
+                    "username"    => $username,
+                    "password"    => $password,
+                    "program_tag" => $program->program_tag
                 ]);
             }
 

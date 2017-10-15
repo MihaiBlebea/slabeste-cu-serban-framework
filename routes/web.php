@@ -24,7 +24,7 @@ $this->get("logout", "App\\Controllers\\LoginController@logout")->as("logout");
 $this->group([
     "name" => "admin-group",
     "prefix" => "admin",
-    "rules" => ["LoginRule" => "App\\Rules\\AdminRule"]
+    "rules" => ["LoginRule" => "App\\Rules\\LoginRule", "AdminRule" => "App\\Rules\\AdminRule"]
 ]);
 
 // Program's CRUD operations
@@ -196,4 +196,7 @@ $this->group([
 ]);
 
 $this->get("email/daily", "App\\Controllers\\CronController@sendDailyEmailToAdmin")
+     ->belongsTo("cron-group");
+
+$this->get("delete/recover-password", "App\\Controllers\\CronController@deleteRecoverPasswordTokens")
      ->belongsTo("cron-group");

@@ -13,7 +13,7 @@ class LoginRule extends Rule implements RouterRuleInterface
     public function apply($params = null)
     {
         $session = new UsernameSession();
-
+        
         if($session->getContent() !== null)
         {
             $this->next();

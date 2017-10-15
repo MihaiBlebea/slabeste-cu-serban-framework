@@ -17,6 +17,7 @@ class ProgramRule extends Rule implements RouterRuleInterface
         $params = $request->getArray();
 		$program = $params[count($params)-2];
 
+		// Needs refractor. It's too dependent on the url structure
         $session = new UsernameSession();
 		$account = new Account();
 		$account = $account->where("username", "=", $session->getContent())

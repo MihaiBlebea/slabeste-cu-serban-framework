@@ -6,21 +6,28 @@ use Framework\Interfaces\RouterRuleInterface;
 use Framework\Injectables\Injector;
 use Framework\RouterRules\Rule;
 use Framework\Sessions\UsernameSession;
+use App\Models\Account;
 
 class AdminRule extends Rule implements RouterRuleInterface
 {
 	public function apply($params = null)
 	{
 		$session = new UsernameSession();
-		// dd($session->getContent());
-		if(1 == 2)
+
+		$account = new Account();
+		$account = $account->where("username", "=", $session->getContent())
+						   ->where("program_tag", "=", "admin")
+						   ->selectOne();
+		if($account !== false)
 		{
 			$this->next();
+		} else {
+			$this->fail();
 		}
 	}
 
 	public function fail()
 	{
-		dd("failed rule");
+		Router::goToUrl("login");
 	}
 }

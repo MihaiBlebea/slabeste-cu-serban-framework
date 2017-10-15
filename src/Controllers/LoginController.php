@@ -9,7 +9,8 @@ use App\Models\User;
 use App\Models\Account;
 use Framework\Router\Request;
 use App\Models\RecoverPassword;
-use App\Emails\RecoverPasswordEmail;
+use Framework\Factory\EmailFactory;
+use App\Managers\ResetPasswordManager;
 
 class LoginController
 {
@@ -48,7 +49,7 @@ class LoginController
                 $account = $account->where("username", "=", $user->username)
                                    ->where("program_tag", "=", "admin")
                                    ->selectOne();
-        
+
                 if($account == false)
                 {
                     Router::goToName("member.home.page")->goToUrl();
@@ -63,34 +64,6 @@ class LoginController
                 'errorMessage' => 'Datele introduse nu sunt corecte'
             ])->setDisplay('login/index.tpl');
         }
-
-
-
-
-        // if($user !== false)
-        // {
-        //     $session = new UsernameSession();
-        //     $session->setContent($user->username);
-        //
-        //     // Check accounts database for admin tag
-        //     $account = new Account();
-        //     $account = $account->where("username", "=", $user->username)
-        //                        ->where("program_tag", "=", "admin")
-        //                        ->selectOne();
-        //
-        //     if($account == false)
-        //     {
-        //         Router::goToName("member.home.page")->goToUrl();
-        //     } else {
-        //         Router::goToName("admin.home.page")->goToUrl();
-        //     }
-        // } else {
-        //     // go to the login page with error, username or password do not match
-        //     Template::setAssign([
-        //         'error'        => true,
-        //         'errorMessage' => 'Datele introduse nu sunt corecte'
-        //     ])->setDisplay('login/index.tpl');
-        // }
     }
 
     public function getRecover()
@@ -119,7 +92,8 @@ class LoginController
             ]);
 
             // Send the recover confirmation email
-            RecoverPasswordEmail::send([
+            $email = EmailFactory::build("RecoverPassword");
+            $email->send([
                 "username" => $user->username,
                 "email"    => $user->email,
                 "code"     => $code
@@ -168,6 +142,15 @@ class LoginController
         $user->where('username', '=', $request->out('username'))->update([
             'password' => $hashPassword
         ]);
+
+        $user = $user->where('username', '=', $request->out('username'))->selectOne();
+
+        $manager = new ResetPasswordManager();
+        $manager->run([
+            "user"     => $user,
+            "password" => $request->out("password1")
+        ]);
+
         Template::setAssign(['error' => false])->setDisplay('login/index.tpl');
     }
 

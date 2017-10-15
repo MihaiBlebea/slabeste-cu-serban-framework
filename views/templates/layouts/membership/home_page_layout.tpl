@@ -74,6 +74,13 @@
             .program-main-image:hover {
                 opacity: 0.6;
             }
+            .program-main-image-not-owned {
+                filter: grayscale(100%);
+                transition: all 0.8s ease-in-out;
+            }
+            .program-main-image-not-owned:hover {
+                filter: grayscale(0%);
+            }
         </style>
     </head>
     <body>

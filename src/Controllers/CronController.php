@@ -6,6 +6,7 @@ use Framework\Factory\EmailFactory;
 use App\Models\Transaction;
 use App\Models\Program;
 use Carbon\Carbon;
+use App\Models\RecoverPassword;
 
 class CronController
 {
@@ -60,5 +61,11 @@ class CronController
 
         $email = EmailFactory::build("DailyAdmin");
         $email->send($payload);
+    }
+
+    public function deleteRecoverPasswordTokens()
+    {
+        $recover = new RecoverPassword;
+        $recover = $recover->where("id", ">", 0)->delete();
     }
 }

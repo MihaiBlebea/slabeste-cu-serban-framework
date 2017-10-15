@@ -9,6 +9,7 @@ use App\Models\Program;
 use Framework\Router\Request;
 use App\Managers\OwnedProgramsManager;
 use App\Managers\PrepareChaptersAndLessonsManager;
+use App\Managers\ResetPasswordManager;
 use Framework\Sessions\UsernameSession;
 use Framework\Alias\Router;
 
@@ -67,7 +68,7 @@ class MembershipController
         Router::goToUrl("ebooks/" . $program . "/" . $file . "." . $extension);
     }
 
-    // Get the account information
+    // Get the account information in the membership
     public function getAccount()
     {
         $auth = new UsernameSession();
@@ -91,12 +92,11 @@ class MembershipController
         $auth = new UsernameSession();
         $auth = $auth->getContent();
 
-        $managerPrograms = new OwnedProgramsManager();
-        $programs = $managerPrograms->run();
+        $user = new User();
+        $auth_user = $user->where("username", "=", $auth)->selectOne();
 
         if($request->out("email"))
         {
-            $user = new User();
             $user->where("username", "=", $auth)->update([
                 "email" => $request->out("email")
             ]);
@@ -104,16 +104,15 @@ class MembershipController
 
         if(!empty($request->out("password1")) && $request->out("password1") !== "")
         {
-            $user = new User();
-            // Hash the user changed password
-            $hashPassword = $user->hashPassword($request->out("password1"));
-
-            $user->where("username", "=", $auth)->update([
-                "password" => $hashPassword
+            $manager = new ResetPasswordManager();
+            $manager->run([
+                "user"     => $auth_user,
+                "password" => $request->out("password1")
             ]);
         }
 
-        $user = $user->where("username", "=", $auth)->selectOne();
+        $managerPrograms = new OwnedProgramsManager();
+        $programs = $managerPrograms->run();
 
         Template::setAssign([
                 "user"         => $user,

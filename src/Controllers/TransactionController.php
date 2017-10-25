@@ -36,16 +36,18 @@ class TransactionController
         {
             $user = new User();
             $user = $user->where("username", "=", $tran->username)->selectOne();
-            $tran->firstName = $user->first_name;
-            $tran->lastName = $user->last_name;
-
+            if($user)
+            {
+                $tran->firstName = $user->first_name;
+                $tran->lastName = $user->last_name;
+            }
             // Add index to the object shadow property
             $tran->index = $index + 1;
         }
 
         // Apply pagination here
         $paginated = array_chunk($trans, 10);
-
+        
         // Send informations to view
         Template::setAssign([
             "transactions"        => $paginated[$page],

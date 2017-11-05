@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-10 21:46:19
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-11-05 15:40:36
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\checkout\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59dd3fab5f01b0_05211183',
+  'unifunc' => 'content_59ff30f4101ba9_77660324',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a41c4701d17c0ff69befb56a705dfba03f2a87f' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\checkout\\index.tpl',
-      1 => 1507671975,
+      1 => 1509896432,
       2 => 'file',
     ),
   ),
@@ -20,56 +20,56 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59dd3fab5f01b0_05211183 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ff30f4101ba9_77660324 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
-/*<?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_124562790559dd3fab586ef2_07803087', "nav");
-?>
-*/
-
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_102146800059dd3fab5a8274_28506442', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_22865067559ff30f40df438_39722088', "nav");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_150032525259dd3fab5ed203_99335398', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_161226306659ff30f40ed188_18116507', "body");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18036300259ff30f40fff90_41659979', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/checkout_layout.tpl');
 }
 /* {block "nav"} */
-class Block_124562790559dd3fab586ef2_07803087 extends Smarty_Internal_Block
+class Block_22865067559ff30f40df438_39722088 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'nav' => 
   array (
-    0 => 'Block_124562790559dd3fab586ef2_07803087',
+    0 => 'Block_22865067559ff30f40df438_39722088',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <div class="nav">
-        <img style="display:block;margin:auto;" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+        <img style="display:block;margin:auto;max-width: 120px;" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /img/logos/logo_site.png" />
     </div>
-    
+
 <?php
 }
 }
 /* {/block "nav"} */
 /* {block "body"} */
-class Block_102146800059dd3fab5a8274_28506442 extends Smarty_Internal_Block
+class Block_161226306659ff30f40ed188_18116507 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_102146800059dd3fab5a8274_28506442',
+    0 => 'Block_161226306659ff30f40ed188_18116507',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -81,25 +81,33 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <form id="checkout-form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /checkout/payment">
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Nume:</label>
-                        <input name="firstName" type="text" class="form-control" placeholder="ex. Popescu">
+                        <label>Nume:</label>
+                        <input id="first-name" name="firstName" onkeyup="validateFirstName('first-name');" type="text" class="form-control" placeholder="ex. Popescu">
+                        <div class="invalid-feedback">
+                            Numele de familie trebuie sa aiba mai mult de 3 litere, dar nu spatii libere.
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Prenume:</label>
-                        <input name="lastName" type="text" class="form-control" placeholder="ex. Maria">
+                        <label>Prenume:</label>
+                        <input id="last-name" name="lastName" onkeyup="validateFirstName('last-name');" type="text" class="form-control" placeholder="ex. Maria">
+                        <div class="invalid-feedback">
+                            Numele mic trebuie sa aiba mai mult de 3 litere, dar nu spatii libere.
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Email:</label>
-                        <input name="email" type="email" class="form-control" placeholder="">
+                        <label>Email:</label>
+                        <input id="email" name="email" onkeyup="validateEmail('email');" type="email" class="form-control" placeholder="">
+                        <div class="invalid-feedback">
+                            Adresa de email trebuie sa fie una valida.
+                        </div>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Telefon:</label>
-                        <input name="phone" type="text" class="form-control" placeholder="">
+                        <label>Telefon:</label>
+                        <input id="phone" name="phone" type="text" class="form-control" placeholder="">
                     </div>
                     <div class="alert alert-success" role="alert">
                         Plateste cu cardul apasand butonul "Cumpara acum" sau prin PayPal
                     </div>
-                    
 
                     <input name="program_price" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['discountPrice']->value;?>
 ">
@@ -113,7 +121,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Cumpara acum" class="btn btn-success btn-lg btn-block">
+                    <input id="send-button" type="submit" value="Cumpara acum" class="btn btn-success btn-lg btn-block">
                 </form>
                 <img style="display:block;margin:auto;" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /img/logos/plata_sigura.png" />
@@ -124,16 +132,19 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             <div class="col-sm-12 col-md-6">
                 <p class="text-center program-name">Programul <?php echo $_smarty_tpl->tpl_vars['program']->value->program_name;?>
 </p>
-                <img style="max-width:100%" class="mb-3" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+                <img style="width:100%" class="mb-3" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
 " />
-                
+
                 <div class="row">
                     <?php if ($_smarty_tpl->tpl_vars['discount']->value == false) {?>
                         <div class="col">
                             <p class="text-center normal-price discount-label-text">Profita de pretul special</p>
-                            <p class="text-center normal-price"><?php echo $_smarty_tpl->tpl_vars['program']->value->program_price;?>
- RON</p>
+                            
+                            <h1 class="ribbon">
+                                <strong class="ribbon-content normal-price"><?php echo $_smarty_tpl->tpl_vars['program']->value->program_price;?>
+ RON</strong>
+                            </h1>
                         </div>
                     <?php } else { ?>
                         <div class="col">
@@ -179,26 +190,95 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 </div>
             </div>
         </div>
-
-        
     </div>
 <?php
 }
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_150032525259dd3fab5ed203_99335398 extends Smarty_Internal_Block
+class Block_18036300259ff30f40fff90_41659979 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_150032525259dd3fab5ed203_99335398',
+    0 => 'Block_18036300259ff30f40fff90_41659979',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
+<?php echo '<script'; ?>
+>
 
+    function changeDOM(el, valid)
+    {
+        var button = document.getElementById('send-button');
+        if(valid == false)
+        {
+            el.classList.add('is-invalid');
+            button.disabled = true;
+            button.value = "Corecteaza erorile din formular";
+
+        } else {
+            el.classList.remove('is-invalid');
+            button.disabled = false;
+            button.value = "Cumpara acum";
+        }
+    }
+
+    function validateFirstName(elementId)
+    {
+        var valid = true;
+        var el = document.getElementById(elementId);
+
+        if(el.value == "")
+        {
+            valid = false;
+        }
+
+        if(el.value.length < 3)
+        {
+            valid = false;
+        }
+
+        if(el.value.indexOf(" ") > 0)
+        {
+            valid = false;
+        }
+
+        changeDOM(el, valid);
+    }
+
+    function validateEmail(elementId)
+    {
+        var valid = true;
+        var el = document.getElementById(elementId);
+        var button = document.getElementById('send-button');
+
+        if(el.value == "")
+        {
+            valid = false;
+        }
+
+        if(el.value.indexOf('@') < 0)
+        {
+            valid = false;
+        }
+
+        if(el.value.indexOf(' ') > 0)
+        {
+            valid = false;
+        }
+
+        if(el.value.indexOf('.') < 0)
+        {
+            valid = false;
+        }
+
+        changeDOM(el, valid);
+    }
+<?php echo '</script'; ?>
+>
 <?php
 }
 }

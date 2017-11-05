@@ -1,6 +1,6 @@
 <?php
 
-require_once('../../wp-includes/class-phpass2.php');
+// require_once('../../wp-includes/class-phpass2.php');
 
 // Die and dump function
 function dd($args)

@@ -87,7 +87,7 @@
                 </div>
 
 
-                <a class="btn btn-primary btn-lg button-center" href="{$app_path}/member/talie-mai-subtire/ziua-1">Sunt pregatita sa incep</a>
+                <a class="btn btn-primary btn-lg button-center" href="{$app_path}/member/posterior-tonifiat/ziua-1">Sunt pregatita sa incep</a>
             </div>
         </div>
     </div>

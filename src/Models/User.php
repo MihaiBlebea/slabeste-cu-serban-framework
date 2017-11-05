@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Framework\Models\Model;
 use App\Auth\Bcrypt;
+use Framework\Injectables\Injector;
 
 class User extends Model
 {
@@ -29,20 +30,39 @@ class User extends Model
     // Check if password is correct or is invalid
     public function checkPassword($password)
     {
-        $new_check = Bcrypt::check($password, $this->password);
-        if($new_check == false)
-        {
-            $old_check = password_old_system($password, $this->password);
+        $config = Injector::resolve("Config");
+        $app_conf = $config->getConfig("application");
 
+        if($app_conf["app_environment"] == "development")
+        {
+            $new_check = Bcrypt::check($password, $this->password);
+            if($new_check == false)
+            {
+                $old_check = password_old_system($password, $this->password);
+
+                if($old_check == true)
+                {
+                    $this->update([
+                        "password" => $this->hashPassword($password)
+                    ]);
+                }
+                return $old_check;
+            }
+            return $new_check;
+        } else {
+            $old_check = password_old_system($password, $this->password);
             if($old_check == true)
             {
                 $this->update([
                     "password" => $this->hashPassword($password)
                 ]);
+                return $old_check;
+            } else {
+                $new_check = Bcrypt::check($password, $this->password);
+                return $new_check;
             }
-            return $old_check;
         }
-        return $new_check;
+
     }
 
     // Hash password

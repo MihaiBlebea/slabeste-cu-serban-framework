@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-10 21:53:22
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-11-05 15:38:21
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\checkout_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59dd4152732888_12159668',
+  'unifunc' => 'content_59ff306d0d3581_18202731',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5dfbacbc6720df3ece1ac98b5e17d491155f31e0' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\checkout_layout.tpl',
-      1 => 1507672156,
+      1 => 1509896297,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59dd4152732888_12159668 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59ff306d0d3581_18202731 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -51,6 +51,8 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
         <style>
             .nav {
                 background-color: #e5e5e5;
+                box-shadow: 2px 2px 20px;
+                margin-bottom:50px;
             }
             .container-fluid {
                 max-width:900px;
@@ -70,7 +72,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 line-height: 1;
             }
             .normal-price {
-                font-size: 3.2em;
+                font-size: 1.5em;
                 font-weight: bold;
                 line-height: 1;
             }
@@ -104,16 +106,65 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
                 padding-top: 20px;
                 padding-bottom: 20px;
             }
+
+            /* Ribbon */
+            .ribbon {
+                 font-size: 16px !important;
+                 /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+                 width: 90%;
+
+                 position: relative;
+                 background: #ba89b6;
+                 color: #fff;
+                 text-align: center;
+                 padding: 1em 2em; /* Adjust to suit */
+                 margin: 2em auto 3em; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+            }
+            .ribbon:before, .ribbon:after {
+                 content: "";
+                 position: absolute;
+                 display: block;
+                 bottom: -1.5em;
+                 border: 1.5em solid #986794;
+                 z-index: -1;
+            }
+            .ribbon:before {
+                 left: -1.5em;
+                 border-right-width: 1.5em;
+                 border-left-color: transparent;
+            }
+            .ribbon:after {
+                 right: -1.5em;
+                 border-left-width: 1.5em;
+                 border-right-color: transparent;
+            }
+            .ribbon .ribbon-content:before, .ribbon .ribbon-content:after {
+                 content: "";
+                 position: absolute;
+                 display: block;
+                 border-style: solid;
+                 border-color: #804f7c transparent transparent transparent;
+                 bottom: -1em;
+            }
+            .ribbon .ribbon-content:before {
+                 left: 0;
+                 border-width: 1em 0 0 1em;
+            }
+            .ribbon .ribbon-content:after {
+                 right: 0;
+                 border-width: 1em 1em 0 0;
+            }
         </style>
     </head>
     <body>
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_213568738559dd415272bf28_87796232', "nav");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_77786743259ff306d0ccf55_75168884', "nav");
 ?>
 
 
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_180709855259dd415272e7d4_36324505', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_56231816259ff306d0cf806_38455784', "body");
 ?>
 
 
@@ -122,7 +173,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_180709855259dd4152
         </footer>
 
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_147003925859dd4152730728_19756227', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_156100181059ff306d0d1674_81737329', "script");
 ?>
 
         <?php echo '<script'; ?>
@@ -138,12 +189,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_147003925859dd4152
 <body>
 <?php }
 /* {block "nav"} */
-class Block_213568738559dd415272bf28_87796232 extends Smarty_Internal_Block
+class Block_77786743259ff306d0ccf55_75168884 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'nav' => 
   array (
-    0 => 'Block_213568738559dd415272bf28_87796232',
+    0 => 'Block_77786743259ff306d0ccf55_75168884',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -155,12 +206,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "nav"} */
 /* {block "body"} */
-class Block_180709855259dd415272e7d4_36324505 extends Smarty_Internal_Block
+class Block_56231816259ff306d0cf806_38455784 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_180709855259dd415272e7d4_36324505',
+    0 => 'Block_56231816259ff306d0cf806_38455784',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -172,12 +223,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_147003925859dd4152730728_19756227 extends Smarty_Internal_Block
+class Block_156100181059ff306d0d1674_81737329 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_147003925859dd4152730728_19756227',
+    0 => 'Block_156100181059ff306d0d1674_81737329',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

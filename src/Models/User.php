@@ -29,7 +29,20 @@ class User extends Model
     // Check if password is correct or is invalid
     public function checkPassword($password)
     {
-        return Bcrypt::check($password, $this->password);
+        $new_check = Bcrypt::check($password, $this->password);
+        if($new_check == false)
+        {
+            $old_check = password_old_system($password, $this->password);
+
+            if($old_check == true)
+            {
+                $this->update([
+                    "password" => $this->hashPassword($password)
+                ]);
+            }
+            return $old_check;
+        }
+        return $new_check;
     }
 
     // Hash password

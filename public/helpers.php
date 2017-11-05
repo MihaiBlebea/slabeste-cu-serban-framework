@@ -1,5 +1,7 @@
 <?php
 
+require_once('../../wp-includes/class-phpass2.php');
+
 // Die and dump function
 function dd($args)
 {
@@ -13,8 +15,8 @@ function tt()
     die();
 }
 
-// Get the real path function, $path is the string to add to the app_path in config
-function real_path($path = null)
+function password_old_system($input, $saved)
 {
-    
+    $wp_hasher = new PasswordHash( 8, TRUE );
+    return $wp_hasher->CheckPassword($input, $saved);
 }

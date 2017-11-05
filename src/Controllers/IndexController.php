@@ -1,23 +1,28 @@
 <?php
 
-namespace InstaRouter\Controllers;
+namespace App\Controllers;
 
-use InstaRouter\Controllers\Controller;
-use InstaRouter\Database\Worker;
-use InstaRouter\Model\User;
-use InstaRouter\Factory\ModelFactory;
-use InstaRouter\Events\LogUserEvent;
+use App\Managers\ChangeDatabaseManager;
+use Framework\Router\Request;
 
-class IndexController extends Controller
+class IndexController
 {
     public function index()
     {
         $this->smarty->display("landing/index.tpl");
     }
 
-    public function migrate()
+    public function updateAccounts(Request $request = null)
     {
-        $migrate = new Worker;
-        $migrate->migrateAll();
+        if($request !== null)
+        {
+            if($request->out("code") == 430043)
+            {
+                $manager = new ChangeDatabaseManager();
+                $manager->run("");
+                dd("done");
+            }
+        }
+        dd("Please insert the admin code");
     }
 }

@@ -209,3 +209,6 @@ $this->group([
 
 $this->get("subscription/braintree", "App\\Controllers\\WebhookController@getRequest")
      ->belongsTo("webhook-group");
+
+// Burn after using (temp routes)
+$this->get("temp/update/accounts", "App\\Controllers\\IndexController@updateAccounts");

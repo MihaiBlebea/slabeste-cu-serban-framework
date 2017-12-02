@@ -7,6 +7,7 @@ use App\Models\Transaction;
 use App\Models\Program;
 use Carbon\Carbon;
 use App\Models\RecoverPassword;
+use App\Log\CronLogger;
 
 class CronController
 {
@@ -61,11 +62,14 @@ class CronController
 
         $email = EmailFactory::build("DailyAdmin");
         $email->send($payload);
+
+        CronLogger::log(["message" => "Email sent was complete"]);
     }
 
     public function deleteRecoverPasswordTokens()
     {
         $recover = new RecoverPassword;
         $recover = $recover->where("id", ">", 0)->delete();
+        CronLogger::log(["message" => "Recover email tokens were deleted"]);
     }
 }

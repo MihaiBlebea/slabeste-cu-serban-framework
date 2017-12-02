@@ -1,5 +1,8 @@
 <?php
 
+// Main home route "/"
+$this->get("", "App\\Controllers\\LoginController@getLogin")->as("get.login.page");
+
 // Landing page routes
 $this->get("landing", "App\\Controllers\\LandingPageController@landing")->as("landing.page");
 
@@ -207,7 +210,7 @@ $this->group([
     "prefix" => "webhook"
 ]);
 
-$this->get("subscription/braintree", "App\\Controllers\\WebhookController@getRequest")
+$this->post("subscription/braintree", "App\\Controllers\\WebhookController@webhook")
      ->belongsTo("webhook-group");
 
 // Burn after using (temp routes)

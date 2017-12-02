@@ -24,7 +24,7 @@
                     <input type="submit" class="btn btn-primary btn-lg btn-block" value="Acceseaza contul">
                 </form>
 
-                <a href="#" class="card-link">Cum pot sa-mi fac un cont?</a><br />
+                <a href="http://www.slabestecuserban.ro/servicii-si-produse-de-slabit/" class="card-link">Cum pot sa-mi fac un cont?</a><br />
                 <a href="{$app_path}/recover-password" class="card-link">Ups, mi-am uitat parola!</a>
             </div>
         </div>

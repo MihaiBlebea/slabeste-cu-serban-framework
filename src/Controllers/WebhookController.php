@@ -1,52 +1,50 @@
 <?php
 
-namespace InstaRouter\Controllers;
+namespace App\Controllers;
 
-use InstaRouter\Controllers\Controller;
-use InstaRouter\Router\Request;
+use Framework\Router\Request;
 use Braintree\WebhookNotification;
 use Braintree\Configuration;
+use Braintree\Customer;
 use Framework\Factory\EmailFactory;
 use App\Models\Account;
 use App\Models\Transaction;
+use App\Log\WebhookLogger;
 
-class WebhookController extends Controller
+class WebhookController
 {
-    public function __construct()
+    public function webhook(Request $request)
     {
-        parent::__construct();
-        global $app;
-        $app->bootstrapBraintree();
-    }
-
-    public function getRequest(Request $request)
-    {
-        global $app;
-        $webhook = WebhookNotification::parse($request->retrive('bt_signature'),
-                                              $request->retrive('bt_payload'));
+        $webhook = WebhookNotification::parse($request->out('bt_signature'),
+                                              $request->out('bt_payload'));
 
         $notification_type = $webhook->kind;
 
-        $customer_id   = $webhookNotification->subscription->transactions[0]->customerDetails->id;
-        $billing_cycle = $webhookNotification->subscription->currentBillingCycle;
-        $client_email  = $webhookNotification->subscription->transactions[0]->customerDetails->email;
-        $price         = $webhookNotification->subscription->transactions[0]->amount;
-        $plan_id       = $webhookNotification->subscription->planId;
-        $user_info     = $this->getUserFromSubscription($customer_id);
-
         if($notification_type == "subscription_charged_successfully")
         {
+            $customer_id   = $webhook->subscription;
+            $customer_id   = $webhook->subscription->transactions[0]->customerDetails->id;
+            $billing_cycle = $webhookNotification->subscription->currentBillingCycle;
+            $client_email  = $webhookNotification->subscription->transactions[0]->customerDetails->email;
+            $price         = $webhookNotification->subscription->transactions[0]->amount;
+            $plan_id       = $webhookNotification->subscription->planId;
+            $user_info     = $this->getUserFromSubscription($customer_id);
+
+            $program_name = "Fit si Supla 1";
+            $program_tag  = "fit-si-supla-1";
+            $value        = $price;
+
             if($user_info["tag"] == "fit-si-supla-1")
             {
                 if($billing_cycle == "2")
                 {
-                    $program_name = "Fit si Supla 2"
+                    $program_name = "Fit si Supla 2";
                     $program_tag  = "fit-si-supla-2";
-                    $value        = $price;
                 } elseif($billing_cycle == "3") {
-                    $program_name = "Fit si Supla 3"
+                    $program_name = "Fit si Supla 3";
                     $program_tag  = "fit-si-supla-3";
-                    $value        = $price;
+                } else {
+
                 }
             }
 
@@ -88,7 +86,7 @@ class WebhookController extends Controller
             ]);
         }
 
-        file_put_contents("webhook.txt", $notification_type, FILE_APPEND);
+        WebhookLogger::log(["message" => "The webhook type was " . $notification_type]);
     }
 
     private function getUserFromSubscription($customer_id)
@@ -104,5 +102,4 @@ class WebhookController extends Controller
         ];
 
     }
-
 }

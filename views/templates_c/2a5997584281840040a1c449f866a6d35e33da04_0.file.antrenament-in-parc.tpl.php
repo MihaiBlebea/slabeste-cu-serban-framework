@@ -1,44 +1,47 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-14 14:36:05
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-02 19:56:49
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\programs\talie-mai-subtire\antrenament-in-parc.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59e220d55a20a6_03264341',
+  'unifunc' => 'content_5a230581667d55_06489349',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2a5997584281840040a1c449f866a6d35e33da04' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\programs\\talie-mai-subtire\\antrenament-in-parc.tpl',
-      1 => 1507989394,
+      1 => 1512244054,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:partials/page-title.tpl' => 1,
+    'file:partials/small-title.tpl' => 2,
+    'file:partials/video.tpl' => 2,
   ),
 ),false)) {
-function content_59e220d55a20a6_03264341 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a230581667d55_06489349 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_191910123759e220d55a02d3_79730131', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_270272885a230581659824_78783118', "body");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/membership/membership_layout.tpl');
 }
 /* {block "body"} */
-class Block_191910123759e220d55a02d3_79730131 extends Smarty_Internal_Block
+class Block_270272885a230581659824_78783118 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_191910123759e220d55a02d3_79730131',
+    0 => 'Block_270272885a230581659824_78783118',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -47,21 +50,21 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <div class="row">
         <div class="jumbotron">
             <div class="program-section">
-                <h1 class="display-3">Antrenamentul D</h1>
-                <p class="lead">Alege una dintre variatiile de mai jos atunci cand ai de facut antrenamentul D.</p>
-                <hr class="my-4">
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/page-title.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>"Antrenamentul D",'sub_title'=>"Alege una dintre variatiile de mai jos atunci cand ai de facut antrenamentul D."), 0, false);
+?>
 
-                <div class="subtitle">
-                    <h4>Antrenamentul D1</h4>
-                </div>
+
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/small-title.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>"Antrenamentul D1"), 0, false);
+?>
+
 
                 <div class="text-section">
                     <p>Antreneaza-te in aer liber ori de cate ori ai ocazia. Iti prezint un circuit eficient care te va ajuta sa iti cresti pulsul si sa arzi cat mai multe calorii. Uite ce include:</p>
                 </div>
 
-                <div class="embed-responsive embed-responsive-16by9 video-section">
-                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/175084064"></iframe>
-                </div>
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/video.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('video_link'=>"https://player.vimeo.com/video/175084064"), 0, false);
+?>
+
 
                 <strong>Circuitul 1</strong>
                 <ul class="exercise-section">
@@ -88,18 +91,18 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 
             <div class="program-section">
 
-                <div class="subtitle">
-                    <h4>Antrenamentul D2</h4>
-                </div>
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/small-title.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>"Antrenamentul D2"), 0, true);
+?>
+
 
                 <div class="text-section">
                     <p>Foarte multe miscari de izometrie incluse in circuitul de astazi, dar iti garantez ca va merita efortul. Este important timpul pe care il petreci in stare de incordare, NU conteaza numarul de repetari. Nu ai nevoie de materiale aditionale pentru acest circuit.</p>
                     <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf" style="color:blue;">Programul de antrenament Saptamana 3</a>).</p>
                 </div>
 
-                <div class="embed-responsive embed-responsive-16by9 video-section">
-                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/175084821"></iframe>
-                </div>
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/video.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('video_link'=>"https://player.vimeo.com/video/175084821"), 0, true);
+?>
+
 
                 <strong>Circuitul 1</strong>
                 <ul class="exercise-section">

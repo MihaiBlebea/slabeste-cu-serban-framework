@@ -4,9 +4,9 @@
     <div class="row">
         <div class="jumbotron">
             <div class="program-section">
-                <h1 class="display-3">Nutritie Saptamana 3</h1>
-                <p class="lead">"Carnea de vita tocata se amesteca cu ceapa, ciupercile si..."</p>
-                <hr class="my-4">
+                {include "partials/page-title.tpl"
+                    title="Nutritie Saptamana 3"
+                    sub_title="'Carnea de vita tocata se amesteca cu ceapa, ciupercile si...'"}
 
                 <div class="text-section">
                     <p>Descarca planul de alimentatie si lista de cumparaturi pentru a III-a saptamana din cadrul programului Talie Mai Subtire.</p>
@@ -15,32 +15,19 @@
                     <p>Nu uita sa verifici si <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Retete-Delicioase.pdf" style="color: blue;">Ghidul Retetelor (click aici pentru a il descarca)</a> pentru a iti pregati mesele indicate in planul alimentar</p>
                 </div>
 
-                <div class="row">
-                    <div class="col">
-                        <div class="card" style="width: 20rem;">
-                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/PLAN-DE-ALIMENTATIE-SAPTAMANA-III.pdf">
-                                <img class="card-img-top download-card-img" src="{$app_path}/img/talie-mai-subtire/nutritie-saptamana-2.png">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="card-title">Ghidul de alimentatie saptamana 3</h4>
-                                <p class="card-text">Apasa pe butonul de mai jos pentru a descarca ghidul de alimentatie pentru saptamana 3.</p>
-                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/PLAN-DE-ALIMENTATIE-SAPTAMANA-III.pdf" class="btn btn-primary">Descarca</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 20rem;">
-                            <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Lista-de-cumparaturi_saptamana-III_Talie-Mai-Subtire.pdf">
-                                <img class="card-img-top download-card-img" src="{$app_path}/img/talie-mai-subtire/cumparaturi-saptamana-2.png">
-                            </a>
-                            <div class="card-body">
-                                <h4 class="card-title">Lista de alimente pentru saptamana 3</h4>
-                                <p class="card-text">Apasa pe butonul de mai jos si descarca lista de cumparaturi sanatoase pentru saptamana 3.</p>
-                                <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Lista-de-cumparaturi_saptamana-III_Talie-Mai-Subtire.pdf" class="btn btn-primary">Descarca</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {include "partials/download-card.tpl"
+                    title="Ghidul de alimentatie saptamana 3"
+                    text="Apasa pe butonul de mai jos pentru a descarca ghidul de alimentatie pentru saptamana 3."
+                    button_text="Descarca"
+                    download_link="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/PLAN-DE-ALIMENTATIE-SAPTAMANA-III.pdf"
+                    image_link="{$app_path}/img/talie-mai-subtire/nutritie-saptamana-3.png"}
+
+                {include "partials/download-card.tpl"
+                    title="Lista de alimente pentru saptamana 3"
+                    text="Apasa pe butonul de mai jos si descarca lista de cumparaturi sanatoase pentru saptamana 3."
+                    button_text="Descarca"
+                    download_link="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Lista-de-cumparaturi_saptamana-III_Talie-Mai-Subtire.pdf"
+                    image_link="{$app_path}/img/talie-mai-subtire/cumparaturi-saptamana-3.png"}
 
             </div>
         </div>

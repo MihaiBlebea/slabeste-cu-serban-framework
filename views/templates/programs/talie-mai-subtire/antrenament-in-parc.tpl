@@ -4,21 +4,19 @@
     <div class="row">
         <div class="jumbotron">
             <div class="program-section">
-                <h1 class="display-3">Antrenamentul D</h1>
-                <p class="lead">Alege una dintre variatiile de mai jos atunci cand ai de facut antrenamentul D.</p>
-                <hr class="my-4">
+                {include "partials/page-title.tpl"
+                    title="Antrenamentul D"
+                    sub_title="Alege una dintre variatiile de mai jos atunci cand ai de facut antrenamentul D."}
 
-                <div class="subtitle">
-                    <h4>Antrenamentul D1</h4>
-                </div>
+                {include "partials/small-title.tpl"
+                    title="Antrenamentul D1"}
 
                 <div class="text-section">
                     <p>Antreneaza-te in aer liber ori de cate ori ai ocazia. Iti prezint un circuit eficient care te va ajuta sa iti cresti pulsul si sa arzi cat mai multe calorii. Uite ce include:</p>
                 </div>
 
-                <div class="embed-responsive embed-responsive-16by9 video-section">
-                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/175084064"></iframe>
-                </div>
+                {include "partials/video.tpl"
+                    video_link="https://player.vimeo.com/video/175084064"}
 
                 <strong>Circuitul 1</strong>
                 <ul class="exercise-section">
@@ -45,18 +43,16 @@
 
             <div class="program-section">
 
-                <div class="subtitle">
-                    <h4>Antrenamentul D2</h4>
-                </div>
+                {include "partials/small-title.tpl"
+                    title="Antrenamentul D2"}
 
                 <div class="text-section">
                     <p>Foarte multe miscari de izometrie incluse in circuitul de astazi, dar iti garantez ca va merita efortul. Este important timpul pe care il petreci in stare de incordare, NU conteaza numarul de repetari. Nu ai nevoie de materiale aditionale pentru acest circuit.</p>
                     <p>Repeta circuitul in functie de nivelul tau (verifica fisa <a href="http://www.slabestecuserban.ro/wp-content/uploads/2016/07/Plan-de-antrenament-saptamana-3.pdf" style="color:blue;">Programul de antrenament Saptamana 3</a>).</p>
                 </div>
 
-                <div class="embed-responsive embed-responsive-16by9 video-section">
-                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/175084821"></iframe>
-                </div>
+                {include "partials/video.tpl"
+                    video_link="https://player.vimeo.com/video/175084821"}
 
                 <strong>Circuitul 1</strong>
                 <ul class="exercise-section">

@@ -1,27 +1,28 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-10-09 21:27:17
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-02 20:02:36
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\membership\membership_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59dbe9b5d53b93_17130752',
+  'unifunc' => 'content_5a2306dc0e43d1_98742599',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '2138aa5612f526196a8b5a15ea4af0a57e346162' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\membership\\membership_layout.tpl',
-      1 => 1507584309,
+      1 => 1512244952,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:layouts/membership/membership_navigation.tpl' => 1,
+    'file:partials/notification.tpl' => 1,
   ),
 ),false)) {
-function content_59dbe9b5d53b93_17130752 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a2306dc0e43d1_98742599 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -30,6 +31,11 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
     <head>
         <title><?php echo $_smarty_tpl->tpl_vars['app_name']->value;?>
 </title>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+        <!-- Fonts -->
+        
+
         <?php echo '<script'; ?>
  src="https://unpkg.com/popper.js"><?php echo '</script'; ?>
 >
@@ -48,7 +54,20 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
  src="https://unpkg.com/axios/dist/axios.min.js"><?php echo '</script'; ?>
 >
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
         <style>
+            @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+            @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
+            @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
+            .small-title {
+                /*font-family: 'Indie Flower', cursive;*/
+            }
+
+            .page-title {
+                font-family: 'Kaushan Script', cursive;
+            }
+
             body {
 
             }
@@ -261,8 +280,15 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
                 </div>
                 
                 <div class="col-xs-12 col-sm-12" id="main">
+
+                    <div class="mt-5 d-lg-none">
+                        <?php $_smarty_tpl->_subTemplateRender("file:partials/notification.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('message'=>"Acceseaza celelalte pagini din meniul <i class='fa fa-bars' aria-hidden='true'></i>",'type'=>"primary"), 0, false);
+?>
+
+                    </div>
+
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_66896761559dbe9b5d43039_03554220', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_242664215a2306dc0d5da8_38277163', "body");
 ?>
 
 
@@ -311,12 +337,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 <body>
 <?php }
 /* {block "body"} */
-class Block_66896761559dbe9b5d43039_03554220 extends Smarty_Internal_Block
+class Block_242664215a2306dc0d5da8_38277163 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_66896761559dbe9b5d43039_03554220',
+    0 => 'Block_242664215a2306dc0d5da8_38277163',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

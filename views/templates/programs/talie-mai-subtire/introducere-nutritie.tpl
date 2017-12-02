@@ -4,9 +4,9 @@
     <div class="row">
         <div class="jumbotron">
             <div class="program-section">
-                <h1 class="display-3">Introducere in nutritie</h1>
-                <p class="lead">Antrenamentul fara nutritie este ca fotbalul fara minge...</p>
-                <hr class="my-4">
+                {include "partials/page-title.tpl"
+                    title="Introducere in nutritie"
+                    sub_title="Antrenamentul fara nutritie este ca fotbalul fara minge..."}
 
                 <div class="text-section">
                     <p>Inainte de a incepe programul Talie mai subtire, urmareste videoclipul de mai jos, in care iti explicam pas cu pas cum sa urmezi planul alimentar din cadrul programului.</p>
@@ -14,9 +14,8 @@
                     <p>Hai sa incepem impreuna aceasta calatorie!</p>
                 </div>
 
-                <div class="embed-responsive embed-responsive-16by9 video-section">
-                    <iframe class="embed-responsive-item" src="https://player.vimeo.com/video/175209848"></iframe>
-                </div>
+                {include "partials/video.tpl"
+                    video_link="https://player.vimeo.com/video/175209848"}
 
             </div>
         </div>

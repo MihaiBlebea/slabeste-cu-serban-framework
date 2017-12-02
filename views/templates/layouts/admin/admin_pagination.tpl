@@ -10,7 +10,13 @@
             </li>
         {/if}
         {for $min=1 to $paginateCount}
-            <li class="page-item"><a class="page-link" href="{$app_path}/admin/{$path_item}?page={$min}">{$min}</a></li>
+            {if ($min > $previousPage - 5 && $min < $previousPage + 5)}
+                {if ($min == $previousPage + 1)}
+                    <li class="page-item"><a class="page-link" href="{$app_path}/admin/{$path_item}?page={$min}"><strong>{$min}</strong></a></li>
+                {else}
+                    <li class="page-item"><a class="page-link" href="{$app_path}/admin/{$path_item}?page={$min}">{$min}</a></li>
+                {/if}
+            {/if}
         {/for}
         {if $nextPage < $paginateCount + 1}
             <li class="page-item">

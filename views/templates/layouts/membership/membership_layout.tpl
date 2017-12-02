@@ -17,8 +17,6 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
         <style>
-            @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
-            @import url('https://fonts.googleapis.com/css?family=Berkshire+Swash');
             @import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
 
             .small-title {

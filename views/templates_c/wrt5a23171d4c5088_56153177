@@ -1,11 +1,11 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-02 21:12:01
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-02 21:11:57
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\admin\admin_layout.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a231721517fd8_23264603',
+  'unifunc' => 'content_5a23171d4bc3e6_72567681',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:layouts/admin/admin_navigation.tpl' => 1,
   ),
 ),false)) {
-function content_5a231721517fd8_23264603 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a23171d4bc3e6_72567681 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -140,24 +140,24 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 
 
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2906794385a231721514598_80282995', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17362483975a23171d4ae0d8_29720148', "body");
 ?>
 
 
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16832210895a231721516ab4_56891996', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5272179275a23171d4b63b3_44628784', "script");
 ?>
 
     </body>
 <body>
 <?php }
 /* {block "body"} */
-class Block_2906794385a231721514598_80282995 extends Smarty_Internal_Block
+class Block_17362483975a23171d4ae0d8_29720148 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_2906794385a231721514598_80282995',
+    0 => 'Block_17362483975a23171d4ae0d8_29720148',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -169,12 +169,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_16832210895a231721516ab4_56891996 extends Smarty_Internal_Block
+class Block_5272179275a23171d4b63b3_44628784 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_16832210895a231721516ab4_56891996',
+    0 => 'Block_5272179275a23171d4b63b3_44628784',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -1,6 +1,8 @@
 
 <html>
     <head>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+        
         <title>{$app_name}</title>
         <script src="https://unpkg.com/popper.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>

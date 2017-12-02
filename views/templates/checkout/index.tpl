@@ -1,7 +1,7 @@
 {extends file='layouts/checkout_layout.tpl'}
 
 {block name="nav"}
-    <div class="nav">
+    <div class="nav animated slideInDown">
         <img style="display:block;margin:auto;max-width: 120px;" src="{$app_path}/img/logos/logo_site.png" />
     </div>
 
@@ -60,7 +60,7 @@
             </div>
             <div class="col-sm-12 col-md-6">
                 <p class="text-center program-name">Programul {$program->program_name}</p>
-                <img style="width:100%" class="mb-3" src="{$app_path}/{$program->program_image}" />
+                <img style="width:100%" class="mb-3 animated fadeIn" src="{$app_path}/{$program->program_image}" />
 
                 <div class="row">
                     {if $discount == false}

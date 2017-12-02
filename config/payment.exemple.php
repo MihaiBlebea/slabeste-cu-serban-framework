@@ -14,4 +14,14 @@ return [
 
     ],
 
+    "BraintreeSandbox"  => [
+
+        'environment'       => 'production',
+        'merchantId'        => '',
+        'publicKey'         => '',
+        'privateKey'        => '',
+        'merchantAccountId' => ''
+
+    ],
+
 ];

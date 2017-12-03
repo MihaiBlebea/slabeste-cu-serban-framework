@@ -14,28 +14,28 @@
                 <form id="checkout-form" method="post" action="{$app_path}/checkout/payment">
                     <div class="form-group">
                         <label>Nume:</label>
-                        <input id="first-name" name="firstName" onkeyup="validateFirstName('first-name');" type="text" class="form-control" placeholder="ex. Popescu">
+                        <input id="first-name" name="firstName" onkeyup="validateFirstName('first-name');" type="text" class="form-control" placeholder="ex. Popescu" required>
                         <div class="invalid-feedback">
                             Numele de familie trebuie sa aiba mai mult de 3 litere, dar nu spatii libere.
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Prenume:</label>
-                        <input id="last-name" name="lastName" onkeyup="validateFirstName('last-name');" type="text" class="form-control" placeholder="ex. Maria">
+                        <input id="last-name" name="lastName" onkeyup="validateFirstName('last-name');" type="text" class="form-control" placeholder="ex. Maria" required>
                         <div class="invalid-feedback">
                             Numele mic trebuie sa aiba mai mult de 3 litere, dar nu spatii libere.
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Email:</label>
-                        <input id="email" name="email" onkeyup="validateEmail('email');" type="email" class="form-control" placeholder="">
+                        <input id="email" name="email" onkeyup="validateEmail('email');" type="email" class="form-control" placeholder="" required>
                         <div class="invalid-feedback">
                             Adresa de email trebuie sa fie una valida.
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Telefon:</label>
-                        <input id="phone" name="phone" type="text" class="form-control" placeholder="">
+                        <input id="phone" name="phone" type="text" class="form-control" placeholder="" required>
                     </div>
                     <div class="alert alert-success" role="alert">
                         Plateste cu cardul apasand butonul "Cumpara acum" sau prin PayPal

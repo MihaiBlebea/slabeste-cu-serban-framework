@@ -1,30 +1,31 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-03 15:13:45
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-03 17:09:07
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\landing\provocare-start.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a2414a9bf5a95_03135375',
+  'unifunc' => 'content_5a242fb39dec13_00605769',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '85485a0ce1b400708073eb6d3d42f9a4dcf95caa' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\landing\\provocare-start.tpl',
-      1 => 1512313987,
+      1 => 1512320940,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:partials/modal-lead-two-fields-no-img.tpl' => 1,
+    'file:partials/landing-card-offer.tpl' => 1,
     'file:partials/landing-steps.tpl' => 1,
     'file:partials/landing-testimonial-left.tpl' => 2,
     'file:partials/landing-testimonial-right.tpl' => 1,
   ),
 ),false)) {
-function content_5a2414a9bf5a95_03135375 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a242fb39dec13_00605769 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -37,23 +38,23 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "../configs
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1060788765a2414a9bc45d3_61019512', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14704139685a242fb3916086_53551502', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15581378625a2414a9bf4660_47668413', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_14090321875a242fb39dc1b6_11041674', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/landing/landing_layout.tpl');
 }
 /* {block "body"} */
-class Block_1060788765a2414a9bc45d3_61019512 extends Smarty_Internal_Block
+class Block_14704139685a242fb3916086_53551502 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_1060788765a2414a9bc45d3_61019512',
+    0 => 'Block_14704139685a242fb3916086_53551502',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -72,14 +73,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="col-md-6 ml-md-auto">
                     <div class="card">
 
-                        <div class="card-body">
-                            <h4 class="offer-text-1"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'page_main_title');?>
-</h4>
-                            <h4 class="offer-text-2"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'page_sub_title');?>
-</h4>
-                            <button data-toggle="modal" data-target="#modalRegister" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;"><?php echo $_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'cta_page');?>
-</button>
-                        </div>
+                        
+                        <?php $_smarty_tpl->_subTemplateRender("file:partials/landing-card-offer.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('title'=>$_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'page_main_title'),'sub_title'=>$_smarty_tpl->smarty->ext->configLoad->_getConfigVariable($_smarty_tpl, 'page_sub_title')), 0, false);
+?>
+
 
                     </div>
                 </div>
@@ -153,12 +150,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_15581378625a2414a9bf4660_47668413 extends Smarty_Internal_Block
+class Block_14090321875a242fb39dc1b6_11041674 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_15581378625a2414a9bf4660_47668413',
+    0 => 'Block_14090321875a242fb39dc1b6_11041674',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

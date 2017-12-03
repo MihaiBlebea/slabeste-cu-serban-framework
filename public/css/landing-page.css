@@ -147,3 +147,27 @@ footer {
     display: flex;
     justify-content: flex-end;
 }
+
+@media screen and (max-width: 780px) {
+    .offer-text-1 {
+        font-size:3em;
+    }
+    .offer-text-2 {
+        font-size:2em;
+    }
+    .offer-text-3 {
+        font-size:2em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .offer-text-1 {
+        font-size:2em;
+    }
+    .offer-text-2 {
+        font-size:1em;
+    }
+    .offer-text-3 {
+        font-size:1em;
+    }
+}

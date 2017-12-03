@@ -8,7 +8,7 @@
             <p>{$content}</p>
         </div>
     </div>
-    <div class="col-md-3 col-sm-6 col-xs-12 d-none">
+    <div class="col-md-3 col-sm-6 col-xs-12 d-none d-md-block d-sm-block">
         <img class="testimonial-image" src="{$image}" alt="Generic placeholder image">
     </div>
 </div>

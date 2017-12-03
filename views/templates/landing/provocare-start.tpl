@@ -15,11 +15,14 @@
                 <div class="col-md-6 ml-md-auto">
                     <div class="card">
 
-                        <div class="card-body">
+                        {* <div class="card-body">
                             <h4 class="offer-text-1">{#page_main_title#}</h4>
                             <h4 class="offer-text-2">{#page_sub_title#}</h4>
                             <button data-toggle="modal" data-target="#modalRegister" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;">{#cta_page#}</button>
-                        </div>
+                        </div> *}
+                        {include "partials/landing-card-offer.tpl"
+                            title     = #page_main_title#
+                            sub_title = #page_sub_title#}
 
                     </div>
                 </div>

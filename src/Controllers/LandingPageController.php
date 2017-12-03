@@ -12,11 +12,21 @@ use Framework\Alias\Router;
 
 class LandingPageController
 {
-    public function landing(Program $program, Landing $landing)
+    public function landing(Program $program, Request $request)
     {
-        Template::setAssign([
-            "landing" => $landing
-        ])->setDisplay($landing->template);
+        $lp = $request->out("lp");
+        if($lp)
+        {
+            $landing = new Landing();
+            $landing = $landing->where("code", "=", $lp)->where("program_tag", "=", $program->program_tag)->selectOne();
+            if($landing)
+            {
+                return Template::setAssign([
+                    "landing" => $landing
+                ])->setDisplay($landing->template);
+            }
+        }
+        return $this->notFound();
     }
 
     public function notFound()
@@ -193,13 +203,20 @@ class LandingPageController
     // Catch the data from autoresponder that come from the landing page
     public function autoresponder(Request $request)
     {
+        $name = $request->out("name");
+        $email = $request->out("email");
+        $redirect = $request->out("redirect");
+        $code = $request->out("code");
+        $program_tag = $request->out("program_tag");
+
         // Get the landing page that called the autoresponder
         $landing = new Landing();
-        $landing = $landing->where("code", "=", $request->out("page_code"))->selectOne();
+        $landing = $landing->where("code", "=", $code)->where("program_tag", "=", $program_tag)->selectOne();
 
         // Store the new autoresponder client
+
         $autoresponder = new Autoresponder();
-        $contactId = $autoresponder->addToList($landing->autoresponder_list, $request->out("name"), $request->out("email"));
+        $contactId = $autoresponder->addToList($landing->autoresponder_list, $name, $email);
         if($contactId !== false)
         {
             // Add new user to an automation
@@ -207,7 +224,7 @@ class LandingPageController
             if($result_code->result_code == 0)
             {
                 // If automation fails then return to the landing page
-                Router::goToUrl("landing/" . $landing->program_tag . "/" . $landing->code);
+                header('Location: ' . $_SERVER["HTTP_REFERER"]);
             } else {
                 // Update lead counter
                 $leadCount = $landing->lead_count + 1;
@@ -215,10 +232,17 @@ class LandingPageController
                     "lead_count" => $leadCount
                 ]);
                 // If automation is successful then go to the database link
-                Router::goToUrl("landing/" . $landing->link);
+                if($redirect == 'false')
+                {
+                    // Go to path specified in the database
+                    Router::goToUrl("landing/" . $landing->link);
+                } else {
+                    // Go to specific page specified in the form
+                    header('Location: ' . $redirect);
+                }
             }
         }
         // If contact adding fails then go back to the landing page
-        Router::goToUrl("landing/" . $landing->program_tag . "/" . $landing->code);
+        header('Location: ' . $_SERVER["HTTP_REFERER"]);
     }
 }

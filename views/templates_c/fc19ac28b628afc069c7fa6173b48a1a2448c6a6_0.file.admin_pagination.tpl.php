@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-02 21:16:58
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-03 13:45:30
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\admin\admin_pagination.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a23184aabca96_41632543',
+  'unifunc' => 'content_5a23fffa113463_77487299',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'fc19ac28b628afc069c7fa6173b48a1a2448c6a6' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\admin\\admin_pagination.tpl',
-      1 => 1512249416,
+      1 => 1512249771,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a23184aabca96_41632543 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a23fffa113463_77487299 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <nav class="row justify-content-center" aria-label="Page navigation example">
@@ -42,11 +42,19 @@ if ($_smarty_tpl->tpl_vars['min']->total > 0) {
 for ($_smarty_tpl->tpl_vars['min']->value = 1, $_smarty_tpl->tpl_vars['min']->iteration = 1;$_smarty_tpl->tpl_vars['min']->iteration <= $_smarty_tpl->tpl_vars['min']->total;$_smarty_tpl->tpl_vars['min']->value += $_smarty_tpl->tpl_vars['min']->step, $_smarty_tpl->tpl_vars['min']->iteration++) {
 $_smarty_tpl->tpl_vars['min']->first = $_smarty_tpl->tpl_vars['min']->iteration == 1;$_smarty_tpl->tpl_vars['min']->last = $_smarty_tpl->tpl_vars['min']->iteration == $_smarty_tpl->tpl_vars['min']->total;?>
             <?php if (($_smarty_tpl->tpl_vars['min']->value > $_smarty_tpl->tpl_vars['previousPage']->value-5 && $_smarty_tpl->tpl_vars['min']->value < $_smarty_tpl->tpl_vars['previousPage']->value+5)) {?>
-            <li class="page-item"><a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+                <?php if (($_smarty_tpl->tpl_vars['min']->value == $_smarty_tpl->tpl_vars['previousPage']->value+1)) {?>
+                    <li class="page-item"><a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/admin/<?php echo $_smarty_tpl->tpl_vars['path_item']->value;?>
+?page=<?php echo $_smarty_tpl->tpl_vars['min']->value;?>
+"><strong><?php echo $_smarty_tpl->tpl_vars['min']->value;?>
+</strong></a></li>
+                <?php } else { ?>
+                    <li class="page-item"><a class="page-link" href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /admin/<?php echo $_smarty_tpl->tpl_vars['path_item']->value;?>
 ?page=<?php echo $_smarty_tpl->tpl_vars['min']->value;?>
 "><?php echo $_smarty_tpl->tpl_vars['min']->value;?>
 </a></li>
+                <?php }?>
             <?php }?>
         <?php }
 }

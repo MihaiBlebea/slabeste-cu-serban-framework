@@ -3,9 +3,6 @@
 // Main home route "/"
 $this->get("", "App\\Controllers\\LoginController@getLogin")->as("get.login.page");
 
-// Landing page routes
-$this->get("landing", "App\\Controllers\\LandingPageController@landing")->as("landing.page");
-
 // 404 page not found
 $this->get("404", "App\\Controllers\\LandingPageController@notFound")->as("404.page");
 
@@ -167,11 +164,8 @@ $this->group([
     "prefix" => "landing"
 ]);
 
-$this->get(":program/:code", "App\\Controllers\\LandingPageController@landing")
-     ->bind([
-         "program" => "Program",
-         "code"    => "Landing"
-     ])
+$this->get(":tag", "App\\Controllers\\LandingPageController@landing")
+     ->bind(["tag" => "Program"])
      ->as("landing.page")
      ->belongsTo("landing-group");
 

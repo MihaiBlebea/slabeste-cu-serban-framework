@@ -24,9 +24,22 @@ class ClientController
         } else {
             $page = 0;
         }
+        // Get the total number of clients
+        $user = new User();
+        $count = $user->count();
+        $limit = 10;
+
+        $pages = $count / $limit;
+        if(is_float($pages))
+        {
+            $pages = intval($pages) + 1;
+        }
+
+        // Get the paginated users
+        $users = $user->sortBy("regdate", "DESC")->limitBy($limit, $limit * $page)->selectAll();
 
         $managerPrograms = new NrOfProgramsBoughtManager();
-        $users = $managerPrograms->run("");
+        $users = $managerPrograms->run($users);
         $managerMoney = new MoneySpentPerUserManager();
         $users = $managerMoney->run($users);
 
@@ -35,11 +48,11 @@ class ClientController
             $user->index = $index + 1;
         }
 
-        $paginated = array_chunk($users, 10);
+        // $paginated = array_chunk($users, 10);
 
         Template::setAssign([
-            "users"         => $paginated[$page],
-            "paginateCount" => count($paginated),
+            "users"         => $users,
+            "paginateCount" => $pages,
             "previousPage"  => $page,
             "nextPage"      => $page + 2,
             "error"         => false
@@ -125,32 +138,31 @@ class ClientController
             ]);
         };
 
-        // Process users
-        $manager = new NrOfProgramsBoughtManager();
-        $users = $manager->run("");
-
-        Template::setAssign([
-            "users"        => $users,
-            'error'        => true,
-            'errorType'    => 'success',
-            'errorMessage' => 'The client has been updated.'
-        ])->setDisplay("admin/clients.tpl");
+        // // Process users
+        // $manager = new NrOfProgramsBoughtManager();
+        // $users = $manager->run(false);
+        //
+        // Template::setAssign([
+        //     "users"        => $users,
+        //     "paginateCount" => count($paginated),
+        //     "previousPage"  => $page,
+        //     "nextPage"      => $page + 2,
+        //     'error'        => true,
+        //     'errorType'    => 'success',
+        //     'errorMessage' => 'The client has been updated.'
+        // ])->setDisplay("admin/clients.tpl");
+        $this->clients();
     }
 
-    public function delete(User $user)
+    public function delete($user)
     {
+        dd('ceva');
         $account = new Account();
         $accounts = $account->where("username", "=", $user->username)->delete();
 
         $user->delete();
 
-        $manager = new NrOfProgramsBoughtManager();
-        $users = $manager->run("");
-
-        Template::setAssign([
-            "users" => $users,
-            "error" => false
-        ])->setDisplay("admin/clients.tpl");
+        $this->clients();
     }
 
     public function getCreate()
@@ -208,15 +220,16 @@ class ClientController
         $listenerEmailClient = ListenerFactory::build("NewClientEmailToClient");
         $event->attach($listenerEmailAdmin)->attach($listenerEmailClient)->trigger($payloadNotification);
 
-        $manager = new NrOfProgramsBoughtManager();
-        $users = $manager->run("");
-
-        Template::setAssign([
-            "users"        => $users,
-            'error'        => true,
-            'errorType'    => 'success',
-            'errorMessage' => 'The client has been created.'
-        ])->setDisplay("admin/clients.tpl");
+        // $manager = new NrOfProgramsBoughtManager();
+        // $users = $manager->run("");
+        //
+        // Template::setAssign([
+        //     "users"        => $users,
+        //     'error'        => true,
+        //     'errorType'    => 'success',
+        //     'errorMessage' => 'The client has been created.'
+        // ])->setDisplay("admin/clients.tpl");
+        $this->clients();
     }
 
 }

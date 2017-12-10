@@ -11,8 +11,16 @@ class NrOfProgramsBoughtManager implements ManagerInterface
 {
 	public function run($payload)
 	{
-		// Get all users who bought programs
-		$users = $this->getAllUsers();
+		// Check if users are passed as payload
+		if($payload == false)
+		{
+			// Get all users who bought programs
+			$users = $this->getAllUsers();
+		} else {
+			// IF users are passed as payload then asssign then to $users
+			$users = $payload;
+		}
+
 		// Add the number of programs bought to user MongoDeleteBatch
 		if($users !== [])
 		{
@@ -29,7 +37,7 @@ class NrOfProgramsBoughtManager implements ManagerInterface
 	private function getAllUsers()
 	{
 		$user = new User();
-		return $user->selectAll();
+		return $user->sortBy("regdate", "DESC")->limitBy(10)->selectAll();
 	}
 
 	private function getNrOfProgramsBought($user)

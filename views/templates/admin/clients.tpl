@@ -34,7 +34,7 @@
                 <hr />
 
                 <!-- Paginate notification start -->
-                {include "layouts/admin/admin_paginate_notification.tpl"}
+                {include "partials/admin-paginate-notification.tpl"}
                 <!-- Paginate notification end -->
 
                 <table class="table">
@@ -66,7 +66,7 @@
 
                 <!-- Insert pagination here -->
                 <!-- Pagination start -->
-                {include "layouts/admin/admin_pagination.tpl" path_item="clients"}
+                {include "partials/admin-pagination.tpl" path_item="clients"}
                 <!-- Pagination end -->
                 <hr />
 

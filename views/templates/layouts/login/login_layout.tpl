@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-        
+
         <title>{$app_name}</title>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/popper.js"></script>
@@ -21,10 +21,17 @@
             }
             a {
                 text-decoration: none;
-                /* color: #fff; */
+                color: white;
             }
             a:hover {
-                /* color: yellow; */
+                color: yellow;
+            }
+            a.card-link {
+                color: #0A82C5;
+            }
+            a.card-link:hover {
+                color: #0A82C5;
+                font-weight: bold;
             }
             .nav {
                 background-color: #0A82C5;

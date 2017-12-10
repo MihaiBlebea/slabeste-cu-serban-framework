@@ -22,7 +22,7 @@ class TransactionController
         }
 
         $trans = new Transaction();
-        $trans = $trans->selectAll();
+        $trans = $trans->sortBy('reg_date', 'DESC')->selectAll();
 
         // Calculate sum of money
         $totalValue = 0;
@@ -47,7 +47,7 @@ class TransactionController
 
         // Apply pagination here
         $paginated = array_chunk($trans, 10);
-        
+
         // Send informations to view
         Template::setAssign([
             "transactions"        => $paginated[$page],

@@ -39,7 +39,7 @@ class OwnedProgramsManager implements ManagerInterface
 	private function getAccounts($session)
 	{
 		$account = new Account();
-		$accounts = $account->where("username", "=", $session->getContent())->select();
+		$accounts = $account->where("username", "=", $session->getContent())->sortBy('regdate', 'ASC')->select();
 		return array_column($accounts, 'program_tag');
 	}
 }

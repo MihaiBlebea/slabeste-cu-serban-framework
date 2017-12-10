@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-11-05 15:56:54
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-10 13:34:02
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\checkout\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59ff34c6cebe63_51518299',
+  'unifunc' => 'content_5a2d37cacc8047_93726286',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a41c4701d17c0ff69befb56a705dfba03f2a87f' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\checkout\\index.tpl',
-      1 => 1509897410,
+      1 => 1512319682,
       2 => 'file',
     ),
   ),
@@ -20,35 +20,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59ff34c6cebe63_51518299 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a2d37cacc8047_93726286 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_204683668259ff34c6cbe8d9_96566236', "nav");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2114717595a2d37ca894cf8_51220027', "nav");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_156093817059ff34c6cd4548_59841431', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3728646265a2d37cab133a6_37032085', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9958351559ff34c6cea929_45427058', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11956504975a2d37cacc62f2_54567099', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/checkout_layout.tpl');
 }
 /* {block "nav"} */
-class Block_204683668259ff34c6cbe8d9_96566236 extends Smarty_Internal_Block
+class Block_2114717595a2d37ca894cf8_51220027 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'nav' => 
   array (
-    0 => 'Block_204683668259ff34c6cbe8d9_96566236',
+    0 => 'Block_2114717595a2d37ca894cf8_51220027',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,12 +64,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "nav"} */
 /* {block "body"} */
-class Block_156093817059ff34c6cd4548_59841431 extends Smarty_Internal_Block
+class Block_3728646265a2d37cab133a6_37032085 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_156093817059ff34c6cd4548_59841431',
+    0 => 'Block_3728646265a2d37cab133a6_37032085',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -82,28 +82,28 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 /checkout/payment">
                     <div class="form-group">
                         <label>Nume:</label>
-                        <input id="first-name" name="firstName" onkeyup="validateFirstName('first-name');" type="text" class="form-control" placeholder="ex. Popescu">
+                        <input id="first-name" name="firstName" onkeyup="validateFirstName('first-name');" type="text" class="form-control" placeholder="ex. Popescu" required>
                         <div class="invalid-feedback">
                             Numele de familie trebuie sa aiba mai mult de 3 litere, dar nu spatii libere.
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Prenume:</label>
-                        <input id="last-name" name="lastName" onkeyup="validateFirstName('last-name');" type="text" class="form-control" placeholder="ex. Maria">
+                        <input id="last-name" name="lastName" onkeyup="validateFirstName('last-name');" type="text" class="form-control" placeholder="ex. Maria" required>
                         <div class="invalid-feedback">
                             Numele mic trebuie sa aiba mai mult de 3 litere, dar nu spatii libere.
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Email:</label>
-                        <input id="email" name="email" onkeyup="validateEmail('email');" type="email" class="form-control" placeholder="">
+                        <input id="email" name="email" onkeyup="validateEmail('email');" type="email" class="form-control" placeholder="" required>
                         <div class="invalid-feedback">
                             Adresa de email trebuie sa fie una valida.
                         </div>
                     </div>
                     <div class="form-group">
                         <label>Telefon:</label>
-                        <input id="phone" name="phone" type="text" class="form-control" placeholder="">
+                        <input id="phone" name="phone" type="text" class="form-control" placeholder="" required>
                     </div>
                     <div class="alert alert-success" role="alert">
                         Plateste cu cardul apasand butonul "Cumpara acum" sau prin PayPal
@@ -196,12 +196,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_9958351559ff34c6cea929_45427058 extends Smarty_Internal_Block
+class Block_11956504975a2d37cacc62f2_54567099 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_9958351559ff34c6cea929_45427058',
+    0 => 'Block_11956504975a2d37cacc62f2_54567099',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

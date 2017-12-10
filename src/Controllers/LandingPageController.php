@@ -44,20 +44,29 @@ class LandingPageController
             $page = 0;
         }
 
+        // Process pagination
         $landing = new Landing();
-        $landings = $landing->selectAll();
+        $count = $landing->count();
+        $limit = 10;
+
+        $pages = $count / $limit;
+        if(is_float($pages))
+        {
+            $pages = intval($pages) + 1;
+        }
+
+        // Get the paginated landign pages
+        $landings = $landing->sortBy('reg_date', 'DESC')->limitBy($limit, $limit * $page)->selectAll();
 
         foreach($landings as $index => $landing)
         {
-            $landing->index = $index + 1;
+            $landing->index = ($page * $limit) + $index + 1;
         }
-
-        $paginated = array_chunk($landings, 10);
 
         Template::setAssign([
             "error"         => false,
-            "landings"      => $paginated[$page],
-            "paginateCount" => count($paginated),
+            "landings"      => $landings,
+            "paginateCount" => $pages,
             "previousPage"  => $page,
             "nextPage"      => $page + 2,
         ])->setDisplay("admin/landings.tpl");
@@ -157,20 +166,34 @@ class LandingPageController
             $page = 0;
         }
 
+        // Process pagination
         $landing = new Landing();
-        $landings = $landing->where($mode, "=", $id)->select();
+        $count = $landing->count();
+        $limit = 10;
+
+        $pages = $count / $limit;
+        if(is_float($pages))
+        {
+            $pages = intval($pages) + 1;
+        }
+
+        // Get the paginated landign pages
+        $landings = $landing->where($mode, "=", $id)->sortBy('reg_date', 'DESC')->limitBy($limit, $limit * $page)->select();
 
         foreach($landings as $index => $landing)
         {
-            $landing->index = $index + 1;
+            $landing->index = ($page * $limit) + $index + 1;
         }
 
-        $paginated = array_chunk($landings, 10);
+        foreach($landings as $index => $landing)
+        {
+            $landing->index = ($page * $limit) + $index + 1;
+        }
 
         Template::setAssign([
             "error"    => false,
-            "landings" => $paginated[$page],
-            "paginateCount" => count($paginated),
+            "landings" => $landings,
+            "paginateCount" => $pages,
             "previousPage"  => $page,
             "nextPage"      => $page + 2,
         ])->setDisplay("admin/landings.tpl");

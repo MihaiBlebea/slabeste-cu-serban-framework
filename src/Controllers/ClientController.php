@@ -45,7 +45,7 @@ class ClientController
 
         foreach($users as $index => $user)
         {
-            $user->index = $index + 1;
+            $user->index = ($page * $limit) + $index + 1;
         }
 
         // $paginated = array_chunk($users, 10);

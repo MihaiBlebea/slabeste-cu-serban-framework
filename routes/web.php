@@ -36,6 +36,9 @@ $this->get("programs", "App\\Controllers\\ProductController@products")
      ->as("admin.products.page")
      ->belongsTo("admin-group");
 
+$this->get("program/create", "App\\Controllers\\ProductController@product")
+     ->belongsTo("admin-group");
+
 $this->get("program/:program", "App\\Controllers\\ProductController@product")
      ->bind(["program" => "Program"])
      ->as("admin.product.page")

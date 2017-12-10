@@ -12,7 +12,12 @@ class NrOfProgramSoldManager implements ManagerInterface
 	public function run($payload)
 	{
 		// Get all programs from database
-		$programs = $this->getAllActivePrograms();
+		if($payload == false)
+		{
+			$programs = $this->getAllActivePrograms();
+		} else {
+			$programs = $payload;
+		}
 
 		// Get all transactions associated with each programs
 		$transaction = new Transaction();
@@ -21,7 +26,6 @@ class NrOfProgramSoldManager implements ManagerInterface
 			$program->sold = $this->getAllTransactionsFor($transaction, $program);
 			// $program->sold = $nrSales;
 		}
-
 		// Return programs
 		return $programs;
 	}

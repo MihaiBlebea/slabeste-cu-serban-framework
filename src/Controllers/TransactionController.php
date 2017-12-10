@@ -21,8 +21,19 @@ class TransactionController
             $page = 0;
         }
 
+        // Process paginations
         $trans = new Transaction();
-        $trans = $trans->sortBy('reg_date', 'DESC')->selectAll();
+        $count = $trans->count();
+        $limit = 10;
+
+        $pages = $count / $limit;
+        if(is_float($pages))
+        {
+            $pages = intval($pages) + 1;
+        }
+
+        // Get the paginated transactions
+        $trans = $trans->sortBy('reg_date', 'DESC')->limitBy($limit, $limit * $page)->selectAll();
 
         // Calculate sum of money
         $totalValue = 0;
@@ -42,16 +53,13 @@ class TransactionController
                 $tran->lastName = $user->last_name;
             }
             // Add index to the object shadow property
-            $tran->index = $index + 1;
+            $tran->index = ($page * $limit) + $index + 1;
         }
-
-        // Apply pagination here
-        $paginated = array_chunk($trans, 10);
 
         // Send informations to view
         Template::setAssign([
-            "transactions"        => $paginated[$page],
-            "paginateCount"       => count($paginated),
+            "transactions"        => $trans,
+            "paginateCount"       => $pages,
             "previousPage"        => $page,
             "nextPage"            => $page + 2,
             "transaction_count"   => count($trans),

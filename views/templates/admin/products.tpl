@@ -44,6 +44,8 @@
                 {include "partials/admin-pagination.tpl" path_item="programs"}
                 <!-- Pagination end -->
 
+                <hr />
+                <a href="{$app_path}/admin/program/create" class="card-link">Create a new program</a><br />
             </div>
         </div>
     </div>

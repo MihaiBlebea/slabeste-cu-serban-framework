@@ -104,7 +104,7 @@
                         <a href="{$app_path}/admin/programs" class="card-link">Back to products</a><br />
                     </div>
                     <div class="col">
-                        <a href="{$app_path}/admin/program/delete/{$program->id}" class="card-link" style="color:red;float: right;">Delete program</a><br />
+                        <a href="{$app_path}/admin/program/delete/{$program->program_tag}" class="card-link" style="color:red;float: right;">Delete program</a><br />
                     </div>
                 <div class="row">
             </div>

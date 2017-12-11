@@ -87,5 +87,5 @@
 {/block}
 
 {block name="script"}
-
+    <script src="{$app_path}/../script-build/app/bundle.js"></script>
 {/block}

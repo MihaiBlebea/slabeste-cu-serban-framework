@@ -9,7 +9,16 @@
 
 {block name="body"}
     <div class="container-fluid">
-        <div class="row mb-5 animated fadeIn">
+        <div class="row mb-5">
+            <div class="col-sm-12 col-md-12">
+                {if $error == true}
+                    {include 'partials/notification.tpl'
+                        type="danger"
+                        message="Eroare! Plata nu a putut fi efectuata. Verifica datele si incearca din nou"}
+                {/if}
+            </div>
+        </div>
+        <div class="row mb-2 animated fadeIn">
             <div class="col-sm-12 col-md-6">
                 <form id="checkout-form" method="post" action="{$app_path}/checkout/payment">
                     <div class="form-group">

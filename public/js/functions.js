@@ -14,7 +14,7 @@ function checkIfLocalStorage()
 // Get the tracking code from the page URL
 function parseUrl()
 {
-    var params = window.location.href.split("/");
+    var params = window.location.href.split("?");
     var code = params[params.length - 1];
 
     if(code.length == 4)

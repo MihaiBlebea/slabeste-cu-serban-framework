@@ -19,6 +19,12 @@ class CheckoutController
 {
     public function index(Program $program, Request $request = null, $error = null)
     {
+        if($request !== null)
+        {
+            $error = ($request->out("error") !== null) ? true : false;
+        } else {
+            $error = false;
+        }
         // Set discount equal to false
         $discount = false;
 
@@ -47,7 +53,8 @@ class CheckoutController
             "program"         => $program,
             "discount"        => $discount,
             "discountPrice"   => isset($discountPrice) ? $discountPrice : $program->program_price,
-            "braintree_token" => $token
+            "braintree_token" => $token,
+            "error"           => $error
         ])->setDisplay("checkout/index.tpl");
     }
 
@@ -159,7 +166,14 @@ class CheckoutController
 
         } else {
             // Add tempalte for payment not processed, and send back to Checkout page
-            dd('Plata nu a fost efectuata');
+            $redirect = $_SERVER["HTTP_REFERER"];
+            if(strpos($redirect, "?") !== false)
+            {
+                $redirect .= '&error=true';
+            } else {
+                $redirect .= '?error=true';
+            }
+            header($redirect);
         }
 
         // Set up the event payload that's going to be sent to the user and to the admin

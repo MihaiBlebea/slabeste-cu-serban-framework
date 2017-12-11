@@ -12,16 +12,16 @@
 
                     <div class="mb-2">
                         <label class="form-control-label">Prenumele tau:</label>
-                        <input id="name" onkeyup="validateName();" type="text" class="form-control" name="name" placeholder="Maria" required>
+                        <input id="name" onkeyup="Mihai.validateName(event);" data-type="error" type="text" class="form-control" name="name" placeholder="Maria" required>
                         <div class="invalid-feedback">Numele trebuie sa contina mai mult de 3 litere</div>
                     </div>
 
                     <div class="mb-2">
                         <label class="form-control-label">Emailul tau:</label>
-                        <input id="email" onkeyup="validateEmail();" type="text" class="form-control" name="email" autocomplete="off" placeholder="@" required>
+                        <input id="email" onchange="" type="text" class="form-control" name="email" autocomplete="off" placeholder="@" required>
                         <div class="invalid-feedback">Emailul trebuie sa contina @ si sa aiba peste 7 litere</div>
                     </div>
-    
+
                     <input type="hidden" name="program_tag" value="{$landing->program_tag|default:'false'}">
                     <input type="hidden" name="code" value="{$landing->code|default:'false'}">
                     <input type="hidden" name="redirect" value="{$redirect|default:'false'}">
@@ -36,47 +36,47 @@
 </div>
 
 <script>
-    function validateName()
-    {
-        let name = document.getElementById('name');
-        name.classList.remove('is-invalid');
-        activateButton();
-
-        if(name.value.length < 3)
-        {
-            name.classList.add('is-invalid');
-            disableButton();
-        }
-    }
-
-    function validateEmail()
-    {
-        let email = document.getElementById('email');
-        email.classList.remove('is-invalid');
-        activateButton();
-
-        if(email.value.length < 7)
-        {
-            email.classList.add('is-invalid');
-            disableButton();
-        }
-
-        if(email.value.includes('@') == false)
-        {
-            email.classList.add('is-invalid');
-            disableButton();
-        }
-    }
-
-    function disableButton()
-    {
-        let button = document.getElementById('button');
-        button.disabled = true;
-    }
-
-    function activateButton()
-    {
-        let button = document.getElementById('button');
-        button.disabled = false;
-    }
+    // function validateName()
+    // {
+    //     let name = document.getElementById('name');
+    //     name.classList.remove('is-invalid');
+    //     activateButton();
+    //
+    //     if(name.value.length < 3)
+    //     {
+    //         name.classList.add('is-invalid');
+    //         disableButton();
+    //     }
+    // }
+    //
+    // function validateEmail()
+    // {
+    //     let email = document.getElementById('email');
+    //     email.classList.remove('is-invalid');
+    //     activateButton();
+    //
+    //     if(email.value.length < 7)
+    //     {
+    //         email.classList.add('is-invalid');
+    //         disableButton();
+    //     }
+    //
+    //     if(email.value.includes('@') == false)
+    //     {
+    //         email.classList.add('is-invalid');
+    //         disableButton();
+    //     }
+    // }
+    //
+    // function disableButton()
+    // {
+    //     let button = document.getElementById('button');
+    //     button.disabled = true;
+    // }
+    //
+    // function activateButton()
+    // {
+    //     let button = document.getElementById('button');
+    //     button.disabled = false;
+    // }
 </script>

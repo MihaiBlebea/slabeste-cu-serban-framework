@@ -1,0 +1,35 @@
+{
+    "name": "slabeste-cu-serban-framework",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "test",
+        "start": "node script-dev/index.js",
+        "build-dev": "webpack -d",
+        "build-prod": "webpack -p"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/SerbanBlebea/slabeste-cu-serban-framework.git"
+    },
+    "author": "Serban Blebea",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/SerbanBlebea/slabeste-cu-serban-framework/issues"
+    },
+    "homepage": "https://github.com/SerbanBlebea/slabeste-cu-serban-framework#readme",
+    "dependencies": {
+        "axios": "^0.17.1"
+    },
+    "devDependencies": {
+        "nodemon": "^1.12.1",
+        "webpack": "^3.8.1",
+        "webpack-dev-server": "^2.9.3",
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-preset-es2015": "^6.24.1",
+        "babel-preset-react": "^6.24.1",
+        "babel-preset-stage-2": "^6.24.1"
+    }
+}

@@ -20,6 +20,7 @@ class Landing extends Model
 	public $tags;
 	public $lead_count;
 	public $start_time;
+	public $reg_date;
 
 	public $landingPath = "landing";
 

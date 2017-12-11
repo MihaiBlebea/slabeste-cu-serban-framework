@@ -4,3 +4,4 @@
 /config/database.php
 /config/email.php
 /config/payment.php
+/node_modules/

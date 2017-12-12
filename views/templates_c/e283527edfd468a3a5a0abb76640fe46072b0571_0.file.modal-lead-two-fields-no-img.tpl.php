@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-11 23:17:41
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-12 23:25:03
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\partials\modal-lead-two-fields-no-img.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a2f1215576df7_67084032',
+  'unifunc' => 'content_5a30654f875798_79025306',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e283527edfd468a3a5a0abb76640fe46072b0571' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\partials\\modal-lead-two-fields-no-img.tpl',
-      1 => 1513034255,
+      1 => 1513120973,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a2f1215576df7_67084032 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a30654f875798_79025306 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -33,19 +33,22 @@ function content_5a2f1215576df7_67084032 (Smarty_Internal_Template $_smarty_tpl)
                 </button>
             </div>
             <div class="modal-body">
+                <div class="progress mb-4">
+                    <div id="progress-bar" class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="25" aria-valuemax="100" style="width: 25%"></div>
+                </div>
+
                 <form action="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /autoresponder/catch" method="POST">
-
                     <div class="mb-2">
                         <label class="form-control-label">Prenumele tau:</label>
-                        <input id="name" onkeyup="Mihai.validateName(event);" data-type="error" type="text" class="form-control" name="name" placeholder="Maria" required>
-                        <div class="invalid-feedback">Numele trebuie sa contina mai mult de 3 litere</div>
+                        <input id="name" onchange="Landing.validateName(event);" data-type="error" type="text" class="form-control" name="name" placeholder="Maria" required>
+                        <div class="invalid-feedback">Numele nu poate fi mai scurt de 3 litere</div>
                     </div>
 
                     <div class="mb-2">
                         <label class="form-control-label">Emailul tau:</label>
-                        <input id="email" onchange="" type="text" class="form-control" name="email" autocomplete="off" placeholder="@" required>
-                        <div class="invalid-feedback">Emailul trebuie sa contina @ si sa aiba peste 7 litere</div>
+                        <input id="email" data-error-message="Verifica adresa de email" onchange="Landing.validateEmail(event);" type="text" class="form-control" name="email" autocomplete="off" placeholder="@" required>
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <input type="hidden" name="program_tag" value="<?php echo (($tmp = @$_smarty_tpl->tpl_vars['landing']->value->program_tag)===null||$tmp==='' ? 'false' : $tmp);?>
@@ -56,7 +59,7 @@ function content_5a2f1215576df7_67084032 (Smarty_Internal_Template $_smarty_tpl)
 ">
 
                     <div class="mt-3">
-                        <button id="button" class="btn btn-primary" style="display:block;margin:auto;" type="submit"><?php echo $_smarty_tpl->tpl_vars['cta_modal']->value;?>
+                        <button id="button-confirm" class="btn btn-primary" style="display:block;margin:auto;" type="submit"><?php echo $_smarty_tpl->tpl_vars['cta_modal']->value;?>
 </button>
                     </div>
                 </form>

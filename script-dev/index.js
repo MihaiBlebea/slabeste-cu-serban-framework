@@ -1,4 +1,7 @@
-import Validator from './src/validate/validator.class.js';
+import validator from 'validator';
+import { incrementProgressBar,
+    disableButton,
+    enableButton } from './src/manipulate/manipulateForm.js';
 
 function isWorking()
 {
@@ -7,23 +10,38 @@ function isWorking()
 
 function validateName(event)
 {
-    let val = new Validator();
-    console.log(val);
-    console.log(event.target.value)
     let value = event.target.value;
+    let result = validator.isLength(value, {min: 3, max: undefined});
+    displayError(result);
+}
 
-    let result = val.value(value).rules({
-        required: true,
-        type: 'string',
-        length: {
-            min: 3,
-            max: 25
-        },
-    });
-    return result;
+function validateEmail(event)
+{
+    let value = event.target.value;
+    let result = validator.isEmail(value);
+    displayError(result);
+}
+
+function displayError(result)
+{
+    if(result !== true)
+    {
+        event.target.classList.add('is-invalid');
+        let message = event.target.dataset.errorMessage;
+        if(message !== undefined)
+        {
+            event.target.nextElementSibling.innerText = message;
+            disableButton('button-confirm');
+        }
+    } else {
+        event.target.classList.remove('is-invalid');
+        incrementProgressBar(15);
+        enableButton('button-confirm');
+    }
 }
 
 export {
     isWorking,
-    validateName
+    validateName,
+    validateEmail
 }

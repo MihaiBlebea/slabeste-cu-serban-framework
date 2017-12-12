@@ -8,18 +8,21 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{$app_path}/autoresponder/catch" method="POST">
+                <div class="progress mb-4">
+                    <div id="progress-bar" class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="25" aria-valuemax="100" style="width: 25%"></div>
+                </div>
 
+                <form action="{$app_path}/autoresponder/catch" method="POST">
                     <div class="mb-2">
                         <label class="form-control-label">Prenumele tau:</label>
-                        <input id="name" onkeyup="Mihai.validateName(event);" data-type="error" type="text" class="form-control" name="name" placeholder="Maria" required>
-                        <div class="invalid-feedback">Numele trebuie sa contina mai mult de 3 litere</div>
+                        <input id="name" onchange="Landing.validateName(event);" data-type="error" type="text" class="form-control" name="name" placeholder="Maria" required>
+                        <div class="invalid-feedback">Numele nu poate fi mai scurt de 3 litere</div>
                     </div>
 
                     <div class="mb-2">
                         <label class="form-control-label">Emailul tau:</label>
-                        <input id="email" onchange="" type="text" class="form-control" name="email" autocomplete="off" placeholder="@" required>
-                        <div class="invalid-feedback">Emailul trebuie sa contina @ si sa aiba peste 7 litere</div>
+                        <input id="email" data-error-message="Verifica adresa de email" onchange="Landing.validateEmail(event);" type="text" class="form-control" name="email" autocomplete="off" placeholder="@" required>
+                        <div class="invalid-feedback"></div>
                     </div>
 
                     <input type="hidden" name="program_tag" value="{$landing->program_tag|default:'false'}">
@@ -27,7 +30,7 @@
                     <input type="hidden" name="redirect" value="{$redirect|default:'false'}">
 
                     <div class="mt-3">
-                        <button id="button" class="btn btn-primary" style="display:block;margin:auto;" type="submit">{$cta_modal}</button>
+                        <button id="button-confirm" class="btn btn-primary" style="display:block;margin:auto;" type="submit">{$cta_modal}</button>
                     </div>
                 </form>
             </div>

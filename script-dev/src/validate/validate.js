@@ -1,16 +1,38 @@
-// import Validator from './validator.class.js';
+import validator from 'validator';
 
-function validateName()
+function validateName(event)
 {
-    console.log('altceva');
+    let value = event.target.value;
+    let result = validator.isLength(value, {min: 3, max: undefined});
+    displayError(result);
 }
 
-function validateEmail()
+function validateEmail(event)
 {
-    console.log('ceva');
+    let value = event.target.value;
+    let result = validator.isEmail(value);
+    displayError(result);
 }
 
-module.exports = {
-    validateEmail,
-    validateName
+function displayError(result)
+{
+    if(result !== true)
+    {
+        event.target.classList.add('is-invalid');
+        let message = event.target.dataset.errorMessage;
+        if(message !== undefined)
+        {
+            event.target.nextElementSibling.innerText = message;
+            disableButton('button-confirm');
+        }
+    } else {
+        event.target.classList.remove('is-invalid');
+        incrementProgressBar(15);
+        enableButton('button-confirm');
+    }
+}
+
+export {
+    validateName,
+    validateEmail
 }

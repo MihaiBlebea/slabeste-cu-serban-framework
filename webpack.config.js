@@ -10,7 +10,7 @@ var config = {
         path: dist + '/app',
         filename: 'bundle.js',
         publicPath: '/app/',
-        library: 'Mihai'
+        library: 'Landing'
     },
     module: {
         loaders: [

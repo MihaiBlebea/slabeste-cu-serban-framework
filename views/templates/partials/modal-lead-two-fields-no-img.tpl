@@ -9,19 +9,19 @@
             </div>
             <div class="modal-body">
                 <div class="progress mb-4">
-                    <div id="progress-bar" class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="25" aria-valuemax="100" style="width: 25%"></div>
+                    <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="25" aria-valuemax="100" style="width: 25%"></div>
                 </div>
 
                 <form action="{$app_path}/autoresponder/catch" method="POST">
                     <div class="mb-2">
                         <label class="form-control-label">Prenumele tau:</label>
-                        <input id="name" onchange="Landing.validateName(event);" data-type="error" type="text" class="form-control" name="name" placeholder="Maria" required>
+                        <input id="name" onkeyup="Landing.validateName(event);" data-type="error" type="text" class="form-control" name="name" placeholder="Maria" required>
                         <div class="invalid-feedback">Numele nu poate fi mai scurt de 3 litere</div>
                     </div>
 
                     <div class="mb-2">
                         <label class="form-control-label">Emailul tau:</label>
-                        <input id="email" data-error-message="Verifica adresa de email" onchange="Landing.validateEmail(event);" type="text" class="form-control" name="email" autocomplete="off" placeholder="@" required>
+                        <input id="email" data-error-message="Verifica adresa de email" onkeyup="Landing.validateEmail(event);" type="text" class="form-control" name="email" autocomplete="off" placeholder="@" required>
                         <div class="invalid-feedback"></div>
                     </div>
 

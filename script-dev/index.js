@@ -1,47 +1,39 @@
 import validator from 'validator';
-import { incrementProgressBar,
-    disableButton,
-    enableButton } from './src/manipulate/manipulateForm.js';
+import { disableButton,
+    enableButton } from './src/manipulate/form.js';
+import { validateName, validateEmail } from './src/validate/validate.js';
+import { setLocal, getLocal, removeLocal } from './src/store/storeLocal.js';
+import { getQuery,
+    getRoot,
+    getPathString,
+    getPathArray,
+    getRealPathArray } from './src/tracking/url.js';
+import { run, toServer } from './src/tracking/tracking.js';
 
 function isWorking()
 {
-    return 'Mihai is set and working';
+    let message = 'Landing Page bundle is set and working';
+    console.log(message)
+    return message;
 }
 
-function validateName(event)
-{
-    let value = event.target.value;
-    let result = validator.isLength(value, {min: 3, max: undefined});
-    displayError(result);
-}
-
-function validateEmail(event)
-{
-    let value = event.target.value;
-    let result = validator.isEmail(value);
-    displayError(result);
-}
-
-function displayError(result)
-{
-    if(result !== true)
-    {
-        event.target.classList.add('is-invalid');
-        let message = event.target.dataset.errorMessage;
-        if(message !== undefined)
-        {
-            event.target.nextElementSibling.innerText = message;
-            disableButton('button-confirm');
-        }
-    } else {
-        event.target.classList.remove('is-invalid');
-        incrementProgressBar(15);
-        enableButton('button-confirm');
-    }
-}
+run();
+isWorking();
 
 export {
+    setLocal,
+    getLocal,
+    removeLocal,
     isWorking,
+    disableButton,
+    enableButton,
     validateName,
-    validateEmail
+    validateEmail,
+    getQuery,
+    getRoot,
+    getPathString,
+    getPathArray,
+    getRealPathArray,
+    run,
+    toServer
 }

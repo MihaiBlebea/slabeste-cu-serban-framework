@@ -1,4 +1,5 @@
 import validator from 'validator';
+import { disableButton, enableButton } from '../manipulate/form.js';
 
 function validateName(event)
 {
@@ -27,7 +28,6 @@ function displayError(result)
         }
     } else {
         event.target.classList.remove('is-invalid');
-        incrementProgressBar(15);
         enableButton('button-confirm');
     }
 }

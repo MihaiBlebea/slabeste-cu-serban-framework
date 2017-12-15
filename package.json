@@ -21,6 +21,7 @@
     "homepage": "https://github.com/SerbanBlebea/slabeste-cu-serban-framework#readme",
     "dependencies": {
         "axios": "^0.17.1",
+        "scrollmonitor": "^1.2.4",
         "validator": "^9.2.0"
     },
     "devDependencies": {

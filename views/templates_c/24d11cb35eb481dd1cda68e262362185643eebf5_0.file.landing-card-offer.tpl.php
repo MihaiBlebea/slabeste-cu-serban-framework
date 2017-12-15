@@ -1,11 +1,11 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-03 17:09:08
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-15 21:18:29
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\partials\landing-card-offer.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a242fb42b7d62_49736247',
+  'unifunc' => 'content_5a343c25b978d9_85963694',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a242fb42b7d62_49736247 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a343c25b978d9_85963694 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="card-body">
     <h4 class="offer-text-1"><?php echo $_smarty_tpl->tpl_vars['title']->value;?>

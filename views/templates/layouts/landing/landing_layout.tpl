@@ -11,6 +11,7 @@
 
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" href="{$app_path}/css/social-media-buttons.css">
         <link rel="stylesheet" href="{$app_path}/css/landing-page.css">
@@ -25,9 +26,6 @@
 
         {include "partials/landing-footer.tpl"}
 
-        <script src="{$app_path}/js/functions.js"></script>
-        <script src="{$app_path}/js/localStorage.js"></script>
-        <script src="{$app_path}/js/tracking.js"></script>
         {block name="script"}
 
         {/block}

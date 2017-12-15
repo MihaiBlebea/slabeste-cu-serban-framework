@@ -1,4 +1,5 @@
 import validator from 'validator';
+import scrollMonitor from 'scrollMonitor';
 import { disableButton,
     enableButton } from './src/manipulate/form.js';
 import { validateName, validateEmail } from './src/validate/validate.js';
@@ -17,7 +18,16 @@ function isWorking()
     return message;
 }
 
-run();
+function isInView(id, callback)
+{
+    let item = document.getElementById(id);
+    let elementWatcher = scrollMonitor.create(item);
+    elementWatcher.enterViewport(function() {
+        console.log( 'I have entered the viewport' );
+        callback(item);
+    });
+}
+
 isWorking();
 
 export {
@@ -35,5 +45,6 @@ export {
     getPathArray,
     getRealPathArray,
     run,
-    toServer
+    toServer,
+    isInView
 }

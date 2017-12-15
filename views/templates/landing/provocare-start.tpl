@@ -10,16 +10,11 @@
         {include "partials/modal-lead-two-fields-no-img.tpl" cta_modal=#cta_modal#}
         <!-- Offer Start -->
 
-        <div class="background-offer">
+        <div class="background-offer" style="background-image: url('{#main_image#}')">
             <div class="row offer">
                 <div class="col-md-6 ml-md-auto">
-                    <div class="card">
+                    <div id="cta-1" class="card">
 
-                        {* <div class="card-body">
-                            <h4 class="offer-text-1">{#page_main_title#}</h4>
-                            <h4 class="offer-text-2">{#page_sub_title#}</h4>
-                            <button data-toggle="modal" data-target="#modalRegister" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;">{#cta_page#}</button>
-                        </div> *}
                         {include "partials/landing-card-offer.tpl"
                             title     = #page_main_title#
                             sub_title = #page_sub_title#}
@@ -48,16 +43,18 @@
                         <li class="benefit-item">{$benefitItem}</li>
                     {/foreach}
                 </ul>
-                <div class="jumbotron">
-                    <h3 class="col mb-4 text-center">{#cta_offer_1#}</h3>
-                    <button data-toggle="modal" data-target="#modalRegister" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;">{#cta_page#}</button>
+                <div id="cta-2" class="mb-5 mt-5">
+                    {include "partials/landing-call-to-action.tpl"
+                        title = "Inscrie-te gratuit"
+                        color = "btn-warning"
+                        cta = "Inscrie-te Acum!"}
                 </div>
             </div>
         </div>
         <!-- Benefits End -->
 
         <!-- Testimonials Start -->
-        <div id="testimonials" class="row testimonials">
+        <div id="testimonials" class="row mt-5 mb-5">
             <div class="testimonials">
                 {include "partials/landing-testimonial-left.tpl"
                     image   = "http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg"
@@ -75,17 +72,53 @@
                     image   = "http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg"
                     title   = "Diana a pierdut 10 kg"
                     content = "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."}
-                <div class="jumbotron">
-                    <h3 class="col mb-4 text-center">{#cta_offer_2#}</h3>
-                    <button data-toggle="modal" data-target="#modalRegister" type="button" class="col btn btn-warning btn-lg" style="margin:auto;margin-top:30px;display:block;">{#cta_page#}</button>
-                </div>
             </div>
         </div>
         <!-- Testimonials End -->
+        <div class="mb-5 mt-5">
+            <div id="cta-3">
+                {include "partials/landing-call-to-action.tpl"
+                    title = "Vrei si tu rezultate asemanatoare?"
+                    color = "btn-warning"
+                    cta   = "Inscrie-te aici!"}
+            </div>
+        </div>
 
+        <!-- About the author section -->
+        <div class="mb-5">
+            {include "partials/about-author.tpl" banner = "true"}
+        </div>
+        <!-- About the author section -->
+
+        <div class="row dark-blue">
+            <div id="cta-4" class="col pt-5 pb-5">
+                {include "partials/landing-call-to-action.tpl"
+                    title = #cta_offer_2#
+                    color = "btn-warning"
+                    cta = "Inscrie-te Acum!"}
+            </div>
+        </div>
     </div>
 {/block}
 
 {block name="script"}
     <script src="{$app_path}/../script-build/app/bundle.js"></script>
+    <script>
+        Landing.isInView('cta-1', function(item) {
+            item.classList.add('animated', 'bounceInDown');
+        });
+
+        Landing.isInView('cta-2', function(item) {
+            item.classList.add('animated', 'bounceInDown');
+        });
+
+        Landing.isInView('cta-3', function(item) {
+            item.classList.add('animated', 'bounceInDown');
+        });
+
+        Landing.isInView('cta-4', function(item) {
+            item.classList.add('animated', 'tada');
+        });
+
+    </script>
 {/block}

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-13 21:30:24
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-15 21:57:58
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\partials\modal-lead-two-fields-no-img.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a319bf0b941f8_70272905',
+  'unifunc' => 'content_5a34456681d716_85525089',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e283527edfd468a3a5a0abb76640fe46072b0571' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\partials\\modal-lead-two-fields-no-img.tpl',
-      1 => 1513200568,
+      1 => 1513375075,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a319bf0b941f8_70272905 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a34456681d716_85525089 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div class="modal fade" id="modalRegister" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -59,7 +59,7 @@ function content_5a319bf0b941f8_70272905 (Smarty_Internal_Template $_smarty_tpl)
 ">
 
                     <div class="mt-3">
-                        <button id="button-confirm" class="btn btn-primary" style="display:block;margin:auto;" type="submit"><?php echo $_smarty_tpl->tpl_vars['cta_modal']->value;?>
+                        <button id="button-confirm" class="btn btn-warning" style="display:block;margin:auto;" type="submit"><?php echo $_smarty_tpl->tpl_vars['cta_modal']->value;?>
 </button>
                     </div>
                 </form>

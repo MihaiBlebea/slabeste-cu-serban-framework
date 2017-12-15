@@ -30,7 +30,7 @@
                     <input type="hidden" name="redirect" value="{$redirect|default:'false'}">
 
                     <div class="mt-3">
-                        <button id="button-confirm" class="btn btn-primary" style="display:block;margin:auto;" type="submit">{$cta_modal}</button>
+                        <button id="button-confirm" class="btn btn-warning" style="display:block;margin:auto;" type="submit">{$cta_modal}</button>
                     </div>
                 </form>
             </div>

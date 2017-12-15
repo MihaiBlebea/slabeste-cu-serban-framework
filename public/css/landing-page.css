@@ -85,13 +85,13 @@ a.card-link:hover {
     margin: auto;
 }
 .step-number {
-    font-size: 3.2em;
+    font-size: 5em;
     color:yellow;
     font-weight:bold;
     padding-right:0;
 }
 .step-text {
-    padding-left:2px;
+    padding-left:inherit;
 }
 .step-title {
     font-size: 1.5em;
@@ -134,6 +134,9 @@ hr {
 .img-logo {
     max-height: 35px;
 }
+img {
+    max-width:100%;
+}
 .text-center {
     text-align: center;
 }
@@ -146,6 +149,23 @@ footer {
 .social-buttons-container {
     display: flex;
     justify-content: flex-end;
+}
+.author {
+    max-width: 900px;
+    margin:auto;
+}
+.align-v-center {
+    align-items: center!important;
+}
+.align-h-center {
+    justify-content: center!important;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+.dark-blue {
+    background-color: #1b6389!important;
+    color:white;
 }
 
 @media screen and (max-width: 780px) {

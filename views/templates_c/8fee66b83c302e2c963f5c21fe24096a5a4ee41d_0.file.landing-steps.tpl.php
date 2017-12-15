@@ -1,11 +1,11 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-03 15:16:11
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-15 21:18:29
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\partials\landing-steps.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a24153bc890b3_58948580',
+  'unifunc' => 'content_5a343c25cc5801_65968902',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a24153bc890b3_58948580 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a343c25cc5801_65968902 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <div id="steps" class="row steps">
     <div class="steps-container row">

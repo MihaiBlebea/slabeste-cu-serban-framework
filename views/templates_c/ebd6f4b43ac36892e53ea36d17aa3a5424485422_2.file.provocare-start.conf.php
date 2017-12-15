@@ -1,20 +1,20 @@
-<?php /* Smarty version 3.1.32-dev-22, created on 2017-09-25 20:37:38
+<?php /* Smarty version 3.1.32-dev-22, created on 2017-12-15 21:18:28
          compiled from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\configs\provocare-start.conf" */ ?>
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-09-25 20:37:38
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-15 21:18:28
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\configs\provocare-start.conf" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_59c96912670637_94592298',
+  'unifunc' => 'content_5a343c24e27791_86051795',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ebd6f4b43ac36892e53ea36d17aa3a5424485422' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\configs\\provocare-start.conf',
-      1 => 1506168535,
+      1 => 1513368170,
       2 => 'file',
     ),
   ),
@@ -22,13 +22,14 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_59c96912670637_94592298 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a343c24e27791_86051795 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigVars($_smarty_tpl, array (
   'sections' => 
   array (
   ),
   'vars' => 
   array (
+    'main_image' => 'https://fthmb.tqn.com/-TlEB4rwJDjVTmxDk5FlCpDHoms=/5124x3409/filters:no_upscale():fill(87E3EF,1)/usa-new-jersey-jersey-city-midsection-of-woman-holding-fitness-ball-114849250-581f386a5f9b581c0b532788.jpg',
     'page_main_title' => 'Vrei sa scapi de centimetri in plus?',
     'page_sub_title' => 'Fara sa te infometezi, sa iei prafuri dubioase si sa petreci ore in sir in sala de fitness',
     'cta_page' => 'Vreau sa ma inscriu',

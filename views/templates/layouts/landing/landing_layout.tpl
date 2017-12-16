@@ -18,7 +18,7 @@
     </head>
     <body>
         <!-- Include the navigation component-->
-        {include 'layouts/landing/landing_navigation.tpl'}
+        {include 'partials/landing-navigation.tpl'}
 
         {block name="body"}
 

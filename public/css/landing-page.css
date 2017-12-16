@@ -13,6 +13,11 @@ a.card-link:hover {
     color: #0A82C5;
     font-weight: bold;
 }
+.container-content {
+    max-width:900px;
+    display:block;
+    margin:auto;
+}
 .nav {
     /*background-color: #0A82C5;*/
     background-color: white;
@@ -53,7 +58,7 @@ a.card-link:hover {
 .card {
     position:relative;
     z-index:2;
-    margin-top:70px;
+    margin-top:120px;
     margin-bottom:70px;
 }
 .card-body {
@@ -65,7 +70,7 @@ a.card-link:hover {
     font-size:3em;
 }
 .offer-text-2 {
-    font-size:2em;
+    font-size:1.5em;
 }
 .offer-text-3 {
     font-size:2em;
@@ -126,7 +131,7 @@ button {
     max-width: 200px;
 }
 hr {
-    margin: 50px 0px;
+    margin: 20px 0px;
 }
 .jumbotron {
     background-color:inherit;
@@ -163,9 +168,30 @@ footer {
     display: block;
     text-align: center;
 }
-.dark-blue {
+.dark-blue-background {
     background-color: #1b6389!important;
     color:white;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.light-blue-background {
+    background-color: #0A82C5!important;
+    color: white;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.white-background {
+    background-color: white;
+    color: black;
+    margin-left: -15px;
+    margin-right: -15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 @media screen and (max-width: 780px) {
@@ -173,7 +199,7 @@ footer {
         font-size:3em;
     }
     .offer-text-2 {
-        font-size:2em;
+        font-size:1.5em;
     }
     .offer-text-3 {
         font-size:2em;

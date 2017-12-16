@@ -10,10 +10,10 @@
         {include "partials/modal-lead-two-fields-no-img.tpl" cta_modal=#cta_modal#}
         <!-- Offer Start -->
 
-        <div class="background-offer" style="background-image: url('{#main_image#}')">
+        <div class="background-offer" style="background-image: url('{$app_path}{#main_image_desktop#}')">
             <div class="row offer">
                 <div class="col-md-6 ml-md-auto">
-                    <div id="cta-1" class="card">
+                    <div id="cta-0" class="card">
 
                         {include "partials/landing-card-offer.tpl"
                             title     = #page_main_title#
@@ -35,27 +35,41 @@
             step_3_subtitle = #step_3_subtitle# }
         <!-- Steps End -->
 
-        <!-- Benefits Start-->
-        <div id="benefits" class="row benefits">
-            <div class="bullet-point-benefits">
-                <ul>
-                    {foreach from=#benefit# item=benefitItem}
-                        <li class="benefit-item">{$benefitItem}</li>
-                    {/foreach}
-                </ul>
-                <div id="cta-2" class="mb-5 mt-5">
-                    {include "partials/landing-call-to-action.tpl"
-                        title = "Inscrie-te gratuit"
-                        color = "btn-warning"
-                        cta = "Inscrie-te Acum!"}
+        <!-- Explain the lead magnet -->
+        <div class="light-blue-background" style="padding-bottom:10px;">
+            <div id="content" class="row container-content">
+                <div class="col">
+                    <h3 class="col mb-5 text-center">{#content_title#}</h3>
+                    <p>{#content_text#}</p>
                 </div>
             </div>
         </div>
+        <!-- Explain the lead magnet -->
+
+        <!-- Benefits Start-->
+        <div id="benefits" class="row benefits">
+            <div class="bullet-point-benefits">
+                <ul style="list-style: none;padding-left: 10px;">
+                    {foreach from=#benefit# item=benefitItem}
+                        <li class="benefit-item">
+                            {$benefitItem}
+                        </li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+
+        {include "partials/landing-call-to-action.tpl"
+            id       = "cta-1"
+            bg_color = "light-blue-background"
+            title    = #cta_offer_1#
+            color    = "btn-warning"
+            cta      = #cta_1#}
         <!-- Benefits End -->
 
         <!-- Testimonials Start -->
         <div id="testimonials" class="row mt-5 mb-5">
-            <div class="testimonials">
+            <div class="col container-content">
                 {include "partials/landing-testimonial-left.tpl"
                     image   = "http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg"
                     title   = "Diana a pierdut 10 kg"
@@ -75,14 +89,13 @@
             </div>
         </div>
         <!-- Testimonials End -->
-        <div class="mb-5 mt-5">
-            <div id="cta-3">
-                {include "partials/landing-call-to-action.tpl"
-                    title = "Vrei si tu rezultate asemanatoare?"
-                    color = "btn-warning"
-                    cta   = "Inscrie-te aici!"}
-            </div>
-        </div>
+
+        {include "partials/landing-call-to-action.tpl"
+            id       = "cta-2"
+            bg_color = "white-background"
+            title    = #cta_offer_2#
+            color    = "btn-warning"
+            cta      = #cta_2#}
 
         <!-- About the author section -->
         <div class="mb-5">
@@ -90,33 +103,31 @@
         </div>
         <!-- About the author section -->
 
-        <div class="row dark-blue">
-            <div id="cta-4" class="col pt-5 pb-5">
-                {include "partials/landing-call-to-action.tpl"
-                    title = #cta_offer_2#
-                    color = "btn-warning"
-                    cta = "Inscrie-te Acum!"}
-            </div>
-        </div>
+        {include "partials/landing-call-to-action.tpl"
+            id       = "cta-3"
+            bg_color = "dark-blue-background"
+            title    = #cta_offer_3#
+            color    = "btn-warning"
+            cta      = #cta_3#}
     </div>
 {/block}
 
 {block name="script"}
     <script src="{$app_path}/../script-build/app/bundle.js"></script>
     <script>
+        Landing.isInView('cta-0', function(item) {
+            item.classList.add('animated', 'fadeIn');
+        });
+
         Landing.isInView('cta-1', function(item) {
-            item.classList.add('animated', 'bounceInDown');
+            item.classList.add('animated', 'fadeIn');
         });
 
         Landing.isInView('cta-2', function(item) {
-            item.classList.add('animated', 'bounceInDown');
+            item.classList.add('animated', 'tada');
         });
 
         Landing.isInView('cta-3', function(item) {
-            item.classList.add('animated', 'bounceInDown');
-        });
-
-        Landing.isInView('cta-4', function(item) {
             item.classList.add('animated', 'tada');
         });
 

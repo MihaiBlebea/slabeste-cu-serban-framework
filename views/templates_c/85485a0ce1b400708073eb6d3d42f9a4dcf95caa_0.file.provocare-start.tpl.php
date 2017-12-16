@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-16 12:34:46
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-16 16:39:57
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\landing\provocare-start.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a3512e6930d76_72960950',
+  'unifunc' => 'content_5a354c5d105255_33871487',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '85485a0ce1b400708073eb6d3d42f9a4dcf95caa' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\landing\\provocare-start.tpl',
-      1 => 1513427684,
+      1 => 1513442393,
       2 => 'file',
     ),
   ),
@@ -23,11 +23,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/landing-steps.tpl' => 1,
     'file:partials/landing-call-to-action.tpl' => 3,
     'file:partials/landing-testimonial-left.tpl' => 2,
-    'file:partials/landing-testimonial-right.tpl' => 1,
+    'file:partials/landing-testimonial-right.tpl' => 2,
     'file:partials/about-author.tpl' => 1,
   ),
 ),false)) {
-function content_5a3512e6930d76_72960950 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a354c5d105255_33871487 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -40,23 +40,23 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigFile($_smarty_tpl, "../configs
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16847160655a3512e68e8383_53296986', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7962919575a354c5d0c8512_18134974', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21049143035a3512e692f0d2_96979841', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_11483504875a354c5d103631_88642690', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/landing/landing_layout.tpl');
 }
 /* {block "body"} */
-class Block_16847160655a3512e68e8383_53296986 extends Smarty_Internal_Block
+class Block_7962919575a354c5d0c8512_18134974 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_16847160655a3512e68e8383_53296986',
+    0 => 'Block_7962919575a354c5d0c8512_18134974',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -137,17 +137,22 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
         <!-- Testimonials Start -->
         <div id="testimonials" class="row mt-5 mb-5">
             <div class="col container-content">
-                <?php $_smarty_tpl->_subTemplateRender("file:partials/landing-testimonial-left.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('image'=>"http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg",'title'=>"Diana a pierdut 10 kg",'content'=>"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."), 0, false);
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/landing-testimonial-left.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('image'=>((string)$_smarty_tpl->tpl_vars['app_path']->value)."/img/testimoniale/denys.png",'title'=>"Denys a slabit peste 20 kg",'content'=>"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."), 0, false);
 ?>
 
                 <hr />
 
-                <?php $_smarty_tpl->_subTemplateRender("file:partials/landing-testimonial-right.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('image'=>"http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg",'title'=>"Diana a pierdut 10 kg",'content'=>"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."), 0, false);
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/landing-testimonial-right.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('image'=>((string)$_smarty_tpl->tpl_vars['app_path']->value)."/img/testimoniale/raluca.png",'title'=>"Raluca si-a subtiat talia cu peste 7 centimetri",'content'=>"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."), 0, false);
 ?>
 
                 <hr />
 
-                <?php $_smarty_tpl->_subTemplateRender("file:partials/landing-testimonial-left.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('image'=>"http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg",'title'=>"Diana a pierdut 10 kg",'content'=>"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."), 0, true);
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/landing-testimonial-left.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('image'=>((string)$_smarty_tpl->tpl_vars['app_path']->value)."/img/testimoniale/maroiu.png",'title'=>"Monica M. a ajuns in cea mai buna forma fizica",'content'=>"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."), 0, true);
+?>
+
+                <hr />
+
+                <?php $_smarty_tpl->_subTemplateRender("file:partials/landing-testimonial-right.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('image'=>((string)$_smarty_tpl->tpl_vars['app_path']->value)."/img/testimoniale/monica.png",'title'=>"Monica C. a slabit peste 5 kg",'content'=>"Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."), 0, true);
 ?>
 
             </div>
@@ -175,12 +180,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_21049143035a3512e692f0d2_96979841 extends Smarty_Internal_Block
+class Block_11483504875a354c5d103631_88642690 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_21049143035a3512e692f0d2_96979841',
+    0 => 'Block_11483504875a354c5d103631_88642690',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

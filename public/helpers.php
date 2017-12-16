@@ -15,6 +15,12 @@ function tt()
     die();
 }
 
+function returnJson($response)
+{
+    echo json_encode($response);
+    die();
+}
+
 function password_old_system($input, $saved)
 {
     $wp_hasher = new PasswordHash( 8, TRUE );

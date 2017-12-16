@@ -175,9 +175,6 @@ $this->get(":tag", "App\\Controllers\\LandingPageController@landing")
 // Send tracking to this link
 $this->post("tracking/receive", "App\\Controllers\\LandingPageController@receive");
 
-// Send tracking to this link
-$this->post("autoresponder/catch", "App\\Controllers\\LandingPageController@autoresponder");
-
 
 // Admin API - just get requests for data json
 $this->group([
@@ -186,6 +183,9 @@ $this->group([
 ]);
 
 $this->get("get/transactions", "App\\Controllers\\ApiController@getTransactions")
+     ->belongsTo("api-group");
+
+$this->post("autoresponder/catch", "App\\Controllers\\ApiController@autoresponder")
      ->belongsTo("api-group");
 
 

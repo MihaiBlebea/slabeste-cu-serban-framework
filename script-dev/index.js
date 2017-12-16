@@ -1,7 +1,13 @@
 import validator from 'validator';
 import scrollMonitor from 'scrollMonitor';
 import { disableButton,
-    enableButton } from './src/manipulate/form.js';
+    enableButton,
+    showForm,
+    hideForm,
+    showLoading,
+    hideLoading,
+    showError,
+    hideError } from './src/manipulate/form.js';
 import { validateName, validateEmail } from './src/validate/validate.js';
 import { setLocal, getLocal, removeLocal } from './src/store/storeLocal.js';
 import { getQuery,
@@ -9,7 +15,7 @@ import { getQuery,
     getPathString,
     getPathArray,
     getRealPathArray } from './src/tracking/url.js';
-import { run, toServer } from './src/tracking/tracking.js';
+import { addSubscriber } from './src/autoresponder/autoresponder.js';
 
 function isWorking()
 {
@@ -17,6 +23,7 @@ function isWorking()
     console.log(message)
     return message;
 }
+isWorking();
 
 function isInView(id, callback)
 {
@@ -28,8 +35,6 @@ function isInView(id, callback)
     });
 }
 
-isWorking();
-
 export {
     setLocal,
     getLocal,
@@ -37,6 +42,12 @@ export {
     isWorking,
     disableButton,
     enableButton,
+    showForm,
+    hideForm,
+    showLoading,
+    hideLoading,
+    showError,
+    hideError,
     validateName,
     validateEmail,
     getQuery,
@@ -44,7 +55,6 @@ export {
     getPathString,
     getPathArray,
     getRealPathArray,
-    run,
-    toServer,
-    isInView
+    isInView,
+    addSubscriber
 }

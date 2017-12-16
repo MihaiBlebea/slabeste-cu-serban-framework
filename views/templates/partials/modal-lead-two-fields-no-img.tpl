@@ -12,7 +12,23 @@
                     <div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="25" aria-valuemax="100" style="width: 25%"></div>
                 </div>
 
-                <form action="{$app_path}/autoresponder/catch" method="POST">
+                <div id="error" style="display:none;">
+                    {include 'partials/notification.tpl'
+                        type="danger"
+                        message="Din pacate ceva nu a functionat corect. Te rugam sa incerci din nou."}
+                </div>
+
+                <div id="loading" style="display:none;">
+                    {include "partials/landing-loading.tpl"}
+                </div>
+
+                <form data-redirect="{#redirect#}"
+                      data-list="{#list#}"
+                      data-automation="{#automation#}"
+                      data-tag="{#tag#}"
+                      data-post="{$app_path}/api/autoresponder/catch"
+                      data-query="{#query#}">
+
                     <div class="mb-2">
                         <label class="form-control-label">Prenumele tau:</label>
                         <input id="name" onkeyup="Landing.validateName(event);" data-type="error" type="text" class="form-control" name="name" placeholder="Maria" required>
@@ -25,61 +41,14 @@
                         <div class="invalid-feedback"></div>
                     </div>
 
-                    <input type="hidden" name="program_tag" value="{$landing->program_tag|default:'false'}">
-                    <input type="hidden" name="code" value="{$landing->code|default:'false'}">
-                    <input type="hidden" name="redirect" value="{$redirect|default:'false'}">
-
                     <div class="mt-3">
-                        <button id="button-confirm" class="btn btn-warning" style="display:block;margin:auto;" type="submit">{$cta_modal}</button>
+                        <button onclick="Landing.addSubscriber(event);"
+                                id="button-confirm"
+                                class="btn btn-warning"
+                                style="display:block;margin:auto;">{$cta_modal}</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-<script>
-    // function validateName()
-    // {
-    //     let name = document.getElementById('name');
-    //     name.classList.remove('is-invalid');
-    //     activateButton();
-    //
-    //     if(name.value.length < 3)
-    //     {
-    //         name.classList.add('is-invalid');
-    //         disableButton();
-    //     }
-    // }
-    //
-    // function validateEmail()
-    // {
-    //     let email = document.getElementById('email');
-    //     email.classList.remove('is-invalid');
-    //     activateButton();
-    //
-    //     if(email.value.length < 7)
-    //     {
-    //         email.classList.add('is-invalid');
-    //         disableButton();
-    //     }
-    //
-    //     if(email.value.includes('@') == false)
-    //     {
-    //         email.classList.add('is-invalid');
-    //         disableButton();
-    //     }
-    // }
-    //
-    // function disableButton()
-    // {
-    //     let button = document.getElementById('button');
-    //     button.disabled = true;
-    // }
-    //
-    // function activateButton()
-    // {
-    //     let button = document.getElementById('button');
-    //     button.disabled = false;
-    // }
-</script>

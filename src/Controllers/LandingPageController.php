@@ -7,7 +7,6 @@ use App\Models\Program;
 use App\Models\Landing;
 use App\Models\Action;
 use Framework\Router\Request;
-use App\Autoresponder\Autoresponder;
 use Framework\Alias\Router;
 
 class LandingPageController
@@ -226,51 +225,5 @@ class LandingPageController
             return true;
         }
         return false;
-    }
-
-    // Catch the data from autoresponder that come from the landing page
-    public function autoresponder(Request $request)
-    {
-        $name = $request->out("name");
-        $email = $request->out("email");
-        $redirect = $request->out("redirect");
-        $code = $request->out("code");
-        $program_tag = $request->out("program_tag");
-
-        // Get the landing page that called the autoresponder
-        $landing = new Landing();
-        $landing = $landing->where("code", "=", $code)->where("program_tag", "=", $program_tag)->selectOne();
-
-        // Store the new autoresponder client
-
-        $autoresponder = new Autoresponder();
-        $contactId = $autoresponder->addToList($landing->autoresponder_list, $name, $email);
-        if($contactId !== false)
-        {
-            // Add new user to an automation
-            $result_code = $autoresponder->addToAutomation($contactId, $landing->autoresponder_automation);
-            if($result_code->result_code == 0)
-            {
-                // If automation fails then return to the landing page
-                header('Location: ' . $_SERVER["HTTP_REFERER"]);
-            } else {
-                // Update lead counter
-                $leadCount = $landing->lead_count + 1;
-                $landing->update([
-                    "lead_count" => $leadCount
-                ]);
-                // If automation is successful then go to the database link
-                if($redirect == 'false')
-                {
-                    // Go to path specified in the database
-                    Router::goToUrl("landing/" . $landing->link);
-                } else {
-                    // Go to specific page specified in the form
-                    header('Location: ' . $redirect);
-                }
-            }
-        }
-        // If contact adding fails then go back to the landing page
-        header('Location: ' . $_SERVER["HTTP_REFERER"]);
     }
 }

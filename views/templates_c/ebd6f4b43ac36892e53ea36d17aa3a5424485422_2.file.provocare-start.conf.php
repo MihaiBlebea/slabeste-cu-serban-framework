@@ -1,20 +1,20 @@
-<?php /* Smarty version 3.1.32-dev-22, created on 2017-12-16 12:32:32
+<?php /* Smarty version 3.1.32-dev-22, created on 2017-12-16 16:40:47
          compiled from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\configs\provocare-start.conf" */ ?>
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-16 12:32:32
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-16 16:40:47
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\configs\provocare-start.conf" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a351260e5d164_12275536',
+  'unifunc' => 'content_5a354c8f759187_08395617',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'ebd6f4b43ac36892e53ea36d17aa3a5424485422' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\configs\\provocare-start.conf',
-      1 => 1513427518,
+      1 => 1513442437,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a351260e5d164_12275536 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a354c8f759187_08395617 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->smarty->ext->configLoad->_loadConfigVars($_smarty_tpl, array (
   'sections' => 
   array (
@@ -34,11 +34,11 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigVars($_smarty_tpl, array (
     'page_sub_title' => 'Obtine o Talie Subtire si Tonifiata cu doar 10 Minute pe zi! Inscrierea gratuita.',
     'cta_page' => 'Vreau sa ma inscriu',
     'step_1_title' => 'Inscrie-te',
-    'step_1_subtitle' => 'Apasa pe butonul verde de inscriere',
+    'step_1_subtitle' => 'Apasa pe buton si introdu datele tale de inscriere',
     'step_2_title' => 'Confirma emailul',
-    'step_2_subtitle' => 'Apasa pe link si confirma inscrierea',
+    'step_2_subtitle' => 'Si descarca planul de alimentatie personalizat',
     'step_3_title' => 'Obtine rezultate',
-    'step_3_subtitle' => 'Cu 10 minute de antrenament pe zi',
+    'step_3_subtitle' => 'Cu doar 10 minute de antrenament pe zi',
     'content_title' => 'Chiar este posibil sa ma antrenez mai putin si sa slabesc mai mult?',
     'content_text' => 'Da, chiar este posibil. Datorita sistemului meu unic de <strong>antrenament inteligent</strong>, poti arde de 9 ori mai multe calorii prin <strong>antrenamente scurte de doar 10 -15 minute pe zi</strong>. In plus, vei continua sa arzi calorii intr-un ritm impresionant chiar si dupa terminarea sesiunii de antrenament datorita accelerarii metabolismului. <strong>Asta inseamna ca slabesti in timp ce stai la birou</strong>, te uiti la un film sau navighezi pe internet.',
     'benefit' => 
@@ -56,6 +56,11 @@ $_smarty_tpl->smarty->ext->configLoad->_loadConfigVars($_smarty_tpl, array (
     'cta_2' => 'Click aici!',
     'cta_offer_3' => 'Profita acum gratuit de intreg programul',
     'cta_3' => 'Da, vreau rezultate!',
+    'redirect' => 'http://www.slabestecuserban.ro/provocarea-pentru-abdomen-start/provocarea-pentru-abdomen-orientare',
+    'list' => '10',
+    'automation' => '35',
+    'tag' => 'Provocare abdomen',
+    'query' => '?confirmation=true',
   ),
 ));
 }

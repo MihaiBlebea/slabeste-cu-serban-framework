@@ -71,20 +71,26 @@
         <div id="testimonials" class="row mt-5 mb-5">
             <div class="col container-content">
                 {include "partials/landing-testimonial-left.tpl"
-                    image   = "http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg"
-                    title   = "Diana a pierdut 10 kg"
+                    image   = "{$app_path}/img/testimoniale/denys.png"
+                    title   = "Denys a slabit peste 20 kg"
                     content = "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."}
                 <hr />
 
                 {include "partials/landing-testimonial-right.tpl"
-                    image   = "http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg"
-                    title   = "Diana a pierdut 10 kg"
+                    image   = "{$app_path}/img/testimoniale/raluca.png"
+                    title   = "Raluca si-a subtiat talia cu peste 7 centimetri"
                     content = "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."}
                 <hr />
 
                 {include "partials/landing-testimonial-left.tpl"
-                    image   = "http://images.shape.mdpcdn.com/sites/shape.com/files/styles/slide/public/media/brooke-strait-fitness-transformation_0.jpg"
-                    title   = "Diana a pierdut 10 kg"
+                    image   = "{$app_path}/img/testimoniale/maroiu.png"
+                    title   = "Monica M. a ajuns in cea mai buna forma fizica"
+                    content = "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."}
+                <hr />
+
+                {include "partials/landing-testimonial-right.tpl"
+                    image   = "{$app_path}/img/testimoniale/monica.png"
+                    title   = "Monica C. a slabit peste 5 kg"
                     content = "Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus."}
             </div>
         </div>

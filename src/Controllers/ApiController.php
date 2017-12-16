@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\Transaction;
 use Carbon\Carbon;
+use App\Autoresponder\Autoresponder;
+use Framework\Router\Request;
 
 class ApiController
 {
@@ -29,5 +31,45 @@ class ApiController
         }
         $result = json_encode($dates);
         echo $result;
+    }
+
+    public function autoresponder(Request $request)
+    {
+        $name        = $request->out("name");
+        $email       = $request->out("email");
+        $list        = $request->out("list");
+        $automation  = $request->out("automation");
+        $tag         = $request->out("tag");
+
+        // Store the new autoresponder client
+        $autoresponder = new Autoresponder();
+        $result = $autoresponder->addToList($list, $name, $email);
+
+        if($result)
+        {
+            $contact_id = $result->subscriber_id;
+        }
+
+        if($result !== false)
+        {
+            if($automation !== null)
+            {
+                $result = $autoresponder->addToAutomation($contact_id, $automation);
+            }
+
+            if($tag !== null)
+            {
+                $result = $autoresponder->addTags($contact_id, [$tag]);
+            }
+
+            if($result !== false)
+            {
+                // echo json_encode(["response" => true]);
+                returnJson(["response" => true, "code" => 200]);
+            } else {
+                returnJson(["response" => false, "code" => 200]);
+            }
+        }
+        returnJson(["response" => false, "code" => 200]);
     }
 }

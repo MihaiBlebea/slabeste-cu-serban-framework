@@ -18,32 +18,13 @@ class Autoresponder
         $this->ac = new \ActiveCampaign($this->config["active_campaign_api_url"], $this->config["active_campaign_api_key"]);
     }
 
-    private function getIdFromConfig($type, $name)
-    {
-        return $this->config[$type][$name];
-    }
-
     public function getContactDetails($contactId)
     {
         return $response = $this->ac->api("contact/view?id=" . $contactId);
     }
 
-    // Get active lists with details
-
-    // Get automations
-
-    // Get subsribers today
-    private function getLeadsForDate()
-    {
-        $response = $ac->api("contact/list?ids=all&sort=datetime&sort_direction=DESC&page=1");
-        return count($response);
-    }
-
-
     public function addToList(string $list, $name, $email)
     {
-        // $listId = getIdFromConfig("lists_ID", $list);
-
         $contact = array(
     		"email"                 => $email,
     		"first_name"            => $name,
@@ -51,18 +32,22 @@ class Autoresponder
     		"status[" . $list . "]" => 1
     	);
 
-    	return $contact_sync = $this->ac->api("contact/sync", $contact);
+    	$response = $this->ac->api("contact/sync", $contact);
+        if($response->result_code == 1)
+        {
+            return $response;
+        } else {
+            return false;
+        }
     }
 
     public function addToAutomation($contactId, string $automation)
     {
-        // $automationId = getIdFromConfig("automations_ID", $automation);
-
         $post_data = array(
             "contact_id" => $contactId, // include this or contact_id
             "automation" => $automation, // one or more
         );
-        return $response = $this->ac->api("automation/contact/add", $post_data);
+        return $this->ac->api("automation/contact/add", $post_data);
     }
 
     public function addTags($contactId, array $tags)
@@ -70,12 +55,39 @@ class Autoresponder
         $schema = "";
         foreach($tags as $index => $tag)
         {
-            $schema .= "tags[" . $index . "]: '" . $tag . "'";
+            $schema .= '"tags[' . $index . ']": "' . $tag . '"';
         }
-
         $data = get_object_vars(json_decode('{"id": "' . $contactId . '", ' . $schema . '}'));
+        $response = $this->ac->api("contact/tag/add", $data);
+        return $this->checkResponse($response);
+    }
 
-        return $response = $ac->api("contact/tag/add", $data);
+    public function removeTags($contactId, array $tags)
+    {
+        $schema = $this->buildTagSchema($tags);
+        $data = get_object_vars(json_decode('{"id": "' . $contactId . '", ' . $schema . '}'));
+        $response = $this->ac->api("contact/tag/remove", $data);
+        return $this->checkResponse($response);
+    }
+
+    private function buildTagSchema($tags)
+    {
+        $schema = "";
+        foreach($tags as $index => $tag)
+        {
+            $schema .= '"tags[' . $index . ']": "' . $tag . '"';
+        }
+        return $schema;
+    }
+
+    private function checkResponse($response)
+    {
+        if($response->result_code == 1)
+        {
+            return $response;
+        } else {
+            return false;
+        }
     }
 
 }

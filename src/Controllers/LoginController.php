@@ -31,15 +31,8 @@ class LoginController
         {
             // Username maches with the one in the database
             $check = $user->checkPassword($request->out('password'));
-
-            if($check == false)
+            if($check == true)
             {
-                // If password check fails
-                Template::setAssign([
-                    'error'        => true,
-                    'errorMessage' => 'Datele introduse nu sunt corecte'
-                ])->setDisplay('login/index.tpl');
-            } elseif($check == true) {
                 // If password check is true
                 $session = new UsernameSession();
                 $session->setContent($user->username);
@@ -56,6 +49,12 @@ class LoginController
                 } else {
                     Router::goToName("admin.home.page")->goToUrl();
                 }
+            } else {
+                // If password check is false
+                Template::setAssign([
+                    'error'        => true,
+                    'errorMessage' => 'Datele introduse nu sunt corecte'
+                ])->setDisplay('login/index.tpl');
             }
         } else {
             // If username check fails

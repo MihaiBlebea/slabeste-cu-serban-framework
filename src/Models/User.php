@@ -56,10 +56,11 @@ class User extends Model
                 $this->update([
                     "password" => $this->hashPassword($password)
                 ]);
-                return $old_check;
+                // return $old_check;
+                return ($old_check === "true") ? true : false;
             } else {
                 $new_check = Bcrypt::check($password, $this->password);
-                return $new_check;
+                return ($new_check === "true") ? true : false;
             }
         }
 

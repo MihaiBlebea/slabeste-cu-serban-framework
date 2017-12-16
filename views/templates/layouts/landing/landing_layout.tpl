@@ -8,6 +8,7 @@
         <script src="https://unpkg.com/popper.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
         <script src="https://js.braintreegateway.com/js/braintree-2.27.0.min.js"></script>
+        <script src="https://cdn.optimizely.com/js/2370551806.js"></script>
 
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css">
@@ -15,6 +16,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
         <link rel="stylesheet" href="{$app_path}/css/social-media-buttons.css">
         <link rel="stylesheet" href="{$app_path}/css/landing-page.css">
+
     </head>
     <body>
         <!-- Include the navigation component-->

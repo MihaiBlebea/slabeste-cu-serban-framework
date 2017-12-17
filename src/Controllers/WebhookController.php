@@ -13,7 +13,7 @@ use App\Log\WebhookLogger;
 
 class WebhookController
 {
-    public function webhook(Request $request)
+    public function webhookBraintree(Request $request)
     {
         $webhook = WebhookNotification::parse($request->out('bt_signature'),
                                               $request->out('bt_payload'));
@@ -85,7 +85,6 @@ class WebhookController
                 "billig_cycle" => $billing_cycle
             ]);
         }
-
         WebhookLogger::log(["message" => "The webhook type was " . $notification_type]);
     }
 
@@ -100,6 +99,10 @@ class WebhookController
             "username" => $username,
             "tag"      => $tag
         ];
+    }
 
+    public function webhookActiveCampaign(Request $request)
+    {
+        WebhookLogger::log(["message" => "The AC webhook type was " . json_encode($request->getAllPayload())]);
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "slabestecuserban-membership",
+  "private_key_id": "7c475b32e0a9169cad06eb703afff1c9aa6987d6",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCaCplomCsTKcWz\n78W6rVQ90RWDaVnxfz1swNALnMGQr4yPg2HglhojHFteazijxRIwlbRIUYFkjmLr\ni9NJzGJf/KkzjVzItWZkXnF2YOCYdawXs4kYQwC2S3Z59v3o9RfvzJ1uJ1vcB7Kt\nCC3hVXQP2dkdbNGdlyezP+/+hZ+FaiezpwRqkD17ummVStlAa8skNj7nmQjtVJvI\n4mVg9cbNAJFvVGx/bLl55yJUleBR3u945MGbIgmNW0P+zVt/y1U9+M5r/ZhJXkpw\nSgiNM0Ar+U28cTWwHGKVTbBVJxKUPd1puyvMcrOZriTAg3RRbEu14wcGIERZDFGw\nlPkrVYF9AgMBAAECggEAEdlGDsxI+3K05YVUHi4My4/hRAWORjEF40bRJHNQq2zn\n5s4kpnMGCsjznlRirvk8AxSpm9KT4VytQhlEzXGI+ZHLYj2QQXJhb6JQ19RgWdIS\ns3laWo0S9Ux3qSixIY/aqu7E1Blr56odrjZ7KHewF9EYevQbsryrvTWcn5uIkRr+\nfcKJmQIE7qxd6+1fq3Q5+w9cw1dS6jPYg9N39ubywa9C6dUfUGpuksX/l0KNufpR\n9dPEj6wyBRSjcSYX0RKkN3/EdsInjCjOdUn25t0yPo+CQHjrWfLsSOxbIjXmQqEp\nK6/joNYVVW6dNP+xn7gictlEkK3HaV4tCEXvgtdcwQKBgQDMp2R8bucgD/HGXw4E\ndShdYdGDAtGsJf7JwSsaBCE0q5qH9AssIvNqojg7Z4QxWzhIQI4NBE/IngrX3XeP\nI0A5MMi/Aqpl/yzirc3drdq44ehJt4zZKl9Tnd3dOdxRfl3CzeLlEcJSRdJalFJZ\nW4mikonOuf6qyvwsGpGA9uCNvQKBgQDAsHHIg7whZqZBsK+vPH0JRXIMNsNkg8A5\njb8sVcvCG0Ms86ltNrMkI7FZym8ByMJQ4Pu+90vUSe9W9TamTbYoi6RIiRG3sbgF\ngvDN6L1dmrJmq1bE0JHbb0LZ2u0nbxRwpZGWrY0R020gKNdAHS0mZTS2eXqjb55F\ncgtDp9CewQKBgB1KiBNXPDVWkuA1kqgIrLJQ4c/Cg4gEGCeAQk8C8E29keyLfV3f\n0r8cYLf/5Oe7ip6svqgWSeUI2bxzsj0GapbE6LaOBx16HE6FWcW0sG1tx/VlE/+x\nFNu+6JZVRbdUQs8y8JqgpBNqcuUL/Y1UkKp4FslDzbNcQiN92f1/WDxxAoGAGcC7\nRFhO8YvdlpP9twb3kyCj8Hv1O17cdxS5wzwoQmYQYVajg0Q3RxI6Js0Gbw+c4OBg\n5RH6IYJMKawWRL3IJb0cFNG0+38WIC5y7qI3hOYjB9PIgf96LwC8x48Z+RZAfhmy\nzpedbg962zx6IEiF+0a1d9neiS9m0NNALCemm0ECgYEAuRy2/zUJfANps9pk6AtG\nkc/08yrPLCRAikGlGLE91O0RSncaLrjpFudzGibEkmLj5WP/yBEZEuLQAgh+OpHP\nHdLTaye+MVfmoX+jIYwWzTI0Mb+vuX3TvMtL3Cx94+1VFYsfHWFtWnO/vzSAE0S8\nM8Rll+zXxf4Fbyo2WX2hfAs=\n-----END PRIVATE KEY-----\n",
+  "client_email": "slabestecuserban@slabestecuserban-membership.iam.gserviceaccount.com",
+  "client_id": "106521570652433941000",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/slabestecuserban%40slabestecuserban-membership.iam.gserviceaccount.com"
+}

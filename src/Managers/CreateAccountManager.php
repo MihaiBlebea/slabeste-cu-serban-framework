@@ -10,7 +10,7 @@ class CreateAccountManager implements ManagerInterface
 {
 	public function run($payload)
 	{
-		if($payload["program_tag"] == "fit-si-supla-integral")
+		if($payload["program_tag"] == "fit-si-supla")
 		{
 			$tags = ["fit-si-supla-1", "fit-si-supla-2", "fit-si-supla-3"];
 

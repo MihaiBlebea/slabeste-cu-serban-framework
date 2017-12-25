@@ -57,7 +57,8 @@ $this->get("clients", "App\\Controllers\\ClientController@clients")
      ->as("admin.clients.page")
      ->belongsTo("admin-group");
 
-$this->get("client/:client/:search", "App\\Controllers\\ClientController@client")
+$this->get("client/:client", "App\\Controllers\\ClientController@client")
+     ->bind(["client" => "User"])
      ->as("admin.client.page")
      ->belongsTo("admin-group");
 
@@ -70,7 +71,7 @@ $this->post("client/update", "App\\Controllers\\ClientController@update")
      ->as("update.client.page")
      ->belongsTo("admin-group");
 
-$this->get("client/create", "App\\Controllers\\ClientController@getCreate")
+$this->get("client/create/new", "App\\Controllers\\ClientController@getCreate")
      ->as("create.client.page")
      ->belongsTo("admin-group");
 
@@ -80,10 +81,6 @@ $this->post("client/create", "App\\Controllers\\ClientController@postCreate")
 // Show and sort transactions
 $this->get("transactions", "App\\Controllers\\TransactionController@transactions")
      ->as("admin.transactions.page")
-     ->belongsTo("admin-group");
-
-$this->get("transaction/search/:method/:id", "App\\Controllers\\TransactionController@search")
-     ->as("search.transactions.page")
      ->belongsTo("admin-group");
 
 // Show landing pages
@@ -121,6 +118,11 @@ $this->get("landing/reset/:landing", "App\\Controllers\\LandingPageController@re
      ->bind(["landing" => "Landing"])
      ->as("admin.reset.landings.page")
      ->belongsTo("admin-group");
+
+// Analytics zone for analizing traffic sources
+$this->get("analytics", "App\\Controllers\\GoogleApiController@display")
+     ->belongsTo("admin-group");
+
 
 // Membership zone
 $this->group([

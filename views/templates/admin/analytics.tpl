@@ -11,7 +11,7 @@
 
 {block name="body"}
     <div class="container-fluid">
-        {if $error == true}
+        {if isset($error) && $error == true}
             <div class="alert alert-{$errorType}" role="alert">
                 {$errorMessage}
             </div>
@@ -20,8 +20,8 @@
             <div class="card-body">
                 <div class="row" style="display:flex;align-items:center;">
                     <div class="col-lg-6">
-                        <h4 class="card-title">Manage clients</h4>
-                        <h6 class="card-subtitle mb-2 text-muted">Clients database</h6>
+                        <h4 class="card-title">Analytics</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">Manage traffic and events</h6>
                     </div>
                     <div class="col-lg-6">
                         {if isset($options)}
@@ -34,7 +34,7 @@
                 <hr />
 
                 <!-- Paginate notification start -->
-                {include "partials/admin-paginate-notification.tpl"}
+                {* {include "partials/admin-paginate-notification.tpl"} *}
                 <!-- Paginate notification end -->
 
                 <div class="row d-none d-md-flex">
@@ -55,7 +55,7 @@
                     </div>
                 </div>
                 <hr />
-                {foreach $users as $user}
+                {* {foreach $users as $user}
                     <div class="row row-hover mb-2" onclick="window.location.href = '{$app_path}/admin/client/{$user->id}'">
                         <div class="col-md-3 col-sm-6 elipsis">
                             <span class="mr-1">{$user->index}.</span> {$user->first_name} {$user->last_name}
@@ -74,12 +74,8 @@
                         </div>
                     </div>
                     <hr class="d-block d-sm-block d-md-none" />
-                {/foreach}
+                {/foreach} *}
 
-                <hr />
-                <!-- Pagination start -->
-                {include "partials/admin-pagination.tpl" path_item="clients"}
-                <!-- Pagination end -->
 
             </div>
         </div>

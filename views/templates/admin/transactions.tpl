@@ -1,6 +1,15 @@
 
 {extends file='layouts/admin/admin_layout.tpl'}
 
+{block name="mobile-menu"}
+    <a href="{$app_path}/admin/transactions" class="nav-link active" style="color:red;">Reset search</a>
+{/block}
+
+{block name="sidebar"}
+    <p>Total value: <strong>{$total_value|default:"0"} RON</strong></p>
+    <a href="{$app_path}/admin/transactions" class="card-link" style="color:red;">Reset search</a>
+{/block}
+
 {block name="body"}
     <div class="container-fluid">
         {if $error == true}
@@ -16,59 +25,68 @@
                         <h6 class="card-subtitle mb-2 text-muted">{$transaction_count|default:"0"} transactions in database</h6>
                     </div>
                     <div class="col-lg-6">
-                        <div class="input-group">
-                            <div class="input-group-btn">
-                                <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    Search by
-                                </button>
-                                <div class="dropdown-menu">
-                                    <a class="dropdown-item" onclick="sendSearch('username');">Username</a>
-                                    <a class="dropdown-item" onclick="sendSearch('email');">Email</a>
-                                    <a class="dropdown-item" onclick="sendSearch('program_tag');">Program Tag</a>
-                                    <a class="dropdown-item" onclick="sendSearch('reg_date');">After date</a>
-                                </div>
-                            </div>
-                            <input id="search-input" type="text" class="form-control" aria-label="Text input with dropdown button">
-                        </div>
+                        {if isset($options)}
+                            {include 'partials/admin/search.tpl'
+                                path="{$app_path}/admin/transactions"
+                                options=$options}
+                        {/if}
                     </div>
                 </div>
                 <hr />
                 <div class="row">
                     <canvas id="myChart" style="height:50vh; width:80vw"></canvas>
                 </div>
-
+                <hr />
+                
                 <!-- Paginate notification start -->
                 {include "partials/admin-paginate-notification.tpl"}
                 <!-- Paginate notification end -->
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Date</th>
-                            <th>Name</th>
-                            <th>Username</th>
-                            <th>Program tag</th>
-                            <th>Value</th>
-                            <th>Transaction ID</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {if isset($transactions)}
-                            {foreach $transactions as $transaction}
-                                <tr>
-                                    <th scope="row">{$transaction->index}</th>
-                                    <td>{$transaction->reg_date}</td>
-                                    <td>{$transaction->firstName} {$transaction->lastName}</td>
-                                    <td>{$transaction->username}</td>
-                                    <td>{$transaction->program_tag}</td>
-                                    <td>{$transaction->value}ron</td>
-                                    <td>{$transaction->transaction_id}</td>
-                                </tr>
-                            {/foreach}
-                        {/if}
-                    </tbody>
-                </table>
+                <div class="row d-none d-md-flex">
+                    <div class="col-md-2 elipsis">
+                        Date
+                    </div>
+                    <div class="col-md-2 elipsis">
+                        Name
+                    </div>
+                    <div class="col-md-2 elipsis">
+                        Username
+                    </div>
+                    <div class="col-md-3 elipsis">
+                        Program
+                    </div>
+                    <div class="col-md-1 elipsis">
+                        Value
+                    </div>
+                    <div class="col-md-2 elipsis">
+                        <span class="float-sm-right">Trans. ID</span>
+                    </div>
+                </div>
+                <hr />
+                {foreach $transactions as $transaction}
+                    <div class="row row-hover mb-2">
+                        <div class="col-md-2 col-sm-4 elipsis">
+                            <span class="mr-1">{$transaction->index}.</span> {$transaction->reg_date}
+                        </div>
+                        <div class="col-md-2 col-sm-4 elipsis">
+                            <span class="float-sm-right float-md-left">{$transaction->firstName} {$transaction->lastName}</span>
+                        </div>
+                        <div class="col-md-2 col-sm-4 elipsis ">
+                            <span class="float-sm-right">{$transaction->username}</span>
+                        </div>
+                        <div class="col-md-3 col-sm-4 elipsis">
+                            {$transaction->program_tag}
+                        </div>
+                        <div class="col-md-1 col-sm-4 elipsis">
+                            <span class="float-sm-right float-md-left">{$transaction->value}ron</span>
+                        </div>
+                        <div class="col-md-2 col-sm-4 elipsis">
+                            <span class="float-sm-right">{$transaction->transaction_id}</span>
+                        </div>
+                    </div>
+                    <hr class="d-block d-sm-block d-md-none" />
+                {/foreach}
+                <hr />
 
                 <!-- Insert pagination here -->
                 <!-- Pagination start -->
@@ -90,18 +108,7 @@
 {/block}
 
 {block name="script"}
-    <script>
-        function getSearch()
-        {
-            return search = document.getElementById('search-input').value;
-        }
 
-        function sendSearch(mode)
-        {
-            var client = getSearch();
-            return window.location="{$app_path}/admin/transaction/search/" + mode + "/" + client;
-        }
-    </script>
     <script>
         axios.get("{$app_path}/api/get/transactions").then((response)=> {
             return response.data;

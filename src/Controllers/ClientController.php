@@ -24,6 +24,7 @@ class ClientController
         } else {
             $page = 0;
         }
+
         // Get the total number of clients
         $user = new User();
         $count = $user->count();
@@ -35,8 +36,15 @@ class ClientController
             $pages = intval($pages) + 1;
         }
 
-        // Get the paginated users
-        $users = $user->sortBy("regdate", "DESC")->limitBy($limit, $limit * $page)->selectAll();
+        // Get the paginated users with or withour search options
+        if($request !== null && $request->out("mode") !== null && $request->out("search") !== null)
+        {
+            $search = $request->out("search");
+            $mode = $request->out("mode");
+            $users = $user->where($mode, "=", $search)->sortBy("regdate", "DESC")->limitBy($limit, $limit * $page)->select();
+        } else {
+            $users = $user->sortBy("regdate", "DESC")->limitBy($limit, $limit * $page)->selectAll();
+        }
 
         $managerPrograms = new NrOfProgramsBoughtManager();
         $users = $managerPrograms->run($users);
@@ -48,21 +56,20 @@ class ClientController
             $user->index = ($page * $limit) + $index + 1;
         }
 
-        // $paginated = array_chunk($users, 10);
-
         Template::setAssign([
             "users"         => $users,
             "paginateCount" => $pages,
             "previousPage"  => $page,
             "nextPage"      => $page + 2,
-            "error"         => false
+            "error"         => false,
+            "options"       => ['id', 'username', 'email']
         ])->setDisplay("admin/clients.tpl");
     }
 
-    public function client($searchBy,$searchMode)
+    public function client(User $user)
     {
-        $user = new User();
-        $user = $user->where($searchMode, "=", $searchBy)->selectOne();
+        // $user = new User();
+        // $user = $user->where($searchMode, "=", $searchBy)->selectOne();
 
         if($user)
         {
@@ -138,19 +145,6 @@ class ClientController
             ]);
         };
 
-        // // Process users
-        // $manager = new NrOfProgramsBoughtManager();
-        // $users = $manager->run(false);
-        //
-        // Template::setAssign([
-        //     "users"        => $users,
-        //     "paginateCount" => count($paginated),
-        //     "previousPage"  => $page,
-        //     "nextPage"      => $page + 2,
-        //     'error'        => true,
-        //     'errorType'    => 'success',
-        //     'errorMessage' => 'The client has been updated.'
-        // ])->setDisplay("admin/clients.tpl");
         $this->clients();
     }
 
@@ -220,15 +214,6 @@ class ClientController
         $listenerEmailClient = ListenerFactory::build("NewClientEmailToClient");
         $event->attach($listenerEmailAdmin)->attach($listenerEmailClient)->trigger($payloadNotification);
 
-        // $manager = new NrOfProgramsBoughtManager();
-        // $users = $manager->run("");
-        //
-        // Template::setAssign([
-        //     "users"        => $users,
-        //     'error'        => true,
-        //     'errorType'    => 'success',
-        //     'errorMessage' => 'The client has been created.'
-        // ])->setDisplay("admin/clients.tpl");
         $this->clients();
     }
 

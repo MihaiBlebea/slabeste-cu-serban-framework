@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Kaushan+Script');
+
+.small-title {
+    /*font-family: 'Indie Flower', cursive;*/
+}
+
+.page-title {
+    font-family: 'Kaushan Script', cursive;
+}
+
+body {
+    background-image: url('http://www.50jahre30.de/wp-content/uploads/2016/03/O7MF4F0.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    color: inherit;
+}
+a.card-link {
+    color: #0A82C5;
+}
+a.card-link:hover {
+    color: #0A82C5;
+    font-weight: bold;
+}
+.nav {
+    background-color: #0A82C5;
+    color:white;
+    z-index: 3;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.nav-item:hover {
+    color: yellow;
+}
+
+.sidebar-link-item {
+    transition: all 0.3s ease-in-out;
+}
+.sidebar-link-item:hover {
+    color: #1B6389;
+    font-weight: bold;
+}
+.sidebar {
+    position: fixed;
+    border-right: solid 0.6px grey;
+    background-color: white;
+    height: 100%;
+    text-align: center;
+}
+.content {
+    padding:70px 50px;
+}
+.footer {
+    padding:5px;
+    background-color:#1B6389;
+    color:#fff;
+}
+.program-card {
+    margin:10px;
+}
+.jumbotron {
+    background-color:#ffffff;
+}
+.button-center {
+    margin:auto;
+    display:block;
+}
+.program-details {
+    padding:5px 0px;
+}
+
+.program-section {
+    max-width:80%;
+    margin:auto;
+    margin-bottom:30px;
+}
+.text-section {
+    margin:20px auto;
+}
+.video-section {
+    margin:20px auto;
+}
+.subtitle-section {
+
+}
+.exercise-section {
+    list-style: none;
+    padding:0;
+}
+.other-programs-section {
+
+}
+.download-card-img {
+    display: block;
+    margin: auto;
+    max-width: 300px;
+    max-height: 350px;
+    transition: all 0.6s ease-in-out;
+}
+.download-card-img:hover {
+    opacity: 0.6;
+}
+.display-3 {
+    font-size: 3rem;
+}
+.img-content {
+    max-width:700px;
+}
+.content-link {
+    color:blue;
+    margin-bottom:20px;
+}
+.image-program-footer {
+    filter: grayscale(100%);
+    transition: all 0.8s ease-in-out;
+}
+.image-program-footer:hover {
+    filter: grayscale(0%);
+}
+#sticky-sidebar {
+    margin-top:10px;
+    position:fixed;
+    max-width: 20%;
+    border-right: solid 1px grey;
+    height:100%;
+    z-index:2;
+}
+#main {
+    max-width: 80%;
+    margin-left: 20%;
+}
+.sidebar-content {
+    height: 60%;
+    overflow: auto;
+    overflow-x: hidden;
+}
+.sidebar-program-image {
+    max-width: 100%;
+}
+.menu-desktop {
+    display:flex;
+}
+.menu-mobile {
+    display:none
+}
+.row-hover {
+    transition: all 0.8s;
+}
+.row-hover:hover {
+    background-color:#1B6389;
+    color:#fff;
+    cursor:pointer;
+}
+
+.elipsis {
+    display:inline-block;
+    width:100%;
+    white-space: nowrap;
+    overflow:hidden !important;
+    text-overflow: ellipsis;
+}
+
+/* Mobile version */
+@media only screen and (max-width: 1000px) {
+    .sidebar {
+        display:none;
+    }
+    .menu-desktop {
+        display:none;
+    }
+    .menu-mobile {
+        display:block;
+        background-color: #0A82C5;
+        color:white;
+    }
+    .navbar {
+        justify-content: start;
+    }
+    .navbar-toggler {
+        border: 1px solid white;
+    }
+    #main {
+        max-width: 100%;
+        margin-left: 0px;
+    }
+}

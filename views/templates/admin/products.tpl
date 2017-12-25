@@ -18,34 +18,36 @@
                 {include "partials/admin-paginate-notification.tpl"}
                 <!-- Paginate notification end -->
 
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Name</th>
-                            <th>Clients</th>
-                            <th>Edit</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {foreach $programs as $program}
-                            <tr>
-                                <th scope="row">{$program->index}</th>
-                                <td>{$program->program_name}</td>
-                                <td>{$program->sold}</td>
-                                <td><a href="{$app_path}/admin/program/{$program->program_tag}">Edit</a></td>
-                            </tr>
-                        {/foreach}
-                    </tbody>
-                </table>
+                <div class="row d-none d-md-flex">
+                    <div class="col-md-4 elipsis">
+                        Name
+                    </div>
+                    <div class="col-md-4 elipsis">
+                        Clients
+                    </div>
+                    <div class="col-md-4 elipsis">
+                        Money
+                    </div>
+                </div>
+                <hr />
+                {foreach $programs as $program}
+                    <div class="row row-hover mb-2">
+                        <div class="col-md-3 col-sm-6 elipsis">
+                            <span class="mr-1">{$program->index}.</span> {$program->program_name}
+                        </div>
+                        <div class="col-md-2 col-sm-6 elipsis">
+                            <span class="float-sm-right float-md-center">{$program->sold}<span class="ml-1 d-inline-flex d-sm-inline-flex d-md-none elipsis">clients</span></span>
+                        </div>
+                    </div>
+                    <hr class="d-block d-sm-block d-md-none" />
+                {/foreach}
+
+                <hr />
 
                 <!-- Insert pagination here -->
                 <!-- Pagination start -->
                 {include "partials/admin-pagination.tpl" path_item="programs"}
                 <!-- Pagination end -->
-
-                <hr />
-                <a href="{$app_path}/admin/program/create" class="card-link">Create a new program</a><br />
             </div>
         </div>
     </div>

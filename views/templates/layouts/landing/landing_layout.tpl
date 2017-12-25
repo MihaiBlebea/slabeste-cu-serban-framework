@@ -4,6 +4,8 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 
         <title>{$app_name}</title>
+        {include 'partials/landing/analytics-head.tpl'}
+
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <script src="https://unpkg.com/popper.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
@@ -22,14 +24,12 @@
         <!-- Include the navigation component-->
         {include 'partials/landing-navigation.tpl'}
 
-        {block name="body"}
-
-        {/block}
+        {block name="body"}{/block}
 
         {include "partials/landing-footer.tpl"}
 
-        {block name="script"}
+        {block name="script"}{/block}
 
-        {/block}
+        {include 'partials/landing/analytics-body.tpl'}
     </body>
 <body>

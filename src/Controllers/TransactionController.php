@@ -8,6 +8,7 @@ use App\Models\Program;
 use App\Models\Transaction;
 use Framework\Router\Request;
 use Framework\Alias\Template;
+use Carbon\Carbon;
 
 class TransactionController
 {
@@ -33,7 +34,33 @@ class TransactionController
         }
 
         // Get the paginated transactions
-        $trans = $trans->sortBy('reg_date', 'DESC')->limitBy($limit, $limit * $page)->selectAll();
+        if($request !== null && $request->out("mode") !== null && $request->out("search") !== null)
+        {
+            $search = $request->out("search");
+            $mode = $request->out("mode");
+
+            switch($mode)
+            {
+                case 'email':
+                    $user = new User();
+                    $user = $user->where('email', '=', $search)->selectOne();
+                    if($user)
+                    {
+                        $trans = $trans->where('username', '=', $user->username)->sortBy('reg_date', 'DESC')->limitBy($limit, $limit * $page)->select();
+                    }
+                    break;
+                case 'after_date':
+                    $date = new Carbon($search);
+                    $trans = $trans->where('reg_date', '>', $date->toDateTimeString())->sortBy('reg_date', 'DESC')->limitBy($limit, $limit * $page)->select();
+                    break;
+                default:
+                    $trans = $trans->where($mode, '=', $search)->sortBy('reg_date', 'DESC')->limitBy($limit, $limit * $page)->select();
+                    break;
+            }
+
+        } else {
+            $trans = $trans->sortBy('reg_date', 'DESC')->limitBy($limit, $limit * $page)->selectAll();
+        }
 
         // Calculate sum of money
         $totalValue = 0;
@@ -64,80 +91,8 @@ class TransactionController
             "nextPage"            => $page + 2,
             "transaction_count"   => count($trans),
             "total_value"         => $totalValue,
-            "error"               => false
+            "error"               => false,
+            "options"             => ['program_tag', 'username', 'email', 'after_date']
         ])->setDisplay("admin/transactions.tpl");
-    }
-
-    public function search($method, $search, Request $request = null)
-    {
-        // Set and get pagination
-        if($request !== null && $request->out("page") !== null)
-        {
-            $page = $request->out("page") - 1;
-        } else {
-            $page = 0;
-        }
-
-        $trans = new Transaction();
-
-        // Search by username
-        if($method == 'username')
-        {
-            $trans = $trans->where('username', '=', $search)->select();
-        }
-
-        // Search by email
-        if($method == 'email')
-        {
-            $user = new User();
-            $user = $user->where('email', '=', $search)->select();
-            $trans = $trans->where('username', '=', $user['username'])->select();
-        }
-
-        // Search by program tag
-        if($method == 'program_tag')
-        {
-            $trans = $trans->where('program_tag', '=', $search)->select();
-        }
-
-        // If there are any transactions
-        if($trans)
-        {
-            $totalValue = 0;
-            foreach(array_column($trans, "value") as $tran)
-            {
-                $totalValue += $tran;
-            }
-
-            foreach($trans as $index => $tran)
-            {
-                $user = new User();
-                $user = $user->where("username", "=", $tran->username)->selectOne();
-                $tran->firstName = $user->first_name;
-                $tran->lastName = $user->last_name;
-
-                // Add index to the object shadow property
-                $tran->index = $index + 1;
-            }
-
-            // Apply pagination here
-            $paginated = array_chunk($trans, 10);
-
-            Template::setAssign([
-                'transactions'      => $paginated[$page],
-                'transaction_count' => count($trans),
-                "paginateCount"     => count($paginated),
-                "previousPage"      => $page,
-                "nextPage"          => $page + 2,
-                'total_value'       => $totalValue,
-                'error'             => false
-            ])->setDisplay("admin/transactions.tpl");
-        } else {
-            Template::setAssign([
-                'error'             => true,
-                'errorType'         => 'danger',
-                'errorMessage'      => 'Could not find any transactions'
-            ])->display("admin/transactions.tpl");
-        }
     }
 }

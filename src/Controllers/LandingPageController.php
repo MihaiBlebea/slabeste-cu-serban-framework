@@ -8,6 +8,7 @@ use App\Models\Landing;
 use App\Models\Action;
 use Framework\Router\Request;
 use Framework\Alias\Router;
+use Framework\Injectables\Injector;
 
 class LandingPageController
 {
@@ -16,12 +17,16 @@ class LandingPageController
         $lp = $request->out("lp");
         if($lp)
         {
+            $config = Injector::resolve('Config');
+            $social = $config->getConfig("social");
+
             $landing = new Landing();
             $landing = $landing->where("code", "=", $lp)->where("program_tag", "=", $program->program_tag)->selectOne();
             if($landing)
             {
                 return Template::setAssign([
-                    "landing" => $landing
+                    "landing" => $landing,
+                    "social"  => $social
                 ])->setDisplay($landing->template);
             }
         }

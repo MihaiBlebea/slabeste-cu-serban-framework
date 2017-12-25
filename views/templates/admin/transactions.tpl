@@ -37,7 +37,7 @@
                     <canvas id="myChart" style="height:50vh; width:80vw"></canvas>
                 </div>
                 <hr />
-                
+
                 <!-- Paginate notification start -->
                 {include "partials/admin-paginate-notification.tpl"}
                 <!-- Paginate notification end -->
@@ -114,7 +114,6 @@
             return response.data;
         }).then((data)=> {
 
-            console.log(Object.values(data));
             var ctx = document.getElementById("myChart").getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'line',

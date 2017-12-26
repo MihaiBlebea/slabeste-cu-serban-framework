@@ -25,6 +25,8 @@ class GoogleApi
 
     private $metrics = null;
 
+    private $segment = null;
+
     private $analytics;
 
     public function __construct(Carbon $carbon)
@@ -44,6 +46,7 @@ class GoogleApi
         $this->client->setAuthConfig($google_config_path);
         $this->client->setScopes(['https://www.googleapis.com/auth/analytics.readonly']);
         $this->analytics = new \Google_Service_AnalyticsReporting($this->client);
+
         return $this;
     }
 
@@ -89,6 +92,22 @@ class GoogleApi
         return $this;
     }
 
+    public function segment($id)
+    {
+        $this->segment = new \Google_Service_AnalyticsReporting_Segment();
+        $this->segment->setSegmentId($id);
+        array_push($this->dimensions, $this->segmentDimension());
+        // dd($this->segmentDimension());
+        return $this;
+    }
+
+    private function segmentDimension()
+    {
+        $segmentDimensions = new \Google_Service_AnalyticsReporting_Dimension();
+        $segmentDimensions->setName("ga:segment");
+        return $segmentDimensions;
+    }
+
     public function order($value, $order = "VALUE", $type = "DESCENDING")
     {
         $this->order = new \Google_Service_AnalyticsReporting_OrderBy();
@@ -113,6 +132,15 @@ class GoogleApi
         return $this;
     }
 
+    public function passObject($request)
+    {
+        $body = new \Google_Service_AnalyticsReporting_GetReportsRequest();
+        $body->setReportRequests(array($request));
+        $result = $this->analytics->reports->batchGet($body);
+
+        return $result;
+    }
+
     public function getReport()
     {
         // get the viewId from config file.
@@ -125,7 +153,8 @@ class GoogleApi
         $request->setDimensions($this->dimensions);
         $request->setDimensionFilterClauses(array($this->dimensionFilterClause));
         $request->setMetrics(array($this->metrics));
-        $request->setIncludeEmptyRows(true);
+        // $request->setIncludeEmptyRows(true);
+        $request->setSegments(array($this->segment));
         $request->setOrderBys($this->order);
 
         $body = new \Google_Service_AnalyticsReporting_GetReportsRequest();

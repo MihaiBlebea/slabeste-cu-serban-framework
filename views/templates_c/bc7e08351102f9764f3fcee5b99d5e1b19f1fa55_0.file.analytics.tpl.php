@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-25 20:57:43
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-26 20:54:18
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\analytics.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a41664700a936_20970076',
+  'unifunc' => 'content_5a42b6fa527963_02923009',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'bc7e08351102f9764f3fcee5b99d5e1b19f1fa55' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\analytics.tpl',
-      1 => 1514235456,
+      1 => 1514321656,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/admin/search.tpl' => 1,
   ),
 ),false)) {
-function content_5a41664700a936_20970076 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a42b6fa527963_02923009 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -29,64 +29,69 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13248580105a416646f2e243_77559047', "mobile-menu");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19645592975a42b6fa5011c7_22784775', "mobile-menu");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12983588285a416646f362d8_34284654', "sidebar");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17458958575a42b6fa509021_47724768', "sidebar");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8767936055a416646f384c4_25652758', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7659269855a42b6fa50b241_67253467', "body");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3511249045a42b6fa524755_03400573', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
 /* {block "mobile-menu"} */
-class Block_13248580105a416646f2e243_77559047 extends Smarty_Internal_Block
+class Block_19645592975a42b6fa5011c7_22784775 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'mobile-menu' => 
   array (
-    0 => 'Block_13248580105a416646f2e243_77559047',
+    0 => 'Block_19645592975a42b6fa5011c7_22784775',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
-/admin/client/create/new" class="nav-link active">Create a new client</a>
+/admin/client/create/new" class="nav-link active">All Sales Pages</a>
 <?php
 }
 }
 /* {/block "mobile-menu"} */
 /* {block "sidebar"} */
-class Block_12983588285a416646f362d8_34284654 extends Smarty_Internal_Block
+class Block_17458958575a42b6fa509021_47724768 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'sidebar' => 
   array (
-    0 => 'Block_12983588285a416646f362d8_34284654',
+    0 => 'Block_17458958575a42b6fa509021_47724768',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
     <a href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
-/admin/client/create/new" class="card-link">Create a new client</a>
+/admin/client/create/new" class="card-link">All Sales Pages</a>
 <?php
 }
 }
 /* {/block "sidebar"} */
 /* {block "body"} */
-class Block_8767936055a416646f384c4_25652758 extends Smarty_Internal_Block
+class Block_7659269855a42b6fa50b241_67253467 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_8767936055a416646f384c4_25652758',
+    0 => 'Block_7659269855a42b6fa50b241_67253467',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -115,6 +120,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         <?php }?>
                     </div>
                 </div>
+                <hr />
+
+
+                <canvas id="sales-page-chart" style="height:50vh; width:80vw"></canvas>
                 <hr />
 
                 <!-- Paginate notification start -->
@@ -149,4 +158,92 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 }
 /* {/block "body"} */
+/* {block "script"} */
+class Block_3511249045a42b6fa524755_03400573 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'script' => 
+  array (
+    0 => 'Block_3511249045a42b6fa524755_03400573',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+<?php echo '<script'; ?>
+>
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++)
+        {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    axios.get("<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/api/sale-pages").then((response)=> {
+        return response.data;
+    }).then((data)=> {
+
+        let yAxes = [];
+        let dataset = [];
+
+        for(let item in data)
+        {
+            for(let foo in data[item])
+            {
+                let int = parseInt(data[item][foo].count);
+                if(yAxes.includes(int) == false)
+                {
+                    yAxes.push(int)
+                    dataset.push({
+                        label: data[item][foo].url,
+                        borderColor: getRandomColor(),
+                        data: data[item][foo].count,
+                        borderWidth: 1
+                    })
+                }
+            }
+        }
+
+        let count = yAxes.sort(function(a, b) {
+            return b - a});
+        console.log(Object.values(dataset))
+
+        let ctx = document.getElementById("sales-page-chart").getContext('2d');
+        let salesPageChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: dataset
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Sales pages'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'category',
+                        labels: count
+                    }],
+                    xAxes: [{
+                        type: 'category',
+                        labels: Object.keys(data).map((item)=> {
+                            return item;
+                        }),
+                    }]
+                }
+            }
+        });
+
+    })
+<?php echo '</script'; ?>
+>
+<?php
+}
+}
+/* {/block "script"} */
 }

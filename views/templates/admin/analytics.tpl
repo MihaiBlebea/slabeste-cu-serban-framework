@@ -2,11 +2,11 @@
 {extends file='layouts/admin/admin_layout.tpl'}
 
 {block name="mobile-menu"}
-    <a href="{$app_path}/admin/client/create/new" class="nav-link active">Create a new client</a>
+    <a href="{$app_path}/admin/client/create/new" class="nav-link active">All Sales Pages</a>
 {/block}
 
 {block name="sidebar"}
-    <a href="{$app_path}/admin/client/create/new" class="card-link">Create a new client</a>
+    <a href="{$app_path}/admin/client/create/new" class="card-link">All Sales Pages</a>
 {/block}
 
 {block name="body"}
@@ -31,6 +31,10 @@
                         {/if}
                     </div>
                 </div>
+                <hr />
+
+
+                <canvas id="sales-page-chart" style="height:50vh; width:80vw"></canvas>
                 <hr />
 
                 <!-- Paginate notification start -->
@@ -80,4 +84,76 @@
             </div>
         </div>
     </div>
+{/block}
+
+{block name="script"}
+<script>
+    function getRandomColor() {
+        var letters = '0123456789ABCDEF';
+        var color = '#';
+        for (var i = 0; i < 6; i++)
+        {
+            color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+
+    axios.get("{$app_path}/api/sale-pages").then((response)=> {
+        return response.data;
+    }).then((data)=> {
+
+        let yAxes = [];
+        let dataset = [];
+
+        for(let item in data)
+        {
+            for(let foo in data[item])
+            {
+                let int = parseInt(data[item][foo].count);
+                if(yAxes.includes(int) == false)
+                {
+                    yAxes.push(int)
+                }
+                dataset.push({
+                    label: data[item][foo].url,
+                    borderColor: getRandomColor(),
+                    data: data[item][foo].count,
+                    borderWidth: 1
+                })
+            }
+        }
+
+        let count = yAxes.sort(function(a, b) {
+            return b - a});
+        console.log(Object.values(dataset))
+
+        let ctx = document.getElementById("sales-page-chart").getContext('2d');
+        let salesPageChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: dataset
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Sales pages'
+                },
+                scales: {
+                    yAxes: [{
+                        type: 'category',
+                        labels: count
+                    }],
+                    xAxes: [{
+                        type: 'category',
+                        labels: Object.keys(data).map((item)=> {
+                            return item;
+                        }),
+                    }]
+                }
+            }
+        });
+
+    })
+</script>
 {/block}

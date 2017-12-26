@@ -175,7 +175,7 @@ $this->get(":tag", "App\\Controllers\\LandingPageController@landing")
      ->belongsTo("landing-group");
 
 // Send tracking to this link
-$this->post("tracking/receive", "App\\Controllers\\LandingPageController@receive");
+// $this->post("tracking/receive", "App\\Controllers\\LandingPageController@receive");
 
 
 // Admin API - just get requests for data json
@@ -188,6 +188,9 @@ $this->get("get/transactions", "App\\Controllers\\ApiController@getTransactions"
      ->belongsTo("api-group");
 
 $this->post("autoresponder/catch", "App\\Controllers\\ApiController@autoresponder")
+     ->belongsTo("api-group");
+
+$this->get("sale-pages", "App\\Controllers\\GoogleApiController@allSalesPage")
      ->belongsTo("api-group");
 
 

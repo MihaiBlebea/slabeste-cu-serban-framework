@@ -154,17 +154,10 @@ class CheckoutController
             $list = $ac->addToList(5, $request->out("firstName"), $request->out("email"));
 
             // Add user to the automation
-            if($list->success == 1)
+            if($list && $program->active_campaign_tag !== '')
             {
-                $automation = $ac->addToAutomation($list->subscriber_id, "47");
-
-                // Add tag to exclude from automations
-                // if($automation->success == 1)
-                // {
-                //     $tag = "cumparat-" . $program->program_tag;
-                //     $result = $ac->addTags($list->subscriber_id, [$tag]);
-                //     dd($result);
-                // }
+                $contact_id = $list->subscriber_id;
+                $result = $ac->addTags($contact_id, [$program->active_campaign_tag]);
             }
 
         } else {

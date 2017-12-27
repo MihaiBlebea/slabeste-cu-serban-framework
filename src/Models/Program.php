@@ -19,7 +19,8 @@ class Program extends Model
 	public $main_page;
 	public $offer_id;
 	public $plan_id;
-
+	public $active_campaign_tag;
+	
 	// property indicating if program is owned by the user or not (default FALSE)
 	public $owned = false;
 

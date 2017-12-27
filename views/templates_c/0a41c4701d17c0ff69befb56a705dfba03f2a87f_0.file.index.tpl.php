@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-27 22:18:15
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-27 22:53:53
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\checkout\index.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a441c27cd7852_48014407',
+  'unifunc' => 'content_5a442481ae8865_38232368',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0a41c4701d17c0ff69befb56a705dfba03f2a87f' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\checkout\\index.tpl',
-      1 => 1514413092,
+      1 => 1514413444,
       2 => 'file',
     ),
   ),
@@ -22,35 +22,35 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/checkout/price.tpl' => 3,
   ),
 ),false)) {
-function content_5a441c27cd7852_48014407 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a442481ae8865_38232368 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6295346335a441c27caee08_53359216', "nav");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20032681415a442481ac0d86_73594637', "nav");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13898723715a441c27cb7ab4_09074221', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8997261855a442481aca512_70748460', "body");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7485052105a441c27cd6315_25932309', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17090711565a442481ae73f3_48785741', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/checkout_layout.tpl');
 }
 /* {block "nav"} */
-class Block_6295346335a441c27caee08_53359216 extends Smarty_Internal_Block
+class Block_20032681415a442481ac0d86_73594637 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'nav' => 
   array (
-    0 => 'Block_6295346335a441c27caee08_53359216',
+    0 => 'Block_20032681415a442481ac0d86_73594637',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -65,12 +65,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "nav"} */
 /* {block "body"} */
-class Block_13898723715a441c27cb7ab4_09074221 extends Smarty_Internal_Block
+class Block_8997261855a442481aca512_70748460 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_13898723715a441c27cb7ab4_09074221',
+    0 => 'Block_8997261855a442481aca512_70748460',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -119,7 +119,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         Plateste cu cardul apasand butonul "Cumpara acum" sau prin PayPal
                     </div>
 
-                    <input name="program_price" type="text" value="<?php echo $_smarty_tpl->tpl_vars['discountPrice']->value;?>
+                    <input name="program_price" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['discountPrice']->value;?>
 ">
                     <input name="programTag" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_tag;?>
 ">
@@ -210,12 +210,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_7485052105a441c27cd6315_25932309 extends Smarty_Internal_Block
+class Block_17090711565a442481ae73f3_48785741 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_7485052105a441c27cd6315_25932309',
+    0 => 'Block_17090711565a442481ae73f3_48785741',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

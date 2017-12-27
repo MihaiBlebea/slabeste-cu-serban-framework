@@ -190,7 +190,7 @@ $this->get("get/transactions", "App\\Controllers\\ApiController@getTransactions"
 $this->post("autoresponder/catch", "App\\Controllers\\ApiController@autoresponder")
      ->belongsTo("api-group");
 
-$this->get("sale-pages", "App\\Controllers\\GoogleApiController@allSalesPage")
+$this->post("sale-pages", "App\\Controllers\\GoogleApiController@customSegment")
      ->belongsTo("api-group");
 
 

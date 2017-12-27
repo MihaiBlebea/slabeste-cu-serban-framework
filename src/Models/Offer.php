@@ -13,4 +13,5 @@ class Offer extends Model
 	public $price;
 	public $code;
 	public $reg_date;
+	public $expire;
 }

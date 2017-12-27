@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-25 20:49:34
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-27 18:29:49
   from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\admin\transactions.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a41645e716e29_00080490',
+  'unifunc' => 'content_5a43e69daab687_73904337',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'e43451a7921579f0c9f926b09cd6a0b80395979a' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\admin\\transactions.tpl',
-      1 => 1514234971,
+      1 => 1514399379,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/admin-pagination.tpl' => 1,
   ),
 ),false)) {
-function content_5a41645e716e29_00080490 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a43e69daab687_73904337 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 ?>
@@ -31,33 +31,64 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, true);
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15996604965a41645e6d4fc9_74638121', "mobile-menu");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17003896845a43e69da13643_61874233', "head-script");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17036278295a41645e6dd499_82253810', "sidebar");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4442099945a43e69da21f62_44907452', "mobile-menu");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16606489965a41645e6ec110_13641798', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13943402935a43e69da24149_65896819', "sidebar");
 ?>
 
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3709271565a41645e715250_86968022', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1018577935a43e69da34d60_89813219', "body");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_17192807645a43e69daa82f0_40494405', "script");
 ?>
 
 <?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/admin/admin_layout.tpl');
 }
+/* {block "head-script"} */
+class Block_17003896845a43e69da13643_61874233 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'head-script' => 
+  array (
+    0 => 'Block_17003896845a43e69da13643_61874233',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+    <?php echo '<script'; ?>
+ src="https://unpkg.com/axios/dist/axios.min.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/js/vue.js"><?php echo '</script'; ?>
+>
+<?php
+}
+}
+/* {/block "head-script"} */
 /* {block "mobile-menu"} */
-class Block_15996604965a41645e6d4fc9_74638121 extends Smarty_Internal_Block
+class Block_4442099945a43e69da21f62_44907452 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'mobile-menu' => 
   array (
-    0 => 'Block_15996604965a41645e6d4fc9_74638121',
+    0 => 'Block_4442099945a43e69da21f62_44907452',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -70,12 +101,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "mobile-menu"} */
 /* {block "sidebar"} */
-class Block_17036278295a41645e6dd499_82253810 extends Smarty_Internal_Block
+class Block_13943402935a43e69da24149_65896819 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'sidebar' => 
   array (
-    0 => 'Block_17036278295a41645e6dd499_82253810',
+    0 => 'Block_13943402935a43e69da24149_65896819',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -90,12 +121,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "sidebar"} */
 /* {block "body"} */
-class Block_16606489965a41645e6ec110_13641798 extends Smarty_Internal_Block
+class Block_1018577935a43e69da34d60_89813219 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_16606489965a41645e6ec110_13641798',
+    0 => 'Block_1018577935a43e69da34d60_89813219',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -130,7 +161,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <canvas id="myChart" style="height:50vh; width:80vw"></canvas>
                 </div>
                 <hr />
-                
+
                 <!-- Paginate notification start -->
                 <?php $_smarty_tpl->_subTemplateRender("file:partials/admin-paginate-notification.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
@@ -226,12 +257,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_3709271565a41645e715250_86968022 extends Smarty_Internal_Block
+class Block_17192807645a43e69daa82f0_40494405 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_3709271565a41645e715250_86968022',
+    0 => 'Block_17192807645a43e69daa82f0_40494405',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -245,7 +276,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
             return response.data;
         }).then((data)=> {
 
-            console.log(Object.values(data));
             var ctx = document.getElementById("myChart").getContext('2d');
             var myChart = new Chart(ctx, {
                 type: 'line',
@@ -255,7 +285,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         label: 'RON',
                         borderColor: "blue",
                         data: Object.values(data),
-                        borderWidth: 1
+                        borderWidth: 3
                     }]
                 },
                 options: {

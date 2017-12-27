@@ -1,6 +1,12 @@
 
 {extends file='layouts/admin/admin_layout.tpl'}
 
+{block name="head-script"}
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.js"></script>
+    <script src="{$app_path}/js/vue.js"></script>
+{/block}
+
 {block name="mobile-menu"}
     <a href="{$app_path}/admin/transactions" class="nav-link active" style="color:red;">Reset search</a>
 {/block}
@@ -123,7 +129,7 @@
                         label: 'RON',
                         borderColor: "blue",
                         data: Object.values(data),
-                        borderWidth: 1
+                        borderWidth: 3
                     }]
                 },
                 options: {

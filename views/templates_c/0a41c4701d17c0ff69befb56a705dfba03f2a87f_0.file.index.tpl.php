@@ -1,25 +1,95 @@
-{extends file='layouts/checkout_layout.tpl'}
+<?php
+/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-27 22:18:15
+  from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\checkout\index.tpl" */
 
-{block name="nav"}
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32-dev-22',
+  'unifunc' => 'content_5a441c27cd7852_48014407',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '0a41c4701d17c0ff69befb56a705dfba03f2a87f' => 
+    array (
+      0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\checkout\\index.tpl',
+      1 => 1514413092,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:partials/notification.tpl' => 1,
+    'file:partials/checkout/price.tpl' => 3,
+  ),
+),false)) {
+function content_5a441c27cd7852_48014407 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, true);
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6295346335a441c27caee08_53359216', "nav");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13898723715a441c27cb7ab4_09074221', "body");
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7485052105a441c27cd6315_25932309', "script");
+?>
+
+<?php $_smarty_tpl->inheritance->endChild($_smarty_tpl, 'layouts/checkout_layout.tpl');
+}
+/* {block "nav"} */
+class Block_6295346335a441c27caee08_53359216 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'nav' => 
+  array (
+    0 => 'Block_6295346335a441c27caee08_53359216',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
     <div class="nav animated slideInDown">
-        <img style="display:block;margin:auto;max-width: 120px;" src="{$app_path}/img/logos/logo_site.png" />
+        <img style="display:block;margin:auto;max-width: 120px;" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/img/logos/logo_site.png" />
     </div>
-{/block}
+<?php
+}
+}
+/* {/block "nav"} */
+/* {block "body"} */
+class Block_13898723715a441c27cb7ab4_09074221 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'body' => 
+  array (
+    0 => 'Block_13898723715a441c27cb7ab4_09074221',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
 
-{block name="body"}
     <div class="container-fluid">
         <div class="row mb-5">
             <div class="col-sm-12 col-md-12">
-                {if $error == true}
-                    {include 'partials/notification.tpl'
-                        type="danger"
-                        message="Eroare! Plata nu a putut fi efectuata. Verifica datele si incearca din nou"}
-                {/if}
+                <?php if ($_smarty_tpl->tpl_vars['error']->value == true) {?>
+                    <?php $_smarty_tpl->_subTemplateRender('file:partials/notification.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('type'=>"danger",'message'=>"Eroare! Plata nu a putut fi efectuata. Verifica datele si incearca din nou"), 0, false);
+?>
+
+                <?php }?>
             </div>
         </div>
         <div class="row mb-2 animated fadeIn">
             <div class="col-sm-12 col-md-6">
-                <form id="checkout-form" method="post" action="{$app_path}/checkout/payment">
+                <form id="checkout-form" method="post" action="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/checkout/payment">
                     <div class="form-group">
                         <label>Nume:</label>
                         <input id="first-name" name="firstName" onkeyup="validateFirstName('first-name');" type="text" class="form-control" placeholder="ex. Popescu" required>
@@ -49,8 +119,10 @@
                         Plateste cu cardul apasand butonul "Cumpara acum" sau prin PayPal
                     </div>
 
-                    <input name="program_price" type="hidden" value="{$discountPrice}">
-                    <input name="programTag" type="hidden" value="{$program->program_tag}">
+                    <input name="program_price" type="text" value="<?php echo $_smarty_tpl->tpl_vars['discountPrice']->value;?>
+">
+                    <input name="programTag" type="hidden" value="<?php echo $_smarty_tpl->tpl_vars['program']->value->program_tag;?>
+">
 
                     <div class="form-group">
                         <div class="card">
@@ -61,43 +133,45 @@
                     </div>
                     <input id="send-button" type="submit" value="Cumpara acum" class="btn btn-success btn-lg btn-block">
                 </form>
-                <img style="display:block;margin:auto;" src="{$app_path}/img/logos/plata_sigura.png" />
+                <img style="display:block;margin:auto;" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/img/logos/plata_sigura.png" />
                 <p class="text-center mt-2">
                     Siguranta platii tale este importanta pentru noi. De aceea, folosim cele mai moderne filtre de securitate pentru platile online. Nicio informatie confidentiala nu este stocata pe acest site.
                 </p>
             </div>
             <div class="col-sm-12 col-md-6">
-                <p class="text-center program-name">Programul {$program->program_name}</p>
+                <p class="text-center program-name">Programul <?php echo $_smarty_tpl->tpl_vars['program']->value->program_name;?>
+</p>
 
-                {if $discount == true}
+                <?php if ($_smarty_tpl->tpl_vars['discount']->value == true) {?>
                     <div class="alert alert-success" role="alert">
-                        Profita de <strong>-{$discountProcent}% reducere</strong>!
+                        Profita de <strong>-<?php echo $_smarty_tpl->tpl_vars['discountProcent']->value;?>
+% reducere</strong>!
                     </div>
-                {/if}
-                <img style="width:100%" class="mb-3 animated fadeIn" src="{$app_path}/{$program->program_image}" />
+                <?php }?>
+                <img style="width:100%" class="mb-3 animated fadeIn" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/<?php echo $_smarty_tpl->tpl_vars['program']->value->program_image;?>
+" />
 
                 <div class="row">
-                    {if $discount == false}
+                    <?php if ($_smarty_tpl->tpl_vars['discount']->value == false) {?>
                         <div class="col">
-                            {include 'partials/checkout/price.tpl'
-                                text  = "Pret Special"
-                                price = $program->program_price
-                                mode  = "new-price"}
+                            <?php $_smarty_tpl->_subTemplateRender('file:partials/checkout/price.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('text'=>"Pret Special",'price'=>$_smarty_tpl->tpl_vars['program']->value->program_price,'mode'=>"new-price"), 0, false);
+?>
+
                         </div>
-                    {else}
+                    <?php } else { ?>
                         <div class="col-md-6">
-                            {include 'partials/checkout/price.tpl'
-                                text  = "Pret Redus"
-                                price = $discountPrice
-                                mode  = "new-price"}
+                            <?php $_smarty_tpl->_subTemplateRender('file:partials/checkout/price.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('text'=>"Pret Redus",'price'=>$_smarty_tpl->tpl_vars['discountPrice']->value,'mode'=>"new-price"), 0, true);
+?>
+
                         </div>
                         <div class="col-md-6">
-                            {include 'partials/checkout/price.tpl'
-                                text  = "Vechiul Pret"
-                                price = $program->program_price
-                                mode  = "old-price"}
+                            <?php $_smarty_tpl->_subTemplateRender('file:partials/checkout/price.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('text'=>"Vechiul Pret",'price'=>$_smarty_tpl->tpl_vars['program']->value->program_price,'mode'=>"old-price"), 0, true);
+?>
+
                         </div>
-                    {/if}
+                    <?php }?>
                 </div>
                 <hr />
                 <div class="business-details">
@@ -113,7 +187,8 @@
                         <div class="justify-content-center align-items-center">
                             <div class="row justify-content-center align-items-center">
                                 <div class="col-md-4">
-                                    <img style="max-width: 150px;" src="{$app_path}/img/logos/garantie.png" />
+                                    <img style="max-width: 150px;" src="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
+/img/logos/garantie.png" />
                                 </div>
                                 <div class="col-md-8">
                                     <h4><strong>Garantia de 14 zile</strong></h4>
@@ -130,10 +205,24 @@
             </div>
         </div>
     </div>
-{/block}
+<?php
+}
+}
+/* {/block "body"} */
+/* {block "script"} */
+class Block_7485052105a441c27cd6315_25932309 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'script' => 
+  array (
+    0 => 'Block_7485052105a441c27cd6315_25932309',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
 
-{block name="script"}
-<script>
+<?php echo '<script'; ?>
+>
 
     function changeDOM(el, valid)
     {
@@ -202,5 +291,10 @@
 
         changeDOM(el, valid);
     }
-</script>
-{/block}
+<?php echo '</script'; ?>
+>
+<?php
+}
+}
+/* {/block "script"} */
+}

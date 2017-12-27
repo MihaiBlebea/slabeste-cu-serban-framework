@@ -16,8 +16,15 @@ class GoogleApiController
         ])->setDisplay("admin/analytics.tpl");
     }
 
-    public function allSalesPage(Request $request = null)
+    public function customSegment(Request $request = null)
     {
+        $segments = [
+            "all-sale-pages"   => "sessions::condition::ga:landingPagePath=@/sales-page",
+            "all-landing-pages" => "sessions::condition::ga:landingPagePath=@/lm"
+        ];
+
+        $segment = $segments[$request->out('request')];
+
         $carbon = new Carbon();
         $google = new GoogleApi($carbon);
         $response = $google->init()
@@ -25,7 +32,7 @@ class GoogleApiController
                            ->dimensions("ga:date")
                            ->dimensions("ga:pagePath")
                            // ->dimensionFilter("ga:pagePath", ["/app/public/landing/talie-mai-subtire/", "/9-exercitii-pentru-fund-bombat/"], "IN_LIST")
-                           ->segment('sessions::condition::ga:landingPagePath=@/sales-page')
+                           ->segment($segment)
                            ->order("ga:sessions")
                            ->metrics("ga:sessions")
                            ->getReport();
@@ -34,10 +41,11 @@ class GoogleApiController
         $result = [];
         foreach($response as $key => $value)
         {
-            $result[$value["ga:date"]][$value["ga:pagePath"]] = [
+            // $date = Carbon::parse($value["ga:date"]);
+            $result[$key] = [
                 "url"   => $value["ga:pagePath"],
                 "count" => $value["ga:sessions"],
-                "date"  => $value["ga:date"]];
+                "date"  => Carbon::parse($value["ga:date"])->toDateString()];
         }
         returnJson($result);
     }

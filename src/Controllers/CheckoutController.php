@@ -14,6 +14,7 @@ use App\Autoresponder\Autoresponder;
 use Framework\Factory\EventFactory;
 use Framework\Factory\ListenerFactory;
 use App\Managers\CreateAccountManager;
+use Carbon\Carbon;
 
 class CheckoutController
 {
@@ -31,19 +32,20 @@ class CheckoutController
         // Check if discount code expists and is the correct one
         if($request !== null)
         {
-            $discount = $request->out("discount");
+            $code = $request->out("discount");
 
             // Check discount code in the database
             $offer = new Offer();
-            $offer = $offer->where("code", "=", $discount)
+            $offer = $offer->where("code", "=", $code)
                            ->where("program_tag", "=", $program->program_tag)
                            ->selectOne();
 
             // If offer is found in the database, then set discount true and pass the discounted price
-            if($offer)
+            if($offer && $offer->expire > Carbon::now()->toDateTimeString())
             {
                 $discount = true;
                 $discountPrice = $offer->price;
+                $discountProcent = round(($discountPrice / $program->program_price) * 100, 0);
             }
         }
 
@@ -53,6 +55,7 @@ class CheckoutController
             "program"         => $program,
             "discount"        => $discount,
             "discountPrice"   => isset($discountPrice) ? $discountPrice : $program->program_price,
+            "discountProcent" => isset($discountProcent) ? $discountProcent : 0,
             "braintree_token" => $token,
             "error"           => $error
         ])->setDisplay("checkout/index.tpl");
@@ -140,7 +143,7 @@ class CheckoutController
                 'username'       => $username,
                 'program_name'   => $program->program_name,
                 'program_tag'    => $program->program_tag,
-                'value'          => $program->program_price,
+                'value'          => $request->out("program_price"),
                 'transaction_id' => $transactionID,
             ]);
 
@@ -184,7 +187,7 @@ class CheckoutController
             "firstName"    => $request->out("firstName"),
             "lastName"     => $request->out("lastName"),
             "programName"  => $program->program_name,
-            "programPrice" => $program->program_price
+            "programPrice" => $request->out("program_price")
         ];
 
         // Call events to send email to admin and to the client

@@ -3,9 +3,9 @@
 namespace App\Controllers;
 
 use App\GoogleApi\GoogleApi;
-use Carbon\Carbon;
 use Framework\Alias\Template;
 use Framework\Router\Request;
+use Framework\Injectables\Injector;
 
 class GoogleApiController
 {
@@ -16,37 +16,36 @@ class GoogleApiController
         ])->setDisplay("admin/analytics.tpl");
     }
 
-    public function customSegment(Request $request = null)
+    public function getPageType($type, Request $request = null)
     {
-        $segments = [
-            "all-sale-pages"   => "sessions::condition::ga:landingPagePath=@/sales-page",
-            "all-landing-pages" => "sessions::condition::ga:landingPagePath=@/lm"
-        ];
-
-        $segment = $segments[$request->out('request')];
-
-        $carbon = new Carbon();
-        $google = new GoogleApi($carbon);
-        $response = $google->init()
-                           ->lastWeek()
-                           ->dimensions("ga:date")
-                           ->dimensions("ga:pagePath")
-                           // ->dimensionFilter("ga:pagePath", ["/app/public/landing/talie-mai-subtire/", "/9-exercitii-pentru-fund-bombat/"], "IN_LIST")
-                           ->segment($segment)
-                           ->order("ga:sessions")
-                           ->metrics("ga:sessions")
-                           ->getReport();
-        $response = $google->print($response);
-
-        $result = [];
-        foreach($response as $key => $value)
+        if($request !== null)
         {
-            // $date = Carbon::parse($value["ga:date"]);
-            $result[$key] = [
-                "url"   => $value["ga:pagePath"],
-                "count" => $value["ga:sessions"],
-                "date"  => Carbon::parse($value["ga:date"])->toDateString()];
+            $date_start = $request->out("dateStart");
+            $date_end   = $request->out("dateEnd");
+            $metric     = $request->out("metric");
+
+            $config = Injector::resolve("Config");
+            $pages = $config->getConfig("google")["pages"][$type];
+
+            $google = Injector::resolve("GoogleApi");
+            $response = $google->init()
+                               // ->lastWeek()
+                               ->interval($date_start, $date_end)
+                               ->dimensions("ga:date")
+                               ->dimensions("ga:pagePath")
+                               ->dimensionFilter("ga:pagePath", $pages, "IN_LIST")
+                               ->order("ga:date")
+                               ->metrics($metric)
+                               ->getReport();
+            $response = $google->print($response);
+
+            returnJson($response);
         }
-        returnJson($result);
+        returnJson(["result" => "Not a valid request"]);
+    }
+
+    public function getFunnel($name, Request $request)
+    {
+        dd($name);
     }
 }

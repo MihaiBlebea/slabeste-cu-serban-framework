@@ -16,7 +16,7 @@
     </head>
     <body>
         {include 'partials/admin/admin-navigation.tpl'}
-        <div class="container-fluid">
+        <div class="container-fluid" id="app">
             <div class="row">
 
                 <!-- Here is the partial for the sidebar -->

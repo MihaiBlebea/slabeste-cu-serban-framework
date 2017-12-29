@@ -1,11 +1,11 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-25 20:50:32
-  from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\partials\admin\admin-navigation.tpl" */
+/* Smarty version 3.1.32-dev-38, created on 2017-12-29 15:39:18
+  from 'C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\partials\admin\admin-navigation.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a416498013189_07069373',
+  'version' => '3.1.32-dev-38',
+  'unifunc' => 'content_5a4661a6bbaa21_23498156',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a416498013189_07069373 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a4661a6bbaa21_23498156 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -79,7 +79,7 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 /member/home">Go to membership</a>
             <hr />
             <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4313716745a41649800dd49_04231410', "mobile-menu");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13240369895a4661a6bb7c02_57575595', "mobile-menu");
 ?>
 
             <hr />
@@ -91,8 +91,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4313716745a4164980
     </div>
     <nav class="navbar">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            
-            <i style="color: white;" class="fa fa-bars" aria-hidden="true"></i>
+                        <i style="color: white;" class="fa fa-bars" aria-hidden="true"></i>
         </button>
         <a class="nav-link active" href="<?php echo $_smarty_tpl->tpl_vars['app_path']->value;?>
 /member/home">Home</a>
@@ -102,12 +101,12 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4313716745a4164980
 </div>
 <?php }
 /* {block "mobile-menu"} */
-class Block_4313716745a41649800dd49_04231410 extends Smarty_Internal_Block
+class Block_13240369895a4661a6bb7c02_57575595 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'mobile-menu' => 
   array (
-    0 => 'Block_4313716745a41649800dd49_04231410',
+    0 => 'Block_13240369895a4661a6bb7c02_57575595',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

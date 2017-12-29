@@ -4,6 +4,7 @@ namespace App\GoogleApi;
 
 use Framework\Injectables\Injector;
 use Carbon\Carbon;
+use Framework\Configs\Config;
 
 class GoogleApi
 {
@@ -29,10 +30,11 @@ class GoogleApi
 
     private $analytics;
 
-    public function __construct(Carbon $carbon)
+    public function __construct(Config $config, Carbon $carbon)
     {
         $this->carbon = $carbon;
-        $this->config = Injector::resolve("Config");
+        $this->config = $config;
+
     }
 
     public function init()
@@ -52,6 +54,16 @@ class GoogleApi
 
     public function interval($date_start = "7daysAgo", $date_end = "today")
     {
+        if($date_start == "null" || $date_start == null)
+        {
+            $date_start = "7daysAgo";
+        }
+
+        if($date_end == "null" || $date_end == null)
+        {
+            $date_end = "today";
+        }
+
         $this->dateRange = new \Google_Service_AnalyticsReporting_DateRange();
         $this->dateRange->setStartDate($date_start);
         $this->dateRange->setEndDate($date_end);
@@ -108,7 +120,7 @@ class GoogleApi
         return $segmentDimensions;
     }
 
-    public function order($value, $order = "VALUE", $type = "DESCENDING")
+    public function order($value, $order = "VALUE", $type = "ASCENDING")
     {
         $this->order = new \Google_Service_AnalyticsReporting_OrderBy();
         $this->order->setFieldName($value);
@@ -200,6 +212,19 @@ class GoogleApi
                     }
                 }
             }
+        }
+        return $this->formatData($result);
+    }
+
+    private function formatData($response)
+    {
+        $result = [];
+        foreach($response as $key => $value)
+        {
+            $result[$key] = [
+                "url"   => $value["ga:pagePath"],
+                "count" => $value["ga:sessions"],
+                "date"  => Carbon::parse($value["ga:date"])->toDateString()];
         }
         return $result;
     }

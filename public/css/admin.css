@@ -18,16 +18,20 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+    cursor:pointer;
 }
 a:hover {
     color: inherit;
+    cursor:pointer;
 }
 a.card-link {
     color: #0A82C5;
+    cursor:pointer;
 }
 a.card-link:hover {
     color: #0A82C5;
     font-weight: bold;
+    cursor:pointer;
 }
 .nav {
     background-color: #0A82C5;
@@ -160,7 +164,6 @@ a.card-link:hover {
     color:#fff;
     cursor:pointer;
 }
-
 .elipsis {
     display:inline-block;
     width:100%;
@@ -168,6 +171,10 @@ a.card-link:hover {
     overflow:hidden !important;
     text-overflow: ellipsis;
 }
+.hidden {
+    visibility:hidden!important;
+}
+
 
 /* Mobile version */
 @media only screen and (max-width: 1000px) {

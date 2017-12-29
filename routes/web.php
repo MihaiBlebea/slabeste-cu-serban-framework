@@ -174,9 +174,6 @@ $this->get(":tag", "App\\Controllers\\LandingPageController@landing")
      ->as("landing.page")
      ->belongsTo("landing-group");
 
-// Send tracking to this link
-// $this->post("tracking/receive", "App\\Controllers\\LandingPageController@receive");
-
 
 // Admin API - just get requests for data json
 $this->group([
@@ -190,9 +187,11 @@ $this->get("get/transactions", "App\\Controllers\\ApiController@getTransactions"
 $this->post("autoresponder/catch", "App\\Controllers\\ApiController@autoresponder")
      ->belongsTo("api-group");
 
-$this->post("sale-pages", "App\\Controllers\\GoogleApiController@customSegment")
+$this->get("analytics/pages/:type", "App\\Controllers\\GoogleApiController@getPageType")
      ->belongsTo("api-group");
 
+$this->get("analytics/funnel/:name", "App\\Controllers\\GoogleApiController@getFunnel")
+     ->belongsTo("api-group");
 
 // Cron Job - all the paths for cron job
 $this->group([

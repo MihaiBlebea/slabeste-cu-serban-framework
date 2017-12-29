@@ -1,11 +1,11 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-25 20:48:44
-  from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\partials\membership-footer.tpl" */
+/* Smarty version 3.1.32-dev-38, created on 2017-12-29 15:39:19
+  from 'C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\partials\membership-footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a41642c01a4d3_78039622',
+  'version' => '3.1.32-dev-38',
+  'unifunc' => 'content_5a4661a70e9f38_81494941',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,9 +20,8 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5a41642c01a4d3_78039622 (Smarty_Internal_Template $_smarty_tpl) {
-?>
-<footer class="footer">
+function content_5a4661a70e9f38_81494941 (Smarty_Internal_Template $_smarty_tpl) {
+?><footer class="footer">
     Slabeste cu Serban
 </footer>
 <?php }

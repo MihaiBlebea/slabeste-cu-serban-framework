@@ -1,18 +1,18 @@
 <?php
-/* Smarty version {Smarty::SMARTY_VERSION}, created on 2017-12-27 18:29:01
-  from "C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\admin\admin_layout.tpl" */
+/* Smarty version 3.1.32-dev-38, created on 2017-12-29 17:28:19
+  from 'C:\Laragon\www\slabeste-cu-serban\slabeste-cu-serban-framework\views\templates\layouts\admin\admin_layout.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.32-dev-22',
-  'unifunc' => 'content_5a43e66d211b64_14074593',
+  'version' => '3.1.32-dev-38',
+  'unifunc' => 'content_5a467b33c0e948_16420084',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '36683825dad694d80bcebde5440717ed30dd577d' => 
     array (
       0 => 'C:\\Laragon\\www\\slabeste-cu-serban\\slabeste-cu-serban-framework\\views\\templates\\layouts\\admin\\admin_layout.tpl',
-      1 => 1514399329,
+      1 => 1514568496,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:partials/membership-footer.tpl' => 1,
   ),
 ),false)) {
-function content_5a43e66d211b64_14074593 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a467b33c0e948_16420084 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -50,21 +50,20 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 /css/admin.css">
 
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8022366345a43e66d207e26_32983061', "head-script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3900665775a467b33c02788_47579291', "head-script");
 ?>
 
     </head>
     <body>
         <?php $_smarty_tpl->_subTemplateRender('file:partials/admin/admin-navigation.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
-        <div class="container-fluid">
+        <div class="container-fluid" id="app">
             <div class="row">
 
                 <!-- Here is the partial for the sidebar -->
                 <div style="padding:0px;" class="col-md-2 sidebar col-12 col-md-3 col-xl-2 pt-5 bd-sidebar animated fadeInLeft" id="sticky-sidebar">
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5853382995a43e66d20aef8_33933559', "sidebar");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18362974275a467b33c06260_45574738', "sidebar");
 ?>
 
                 </div>
@@ -74,12 +73,11 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5853382995a43e66d2
                     <div class="mt-2 mt-sm-2 mt-md-5 d-lg-none">
                         <?php $_smarty_tpl->_subTemplateRender("file:partials/notification.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('message'=>"Acceseaza celelalte pagini din meniul <i class='fa fa-bars' aria-hidden='true'></i>",'type'=>"primary"), 0, false);
 ?>
-
                     </div>
 
                     <!-- Here is the slot for the body -->
                     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16576993105a43e66d20e155_00283030', "body");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9810921015a467b33c0a613_37144215', "body");
 ?>
 
 
@@ -90,21 +88,20 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16576993105a43e66d
         <?php $_smarty_tpl->_subTemplateRender('file:partials/membership-footer.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 
-
         <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15739981395a43e66d210413_53434568', "script");
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13935386575a467b33c0d052_94138657', "script");
 ?>
 
     </body>
 <body>
 <?php }
 /* {block "head-script"} */
-class Block_8022366345a43e66d207e26_32983061 extends Smarty_Internal_Block
+class Block_3900665775a467b33c02788_47579291 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'head-script' => 
   array (
-    0 => 'Block_8022366345a43e66d207e26_32983061',
+    0 => 'Block_3900665775a467b33c02788_47579291',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -112,12 +109,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "head-script"} */
 /* {block "sidebar"} */
-class Block_5853382995a43e66d20aef8_33933559 extends Smarty_Internal_Block
+class Block_18362974275a467b33c06260_45574738 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'sidebar' => 
   array (
-    0 => 'Block_5853382995a43e66d20aef8_33933559',
+    0 => 'Block_18362974275a467b33c06260_45574738',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -125,12 +122,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "sidebar"} */
 /* {block "body"} */
-class Block_16576993105a43e66d20e155_00283030 extends Smarty_Internal_Block
+class Block_9810921015a467b33c0a613_37144215 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'body' => 
   array (
-    0 => 'Block_16576993105a43e66d20e155_00283030',
+    0 => 'Block_9810921015a467b33c0a613_37144215',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -138,12 +135,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block "body"} */
 /* {block "script"} */
-class Block_15739981395a43e66d210413_53434568 extends Smarty_Internal_Block
+class Block_13935386575a467b33c0d052_94138657 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_15739981395a43e66d210413_53434568',
+    0 => 'Block_13935386575a467b33c0d052_94138657',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

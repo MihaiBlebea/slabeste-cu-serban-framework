@@ -8,20 +8,20 @@
     "packages": [
         {
             "name": "activecampaign/api-php",
-            "version": "v2.0.2",
+            "version": "v2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ActiveCampaign/activecampaign-api-php.git",
-                "reference": "0bb37ecc9c65ebf35c38ccc418ced88bdae29c67"
+                "reference": "2bf5b72ba8668de8dcb27e194948028276e748c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ActiveCampaign/activecampaign-api-php/zipball/0bb37ecc9c65ebf35c38ccc418ced88bdae29c67",
-                "reference": "0bb37ecc9c65ebf35c38ccc418ced88bdae29c67",
+                "url": "https://api.github.com/repos/ActiveCampaign/activecampaign-api-php/zipball/2bf5b72ba8668de8dcb27e194948028276e748c5",
+                "reference": "2bf5b72ba8668de8dcb27e194948028276e748c5",
                 "shasum": ""
             },
             "require": {
-                "lib-curl": "*",
+                "ext-curl": "*",
                 "php": ">=5.3.0"
             },
             "type": "library",
@@ -97,16 +97,16 @@
         },
         {
             "name": "filp/whoops",
-            "version": "2.1.10",
+            "version": "2.1.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/filp/whoops.git",
-                "reference": "ffbbd2c06c64b08fb47974eed5dbce4ca2bb0eec"
+                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/ffbbd2c06c64b08fb47974eed5dbce4ca2bb0eec",
-                "reference": "ffbbd2c06c64b08fb47974eed5dbce4ca2bb0eec",
+                "url": "https://api.github.com/repos/filp/whoops/zipball/c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
+                "reference": "c6081b8838686aa04f1e83ba7e91f78b7b2a23e6",
                 "shasum": ""
             },
             "require": {
@@ -115,7 +115,7 @@
             },
             "require-dev": {
                 "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "^4.8 || ^5.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
                 "symfony/var-dumper": "^2.6 || ^3.0"
             },
             "suggest": {
@@ -151,10 +151,10 @@
                 "exception",
                 "handling",
                 "library",
-                "whoops",
-                "zf2"
+                "throwable",
+                "whoops"
             ],
-            "time": "2017-08-03T18:23:40+00:00"
+            "time": "2017-11-23T18:22:44+00:00"
         },
         {
             "name": "firebase/php-jwt",
@@ -264,12 +264,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/google/google-api-php-client-services.git",
-                "reference": "1950da11f9adeb5ecf67d0e268fd2548fc5f90ae"
+                "reference": "5f474421169fc2d830cb46035cbc27f88c53ba8f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/1950da11f9adeb5ecf67d0e268fd2548fc5f90ae",
-                "reference": "1950da11f9adeb5ecf67d0e268fd2548fc5f90ae",
+                "url": "https://api.github.com/repos/google/google-api-php-client-services/zipball/5f474421169fc2d830cb46035cbc27f88c53ba8f",
+                "reference": "5f474421169fc2d830cb46035cbc27f88c53ba8f",
                 "shasum": ""
             },
             "require": {
@@ -293,7 +293,7 @@
             "keywords": [
                 "google"
             ],
-            "time": "2017-12-16 00:23:06"
+            "time": "2017-12-23 00:23:13"
         },
         {
             "name": "google/auth",
@@ -715,12 +715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpseclib/phpseclib.git",
-                "reference": "b02d78e92aeeddd900cb71510c6ef395025f469e"
+                "reference": "4bc1d7d68207eb923301d330dbdf675a2d75096f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/b02d78e92aeeddd900cb71510c6ef395025f469e",
-                "reference": "b02d78e92aeeddd900cb71510c6ef395025f469e",
+                "url": "https://api.github.com/repos/phpseclib/phpseclib/zipball/4bc1d7d68207eb923301d330dbdf675a2d75096f",
+                "reference": "4bc1d7d68207eb923301d330dbdf675a2d75096f",
                 "shasum": ""
             },
             "require": {
@@ -799,7 +799,7 @@
                 "x.509",
                 "x509"
             ],
-            "time": "2017-12-15 05:49:10"
+            "time": "2017-12-18 06:08:00"
         },
         {
             "name": "psr/cache",
@@ -946,16 +946,16 @@
         },
         {
             "name": "serban/framework",
-            "version": "v1.16",
+            "version": "v1.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/SerbanBlebea/framework.git",
-                "reference": "a4d83c00daeec67f8f705cebb2d2bee6306d25bb"
+                "reference": "2d736c24ba5f3482fa4aa559deeb6880267d3769"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/SerbanBlebea/framework/zipball/a4d83c00daeec67f8f705cebb2d2bee6306d25bb",
-                "reference": "a4d83c00daeec67f8f705cebb2d2bee6306d25bb",
+                "url": "https://api.github.com/repos/SerbanBlebea/framework/zipball/2d736c24ba5f3482fa4aa559deeb6880267d3769",
+                "reference": "2d736c24ba5f3482fa4aa559deeb6880267d3769",
                 "shasum": ""
             },
             "require": {
@@ -980,7 +980,7 @@
                 }
             ],
             "description": "My framework project in PHP",
-            "time": "2017-09-21T15:31:34+00:00"
+            "time": "2017-10-11T21:25:31+00:00"
         },
         {
             "name": "smarty/smarty",
@@ -988,12 +988,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/smarty-php/smarty.git",
-                "reference": "deb9e12aaa0f955da08d54f8ac525682389b5a81"
+                "reference": "93909aacf8df28cbd41b26adfc1a3af1de29ab9b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/deb9e12aaa0f955da08d54f8ac525682389b5a81",
-                "reference": "deb9e12aaa0f955da08d54f8ac525682389b5a81",
+                "url": "https://api.github.com/repos/smarty-php/smarty/zipball/93909aacf8df28cbd41b26adfc1a3af1de29ab9b",
+                "reference": "93909aacf8df28cbd41b26adfc1a3af1de29ab9b",
                 "shasum": ""
             },
             "require": {
@@ -1033,7 +1033,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-08-26 14:13:04"
+            "time": "2017-11-22 00:21:09"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -1041,12 +1041,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803"
+                "reference": "750a2b259dd68436e3b918a4241e80b023a80663"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
-                "reference": "7c8fae0ac1d216eb54349e6a8baa57d515fe8803",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/750a2b259dd68436e3b918a4241e80b023a80663",
+                "reference": "750a2b259dd68436e3b918a4241e80b023a80663",
                 "shasum": ""
             },
             "require": {
@@ -1058,7 +1058,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.5-dev"
+                    "dev-master": "1.6-dev"
                 }
             },
             "autoload": {
@@ -1092,7 +1092,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2017-06-14 15:44:48"
+            "time": "2017-12-17 16:08:10"
         },
         {
             "name": "symfony/translation",
@@ -1100,12 +1100,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/translation.git",
-                "reference": "936bf6dc8955de486d11deebd26aa938322b1555"
+                "reference": "4c5d5582baf2829751a5207659329c1f52eedeb6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/translation/zipball/936bf6dc8955de486d11deebd26aa938322b1555",
-                "reference": "936bf6dc8955de486d11deebd26aa938322b1555",
+                "url": "https://api.github.com/repos/symfony/translation/zipball/4c5d5582baf2829751a5207659329c1f52eedeb6",
+                "reference": "4c5d5582baf2829751a5207659329c1f52eedeb6",
                 "shasum": ""
             },
             "require": {
@@ -1115,7 +1115,7 @@
             "conflict": {
                 "symfony/config": "<2.8",
                 "symfony/dependency-injection": "<3.4",
-                "symfony/yaml": "<3.3"
+                "symfony/yaml": "<3.4"
             },
             "require-dev": {
                 "psr/log": "~1.0",
@@ -1123,7 +1123,7 @@
                 "symfony/dependency-injection": "~3.4|~4.0",
                 "symfony/finder": "~2.8|~3.0|~4.0",
                 "symfony/intl": "^2.8.18|^3.2.5|~4.0",
-                "symfony/yaml": "~3.3|~4.0"
+                "symfony/yaml": "~3.4|~4.0"
             },
             "suggest": {
                 "psr/log": "To use logging capability in translator",
@@ -1160,7 +1160,7 @@
             ],
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
-            "time": "2017-09-15 10:12:22"
+            "time": "2017-12-12 08:27:14"
         }
     ],
     "packages-dev": [],

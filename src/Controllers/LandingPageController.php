@@ -210,25 +210,4 @@ class LandingPageController
         ]);
         return $this->landings();
     }
-
-    // Send the tracking request payload to this link and method
-    public function receive(Request $request)
-    {
-        $page = $request->out("page");
-        $program = $request->out("program");
-
-        $landing = new Landing();
-        $landing = $landing->where("program_tag", "=", $program)
-                           ->where("code", "=", $page)
-                           ->selectOne();
-        if($landing !== false)
-        {
-            $counter = $landing->count + 1;
-            $landing->update([
-                "count" => $counter
-            ]);
-            return true;
-        }
-        return false;
-    }
 }

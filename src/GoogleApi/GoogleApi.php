@@ -165,13 +165,13 @@ class GoogleApi
         $request->setDimensions($this->dimensions);
         $request->setDimensionFilterClauses(array($this->dimensionFilterClause));
         $request->setMetrics(array($this->metrics));
-        // $request->setIncludeEmptyRows(true);
+        $request->setIncludeEmptyRows(true);
         $request->setSegments(array($this->segment));
         $request->setOrderBys($this->order);
 
         $body = new \Google_Service_AnalyticsReporting_GetReportsRequest();
         $body->setReportRequests(array($request));
-
+        
         $result = $this->analytics->reports->batchGet($body);
         // Reset the object properties to default
 

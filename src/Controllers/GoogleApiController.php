@@ -38,7 +38,7 @@ class GoogleApiController
                                ->metrics($metric)
                                ->getReport();
             $response = $google->print($response);
-
+            
             returnJson($response);
         }
         returnJson(["result" => "Not a valid request"]);

@@ -98,6 +98,8 @@ class CheckoutController
                 "phone"        => $request->out("phone"),
                 "email"        => $request->out("email")
             ]);
+        } else {
+            throw new \Exception("Program type should be 'subscription' or 'simple'", 1);
         }
 
         // Payment is done, now it's time to process the user and accounts
